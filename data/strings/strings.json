@@ -7,6 +7,8 @@
 		"profile_increase":"increase in sensor profile.",
 		"hull_decrease":"decrease in hull durability",
 
+		"stuff": "stuff",
+		"test": "test",
 		
 		#These one however are positive(wow)
 		"ppt_increase": "increase in ships PPT.",
