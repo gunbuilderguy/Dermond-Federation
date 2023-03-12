@@ -1,0 +1,103 @@
+{
+  "hullName": "Kontora",
+  "hullId": "DER_kontora",
+  "hullSize": "FRIGATE",
+  "spriteName": "graphics/ships/der_kontora.png",
+  "style": "HIGH_TECH",
+  "height": 96,
+  "width": 68,
+  "center": [34, 43],
+  "collisionRadius": 57.5,
+  "shieldCenter": [0, -0],
+  "shieldRadius": 72.5,
+  "viewOffset": 0,
+  "builtInMods": [
+    "rugged",
+    "hiressensors",
+    "DermondEnginePower"
+  ],
+  "builtInWings": [
+    "DER_Dentor_wing"
+  ],
+  "weaponSlots": [
+    {
+      "id": "WS0003",
+      "size": "SMALL",
+      "type": "HYBRID",
+      "mount": "HARDPOINT",
+      "arc": 0,
+      "angle": 0,
+      "locations": [-8, -25]
+    },
+    {
+      "id": "WS0001",
+      "size": "SMALL",
+      "type": "HYBRID",
+      "mount": "HARDPOINT",
+      "arc": 0,
+      "angle": 0,
+      "locations": [-8, 25]
+    },
+    {
+      "id": "LB 2",
+      "size": "LARGE",
+      "type": "LAUNCH_BAY",
+      "mount": "HIDDEN",
+      "arc": 360,
+      "angle": 0,
+      "locations": [
+        -26, 2,
+        20, -2,
+        20, 2
+      ]
+    },
+    {
+      "id": "LB 3",
+      "size": "LARGE",
+      "type": "LAUNCH_BAY",
+      "mount": "HIDDEN",
+      "arc": 360,
+      "angle": 0,
+      "locations": [-26, -2]
+    }
+  ],
+  "engineSlots": [
+    {
+      "location": [-36, -25],
+      "length": 30,
+      "width": 10,
+      "angle": 180,
+      "contrailSize": 30,
+      "style": "HIGH_TECH"
+    },
+    {
+      "location": [-36, 25],
+      "length": 30,
+      "width": 10,
+      "angle": -180,
+      "contrailSize": 30,
+      "style": "HIGH_TECH"
+    }
+  ],
+  "bounds": [
+    53, -5,
+    50, -17,
+    19, -27,
+    -2, -21,
+    -3, -31,
+    -33, -34,
+    -43, -31,
+    -43, -19,
+    -34, -8,
+    -34, 8,
+    -43, 19,
+    -43, 31,
+    -33, 34,
+    -3, 31,
+    -2, 21,
+    19, 27,
+    50, 17,
+    53, 5,
+    28, -0
+  ]
+}

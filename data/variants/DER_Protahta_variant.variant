@@ -1,0 +1,53 @@
+{
+  "variantId": "DER_Protahta_variant",
+  "hullId": "DER_Protahta",
+  "displayName": "Experimental",
+  "goalVariant": true,
+  "fluxCapacitors": 18,
+  "fluxVents": 24,
+  "quality": 1,
+  "permaMods": [],
+  "hullMods": [
+    "blast_doors",
+    "fluxdistributor",
+    "hardenedshieldemitter"
+  ],
+  "weaponGroups": [
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0001": "der_mentalor_launcher",
+        "WS0002": "der_mentalor_launcher",
+        "WS0003": "heavyblaster",
+        "WS0004": "heavyblaster",
+        "WS0005": "ionpulser",
+        "WS0006": "ionpulser",
+        "WS0007": "pdlaser",
+        "WS0008": "pdlaser",
+        "WS0009": "vulcan",
+        "WS0010": "vulcan",
+        "WS0011": "phasebeam",
+        "WS0012": "phasebeam",
+        "WS0013": "tachyonlance"
+      }
+    },
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {}
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {}
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {}
+    }
+  ],
+  "modules": [],
+  "wings": []
+}

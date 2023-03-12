@@ -1,0 +1,43 @@
+{
+"music":{
+    "dermond_neutral_market": [
+        {
+            "source":"sounds/music",
+            "volume":0.3,
+            "file":"dermond_market_neutral.ogg"
+        }
+    ],
+
+    "dermond_friendly": [
+        {
+            "source":"sounds/music",
+            "volume":0.3,
+            "file":"dermond_friendly.ogg"
+        }
+    ],
+
+    "dermond_hostile_market": [
+        {
+            "source":"sounds/music",
+            "volume":0.3,
+            "file":"dermond_market_hostile.ogg"
+        }
+    ],
+
+    "dermond_neutral_encounter": [
+        {
+            "source":"sounds/music",
+            "volume":0.3,
+            "file":"dermond_encounter_neutral.ogg"
+        }
+    ],
+
+    "dermond_hostile_encounter": [
+        {
+            "source":"sounds/music",
+            "volume":0.3,
+            "file":"dermond_encounter_hostile.ogg"
+        }
+    ]
+}
+}

@@ -1,0 +1,68 @@
+{
+  "variantId": "paragon_Dermond",
+  "hullId": "paragon",
+  "displayName": "Dermond",
+  "goalVariant": false,
+  "fluxCapacitors": 44,
+  "fluxVents": 50,
+  "quality": 1,
+  "permaMods": [],
+  "hullMods": [
+    "advancedcore",
+    "hardenedshieldemitter",
+    "insulatedengine",
+    "pointdefenseai"
+  ],
+  "weaponGroups": [
+    {
+      "autofire": false,
+      "mode": "ALTERNATING",
+      "weapons": {
+        "WS 001": "plasma",
+        "WS 002": "plasma"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "ALTERNATING",
+      "weapons": {
+        "WS 003": "hil",
+        "WS 004": "hil"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS 005": "ionbeam",
+        "WS 006": "ionbeam",
+        "WS 007": "phasebeam",
+        "WS 008": "phasebeam",
+        "WS 009": "ionbeam",
+        "WS 010": "ionbeam"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "ALTERNATING",
+      "weapons": {
+        "WS 012": "df_mentalor_launcher",
+        "WS 014": "df_mentalor_launcher",
+        "WS 018": "df_mentalor_launcher",
+        "WS 020": "df_mentalor_launcher"
+      }
+    },
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {}
+    },
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {}
+    }
+  ],
+  "modules": [],
+  "wings": []
+}

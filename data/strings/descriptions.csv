@@ -1,0 +1,38 @@
+id,type,text1,text2,text3,text4,notes
+DER_Fermond,SHIP,"A very big Heavy Fighter, being closer to a frigate than an actual fighter, but who are we to blame if MVS has something similar. Being very robust and very heavily armed it has become slow and easy target at long ranges, but is very  dangerous if close to the enemy.",,,,
+DER_Dentor,SHIP,"An unknown fighter with mystirious origin, being very similar to infamous Dermond Federation's fighter wing, being classified as ""Light Interceptor"" in chips database it is very powerful, and cannot be replicated or found anywhere else. Since The ""Light Interceptors"" configuration and insides are very complicated it cannot go to far away from the carrier.",,,,
+DER_Dolbre,SHIP,"An interesting ship with unknown origin. A lot of data suggests that it is from an infamous Dermond Federation, but the question rises, how did it get here? The closest Federations outpost is 100 light years away from the core worlds. Being built with an unknown flux core in the ships center, the Dolbre as the ships data suggests is very powerful in hit and run tactics, and also has a very complicated system which makes maintanance of this ship hell for ordinary crew.",,,,
+DER_Protahta,SHIP,"A quite interesting piece of metal, being classified as a Strik Experimental Cruiser. Protahta is armed with 3 flux cores all working as a part of bigger one. Because of unbeliveble complexity of construction Protahta is very maintanence hungry, making it a very bad ship for long range epxeditions.",,,,
+,,,,,,
+der_mentalor_launcher,WEAPON,"Quite interesting LRM being very similar to Salamndra, but having highly efficent nanorforge which allows for record speed of amount of missile being launched from a single pod.",,,,
+,,,,,,
+der_altoh,CUSTOM,"Altoh is a very rich rare ore deposit planet, but is quite poor when comes to normal ore. Around 340 cycles ago a planet collided with Altoh resulting in a dense asteroid ring created around the planet. Due to that the remainings of what was that planet can now be easily mined, resulting in Altoh being a very rich in ore planet. Even though the population of Altoh is high, it only takes in workers which know that they might die, since the remaining of the planet had some organisms... What were those organisms is kept a secret.
+
+
+Altoh is also the main hub for the Dermondian Military High Command, and Dermondian Marine Corp. This result's in Altoh being more heavily armed and defended than Bandore.",,,,
+der_bandore,CUSTOM,"Bandore is the main hub of Dermond in the Persean Sector. Being located on the edge of the sector it is kept relitevly quite. But recently a lot of traiding convoys were raided by the pirates resulting in Bandore parlament declaring Martial Law on the planet in densly populated zones, this has made the need of qualified officers in high demand, which resulted in revival of Dermond Federal Officer Training Commitee.
+
+
+To this day it is unknown what is the deal with the slaves about which records from cycle 126 suggest, many say that they were freed as a part of ""Free Mans"" legeslation campaing. Many are opposing this information. Many say that children of those slaves are still working on the famous Ornium Production Shipyards.",,,,
+der_blockno,CUSTOM,"About what has happend on Blockno is very scarce. When Dermond call that Tri-Tachyon were keeping there tens of millions of slaves before the collapse, almost nobody believed them before the revolts of Tri-Tachyon systems.
+
+
+Blockno's scientific infrastructure is irreplacable and thus Blockno has become the main hub of Science in the Bontora system. To this day it is still unknown how Dermond was able to create that much Alpha AI cores in such a short period of time, but all the information we have points at a secret lab on Blockno and 1st AI war.",,,,
+der_bronsta,CUSTOM,"Bronsta lmost any fleet commander with the right papers can come here and trade, unless they are hunted by the Federation.
+
+
+In cycle 178 an incident occured of Bronsta, and due to that the Bronsta Planet Administrator Office declared Martial Law and the Marine Corp was called in. The result in the next 3 cycles was total eradication of religion from this planet.",,,,
+der_yodora,CUSTOM,"Yodora is known for it's HUGE planet deposits, due to unknown reasons the planet was seen not in dissapearance of deposits but it's increase each 10 cycles. The planet due to unknown reasons has some sort of time & space anomaly. This has resulted in Yodora being a closed planet with primarily miner population.",,,,
+,,,,,,
+dermond_federation,FACTION,"Federation of Dermond is a DOMAIN ERA TERRORIST ORGANISATION who brands their massacres, saturation bombardments, interstellar blockades, total planet eradication, neutron star creation(still unknown how) and many terrible things as the way to create a stable new interstellar ""Democracy""! Their history is very long, but all we know about the current resurrection of the Federation is that they were established around 70 cycles before collapse
+
+
+The Federation was destroyed a long time ago, but not completly. Most of their followers backed down and waited in the outer reaches  of sectors in isolated self sustained systems. In total Domain has claimed to destroy Dermond 4 times, but each and every single time they came back with even more force and better technology. Due to that many factions of the sector brand Dermond as non-human and dehumanise the enemy, the same does The Federation(this record was challenged after peace treaty of cycle 187 which established peace between most factions of Persean Sector, during the peace time an investigation was filed into 4/6 of the Federal Officer Training Academies there were no signs of deliberate hatred towards the citizens of Persea, and to this day many people do not know why the Federation was so hostile towards the citizens of Persea). 
+
+
+During both AI wars Dermond sided with no one and was the one of the few factions fighting against both Tri-Tachyon Corporation and Hegemony, their most famous atrocities in the modern sector is the deployment of planet killer device over Tornheim, which caused over 20 million people to be eradicated, ""The Alliance of Purity"" a Religious organisation which sided with nobody during 2nd AI war was eradicated that moment. To this day the reason to which Dermond deploy planet-killer device is still unknown.
+
+
+In the last 10 cycles they were seen branding themselves with The Luddic Path, and many other organisation funding their militarise and economies, many call it the sing of weakness, but as Dermond Politician put it: ""We may seem inhumane, we may be seen as terrorists, but we will never without a reason massacre entire planets, and those who decide to blame it on our ideology is a DUMB FUCK. We will never refuse alliances and we will never refuse allinging ourselves with other factions of the sector as our founder said ""We are nothing alone"".""
+
+-Last edit 2nd March c.204",,,,

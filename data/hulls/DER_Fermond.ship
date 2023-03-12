@@ -1,0 +1,102 @@
+{
+  "hullName": "Fermond Heavy Aircraft",
+  "hullId": "DER_Fermond",
+  "hullSize": "FIGHTER",
+  "spriteName": "graphics/ships/fighters/DER_Fermond.png",
+  "style": "HIGH_TECH",
+  "height": 100,
+  "width": 100,
+  "center": [50, 42.5],
+  "collisionRadius": 59,
+  "shieldCenter": [0, -0],
+  "shieldRadius": 62,
+  "viewOffset": 0,
+  "weaponSlots": [
+    {
+      "id": "WS0001",
+      "size": "SMALL",
+      "type": "ENERGY",
+      "mount": "HIDDEN",
+      "arc": 45,
+      "angle": -90,
+      "locations": [21, -12.5]
+    },
+    {
+      "id": "WS0002",
+      "size": "SMALL",
+      "type": "ENERGY",
+      "mount": "HIDDEN",
+      "arc": 45,
+      "angle": 90,
+      "locations": [21, 12.5]
+    },
+    {
+      "id": "WS0003",
+      "size": "SMALL",
+      "type": "ENERGY",
+      "mount": "HIDDEN",
+      "arc": 45,
+      "angle": 0,
+      "locations": [8, -22.5]
+    },
+    {
+      "id": "WS0004",
+      "size": "SMALL",
+      "type": "ENERGY",
+      "mount": "HIDDEN",
+      "arc": 45,
+      "angle": -0,
+      "locations": [8, 22.5]
+    },
+    {
+      "id": "WS0005",
+      "size": "SMALL",
+      "type": "ENERGY",
+      "mount": "HIDDEN",
+      "arc": 30,
+      "angle": 0,
+      "locations": [45.5, -0]
+    },
+    {
+      "id": "WS0006",
+      "size": "SMALL",
+      "type": "ENERGY",
+      "mount": "HIDDEN",
+      "arc": 270,
+      "angle": 0,
+      "locations": [11.5, -0]
+    },
+    {
+      "id": "WS0007",
+      "size": "SMALL",
+      "type": "ENERGY",
+      "mount": "HIDDEN",
+      "arc": 242,
+      "angle": 180,
+      "locations": [-26.5, -0]
+    }
+  ],
+  "engineSlots": [
+    {
+      "location": [-21.5, -21],
+      "length": 9,
+      "width": 11,
+      "angle": 180,
+      "contrailSize": 11,
+      "style": "HIGH_TECH"
+    },
+    {
+      "location": [-21.5, 21],
+      "length": 9,
+      "width": 11,
+      "angle": -180,
+      "contrailSize": 11,
+      "style": "HIGH_TECH"
+    }
+  ],
+  "bounds": [
+    -34.5, -48.5,
+    -34.5, 48.5,
+    56.5, -0
+  ]
+}

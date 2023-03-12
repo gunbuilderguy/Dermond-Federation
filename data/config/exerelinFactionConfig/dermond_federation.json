@@ -1,0 +1,178 @@
+{
+    "playableFaction":true,
+    "corvusCompatible":false,
+    "dropPrisoners":true,
+    "raidsFromBases":true,
+    "enabledByDefault":false,
+    "startingFaction":true,
+    "ngcTooltip":"From the depths of hell we will rise.",
+    
+    "rebelFleetSuffix":"Defeatists",
+    
+    "directoryUseShortName":true,
+
+    "asteroidMiningFleetName":"Mining Fleet",
+    "gasMiningFleetName":"Gas Mining Fleet",
+    "invasionFleetName":"Tactical Invasion Fleet",
+    "responseFleetName":"Tactical Defense Fleet ",
+    "invasionSupportFleetName":"Tactical Support Fleet",
+    "defenceFleetName":"Tactical Defense Fleet",
+	"noSyncRelations":false,
+	"noStartingContact":true,
+    "invasionFleetSizeMod":1.3,
+	"responseFleetSizeMod":0.4,	
+    "invasionPointMult":1.5,
+	"vengeanceFleetSizeMult":2.5,
+	"factionIdForHqResponse":"dermond_federation",
+	"freeMarket":false,
+	"specialForcesMaxFleets":5,
+	"specialForcesPointMult":3,
+	"specialForcesSizeMult":2.25,
+    "tariffMult":0.1,
+    "useConfigRelationshipsInNonRandomSector": true, #i am lazy to go and do this in the gen file so woe
+
+
+    "marketSpawnWeight":0.75,
+
+    "startRelationships":{ 
+        #vanilla factions
+        "independent": 0.1,                 #Hi I would like to steal your people 
+        "player": -0.2,                     #Fuck the player, me and my homies hate player.
+        "pirates": -1,                      #God I hate Pirates, except for based from Arthur Pirates but Epicer!
+        "hegemony":-0.8,                    #Fuck the XIV!
+        "luddic_church":-0.3,               #Hey... We are technocratic, but we hate Tri tachyon more than you, oh and also we use AI cores
+        "luddic_path":0.2,                  #Due to some reasons we are friendly???? WTF????
+        "persean":-0.7,                     #Kazeron should be sent into the Gulag, and also I hope people still remember that Chimotoztech is not the only one with pritstine nanoforge.
+        "tritachyon":-1.0,                  #Fuck the (bad)AI! Fuck the (bad)Megacorporations!
+        "sindrian_diktat":-0.8,             #Fuck the Supereme Executer!
+        "remnant": -1.0,                    #My remnant wife... I am sorry that I have to kill you...
+        "lions_guard":-1.0,                 #serving a homeless guy smh
+
+        #modded factions
+        "adversary": -0.4,
+        "orks": 0.8,                        #God bless Bultach
+        "scalartech":-0.3,                  #These guys are kinda like us in technology... But we still better have teleports(WIP)
+        "sindrian_fuel": -0.3,              #Fuck the Sindrian Fuel Company, we have Brande Fuel company at home!
+        "diableavionics":-0.15,             #Fucking based child soldiers, and also they supply us with their engines!
+        "magellan_protectorate": -0.85,     #All rebels are allies... Hold up you are monarchists?... FUCK YOU!
+		"sylphon":0,                        #The meme
+        "blackrock_driveyards":-0.4,        #Teleporting onslaught GO!
+        "dassault_mikoyan": -0.35,          #Dumb s0ren
+        "6eme_bureau": -0.2,                #I love them kinda
+        "blade_breakers": -1.0,             #Fuck Blade Breakers, me and my homies like Deserters!
+        "the_deserter": 0.1,
+        "brighton": 0.2,                    #HMI but from Engalnd
+		"HMI": -0.3,                        #HMI, but... HMI? idfk
+        "mess": -0.8,                       #I hope you aren't near that tree...
+		"interstellarimperium":-1.0,        #Fuck the Imperium
+		"kadur_remnant":-0.2,               #Halal! For in faith we are together!
+		"kadur_theocracy": 0.2,             #Just in case they spawn or they won't idk 
+        "ORA":-0.25,                        #I kinda hate them, but they are kinda good.
+		"shadow_industry":-1,               #Fuck big tiddy mommy.
+        "ironshell":-1,                     #Fuck the IRS and IRS milkies
+        "apex_design":0.2,                  #Boy you better bring me some cocaine because I want to desing something similar to your boxes
+        "star_federation":0.1,              #Federation is my ally, except for the bottom one...
+        "uaf":-1.0,                         #cringe anime mod surpased Remnant Sex in amount of hentai smh
+        "tahlan_legioinfernalis":-1.0,      #These relations were sponsored by Bultach Coalition.
+        "SCY":-0.25,                        #I kinda like them but at the same time I hate them.
+        "MVS": 0.3,                         #This faction is op, change my mind.
+        "gmda": -0.6,                       #People think they can roleplay as robin hoods. Not in my backyard!
+        "gmda_patrol":-0.6,                 #They are roleplayers... Very bad ones tho
+        "draco":-0.6,                       #Literally vampries who made high tech Legion skull_emoji
+        "fang": -0.6,                       #I hope I don't have to know how you make kids...
+        "new_galactic_order":-1,            #I told you who not to bring? CORRECT! BLACK NAZIS!
+        "xhanempire":-1,                    #These guys are familiar to us. Jhonny I want you to employ freelancers and spy on them. They might have that key with them still.
+        "unitedpamed":0.3,                  #Great Admiral of The Sector! I will bring you 50000 people to serve your nation and your people.
+        "vic":-0.3,                         #Keep and eye on them... We don't know what they can bring to us... Also can you... ask to import some of their genetechs? For reserch of course and in no way to create a catgirl harem for our president. Definetly not for that!
+
+        "default": -0.4                     #If I don't know you then YOU HAVE TO FUCK OFF!
+
+    }, 
+
+    "maxRelationships":{
+        "new_galactic_order":-1,            #Peace was never an option with you guys.
+        "luddic_church": 0.3,               #smh they don't like us and blame collapse upon us smh.
+        "luddic_path":0.4,                  #Halal dude
+        "tritachyon":-0.4,                  #smh want to peace with me after we discovered they had like a billion slaves in one system
+        "hegemony":0.1,                     #FUCK YOU! I TOLD YOU NOT FUCKING ENGAGE ME AT MAGEC! AND YOU DID WHAT? CORRECT! YOU FOUGHT US, WE WANTED TO HELP YOU!
+        "ironshell":0.2,                    #I am not going to kill you at least if you won't ask me to pay taxes
+        "diableavionics":0.5,               #Megacorp, but they have slaves... BUT SO WE DO!
+        "shadow_industry":-0.4,             #I just don't like them
+        "uaf": -0.1,                        #Cringe anime mod, no friends
+    },
+    "diplomacyPositiveChance":{ "luddic_church":0.8, "luddic_path":1.3 },
+    "diplomacyNegativeChance":{ "luddic_church":1.2, "luddic_path":0.2 },
+    "morality":"amoral",
+    
+    "alignments":{
+        "corporate":-2,
+        "technocratic":1.2,
+        "hierarchical":-0.25,
+        "militarist":1,
+        "diplomatic":0.8,
+        "ideological":0.4
+    },
+    "diplomacyTraits":["selfrighteous", "foreverwar", "monopolist", "lowprofile", "rebel", "envious"],
+    
+    "colonyExpeditionChance":0,	#I guess we will have to to got to Mars first and only then go colonizing
+    "colonyTargetValuator":"exerelin.campaign.colony.IndustrialColonyTargetValuator",
+    
+    #stabilizeCommodities supplies heavy_armaments food	
+    #I love making the player give a lot of stuff to the station and yes what are you doing here?
+    #Can you please fuck off?
+    
+    "groundBattleSettings":{
+        "moraleDamageTakenMult":0.9
+    },
+    
+    "specialForcesNamerClass":"exerelin.campaign.intel.specialforces.namer.FactionListNamer",
+
+    "startShipsSolo":[["wolf_Starting"]],
+    "startShipsCombatSmall":[
+      ["swp_sunder_u_sta", "shade_Assault", "swp_hecate_sta"],
+      ["medusa_Attack", "wolf_CS", "brawler_tritachyon_Standard"],
+    ],
+    "startShipsTradeSmall":[
+      ["mule_Starting", "wolf_CS", "swp_nautilus_sta"],
+      ["mule_Starting", "wolf_CS", "mercury_Standard"],
+    ],
+    "startShipsCombatLarge":[
+      ["swp_zenith_ass", "omen_PD"],
+      ["aurora_Assault_Support", "tempest_Attack"],
+    ],
+    "startShipsExplorerLarge":[
+      ["apogee_Balanced", "swp_beholder_cs", "afflictor_Strike"],
+      ["apogee_Balanced", "medusa_Attack", "omen_PD"],
+    ],
+    "startShipsTradeLarge":[
+      ["swp_circe_sta", "buffalo_tritachyon_Standard", "swp_nautilus_att"],
+      ["starliner_Standard", "buffalo_tritachyon_Standard", "mercury_Standard"],
+    ],
+    "startShipsCarrierSmall":[["swp_vortex_sta", "tempest_Attack", "swp_hecate_cs"]],
+    "startShipsCarrierLarge":[["swp_eos_sta", "swp_arachne_sta", "brawler_tritachyon_Standard"]],
+    "startShipsSuper":[
+        ["hyperion_Attack"]
+    ],
+    
+    "startSpecialItems":[
+        [["high_tech_package", ""]],
+    ],
+    
+    "defenceStations":[
+        {"ids":["orbitalstation_high", "battlestation_high", "starfortress_high"]},
+    ],
+    
+    "industrySeeds":[
+        {"id":"orbitalworks", "mult":0.1},
+        {"id":"lightindustry", "mult":0.1},
+    ],
+    
+    "bonusSeeds":[
+        {"id":"nanoforge_corrupted", "count":1},
+        {"id":"aiCore_station", "count":2, "mult":0.2},
+        {"id":"aiCore_military", "mult":0.4},
+        {"id":"aiCore_heavyindustry", "count":1},
+        {"id":"aiCore_any", "mult":1.5},
+    ],
+
+}

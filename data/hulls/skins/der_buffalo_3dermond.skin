@@ -1,0 +1,20 @@
+{
+  "baseHullId": "buffalo",
+  "baseValueMult": 1.5,
+  "builtInMods": [
+    "militarized_subsystems",
+    "DermondReconstruction"
+  ],
+  "descriptionId": "buffalo",
+  "descriptionPrefix": "This ship was used by the 3rd Dermond Special Task Force, which went missing during 2nd AI war, still unknown why, and where.",
+  "fighterBays": 0,
+  "fpMod": 0,
+  "hullDesignation": "FRIGATE",
+  "hullName": "Buffalo (Dermond 3rd STF)",
+  "manufacturer": "",
+  "restoreToBaseHull": true,
+  "skinHullId": "der_buffalo_3dermond",
+  "spriteName": "graphics/ships/der_buffalo_3dermond.png",
+  "systemId": "maneuveringjets",
+  "tech": ""
+}

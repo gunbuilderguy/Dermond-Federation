@@ -1,0 +1,24 @@
+{
+  "variantId": "DER_Dentor_variant",
+  "hullId": "DER_Dentor",
+  "displayName": "Light Interceptor",
+  "goalVariant": false,
+  "fluxCapacitors": 0,
+  "fluxVents": 0,
+  "quality": 1,
+  "permaMods": [],
+  "hullMods": [],
+  "weaponGroups": [
+    {
+      "autofire": false,
+      "mode": "ALTERNATING",
+      "weapons": {
+        "WS0001": "shockrepeater",
+        "WS0002": "shockrepeater",
+        "WS0003": "ioncannon"
+      }
+    }
+  ],
+  "modules": [],
+  "wings": []
+}

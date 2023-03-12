@@ -1,0 +1,8 @@
+{
+    "graphics": {
+        "fx":{
+            "der_incompatible": "graphics/icons/tooltips/der_hullmod_incompatible.png",
+            "der_dermondcrest": "graphics/factions/crest_Dermond_Federation.png",
+        }
+    }
+}

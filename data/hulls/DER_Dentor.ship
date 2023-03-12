@@ -1,0 +1,50 @@
+{
+  "hullName": "Dentor Light Intercpetion Wing",
+  "hullId": "DER_Dentor",
+  "hullSize": "FIGHTER",
+  "spriteName": "graphics/ships/fighters/DER_Dentor.png",
+  "style": "HIGH_TECH",
+  "height": 25,
+  "width": 25,
+  "center": [12.5, 11],
+  "collisionRadius": 14.5,
+  "shieldCenter": [0, -0],
+  "shieldRadius": 15.5,
+  "viewOffset": 0,
+  "weaponSlots": [
+    {
+      "id": "WS0001",
+      "size": "SMALL",
+      "type": "ENERGY",
+      "mount": "HIDDEN",
+      "arc": 45,
+      "angle": 0,
+      "locations": [1.5, 5]
+    },
+    {
+      "id": "WS0002",
+      "size": "SMALL",
+      "type": "ENERGY",
+      "mount": "HIDDEN",
+      "arc": 45,
+      "angle": -0,
+      "locations": [1.5, -5]
+    },
+    {
+      "id": "WS0003",
+      "size": "SMALL",
+      "type": "ENERGY",
+      "mount": "HIDDEN",
+      "arc": 270,
+      "angle": 0,
+      "locations": [3.5, -0]
+    }
+  ],
+  "engineSlots": [],
+  "bounds": [
+    14, 0,
+    -9, 11.5,
+    -9, -11.5,
+    14, -0
+  ]
+}

@@ -1,0 +1,33 @@
+{
+	"der":{
+		"fuckyou":"This ship cannot install the following hullmods:",
+		#These are negative buffs
+		"maintanence_increase":"increase in ships maintanence.",
+		"degradecr_fast":"increase in CR degradation time.",
+		"profile_increase":"increase in sensor profile.",
+		"hull_decrease":"decrease in hull durability",
+
+		
+		#These one however are positive(wow)
+		"ppt_increase": "increase in ships PPT.",
+		"engine_increase": " more durable engines.",
+		"armordmg_reduction": "decrease in Armor damage to the ship.",
+		"highexplose_reduction": "decrease in High Explosive damage to the ship.",
+		"energy_reduction": "decrease in Energy damage to the ship.",
+		"corona_reduction": "decrease in Corona damage.",
+		"hull_bonus": "increase in hull durability.",
+		"armour_bonus": "increase in armour durability.",
+		"shield_efficent": "increase in shield efficency.",
+		"speed_increase": "increase in ships speed.",
+		"maneuv_increase":"increase in ships maneuvarability",
+
+		#This text is so boring I can't even imagine how boring it actually is...
+		"speed_desc": "'So you know we love Hit&Run tatics? So I found a way to maximise our engines even better!'",
+		"random_guy": " -Unknown Engieneer after the collapse",
+
+		"reconstruction_desc": "'Ok so bring me as much garbage as you can salvage from raids, we are going to remake them COMPLETLY.'",
+
+		"construction_desc": "'You know what they gave me when I sent them the first blueprint? Crack. I love our Leader.'",
+		"Ornium": " -Arthur Ornium, the creater of Ornium Shipyards Style Construction",
+    },
+}

@@ -1,0 +1,27 @@
+{
+  "variantId": "DER_kontora_variant",
+  "hullId": "DER_kontora",
+  "displayName": "New Variant",
+  "goalVariant": true,
+  "fluxCapacitors": 3,
+  "fluxVents": 4,
+  "quality": 1,
+  "permaMods": [],
+  "hullMods": [
+    "auxiliarythrusters",
+    "eccm",
+    "hardened_subsystems"
+  ],
+  "weaponGroups": [
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0001": "taclaser",
+        "WS0003": "taclaser"
+      }
+    }
+  ],
+  "modules": [],
+  "wings": []
+}

@@ -1,0 +1,156 @@
+{
+  "starSystem":"dermond_Bontora",
+  "markets":[
+    {
+      "entities":["der_altoh"],
+      "faction":"dermond_federation",
+      "size":6,
+      "freePort":true,
+
+      "startingConditions":[
+        "population_5",
+        "der_willofthepeople",
+        "der_marinecorp",
+        "no_atmosphere",
+        "organics_trace",
+        "very_hot",
+        "ore_rich",
+        "rare_ore_ultrarich"
+      ],
+
+      "industries":[
+        ["population", "beta_core"],
+        ["megaport","fullerene_spool","alpha_core"],
+        ["mining", "mantle_bore", "alpha_core"],
+        ["heavybatteries", "drone_replicator", "beta_core"],
+        ["highcommand", "cryoarithmetic_engine","alpha_core"],
+        ["starfortress_high", "beta_core"],
+        ["refining", "catalytic_core", "alpha_core"]
+      ]
+    },
+
+    {
+      "entities":["der_bandore"],
+      "faction":"dermond_federation",
+      "size":8,
+      "freePort":true,
+
+      "startingConditions":[
+        "population_8",
+        #refugee_population
+        #der_slavery
+        "der_willofthepeople",
+        "habitable",
+        "pollution",
+        "cold",
+        "ore_rich",
+        "organics_plentiful",
+        "farmland_bountiful"
+      ],
+
+      "industries":[
+        ["population", "alpha_core"],
+        ["megaport","fullerene_spool","alpha_core"],
+        ["farming", "soil_nanites", "beta_core"],
+        ["mining", "beta_core"],
+        ["heavybatteries", "drone_replicator", "beta_core"],
+        ["der_orniumproduction", "alpha_core"],
+        ["orbitalworks", "pristine_nanoforge", "alpha_core"],
+        ["starfortress_high", "beta_core"],
+        ["der_federala_academy", "beta_core"]
+      ]
+    },
+
+    {
+      "entities":["der_blockno"],
+      "faction":"dermond_federation",
+      "size":4,
+      "freePort":false,
+
+      "startingConditions":[
+        "population_4",
+        "der_willofthepeople",
+        "der_marinecorp",
+        "thin_atmosphere",
+        "habitable",
+        "volatiles_trace",
+        "ore_sparse",
+        "rare_ore_sparse",
+        "low_gravity",
+        "farmland_poor",
+        "organics_trace",
+        "ruins_widespread"
+      ],
+
+      "industries":[
+        ["population", "alpha_core"],
+        ["megaport","fullerene_spool","alpha_core"],
+        ["lightindustry","biofactory_embryo","alpha_core"],
+        ["farming", "alpha_core"],
+        ["heavybatteries", "drone_replicator", "alpha_core"],
+        ["starfortress_high", "beta_core"],
+        ["patrolhq", "beta_core"],
+        ["der_researchcomplex", "beta_core"]
+      ]
+    },
+
+    {
+      "entities":["der_bronsta"],
+      "faction":"dermond_federation",
+      "size":7,
+      "freePort":true,
+
+      "startingConditions":[
+        "population_7",
+        "der_willofthepeople",
+        "no_atmosphere",
+        "poor_light",
+        "cold",
+        "ore_moderate",
+        "rare_ore_rich",
+        "volatiles_abundant"
+      ],
+
+      "industries":[
+        ["population", "beta_core"],
+        ["megaport","fullerene_spool","alpha_core"],
+        ["mining", "mantle_bore","alpha_core"],
+        ["refining", "catalytic_core", "alpha_core"],
+        ["orbitalworks", "corrupted_nanoforge", "beta_core"],
+        ["fuelprod", "synchrotron", "beta_core"],
+        ["heavybatteries", "drone_replicator", "alpha_core"],
+        ["patrolhq", "beta_core"],
+        ["starfortress_high", "beta_core"]
+      ]
+    },
+
+    {
+      "entities":["der_yodora"],
+      "faction":"dermond_federation",
+      "size":6,
+      "freePort":false,
+
+      "startingConditions":[
+        "population_6",
+        "der_willofthepeople",
+        "toxic_atmosphere",
+        "poor_light",
+        "cold",
+        "ore_ultrarich",
+        "rare_ore_rich",
+        "volatiles_abundant",
+        "organics_common"
+      ],
+
+      "industries":[
+        ["population", "beta_core"],
+        ["megaport","fullerene_spool","alpha_core"],
+        ["mining", "mantle_bore", "alpha_core"],
+        ["refining", "catalytic_core", "alpha_core"],
+        ["heavybatteries", "drone_replicator", "alpha_core"],
+        ["militarybase", "beta_core"],
+        ["starfortress_high", "beta_core"] 
+      ]
+    }
+  ]
+}
