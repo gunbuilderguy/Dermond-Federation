@@ -9,7 +9,7 @@
 
 		"stuff": "stuff",
 		"test": "test",
-		
+		#comment
 		#These one however are positive(wow)
 		"ppt_increase": "increase in ships PPT.",
 		"engine_increase": " more durable engines.",
