@@ -82,7 +82,7 @@ public class DermondEnginePower extends BaseHullMod {
         Color YELLOW = new Color(241, 199, 0);
 		String HullmodIncompatible = "graphics/icons/tooltips/der_hullmod_incompatible.png";				
         String CSTitle = "'Post-Collapse Dermondian Engieneering'";
-        String DermondCrest = "graphics/factions/crest_Dermond_Federation.png";
+        String DermondCrest = "graphics/factions/crest_Dermond_Federation_messedup.png";
 		float pad = 2f;
 		Color[] arr ={Misc.getPositiveHighlightColor(),Misc.getHighlightColor()};
         Color[] add ={Misc.getNegativeHighlightColor(),Misc.getHighlightColor()};		
