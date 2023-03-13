@@ -31,7 +31,7 @@ public class DermondFertillaFlux extends BaseHullMod {
         return Global.getSettings().getString("der",  key);}
 
     //Positive
-	private static Map max_flux = new HashMap();
+	private static Map<HullSize, Float> max_flux = new HashMap();
 	static {
 	    max_flux.put(HullSize.FRIGATE, 10f);
 		max_flux.put(HullSize.DESTROYER, 20f);
@@ -39,7 +39,7 @@ public class DermondFertillaFlux extends BaseHullMod {
 		max_flux.put(HullSize.CAPITAL_SHIP, 40f);
     }
 
-	private static Map flux_dis = new HashMap();
+	private static Map<HullSize, Float> flux_dis = new HashMap();
     static {
         flux_dis.put(HullSize.FRIGATE, 50f);
         flux_dis.put(HullSize.DESTROYER, 40f);
@@ -48,7 +48,14 @@ public class DermondFertillaFlux extends BaseHullMod {
     }
 
     //Negative
-    public static final float SUPPLY_USE_MULT = 1.9f;
+    private static Map<HullSize, Float> SUPPLY_USE_MULT = new HashMap();
+    static {
+        SUPPLY_USE_MULT.put(HullSize.FRIGATE, 30f);
+        SUPPLY_USE_MULT.put(HullSize.DESTROYER, 50f);
+        SUPPLY_USE_MULT.put(HullSize.CRUISER, 75f);
+        SUPPLY_USE_MULT.put(HullSize.CAPITAL_SHIP, 150f);
+    }
+
     public static final float CR_DEGRADATION = 1.6f;
 
 
@@ -72,7 +79,7 @@ public class DermondFertillaFlux extends BaseHullMod {
     public void applyEffectsBeforeShipCreation(HullSize hullSize, MutableShipStatsAPI stats, String id) {
         stats.getFluxCapacity().modifyPercent(id, (float) max_flux.get(hullSize));
         stats.getFluxDissipation().modifyPercent(id, (float) flux_dis.get(hullSize));
-        stats.getSuppliesPerMonth().modifyMult(id, SUPPLY_USE_MULT);
+        stats.getSuppliesPerMonth().modifyPercent(id, (float) SUPPLY_USE_MULT.get(hullSize));
         stats.getCRLossPerSecondPercent().modifyMult(id, CR_DEGRADATION);
     }
 
@@ -86,7 +93,7 @@ public class DermondFertillaFlux extends BaseHullMod {
         float PAD = 5f;
         Color YELLOW = new Color(241, 199, 0);
 		String HullmodIncompatible = "graphics/icons/tooltips/der_hullmod_incompatible.png";				
-        String CSTitle = "'Post-Collapse Dermondian Engieneering'";
+        String CSTitle = "'Dermondian Engieneering'";
         String DermondCrest = "graphics/factions/crest_Dermond_Federation.png";
 		float pad = 2f;
 		Color[] arr ={Misc.getPositiveHighlightColor(),Misc.getHighlightColor()};
@@ -106,14 +113,13 @@ public class DermondFertillaFlux extends BaseHullMod {
 
         tooltip.addImageWithText(PAD);
 
-
         //Positive bonuses
-        tooltip.addPara("%s " + getString("maxflux_increase"), pad, arr, max_flux.get(hullSize) + "%"  );
-        tooltip.addPara("%s " + getString("fluxdis_increase"), pad, arr, flux_dis.get(hullSize) + "%"  );
+        tooltip.addPara("%s " + getString("maxflux_increase"), pad, arr, Math.round(max_flux.get(hullSize)) + "%"  );
+        tooltip.addPara("%s " + getString("fluxdis_increase"), pad, arr, Math.round(flux_dis.get(hullSize)) + "%"  );
 
 
         //Negative ones
-        tooltip.addPara("%s " + getString("maintanence_increase"), pad, add, Math.round((SUPPLY_USE_MULT - 1f) * 100f) + "%");
+        tooltip.addPara("%s " + getString("maintanence_increase"), pad, add, Math.round(SUPPLY_USE_MULT.get(hullSize)) + "%");
         tooltip.addPara("%s " + getString("degradecr_fast"), pad, add, Math.round((CR_DEGRADATION - 1f) * 100f) + "%");
         
 

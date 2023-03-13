@@ -126,17 +126,17 @@ public class DermondConstruction extends BaseHullMod {
 
 
         //Positive bonuses
-        tooltip.addPara("%s " + getString("hull_bonus"), pad, arr, HULL_BONUS + "%"  );
+        tooltip.addPara("%s " + getString("hull_bonus"), pad, arr, Math.round(HULL_BONUS) + "%"  );
         tooltip.addPara("%s " + getString("corona_reduction"), pad, arr, Math.round((1f - CORONA_EFFECT_REDUCTION) * 100f) + "%");
         tooltip.addPara("%s " + getString("energy_reduction"), pad, arr, Math.round((1f - ENERGY_DAMAGE_REDUCTION) * 100f) + "%");
         tooltip.addPara("%s " + getString("armordmg_reduction"), pad, arr, Math.round((1f - ARMOR_DAMAGE_REDUCTION) * 100f) + "%");
-        tooltip.addPara("%s " + getString("engine_increase"), pad, arr, HEALTH_BONUS + "%");
+        tooltip.addPara("%s " + getString("engine_increase"), pad, arr, Math.round(HEALTH_BONUS) + "%");
         tooltip.addPara("%s " + getString("ppt_increase"), pad, arr, Math.round((PPT_MULT - 1f) * 100) + "%");
 
         //Negative ones
-        tooltip.addPara("%s " + getString("profile_increase"), pad, add, ((PROFILE_MULT - 1f) * 100f) + "%");
-        tooltip.addPara("%s " + getString("degradecr_fast"), pad, add, DEGRADE_INCREASE_PERCENT + "%");
-        tooltip.addPara("%s " + getString("maintanence_increase"), pad, add, ((SUPPLY_USE_MULT - 1f) * 100f) + "%");
+        tooltip.addPara("%s " + getString("profile_increase"), pad, add, Math.round(((PROFILE_MULT - 1f) * 100f)) + "%");
+        tooltip.addPara("%s " + getString("degradecr_fast"), pad, add, Math.round(DEGRADE_INCREASE_PERCENT) + "%");
+        tooltip.addPara("%s " + getString("maintanence_increase"), pad, add, Math.round(((SUPPLY_USE_MULT - 1f) * 100f)) + "%");
 
 
         

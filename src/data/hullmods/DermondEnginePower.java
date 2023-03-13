@@ -28,14 +28,14 @@ public class DermondEnginePower extends BaseHullMod {
         return Global.getSettings().getString("der",  key);}
 
     //Positive
-	private static Map SPEED = new HashMap();
+	private static Map<HullSize, Float> SPEED = new HashMap();
 	static {
 	    SPEED.put(HullSize.FRIGATE, 10f);
 		SPEED.put(HullSize.DESTROYER, 20f);
 		SPEED.put(HullSize.CRUISER, 30f);
 		SPEED.put(HullSize.CAPITAL_SHIP, 20f);
 	}
-	private static Map MANEUVARABILITY = new HashMap();
+	private static Map<HullSize, Float> MANEUVARABILITY = new HashMap();
 	static {
 	    MANEUVARABILITY.put(HullSize.FRIGATE, 50f);
 		MANEUVARABILITY.put(HullSize.DESTROYER, 40f);
@@ -103,8 +103,8 @@ public class DermondEnginePower extends BaseHullMod {
 
 
         //Positive bonuses
-        tooltip.addPara("%s " + getString("speed_increase"), pad, arr, SPEED.get(hullSize) + "%"  );
-        tooltip.addPara("%s " + getString("maneuv_increase"), pad, arr, MANEUVARABILITY.get(hullSize) + "%"  );
+        tooltip.addPara("%s " + getString("speed_increase"), pad, arr, Math.round(SPEED.get(hullSize)) + "%"  );
+        tooltip.addPara("%s " + getString("maneuv_increase"), pad, arr, Math.round(MANEUVARABILITY.get(hullSize)) + "%"  );
 
 
         //Negative ones
