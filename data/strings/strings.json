@@ -21,14 +21,19 @@
 		"armour_bonus": "increase in armour durability.",
 		"shield_efficent": "increase in shield efficency.",
 		"speed_increase": "increase in ships speed.",
-		"maneuv_increase":"increase in ships maneuvarability",
+		"maneuv_increase":"increase in ships maneuvarability.",
+		"maxflux_increase": "increase in ships maximum flux.",
+		"fluxdis_increase": "increase in ships flux dissapoition.",
 
 		#This text is so boring I can't even imagine how boring it actually is...
 		"speed_desc": "'So you know we love Hit&Run tatics? So I found a way to maximise our engines even better!'",
-		"random_guy": " -Unknown Engieneer after the collapse",
-
 		"reconstruction_desc": "'Ok so bring me as much garbage as you can salvage from raids, we are going to remake them COMPLETLY.'",
 
+		"random_guy": " -Unknown Engieneer after the collapse",
+
+
+
+		"flux_desc": "So I have found a way to increase flux dissapoition of the ship... But the maintence cost will upset you...",
 		"construction_desc": "'You know what they gave me when I sent them the first blueprint? Crack. I love our Leader.'",
 		"Ornium": " -Arthur Ornium, the creater of Ornium Shipyards Style Construction",
     },
