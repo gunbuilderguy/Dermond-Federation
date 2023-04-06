@@ -19,9 +19,28 @@
         "c:\\Program Files (x86)\\Fractal Softworks\\Starsector\\starsector-core\\starfarer_obf.jar",
         "c:\\Program Files (x86)\\Fractal Softworks\\Starsector\\starsector-core\\xstream-1.4.10.jar",
         "jarsworking\\yes.jar",
-        "jarsworking\\DERMOND - Copy (2).jar"
+        "jarsworking\\DERMOND - Copy (2).jar",
+        "c:\\Program Files (x86)\\Fractal Softworks\\Starsector 0.95.1\\starsector-core\\commons-compiler.jar",
+        "c:\\Program Files (x86)\\Fractal Softworks\\Starsector 0.95.1\\starsector-core\\commons-compiler-jdk.jar",
+        "c:\\Program Files (x86)\\Fractal Softworks\\Starsector 0.95.1\\starsector-core\\fs.common_obf.jar",
+        "c:\\Program Files (x86)\\Fractal Softworks\\Starsector 0.95.1\\starsector-core\\fs.sound_obf.jar",
+        "c:\\Program Files (x86)\\Fractal Softworks\\Starsector 0.95.1\\starsector-core\\janino.jar",
+        "c:\\Program Files (x86)\\Fractal Softworks\\Starsector 0.95.1\\starsector-core\\jinput.jar",
+        "c:\\Program Files (x86)\\Fractal Softworks\\Starsector 0.95.1\\starsector-core\\jogg-0.0.7.jar",
+        "c:\\Program Files (x86)\\Fractal Softworks\\Starsector 0.95.1\\starsector-core\\jorbis-0.0.15.jar",
+        "c:\\Program Files (x86)\\Fractal Softworks\\Starsector 0.95.1\\starsector-core\\json.jar",
+        "c:\\Program Files (x86)\\Fractal Softworks\\Starsector 0.95.1\\starsector-core\\log4j-1.2.9.jar",
+        "c:\\Program Files (x86)\\Fractal Softworks\\Starsector 0.95.1\\starsector-core\\lwjgl.jar",
+        "c:\\Program Files (x86)\\Fractal Softworks\\Starsector 0.95.1\\starsector-core\\lwjgl_util.jar",
+        "c:\\Program Files (x86)\\Fractal Softworks\\Starsector 0.95.1\\starsector-core\\starfarer.api.jar",
+        "c:\\Program Files (x86)\\Fractal Softworks\\Starsector 0.95.1\\starsector-core\\starfarer_obf.jar",
+        "c:\\Program Files (x86)\\Fractal Softworks\\Starsector 0.95.1\\starsector-core\\xstream-1.4.10.jar",
+        "c:\\Program Files (x86)\\Fractal Softworks\\Starsector 0.95.1\\mods\\Epta Consortium 2.0.1 - TEST\\jars\\ChangingNexus.jar",
+        "c:\\Program Files (x86)\\Fractal Softworks\\Starsector 0.95.1\\mods\\MagicLib\\jars\\MagicLib.jar",
+        "c:\\Program Files (x86)\\Fractal Softworks\\Starsector 0.95.1\\mods\\LazyLib\\jars\\LazyLib.jar",
+        "c:\\Program Files (x86)\\Fractal Softworks\\Starsector 0.95.1\\mods\\Nexerelin\\jars\\ExerelinCore.jar"
     ],
-    "java.project.outputPath": "jars",
+    "java.project.outputPath": "output",
     "java.project.sourcePaths": [
         "src"
     ]

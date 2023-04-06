@@ -20,7 +20,7 @@ Küllastro,DermondKullastro,2,0.65,Ordo Aeterni Technologiae,"defensive, offensi
 ""-now exactly how they managed to do that... But it looks like one of these hullmods has a strange energy... Close to one we found Sector Bra-""
 
 #DATA CORRUPTED, FURTHER AUDIO FILE RECOVERY IS IMPOSSIBLE",Cultists Upgrades,graphics/hullmods/der_kullastro.png
-Hardella,DermondHerdella,3,0.7,Ordo Aeterni Technologiae,"defensive, offensive, special, no_build_in",Weapons,30000,,,,9,28,34,48,data.hullmods.cultists.HardellaSpecialTargetingUnit,"#DATA DAMAGED
+Hardella,DermondHerdella,3,0.7,Ordo Aeterni Technologiae,"defensive, offensive, special, no_build_in",Weapons,30000,,,,9,28,34,48,data.hullmods.cultists.Hardella,"#DATA DAMAGED
 #RELOADING...
 #RELOADING...
 #RELOAD FAILED",Cultists Targeting system,graphics/hullmods/der_hardella.png
