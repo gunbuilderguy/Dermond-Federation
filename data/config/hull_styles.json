@@ -1,0 +1,40 @@
+{
+    "DERMOND_TECH":{
+		"hyperspaceJitterColor":[51, 194, 215, 200],
+		"baseCampaignExplosionColor":[100,183,194,140],
+		"baseCombatExplosionColor":[30,102,255,140],
+		"fighterRepairFlickerColor":[255,0,25,200],
+		"fighterChipIconColor":[100,165,255,255],
+		"weaponDisabledExplosionColor":[156,103,25,200],
+		"shieldRingColor":[45,216,211,255],
+		"shieldInnerColor":[45,154,211,255],
+		"fluxVentCoreColor":[255,255,255,255],
+		"fluxVentFringeColor":[65,223,255,255],
+		"engineLoopSet":"engine_loop", 					# id of entry in sounds.json
+		"engineAccelerateSet":"engine_accelerate",		# id of entry in sounds.json
+		"empLoopSet":"emp_loop",						# id of entry in sounds.json
+		"fluxLoopSet":"flux_loop",						# id of entry in sounds.json
+		"ventFluxSet":"vent_flux",						# id of entry in sounds.json
+		"shieldBurnoutSet":"shield_burnout",			# id of entry in sounds.json
+		"shieldLowerSet":"shield_lower",				# id of entry in sounds.json
+		"shieldRaiseSet":"shield_raise",				# id of entry in sounds.json
+		"explosionShipSet":"explosion_ship",			# id of entry in sounds.json
+		"damageDecalSheet":"graphics/damage/damage_decal_sheet_base.png",
+		"damageDecalGlowSheet":"graphics/damage/damage_decal_sheet_glow.png",
+		
+		"colorShiftCovers":false,
+		"coversColorShiftAmount":1,
+		"coversMatchShipBrightness":true,
+		"slotCoverSmallTurret":"graphics/weapons/covers/cover_turret_dermond_small.png",
+		"slotCoverSmallHardpoint":"graphics/weapons/covers/cover_hardpoint_dermond_small.png",
+		"slotCoverMediumTurret":"graphics/weapons/covers/cover_turret_dermond_medium.png",
+		"slotCoverMediumHardpoint":"graphics/weapons/covers/cover_hardpoint_dermond_medium.png",
+		"slotCoverLargeTurret":"graphics/weapons/covers/cover_turret_dermond_large.png",
+		"slotCoverLargeHardpoint":"graphics/weapons/covers/cover_hardpoint_dermond_large.png",
+		
+		"dHullOverlayLight":"graphics/damage/dmod_overlay_hightech_light.png",
+		"dHullOverlayMedium":"graphics/damage/dmod_overlay_hightech_medium.png",
+		"dHullOverlayHeavy":"graphics/damage/dmod_overlay_hightech_heavy.png",
+	}
+
+}

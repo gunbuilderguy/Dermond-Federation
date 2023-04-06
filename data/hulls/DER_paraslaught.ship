@@ -7,7 +7,7 @@
   "height": 550,
   "width": 500,
   "center": [250, 245],
-  "collisionRadius": 263,
+  "collisionRadius": 351,
   "shieldCenter": [0, -0],
   "shieldRadius": 288.5,
   "viewOffset": 0,
@@ -322,18 +322,18 @@
       "id": "WS0034",
       "size": "LARGE",
       "type": "BUILT_IN",
-      "mount": "HIDDEN",
+      "mount": "HARDPOINT",
       "arc": 0,
-      "angle": -0,
+      "angle": 0,
       "locations": [101, 136]
     },
     {
       "id": "WS0035",
       "size": "LARGE",
       "type": "BUILT_IN",
-      "mount": "HIDDEN",
+      "mount": "HARDPOINT",
       "arc": 0,
-      "angle": 0,
+      "angle": -0,
       "locations": [101, -136]
     },
     {

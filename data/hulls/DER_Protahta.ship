@@ -3,11 +3,11 @@
   "hullId": "DER_Protahta",
   "hullSize": "CRUISER",
   "spriteName": "graphics/ships/DER_Protahta.png",
-  "style": "HIGH_TECH",
+  "style": "DERMOND_TECH",
   "height": 206,
   "width": 223,
   "center": [111.5, 85.5],
-  "collisionRadius": 126,
+  "collisionRadius": 180.5,
   "shieldCenter": [0, -0],
   "shieldRadius": 135,
   "viewOffset": 0,
@@ -32,7 +32,7 @@
       "id": "WS0002",
       "size": "SMALL",
       "type": "MISSILE",
-      "mount": "HARDPOINT",
+      "mount": "TURRET",
       "arc": 25,
       "angle": -0,
       "locations": [68.5, 42.5]
@@ -111,16 +111,16 @@
     },
     {
       "id": "WS0011",
-      "size": "MEDIUM",
+      "size": "LARGE",
       "type": "ENERGY",
-      "mount": "TURRET",
+      "mount": "HARDPOINT",
       "arc": 125,
       "angle": 180,
       "locations": [-9, -46]
     },
     {
       "id": "WS0012",
-      "size": "MEDIUM",
+      "size": "LARGE",
       "type": "ENERGY",
       "mount": "TURRET",
       "arc": 125,
@@ -144,7 +144,8 @@
       "width": 13,
       "angle": 180,
       "contrailSize": 13,
-      "style": "HIGH_TECH"
+      "style": "CUSTOM",
+      "styleId": "DERMOND_TECH"
     },
     {
       "location": [-69.5, -54.5],
@@ -152,7 +153,8 @@
       "width": 13,
       "angle": -180,
       "contrailSize": 13,
-      "style": "HIGH_TECH"
+      "style": "CUSTOM",
+      "styleId": "DERMOND_TECH"
     },
     {
       "location": [-80.5, 12],
@@ -160,7 +162,8 @@
       "width": 7,
       "angle": 180,
       "contrailSize": 7,
-      "style": "HIGH_TECH"
+      "style": "CUSTOM",
+      "styleId": "DERMOND_TECH"
     },
     {
       "location": [-80.5, -12],
@@ -168,7 +171,8 @@
       "width": 7,
       "angle": -180,
       "contrailSize": 7,
-      "style": "HIGH_TECH"
+      "style": "CUSTOM",
+      "styleId": "DERMOND_TECH"
     },
     {
       "location": [-80.5, 18.5],
@@ -176,7 +180,8 @@
       "width": 7,
       "angle": 180,
       "contrailSize": 7,
-      "style": "HIGH_TECH"
+      "style": "CUSTOM",
+      "styleId": "DERMOND_TECH"
     },
     {
       "location": [-80.5, -18.5],
@@ -184,7 +189,8 @@
       "width": 7,
       "angle": -180,
       "contrailSize": 7,
-      "style": "HIGH_TECH"
+      "style": "CUSTOM",
+      "styleId": "DERMOND_TECH"
     },
     {
       "location": [-80.5, 5],
@@ -192,7 +198,8 @@
       "width": 7,
       "angle": 180,
       "contrailSize": 7,
-      "style": "HIGH_TECH"
+      "style": "CUSTOM",
+      "styleId": "DERMOND_TECH"
     },
     {
       "location": [-80.5, -5],
@@ -200,7 +207,8 @@
       "width": 7,
       "angle": -180,
       "contrailSize": 7,
-      "style": "HIGH_TECH"
+      "style": "CUSTOM",
+      "styleId": "DERMOND_TECH"
     }
   ],
   "bounds": [

@@ -6,10 +6,10 @@
     "DermondReconstruction"
   ],
   "descriptionId": "buffalo",
-  "descriptionPrefix": "This ship was used by the 3rd Dermond Special Task Force, which went missing during 2nd AI war, still unknown why, and where.",
+  "descriptionPrefix": "This ship was used by the 3rd Dermond Special Task Force, which went missing during 2nd AI war, still unknown why, and where.",
   "fighterBays": 0,
   "fpMod": 0,
-  "hullDesignation": "FRIGATE",
+  "hullDesignation": "Cargo vessel",
   "hullName": "Buffalo (Dermond 3rd STF)",
   "manufacturer": "",
   "restoreToBaseHull": true,
