@@ -4,25 +4,32 @@ import com.fs.starfarer.api.impl.campaign.econ.BaseMarketConditionPlugin;
 import com.fs.starfarer.api.impl.campaign.ids.Stats;
 import com.fs.starfarer.api.ui.TooltipMakerAPI;
 import com.fs.starfarer.api.util.Misc;
+import java.util.Arrays;
+
 
 public class der_willofthepeople extends BaseMarketConditionPlugin {
+    private static String [] DER = new String [] {
+        "dermond_federation",
+    };
 
     public static float DEFENSE_BONUS_DF_WILLOFTHEPEOPLE = 2.0f;
-    //public static float FLEET_SIZE_DF_WILLOFTHEPEOPLE = 0.8f;
+    public static float STABILITY_BONUS = 4f;
+    public static float FLEET_SIZE_DF_WILLOFTHEPEOPLE = 1.2f;
 
     @Override
     public void apply(String id) {
-        super.apply(id);
 
         if (!market.getFactionId().contentEquals("dermond_federation")) {
             unapply(id);
             return;
         }
 
-        market.getStats().getDynamic().getMod(Stats.GROUND_DEFENSES_MOD).
-                modifyMult(id, 1f + DEFENSE_BONUS_DF_WILLOFTHEPEOPLE, Misc.ucFirst(condition.getName().toLowerCase()));
-/*       market.getStats().getDynamic().getMod(Stats.COMBAT_FLEET_SIZE_MULT).
-                modifyMult(id, 1f + FLEET_SIZE_DF_WILLOFTHEPEOPLE, Misc.ucFirst(condition.getName().toLowerCase()));*/
+        float mult = market.getStats().getDynamic().getMod(Stats.GROUND_DEFENSES_MOD).getBonusMult();
+            if (Arrays.asList(DER).contains(market.getFactionId())) {
+                market.getStats().getDynamic().getMod(Stats.COMBAT_FLEET_SIZE_MULT).modifyMult(getModId(), FLEET_SIZE_DF_WILLOFTHEPEOPLE, "Will of Dermond");
+                market.getStability().modifyFlat(getModId(), STABILITY_BONUS, "Will of Dermond");
+                market.getStats().getDynamic().getMod(Stats.GROUND_DEFENSES_MOD).modifyMult(getModId(), DEFENSE_BONUS_DF_WILLOFTHEPEOPLE, "Will of Dermond");
+            }
     }
 
     @Override
@@ -33,9 +40,9 @@ public class der_willofthepeople extends BaseMarketConditionPlugin {
     @Override
     public void unapply(String id) {
         super.unapply(id);
-
+		market.getStability().unmodifyFlat(id);
         market.getStats().getDynamic().getMod(Stats.GROUND_DEFENSES_MOD).unmodify(id);
-        //market.getStats().getDynamic().getMod(Stats.COMBAT_FLEET_SIZE_MULT).unmodify(id);
+        market.getStats().getDynamic().getMod(Stats.COMBAT_FLEET_SIZE_MULT).unmodify(id);
     }
 
     @Override
@@ -46,12 +53,19 @@ public class der_willofthepeople extends BaseMarketConditionPlugin {
             return;
         }
 
-        tooltip.addPara("%s ground defenses",
-                10f, Misc.getHighlightColor(),
+        tooltip.addPara(
+            "%s stability bonus.",
+            20f,
+            Misc.getHighlightColor(),
+            "+" + (int)STABILITY_BONUS  
+        );
+        tooltip.addPara(
+                "%s defense rating.",
+                20f,
+                Misc.getHighlightColor(),
                 "+" + (int) (DEFENSE_BONUS_DF_WILLOFTHEPEOPLE * 100f) + "%");
-
-        /*tooltip.addPara("%s fleet size",
-                10f, Misc.getHighlightColor(),
-                "+" + (int) (FLEET_SIZE_DF_WILLOFTHEPEOPLE * 100f) + "%");*/
+        tooltip.addPara("%s fleet size",
+                20f, Misc.getHighlightColor(),
+                "+" + (int) ((FLEET_SIZE_DF_WILLOFTHEPEOPLE - 1f) * 100f) + "%");
     }
 }

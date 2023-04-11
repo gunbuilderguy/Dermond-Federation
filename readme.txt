@@ -9,3 +9,6 @@ And Jackundor with Banano for helping with icons.
 
 Oh and also, why do you open sus txt files?
 Your save just got brikked! - Probably Lortus?
+
+
+Also I will remove the music from the mod if the owner will tell me to do so, as long as they don't enjpy the music!

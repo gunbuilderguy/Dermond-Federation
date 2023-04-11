@@ -1,4 +1,4 @@
-package data.library.ids;
+package data.boring;
 
 public class derIndustries {
 
