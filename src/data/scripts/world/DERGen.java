@@ -38,11 +38,10 @@ public class DERGen implements SectorGeneratorPlugin{
         dermond.setRelationship(Factions.HEGEMONY, -0.8f);
         dermond.setRelationship(Factions.REMNANTS, -1f);
         dermond.setRelationship(Factions.PLAYER, -0.2f);
-        //Modded ones
+        dermond.setRelationship("adversary", -0.4f);
+        dermond.setRelationship("diableavionics", -0.15f); //I still can't belive they use children as soldiers. Best part about them
+        
         /*
-        if(Global.getSettings().getModManager().isModEnabled("adversary")) {
-            dermond.setRelationship("adversary", -0.4f);
-        }
         if(Global.getSettings().getModManager().isModEnabled("ORK")) {
             dermond.setRelationship("orks", 0.8f);
         }

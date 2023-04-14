@@ -1,0 +1,11 @@
+der_maria - Is a clone of a dead scientist. She is the one in charge of Weapons research.
+der_mary - Is a clone of a dead scientist. She is the one in charge of Weapons of Mass Destruction research.
+der_mayerina - An interesting character who is a diplomat to the Persean League. She will only talk to you once you ask about access from Sebastyan at 70 relations. But before that you must visit Olindau before getting said dialoge.
+der_olora - Is the Commander of 3rd Strike Group
+
+der_tatjana - A diplomat to Hegemony, to get acces to her you will have to ask said access from Mayeria at 90 relations.
+der_teroila - High ranking scientist, and the creator of Hunter AI. She is very high ranking officer and also a member of the "Council", her number is 2. She is also a sex toy of Commander of 3rd Batlegroup.
+
+
+der_president - The President of Dermond. He is the only character who will ask you to help him overthrow "Council"
+der_sister - Sister of the President

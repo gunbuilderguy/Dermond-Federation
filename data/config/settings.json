@@ -9,7 +9,7 @@
             "der_fack1": "graphics/icons/hullsys/interdictor_array.png",
         },
         "characters": {
-            "HunterAI": "graphics/portraits/der_HunterAI.png",
+            "HunterAI": "graphics/portraits/characters/AI/der_HunterAI.png",
         },
     },
 

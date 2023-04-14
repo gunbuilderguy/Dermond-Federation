@@ -29,7 +29,7 @@
 	"specialForcesPointMult":3,
 	"specialForcesSizeMult":2.25,
     "tariffMult":0.1,
-    "useConfigRelationshipsInNonRandomSector": true, #i am lazy to go and do this in the gen file so woe
+    "useConfigRelationshipsInNonRandomSector": false, #i am lazy to go and do this in the gen file so woe
 
 
     "marketSpawnWeight":0.75,

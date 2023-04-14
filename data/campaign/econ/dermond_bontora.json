@@ -10,6 +10,7 @@
       "startingConditions":[
         "population_6",
         "der_willofthepeople",
+        "der_kill",
         "der_marinecorp",
         "no_atmosphere",
         "meteor_impacts",
@@ -40,7 +41,7 @@
         "population_8",
         "large_refugee_population",
         "der_kill",
-        #der_slavery
+        "der_slavery",
         "der_willofthepeople",
         "habitable",
         "pollution",
@@ -72,6 +73,7 @@
       "startingConditions":[
         "population_4",
         "der_willofthepeople",
+        "der_kill",
         "der_marinecorp",
         "thin_atmosphere",
         "habitable",
@@ -105,6 +107,7 @@
       "startingConditions":[
         "population_7",
         "der_willofthepeople",
+        "der_kill",
         "no_atmosphere",
         "poor_light",
         "cold",
@@ -135,6 +138,7 @@
       "startingConditions":[
         "population_6",
         "der_willofthepeople",
+        "der_kill",
         "toxic_atmosphere",
         "poor_light",
         "cold",
