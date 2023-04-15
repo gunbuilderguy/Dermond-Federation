@@ -1,6 +1,6 @@
 name,id,planetary,decivRemove,script,desc,icon,order
 Will of Dermond,der_willofthepeople,,TRUE,data.campaign.econ.conditions.der_willofthepeople,"$market is under control of The Federation of Dermond, it is their home, and their job is to protect this place, nobody will surrender without a fight.",graphics/icons/markets/der_willofthepeople.png,142
 Dermondian Marine Corp Presence,der_marinecorp,,TRUE,data.campaign.econ.conditions.der_marinecorp,Dermond Marince Corp is based on $market which increases the ground defense of the planet. The Marines are highly skilled which results in them fighting without fear.,graphics/icons/markets/der_marinecorp.png,143
-Will of Dermond,der_kill,,TRUE,data.campaign.econ.conditions.der_kill,"$market is not under control of The Federation of Dermond, it is their home and they will sabotage everything and refuse to follow your rules or follow your orders.",graphics/icons/markets/der_willofthepeople.png,144
+Will of Dermond,der_kill,,TRUE,data.campaign.econ.conditions.der_kill,"$market is not under control of The Federation of Dermond, it is their home and they will sabotage everything and refuse to follow your rules or follow your orders.",graphics/icons/markets/der_willofthepeople_occupation.png,144
 ,,,,,,,
 Slavery?,der_slavery,,TRUE,data.campaign.econ.conditions.der_slavery,$market is being suspected of having huge concentrations of slaves but nobody knows for sure is it true nowadays or not.,graphics/icons/markets/dissidents.png,
