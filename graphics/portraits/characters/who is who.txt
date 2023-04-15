@@ -1,11 +1,28 @@
-der_maria - Is a clone of a dead scientist. She is the one in charge of Weapons research.
+der_maria - Is a clone of a dead scientist. She is the one in charge of Special Systems research.
 der_mary - Is a clone of a dead scientist. She is the one in charge of Weapons of Mass Destruction research.
 der_mayerina - An interesting character who is a diplomat to the Persean League. She will only talk to you once you ask about access from Sebastyan at 70 relations. But before that you must visit Olindau before getting said dialoge.
 der_olora - Is the Commander of 3rd Strike Group
+der_heria - Sister of der_olora, she is a civilian who has connections to the "Council", she will try to screw you over.
 
-der_tatjana - A diplomat to Hegemony, to get acces to her you will have to ask said access from Mayeria at 90 relations.
+der_tatjana - A diplomat to Hegemony, to get access to her you will have to ask said access from Mayeria at 90 relations.
 der_teroila - High ranking scientist, and the creator of Hunter AI. She is very high ranking officer and also a member of the "Council", her number is 2. She is also a sex toy of Commander of 3rd Batlegroup.
+der_bultach_diplomat - A special contact to whom acces you will have if you are under Bultach commision.
 
-
-der_president - The President of Dermond. He is the only character who will ask you to help him overthrow "Council"
+der_president - The President of Dermond. He is the only character who will ask you to help him overthrow "Council" and install Presidential Republic.
 der_sister - Sister of the President
+
+der_bitch - A special officer who will give you a questline and in the end betray you.
+der_bitch2 - Girlfriend of der_bitch, she will be the one who will try to rape you.
+
+der_high_prestess_new - The High Priestess of The New Church, she is in command of "The Blood of Man"
+
+der_kantas_agent - A Pirate Boss on Jelo, she is the one who will give you quests if you are under Pirate Commision
+der_kantas_agent2 - She is a Pirate captain who is exceptionally good and will try to get under your commision to spy on you on behalf of her Sister and Kanta.
+
+der_lost_queen - Hunter AI body.
+
+der_quest1 - An officer who will ask your help on Teite to help her sister to escape from Ordo Aeterni. She will as a reward sell her body to you.
+der_quest2 - Older sister of der_quest1, she is more sceptic about you and will try to kill you if you take her sister.
+
+
+

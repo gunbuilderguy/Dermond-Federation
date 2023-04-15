@@ -5,14 +5,14 @@
     "raidsFromBases":true,
     "enabledByDefault":false,
     "startingFaction":true,
-    "ngcTooltip":"From the depths of hell we will rise.",
+    "ngcTooltip":"From the Depths of Hell We Will Rise, no matter how Broken are we, The Spirit of Dermond beats Eternely, The Pain and Suffering will fuel Our Broken Hearts and from The Hell We will always rise.",
     
     "rebelFleetSuffix":"Defeatists",
     
     "directoryUseShortName":true,
 
     "asteroidMiningFleetName":"Mining Fleet",
-    "gasMiningFleetName":"Gas Mining Fleet",
+    "gasMiningFleetName":"Volatile Mining Fleet",
     "invasionFleetName":"Tactical Invasion Fleet",
     "responseFleetName":"Tactical Defense Fleet ",
     "invasionSupportFleetName":"Tactical Support Fleet",
@@ -29,7 +29,7 @@
 	"specialForcesPointMult":3,
 	"specialForcesSizeMult":2.25,
     "tariffMult":0.1,
-    "useConfigRelationshipsInNonRandomSector": false, #i am lazy to go and do this in the gen file so woe
+    "useConfigRelationshipsInNonRandomSector": true, #i am lazy to go and do this in the gen file so woe
 
 
     "marketSpawnWeight":0.75,
@@ -41,7 +41,7 @@
         "pirates": -1,                      #God I hate Pirates, except for based from Arthur Pirates but Epicer!
         "hegemony":-0.8,                    #Fuck the XIV!
         "luddic_church":-0.3,               #Hey... We are technocratic, but we hate Tri tachyon more than you, oh and also we use AI cores
-        "luddic_path":0.2,                  #Due to some reasons we are friendly???? WTF????
+        "luddic_path":0.25,                  #Due to some reasons we are friendly???? WTF????
         "persean":-0.7,                     #Kazeron should be sent into the Gulag, and also I hope people still remember that Chimotoztech is not the only one with pritstine nanoforge.
         "tritachyon":-1.0,                  #Fuck the (bad)AI! Fuck the (bad)Megacorporations!
         "sindrian_diktat":-0.8,             #Fuck the Supereme Executer!
@@ -228,6 +228,20 @@
         #Keep and eye on them... We don't know what they can bring to us... Also can you... ask to import some of their genetechs? For reserch of course and in no way to create a catgirl harem for our president. Definetly not for that!
 
 
+        "yrxp": 0.35,
+        #Recently arrived faction to The Sector which was highly cooperative to Dermond, we collaborate with them on almost all issue resolving 'The Isane Gate'
+        #Incident, these guys are our friends try not to worsen our relations with them
+
+
+        "aria":0.2,
+        #The same with Yuri, but these guys are here for conquest however they somehow know what is with 'The Isane Gate' we have to keep good relations with them also
+        #They however want a lot from us... We can give them but they have to help us... This you know is a big issue.
+
+        "ryaz":0.65,
+        #Our second closest ally nowadays. Kindgom of Royal Azalea has become our biggest ally since June cycle 205, since then Dermond was building with RYAZ
+        #well maintained relations, in which The President visited multiple time The Queen. As of now the relaitionships are stable, however are still well maintained
+        #any political change will most likely change relations with RYAZ, and this Dermond has to avoid, since they don't have that much Allies in The Sector
+
 
         "default": -0.4,
         #If I don't know you then YOU HAVE TO FUCK OFF!
@@ -263,13 +277,14 @@
     "colonyExpeditionChance":0,	#I guess we will have to to got to Mars first and only then go colonizing
     "colonyTargetValuator":"exerelin.campaign.colony.IndustrialColonyTargetValuator",
     
-    "stabilizeCommodities": ["food", "hand_weapons", "supplies", "marines"],
+    "stabilizeCommodities": ["food", "hand_weapons", "supplies", "marines", "organs"],
 
     #I love making the player give a lot of stuff to the station and yes what are you doing here?
     #Can you please fuck off?
     
     "groundBattleSettings":{
-        "moraleDamageTakenMult":0.9
+        "moraleDamageTakenMult":0.9,
+        "moraleDamageDealtMult":1.05,
     },
     
     "specialForcesNamerClass":"exerelin.campaign.intel.specialforces.namer.FactionListNamer",

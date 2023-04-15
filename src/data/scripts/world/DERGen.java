@@ -28,7 +28,7 @@ public class DERGen implements SectorGeneratorPlugin{
 
         //Vanilla factions
         dermond.setRelationship(Factions.LUDDIC_CHURCH, -0.3f);
-        dermond.setRelationship(Factions.LUDDIC_PATH, 0.2f);
+        dermond.setRelationship(Factions.LUDDIC_PATH, 0.25f);
         dermond.setRelationship(Factions.TRITACHYON, -1f);
         dermond.setRelationship(Factions.PERSEAN, -0.7f);
         dermond.setRelationship(Factions.PIRATES, -1f);
@@ -38,102 +38,48 @@ public class DERGen implements SectorGeneratorPlugin{
         dermond.setRelationship(Factions.HEGEMONY, -0.8f);
         dermond.setRelationship(Factions.REMNANTS, -1f);
         dermond.setRelationship(Factions.PLAYER, -0.2f);
-        dermond.setRelationship("adversary", -0.4f);
-        dermond.setRelationship("diableavionics", -0.15f); //I still can't belive they use children as soldiers. Best part about them
-        
-        /*
-        if(Global.getSettings().getModManager().isModEnabled("ORK")) {
-            dermond.setRelationship("orks", 0.8f);
-        }
-        if(Global.getSettings().getModManager().isModEnabled("tahlan_scalartech")) {
-            dermond.setRelationship("scalartech", -0.3f);
-        }
-        if(Global.getSettings().getModManager().isModEnabled("PAGSM")) {
-            dermond.setRelationship("sindrian_fuel", -0.3f);
-        }
-        if(Global.getSettings().getModManager().isModEnabled("diableavionics")) {
-            dermond.setRelationship("diableavionics", -0.15f); //I still can't belive they use children as soldiers. Best part about them
-        }
-        if(Global.getSettings().getModManager().isModEnabled("mag_protect")) {
-            dermond.setRelationship("magellan_protectorate", -0.85f); //FUCK S0RE- oops, I wanted to say fuck monarchy? Maybe :>
-        }
-        if(Global.getSettings().getModManager().isModEnabled("Sylphon_RnD")) {
-            dermond.setRelationship("sylphon", 0f); //finish it pls
-        }
-        if(Global.getSettings().getModManager().isModEnabled("blackrock_driveyards")) {
-            dermond.setRelationship("blackrock_driveyards", -0.4f); //These guys litrally use The Mess in their systems!
-        }
-        if(Global.getSettings().getModManager().isModEnabled("istl_dassaultmikoyan")) {
-            dermond.setRelationship("dassault_mikoyan", -0.35f); //I still love 6eme
-            dermond.setRelationship("6eme_bureau", -0.2f);
-            dermond.setRelationship("blade_breakers", -1f);
-            dermond.setRelationship("the_deserter", 0.1f);
-        }
-        if(Global.getSettings().getModManager().isModEnabled("HMI_brighton")) {
-            dermond.setRelationship("brighton", 0.2f); //We will help refugees... But god dammit they are English!
-        }
-        if(Global.getSettings().getModManager().isModEnabled("HMI")) {
-            dermond.setRelationship("HMI", -0.3f); //lowtech paragon and astral smh smh. Oh and also Locomotev is Very cool!
-            dermond.setRelationship("mess", -0.8f);
-        }
-        if(Global.getSettings().getModManager().isModEnabled("Imperium")) {
-            dermond.setRelationship("interstellarimperium", -1f); //I can't believe they use big nukes, not human driven nukes smh
-        }
-        if(Global.getSettings().getModManager().isModEnabled("kadur_remnant")) {
-            dermond.setRelationship("kadur_remnant", -0.2f); //F
-            dermond.setRelationship("kadur_theocracy", 0.2f); //As you rise from the ashes, we will help you
-        }
-        if(Global.getSettings().getModManager().isModEnabled("ORA")) {
-            dermond.setRelationship("ORA", -0.25f); //These guys are french
-        }
-        if(Global.getSettings().getModManager().isModEnabled("shadow_ships")) {
-            dermond.setRelationship("shadow_industry", -1f); //big tiddy doesn't fool me!
-        }
-        if(Global.getSettings().getModManager().isModEnabled("timid_xiv")) {
-            dermond.setRelationship("ironshell", -1f); //Next time I will burn down all coffee fields so you won't have any!
-        }
-        if(Global.getSettings().getModManager().isModEnabled("apex_design")) {
-            dermond.setRelationship("apex_design", 0.2f); //We love helping them!( **no :)** )
-        }
-        if(Global.getSettings().getModManager().isModEnabled("star_federation")) {
-            dermond.setRelationship("star_federation", 0.1f); //We shall protect, and we shall help you.
-        }
-        if(Global.getSettings().getModManager().isModEnabled("uaf")) {
-            dermond.setRelationship("uaf", -1f); //If CY, or somebody on UAF server sees it, I hope you will now know that you can just increase maintanance cost up, but wait lore wise you are weak. And yes the only answer to UAF pilots is slavery and even better getting sent to the tree! 
-        }
-        if(Global.getSettings().getModManager().isModEnabled("tahlan")) {
-            dermond.setRelationship("tahlan_legioinfernalis", -1f); //Anime Tahl is the real leader of Legio, don't lie to me!
-        }
-        if(Global.getSettings().getModManager().isModEnabled("SCY")) {
-            dermond.setRelationship("SCY", -0.25f); //Just recently opened diplomatic ties, and I hope we guys can become good friends...
-        }
-        if(Global.getSettings().getModManager().isModEnabled("exshippack")) {
-            dermond.setRelationship("MVS", 0.3f); //I will pay you 50 billion credits to fuck off from Sector Politics
-        }
-        if(Global.getSettings().getModManager().isModEnabled("gmda")) {
-            dermond.setRelationship("gmda", -0.6f); //fail RP
-            dermond.setRelationship("gmda_patrol", -0.6f);
-        }
-        if(Global.getSettings().getModManager().isModEnabled("HMI_SV")) {
-            dermond.setRelationship("draco", -0.6f);
-            dermond.setRelationship("fang", -0.6f);
-        }
-        if(Global.getSettings().getModManager().isModEnabled("TheDragn_tying_nooses")) {
-            dermond.setRelationship("new_galactic_order", -1f); //Peace was never an option with these dumb fucks
-        }
-        if(Global.getSettings().getModManager().isModEnabled("XhanEmpire")) {
-            dermond.setRelationship("xhanempire", -1f); //These guys were tasked with building a superstructure near the tree, they must have some connection to it
-            dermond.setRelationship("unitedpamed", 0.3f); //I kinda hate you ngl
-        }
-        if(Global.getSettings().getModManager().isModEnabled("vic")) {
-            dermond.setRelationship("vic", -0.3f); //Astrat I want some catgirl portaits for science, can I have them? plz.
-        }
-        /*If I will need it again...
-        if(Global.getSettings().getModManager().isModEnabled("")) { //mod id
-            dermond.setRelationship("", 0.0f); //faction id
-        }
-        */
-        }
+        dermond.setRelationship("armaarmatura", 0.3f); //Mech Good guy :+1: Tritach Bad guy :-1:
+        dermond.setRelationship("adversary", -0.4f); //These guys have some connections to Dermond that's why :)
+        dermond.setRelationship("orks", 0.8f); //Bultach Good - Tritach Bad
+        dermond.setRelationship("scalartech", -0.3f); //They bad :C
+        dermond.setRelationship("sindrian_fuel", -0.3f); //They bad but have braindamage >:(
+        dermond.setRelationship("diableavionics", -0.4f); //I still can't belive they use children as soldiers. Best part about them
+        dermond.setRelationship("magellan_protectorate", -0.85f); //FUCK S0RE- oops, I wanted to say fuck monarchy? Maybe :>
+        dermond.setRelationship("sylphon", 0f); //finish it pls
+        dermond.setRelationship("blackrock_driveyards", -0.45f); //These guys litrally use The Mess in their systems!
+        dermond.setRelationship("dassault_mikoyan", 0.15f); //I still love 6eme
+        dermond.setRelationship("6eme_bureau", 0.35f); //These guys are good friends!
+        dermond.setRelationship("blade_breakers", -0.45f); //These guys are cringe
+        dermond.setRelationship("the_deserter", 0.1f); //These guys are cool
+        dermond.setRelationship("brighton", 0.2f); //We will help refugees... But god dammit they are English!
+        dermond.setRelationship("HMI", -0.3f); //lowtech paragon and astral smh smh. Oh and also Locomotev is Very cool!
+        dermond.setRelationship("mess", -0.8f); //Bad me angy :C
+        dermond.setRelationship("interstellarimperium", -1f); //I can't believe they use big nukes, not human driven nukes smh
+        dermond.setRelationship("kadur_remnant", -0.2f); //F
+        dermond.setRelationship("kadur_theocracy", 0.2f); //As you rise from the ashes, we will help you
+        dermond.setRelationship("ORA", -0.25f); //These guys are french
+        dermond.setRelationship("shadow_industry", -1f); //big tiddy doesn't fool me!
+        dermond.setRelationship("ironshell", -1f); //Next time I will burn down all coffee fields so you won't have any!
+        dermond.setRelationship("apex_design", 0.2f); //We love helping them!( **no :)** )
+        dermond.setRelationship("star_federation", 0.05f); //We shall protect, and we shall help you.
+        dermond.setRelationship("uaf", -1f); //If CY, or somebody on UAF server sees it, I hope you will now know that you can just increase maintanance cost up, but wait lore wise you are weak. And yes the only answer to UAF pilots is slavery and even better getting sent to "The Tree"! 
+        dermond.setRelationship("tahlan_legioinfernalis", -1f); //Anime Tahl is the real leader of Legio, don't lie to me!
+        dermond.setRelationship("SCY", 0.1f); //Just recently opened diplomatic ties, and I hope we guys can become good friends...
+        dermond.setRelationship("MVS", 0.4f); //I will pay you 50 billion credits to fuck off from Sector Politics
+        dermond.setRelationship("gmda", -0.6f); //Fail RP
+        dermond.setRelationship("gmda_patrol", -0.6f); //Fail RP
+        dermond.setRelationship("draco", -0.6f); //Fail RP
+        dermond.setRelationship("fang", -0.6f); //Faril RP
+        dermond.setRelationship("new_galactic_order", -1f); //Peace was never an option with these dumb fucks
+        dermond.setRelationship("xhanempire", -1f); //These guys were tasked with building a superstructure near the tree, they must have some connection to it
+        dermond.setRelationship("unitedpamed", 0.3f); //I kinda hate you ngl
+        dermond.setRelationship("vic", -0.3f); //Astrat I want some catgirl portaits for science, can I have them? plz.
+        dermond.setRelationship("yrxp", 0.35f);
+        dermond.setRelationship("aria", 0.2f);
+        dermond.setRelationship("ryaz", 0.65f);
+        //dermond.setRelationship("", 0.0f); //faction id
+    }
+
     @Override
     public void generate(SectorAPI sector) {
         SharedData.getData().getPersonBountyEventData().addParticipatingFaction("dermond_federation");
