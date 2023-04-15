@@ -57,6 +57,10 @@
         #Adversary has done a lot for The Sector, we support their dream, and we will help them
         #no matter the cost.
 
+        "sevencorp": 0.1,
+        #One of the first Allies of Dermond, however the relations have gone under the Bus after the Epta choosed to increase their relations with Tri Tachyon
+        #Currently the relations are still good, however the relations are still good, and both sides try to keep it that way.
+
 
         "orks": 0.8,
         #Bulltach Coalition is one of the most closest allies of Dermond,
@@ -230,12 +234,13 @@
 
         "yrxp": 0.35,
         #Recently arrived faction to The Sector which was highly cooperative to Dermond, we collaborate with them on almost all issue resolving 'The Isane Gate'
-        #Incident, these guys are our friends try not to worsen our relations with them
+        #incident, these guys are our friends, thus try not to worsen our relations with them
 
 
-        "aria":0.2,
-        #The same with Yuri, but these guys are here for conquest however they somehow know what is with 'The Isane Gate' we have to keep good relations with them also
-        #They however want a lot from us... We can give them but they have to help us... This you know is a big issue.
+        "aria":0.1,
+        #The same with Yuri, but these guys are here for conquest however they somehow know what is with 'The Isane Gate' we have to keep good relations with them also.
+        #They however want a lot from us... We can give them what they need, but they will have to help us... The issue with 'Isane Gate' can destroy us, that's why we need
+        #their help. We have no clear idea about how they know abou it, but if they reveal the issue with 'Isane' we will have great consequences.
 
         "ryaz":0.65,
         #Our second closest ally nowadays. Kindgom of Royal Azalea has become our biggest ally since June cycle 205, since then Dermond was building with RYAZ
@@ -260,8 +265,8 @@
         "shadow_industry":-0.4,             #After we found out they wanted to explode planet killer device on our planet we are never going to make long term peace with them
         "uaf": -0.1,                        #Spy on them for now, we need to find that 'Interdimensional Gate', it might open to us some answers.
     },
-    "diplomacyPositiveChance":{ "luddic_church":0.8, "luddic_path":1.3 },
-    "diplomacyNegativeChance":{ "luddic_church":1.2, "luddic_path":0.2 },
+    "diplomacyPositiveChance":{ "luddic_path":1.5 },
+    "diplomacyNegativeChance":{ "luddic_path":0.2 },
     "morality":"amoral",
     
     "alignments":{

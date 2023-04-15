@@ -34,11 +34,11 @@ public class dermond_Bontora {
 
         system.setLightColor(new Color(255, 178, 102)); // system light color
 
-        PlanetAPI belnarha1 = system.addPlanet("der_altoh", belnarha_star, "Altoh", "barren-bombarded", 140, 110, 3300, 180);
+        PlanetAPI belnarha1 = system.addPlanet("der_altoh", belnarha_star, "Altoh", "barren-bombarded", 124, 110, 3300, 180);
         belnarha1.setCustomDescriptionId("der_altoh");
 
-        JumpPointAPI jumpPoint1 = Global.getFactory().createJumpPoint("bernaha_jump_1", "R Jump-point");
-        jumpPoint1.setCircularOrbit(belnarha_star, 200, 3300, 180); // Angle at 200, L5 of Dreguk
+        JumpPointAPI jumpPoint1 = Global.getFactory().createJumpPoint("bernaha_jump_1", "Altoh Jump-point");
+        jumpPoint1.setCircularOrbit(belnarha_star, 200, 3300, 180);
         jumpPoint1.setRelatedPlanet(belnarha1);
         jumpPoint1.setStandardWormholeToHyperspaceVisual();
         system.addEntity(jumpPoint1);
@@ -49,23 +49,23 @@ public class dermond_Bontora {
         system.addRingBand(belnarha_star, "misc", "rings_dust0", 256f, 1, Color.white, 256f, 4460, 200f, null, null);
         system.addRingBand(belnarha_star, "misc", "rings_dust0", 256f, 1, Color.red, 256f, 4540, 200f, null, null);
 
-        PlanetAPI belnarha2 = system.addPlanet("der_bandore", belnarha_star, "Bandore", "terran", 250, 170, 6000, 280);
+        PlanetAPI belnarha2 = system.addPlanet("der_bandore", belnarha_star, "Bandore", "terran", 355, 170, 6000, 280);
         belnarha2.setCustomDescriptionId("der_bandore");
 
-        PlanetAPI belnarha3 = system.addPlanet("der_blockno", belnarha2, "Blockno", "tundra", 40, 50, 600, 29);
+        PlanetAPI belnarha3 = system.addPlanet("der_blockno", belnarha2, "Blockno", "tundra", 75, 50, 600, 29);
         belnarha3.setCustomDescriptionId("der_blockno");
 
         PlanetAPI belnarha4 = system.addPlanet("der_bronsta", belnarha_star, "Bronstra", "rocky_ice", 250, 165, 8500, 300);
         belnarha4.setCustomDescriptionId("der_bronsta");
 
-        PlanetAPI belnarha5 = system.addPlanet("der_yodora", belnarha_star, "Yodora", "toxic_cold", 200, 120, 9200, 650);
+        PlanetAPI belnarha5 = system.addPlanet("der_yodora", belnarha_star, "Yodora", "toxic_cold", 160, 120, 9200, 650);
         belnarha5.setCustomDescriptionId("der_yodora");
 
         SectorEntityToken gatea = system.addCustomEntity("bontora_gate", // unique id
         "Gate of Revolt", // name - if null, defaultName from custom_entities.json will be used
         "inactive_gate", // type of object, defined in custom_entities.json
         null); // faction
-        gatea.setCircularOrbit(belnarha_star, 120, 6980, 365);
+        gatea.setCircularOrbit(belnarha_star, 108, 6980, 365);
 
 
         SectorEntityToken belnarhaRelay = system.addCustomEntity(null, "Belnarha Comm Relay", "comm_relay", "dermond_federation"); // Makeshift comm relay at L4 of Orguk
@@ -75,7 +75,6 @@ public class dermond_Bontora {
         belnarhaBuoy.setCircularOrbit(belnarha_star, 310, 6500, 280);
 
         
-
         system.autogenerateHyperspaceJumpPoints(true, true);
 
         cleanup(system);

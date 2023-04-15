@@ -12,10 +12,12 @@ import java.util.Objects;
 
 import com.fs.starfarer.api.Global;
 import data.scripts.world.systems.dermond_Bontora;
+import data.scripts.world.systems.dermond_Aleri;
 
-//I kinda hate coding, but if I will if needed so...
+//I kinda hate coding, but if I need I will code...
 
 public class DERGen implements SectorGeneratorPlugin{
+    
     public static void initFactionRelationships(SectorAPI sector) {    
         FactionAPI dermond = Global.getSector().getFaction("dermond_federation");
 
@@ -23,7 +25,7 @@ public class DERGen implements SectorGeneratorPlugin{
             //if (faction.getRelationship("dermond") > 0.2f) continue; //I guess if someone loves dermond that much, they can be above that???
             //if (faction.getRelationship("dermond") < 0f) continue; //I guess if someone hates dermond that much, they can be below that.
             if (Objects.equals(faction.getId(), "dermond_federation")) continue;
-            dermond.setRelationship(faction.getId(), -0.4f); //Otherwise set all factions to -0.4.
+            dermond.setRelationship(faction.getId(), -0.2f); //Otherwise set all factions to -0.2.
         }
 
         //Vanilla factions
@@ -40,6 +42,7 @@ public class DERGen implements SectorGeneratorPlugin{
         dermond.setRelationship(Factions.PLAYER, -0.2f);
         dermond.setRelationship("armaarmatura", 0.3f); //Mech Good guy :+1: Tritach Bad guy :-1:
         dermond.setRelationship("adversary", -0.4f); //These guys have some connections to Dermond that's why :)
+        dermond.setRelationship("sevencorp", 0.1f); //This is just because Seven and Dalton both helped me and Epta is a nice faction all in all.
         dermond.setRelationship("orks", 0.8f); //Bultach Good - Tritach Bad
         dermond.setRelationship("scalartech", -0.3f); //They bad :C
         dermond.setRelationship("sindrian_fuel", -0.3f); //They bad but have braindamage >:(
@@ -74,9 +77,9 @@ public class DERGen implements SectorGeneratorPlugin{
         dermond.setRelationship("xhanempire", -1f); //These guys were tasked with building a superstructure near the tree, they must have some connection to it
         dermond.setRelationship("unitedpamed", 0.3f); //I kinda hate you ngl
         dermond.setRelationship("vic", -0.3f); //Astrat I want some catgirl portaits for science, can I have them? plz.
-        dermond.setRelationship("yrxp", 0.35f);
-        dermond.setRelationship("aria", 0.2f);
-        dermond.setRelationship("ryaz", 0.65f);
+        dermond.setRelationship("yrxp", 0.35f); //I love Anime tbh
+        dermond.setRelationship("aria", 0.1f); //These guys have very good ships
+        dermond.setRelationship("ryaz", 0.65f); //These guys have good relations just because they have magic and Dermond needs it :)
         //dermond.setRelationship("", 0.0f); //faction id
     }
 
@@ -87,6 +90,7 @@ public class DERGen implements SectorGeneratorPlugin{
         initFactionRelationships(sector);
 
         new dermond_Bontora().generate(sector);
+        new dermond_Aleri().generate(sector);
     }
 }
 
