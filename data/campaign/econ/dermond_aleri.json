@@ -40,8 +40,8 @@
           "cold",
           "habitable",
           "rare_ore_sparse",
-          "farmland_poor",
-          "organics_trace"
+          "organics_trace",
+          "farmland_poor"
         ],
   
         "industries":[
