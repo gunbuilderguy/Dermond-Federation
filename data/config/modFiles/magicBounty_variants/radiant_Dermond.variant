@@ -1,0 +1,73 @@
+{
+  "variantId": "radiant_Dermond",
+  "hullId": "radiant",
+  "displayName": "Dermond",
+  "goalVariant": true,
+  "fluxCapacitors": 30,
+  "fluxVents": 30,
+  "quality": 1,
+  "permaMods": [],
+  "hullMods": [
+    "DermondTargetingunit",
+    "DermondFertillaFlux",
+    "DermondEnginePower",
+    "DermondfithGenerationFTLcombat",
+    "autorepair",
+    "DermondHunterAI_Intergration",
+    "DermondTTShields",
+    "DermondKullastro"
+  ],
+  "weaponGroups": [
+    {
+      "autofire": false,
+      "mode": "ALTERNATING",
+      "weapons": {
+        "WS 000": "autopulse",
+        "WS 001": "autopulse"
+      }
+    },
+    {
+      "autofire": false,
+      "mode": "ALTERNATING",
+      "weapons": {
+        "WS 002": "tachyonlance",
+        "WS 003": "tachyonlance",
+        "WS 004": "tachyonlance"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "ALTERNATING",
+      "weapons": {
+        "WS 005": "resonatormrm",
+        "WS 006": "resonatormrm",
+        "WS 007": "resonatormrm",
+        "WS 008": "resonatormrm"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS 009": "shockrepeater",
+        "WS 010": "shockrepeater",
+        "WS 011": "shockrepeater",
+        "WS 016": "shockrepeater",
+        "WS 017": "shockrepeater",
+        "WS 018": "shockrepeater"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS 012": "taclaser",
+        "WS 013": "taclaser",
+        "WS 014": "taclaser",
+        "WS 015": "taclaser"
+      }
+    }
+  ],
+  "modules": [],
+  "wings": []
+}

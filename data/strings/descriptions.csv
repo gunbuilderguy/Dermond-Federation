@@ -4,6 +4,9 @@ DER_Dentor,SHIP,"An unknown fighter with mystirious origin, being very similar t
 DER_Dolbre,SHIP,"An interesting ship with unknown origin. A lot of data suggests that it is from an infamous Dermond Federation, but the question rises, how did it get here? The closest Federations outpost is 100 light years away from the core worlds. Being built with an unknown flux core in the ships center, the Dolbre as the ships data suggests is very powerful in hit and run tactics, and also has a very complicated system which makes maintanance of this ship hell for ordinary crew.",,,,
 DER_Protahta,SHIP,"A quite interesting piece of metal, being classified as a Strik Experimental Cruiser. Protahta is armed with 3 flux cores all working as a part of bigger one. Because of unbeliveble complexity of construction Protahta is very maintanence hungry, making it a very bad ship for long range epxeditions.",,,,
 ,,,,,,
+,,,,,,
+dermond_hunter_AI,RESOURCE,"""it is still unknown how something like this existed in our universe. After rechecking data storage of this Broken AI core it somehow turned back online... I had a conversation with it for around 20 minutes before it asked 'can i be connectedto your ship?' To which I logically responded no. I sitll left it in my ship and not destroying it. When I came close to Hegemony administrated system the AI core said that we are being followed by Phase ships, I didn't believe it... Untill it was too late. My last option was to connect it to the ship, before we were about to get gunned down...""",,,,
+,,,,,,
 der_mentalor_launcher,WEAPON,"Quite interesting LRM being very similar to Salamndra, but having highly efficent nanorforge which allows for record speed of amount of missile being launched from a single pod.",,,,
 ,,,,,,
 der_altoh,CUSTOM,"Altoh is a very rich rare ore deposit planet, but is quite poor when comes to normal ore. Around 340 cycles ago a planet collided with Altoh resulting in a dense asteroid ring created around the planet. Due to that the remainings of what was that planet can now be easily mined, resulting in Altoh being a very rich in ore planet. Even though the population of Altoh is high, it only takes in workers which know that they might die, since the remaining of the planet had some organisms... What were those organisms is kept a secret.
@@ -18,7 +21,7 @@ der_blockno,CUSTOM,"About what has happend on Blockno is very scarce. When Dermo
 
 
 Blockno's scientific infrastructure is irreplacable and thus Blockno has become the main hub of Science in the Bontora system. To this day it is still unknown how Dermond was able to create that much Alpha AI cores in such a short period of time, but all the information we have points at a secret lab on Blockno and 1st AI war.",,,,
-der_bronsta,CUSTOM,"Bronsta lmost any fleet commander with the right papers can come here and trade, unless they are hunted by the Federation.
+der_bronsta,CUSTOM,"Bronsta almost any fleet commander with the right papers can come here and trade, unless they are hunted by the Federation.
 
 
 In cycle 178 an incident occured of Bronsta, and due to that the Bronsta Planet Administrator Office declared Martial Law and the Marine Corp was called in. The result in the next 3 cycles was total eradication of religion from this planet.",,,,

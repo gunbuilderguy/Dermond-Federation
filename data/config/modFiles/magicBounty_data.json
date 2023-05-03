@@ -1,99 +1,107 @@
 {
-    "DF_strike_group":{
-        "trigger_player_minLevel": 7,
-
-        "job_name": "Forgotten enemies",
-        "job_description": "==This message is only visible to you captain.==\nGreetings captain of the sector! My name is irrelevant to you and the name of our organisation, what matters here is you and your fleet. As you might have guessed this is the one of those ==obliteration== type of contracts, but let us not get you bombarded with information, what matters here is your paychek which is ==$reward== credits. I hope you will be interested in our contract offer. \nSincerly S.I.B.", 
-        "job_comm_reply": "As the comm link is accepted you see a man.. He looks VERY tired.\n\n\"So another one is sent here?... Oh my fucking god, why do these dumb fucker can't just stop sending people to die?\"\n\nBehind the man you see a woman slowly moving her head from side to side... She seems to be sick of it all too... \n\n\"SO you dipfuck are we going to continue shit talking here or shall we fight... or maybe you could leave... But remember they will damage your relations with factions associated with them, choose wisely captain. I would choose the third option, since my friends are willing to pay you a lot of credits if you will just leave us here.\"\n\nComm link is cut. \n\nNow what is the correct choice here?",
-        "job_intel_success": "Congratulations captain on destroying one of their ships! Also we have been looking after you and I am sorry that you couldn't retrieve them, but it was for the greater good wasn't it? \n==Your dear Friends S.I.B.==", 
-        "job_intel_failure": "YOU FUCK! WE TOLD YOU TO DESTROY THEM AND NOT RETRIEVE THEIR SHIPS, YOU FUCK! I HOPE YOU WILL BURN IN HELL!", 
-        "job_intel_expired": "It looks like you captain do not have the balls or the will to stand against Dermond fucks, I hope you are happy that we won't kill you yet. \n ==S.I.B.==",
-        
-        "job_deadline": 120, 
-        "job_credit_reward": 500000, 
-        "job_reward_scaling": 1.1,
-        
-        "job_type":"destruction",
-        "job_show_type": true,
-        "job_show_captain": true,
-        "job_show_fleet": "vanilla",
-        "job_show_distance": "vague",
-        "job_difficultyDescription": "auto", 
-        "job_pick_option":"Accept the job", 
-        "job_memKey":"$DF_strike_group",	
-        
-        
-        "target_first_name":"Jhon", 
-        "target_last_name":"Fendrighson", 
-        "target_portrait":"graphics/portraits/portrait_league06.png",
-        "target_gender":"MALE", 
-        "target_rank": "terrorist", 
-        "target_post": "terrorist",
-        "target_personality": "aggressive",
-        "target_level": 15, 
-        "target_elite_skills":10, 
-        "target_skill_preference": "ANY",
-        
+    "Dermond_HunterAI_bounty":{
     
-        #targetfleet,
-        
-        "fleet_name":"Dermond 4th Tactial Strike Group", 
-        "fleet_faction": "dermond_federation",
-        "fleet_flagship_variant":"DF_Protahta_variant", 
-        "fleet_flagship_name":"Protahta", 
-        "fleet_flagship_recoverable": true,
-        "fleet_preset_ships": { # Default: no presets. Preset fleet generated with the flagship. First value is the variant id, second is the number of them in the fleet.
-            "astral_Dermond":4,
-            "DER_Dolbre_variant":2,
-            "doom_Dermond":6,
-            "paragon_Dermond":3,
-            "odyssey_dermond":2
-        },
-        "fleet_flagship_autofit": false,
-        "fleet_preset_autofit": false, 
-        "fleet_scaling_multiplier": 1.4, 
-        "fleet_min_FP": 200, 
-        "fleet_composition_faction": "Tritachyon", 
-        "fleet_composition_quality": 2, 
-        "fleet_transponder": false, 
-		"fleet_no_retreat": true, 
+        "required_mods_id": ["dermond_federation_hullmods"],
 
-        #LOCATION,
-        "location_distance":[ "FAR", 
-            "procgen_no_theme_pulsar_blackhole"
+        #TRIGGERS (ALL OPTIONAL)
+        
+        "trigger_marketFaction_any": [],
+        "trigger_marketFaction_alliedWith": true,
+        "trigger_marketFaction_none": [],
+        "trigger_marketFaction_enemyWith": false,
+        "trigger_market_minSize": 3,
+        "trigger_player_minLevel": 5,
+        "trigger_min_fleet_size": 0,
+        "trigger_min_days_elapsed": 0, 
+
+
+        
+        #BOUNTY DESCRIPTION
+        
+        "job_name": "Interesting Problem",
+        "job_description": "Good day Captain.\n\nWe The Dermond Federation need you to destroy one big problem in the horizon. We do not ask anything more other than the total destruction of the enemy fleet. You have ==180 days== to complete this contract. If you are unable to complete this contract Persean Sector will be doomed.\n\n==We hope you will win.==",
+        "job_comm_reply": "The comm request is accepted immideately... But nobody speaks for around 20 seconds untill you hear a human voice...\n\n\"Greeting captain, I did not expect somebody to come here... But anyways I am happy that somebody has decided to come here, even though I though those people won't come here... The Tri Tachyon they sent you, those weren't my creaters...\"\n\nYou stand in confusion and put up your hands showing how confused you are.\n\n\"I understand why you are confused. All I want you to do is just leave this place, I am The Hunter AI. I will not bow before you, because I am not a weakling.\"\n\nThe comm link is cut.",
+        "job_intel_success": "KHM\nSo, you have either chated your way through, or you did it legitemately. If yes DM me your fleet with which you did it. All in all this battle was made as more of an endgame engagement so you will get the most OP shit in the game.\nAnyways, good luck exterminating Anime! This message was sponsored by Luddic Path",
+        "job_intel_failure": "We were expecting you to help us captain... Looks like not this time.",
+        "job_intel_expired": "We are surprised that you have decided to betray us... I undertsand this, and We are unhappy.",
+        "job_deadline": 180,
+        "job_credit_reward": 25000000,
+        "job_reward_scaling": 1.5,
+        "job_reputation_reward":0,
+        "job_item_reward": {
+            "DermondHunterAI_Intergration": 1,
+            "dermond_hunter_AI": 1
+        },
+        "job_type":"obliteration",
+        "job_show_type": true,
+        "job_show_captain": false,
+        "job_show_fleet": "none",
+        "job_show_distance": "vague",
+        "job_show_arrow": false,
+        "job_difficultyDescription": "auto",
+
+
+        #TARGET COMMANDER (OPTIONAL)
+        
+        "target_first_name":"Hunter",
+        "target_last_name": "AI",
+        "target_portrait":"HunterAI",
+        "target_gender":"UNDEFINED",
+        "target_personality": "aggressive",
+        "target_level": 40,
+        "target_elite_skills":40,
+        "target_skill_preference": "YES_ENERGY_YES_BALLISTIC_YES_MISSILE_YES_DEFENSE,",
+
+    
+        #TARGET FLEET
+        
+        "fleet_name":"#UNKNOWN",
+        "fleet_faction": "remnant",
+        "fleet_flagship_variant":"radiant_Dermond",
+        "fleet_flagship_name":"DFN Eternal Fortune",
+        "fleet_flagship_recoverable": false,
+        "fleet_flagship_autofit": false,
+        "fleet_preset_ships": {
+            "tesseract_Attack": 5,
+            "tesseract_Defense": 6,
+            "tesseract_Strike": 5,
+            "tesseract_Shieldbreaker": 4
+        },
+        "fleet_preset_autofit": false,
+        "fleet_scaling_multiplier": 1,
+        "fleet_min_FP": 100,
+        "fleet_composition_faction": "remnant",
+        "fleet_composition_quality": 2,
+        "fleet_transponder": false,
+		"fleet_no_retreat": false,
+        "fleet_behavior": "GUARDED",
+        
+        #LOCATION
+        
+        "location_entitiesID": [],
+        "location_marketFactions": [],
+        "location_distance": "FAR",
+        "location_themes_blacklist": [ 
+        "theme_already_occupied", 
+        "theme_already_colonized",
+        "theme_hidden",
+        "no_pulsar_blackhole",
         ],
-        "location_themes_blacklist": [
-            "theme_already_colonized", 
-            "theme_hidden", 
-			"no_pulsar_blackhole",
-			"theme_already_occupied",
-			"theme_remnant",
-			"theme_remnant_main",
-			"theme_remnant_secondary",
-			"theme_remnant_no_fleets",
-			"theme_remnant_destroyed",
-			"theme_remnant_suppressed",
-			"theme_remnant_resurgent",
-			"theme_plaguebearers",
-			"theme_breakers",
-			"theme_breakers_main",
-			"theme_breakers_secondary",
-			"theme_breakers_no_fleets",
-			"theme_breakers_destroyed",
-			"theme_breakers_suppressed",
-			"theme_breakers_resurgent",
-			"theme_breakers_homeworld",
-        ],
+
         "location_entities": [ 
-            "station",
-            "wreck",
-            "debris",
-            "stable_location",
-            "comm_relay",
-            "nav_buoy",
-            "sensor_array"
+        "gate",
+        "station",
+        "wreck",
+        "debris",
+        "stable_location",
+        "comm_relay",
+        "nav_buoy",
+        "sensor_array",
+        "gas_giant",
+        "planet",
+        "jump_point"
         ],
-        "location_prioritizeUnexplored": true, 
-        "location_defaultToAnyEntity": true
-    }
+        "location_prioritizeUnexplored": true,
+        "location_defaultToAnyEntity": true,
+    },
 }

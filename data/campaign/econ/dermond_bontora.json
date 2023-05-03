@@ -8,10 +8,12 @@
       "freePort":true,
 
       "startingConditions":[
-        "population_5",
+        "population_6",
         "der_willofthepeople",
+        "der_kill",
         "der_marinecorp",
         "no_atmosphere",
+        "meteor_impacts",
         "organics_trace",
         "very_hot",
         "ore_rich",
@@ -37,8 +39,9 @@
 
       "startingConditions":[
         "population_8",
-        #refugee_population
-        #der_slavery
+        "large_refugee_population",
+        "der_kill",
+        "der_slavery",
         "der_willofthepeople",
         "habitable",
         "pollution",
@@ -70,6 +73,7 @@
       "startingConditions":[
         "population_4",
         "der_willofthepeople",
+        "der_kill",
         "der_marinecorp",
         "thin_atmosphere",
         "habitable",
@@ -103,6 +107,7 @@
       "startingConditions":[
         "population_7",
         "der_willofthepeople",
+        "der_kill",
         "no_atmosphere",
         "poor_light",
         "cold",
@@ -133,6 +138,7 @@
       "startingConditions":[
         "population_6",
         "der_willofthepeople",
+        "der_kill",
         "toxic_atmosphere",
         "poor_light",
         "cold",

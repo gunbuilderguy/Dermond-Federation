@@ -1,5 +1,87 @@
 name,id,tier,rarity,tech/manufacturer,tags,uiTags,base value,unlocked,hidden,hiddenEverywhere,cost_frigate,cost_dest,cost_cruiser,cost_capital,script,desc,short,sprite
-Dermond Construction,DermondConstruction,,,Dermondian Engieneering,"offensive, defensive, engines, no_drop, no_salvage, special",Special,200000,,TRUE,,0,0,0,0,data.hullmods.DermondConstruction,"Standart Dermond costruction Mehcanic. It does a lot to the normal hull, their special feature is the triple flux core, which evenly distributes and efficiently dissapoints flux. ",Standart Dermond construction,graphics/hullmods/der_dermondian_construction.png
-Reconstructed Ship,DermondReconstruction,,,Dermondian Engieneering,"offensive, defensive, no_drop, no_salvage, special",Special,200000,,TRUE,,0,0,0,0,data.hullmods.DermondReconstruction,"This ship was stripped and rebuild almost completly, everything which was left from the old ship is the hull.",Dermondian Reconstruction,graphics/hullmods/der_dermondian_reconstruction.png
-Ornium Engine Modification,DermondEnginePower,,,Ornium Engieneering,"engines,",Engines,20000,,,,3,9,15,20,data.hullmods.DermondEnginePower,"Modifies engines, to increase the maximum speed of the ship, depending on the hull size.",Ornium Engine Modification,graphics/hullmods/der_enginepower.png
+Dermond Construction,DermondConstruction,,,Ornium Engieneering,"offensive, defensive, engines, no_drop, no_salvage, special",Special,200000,,TRUE,,0,0,0,0,data.hullmods.dermond.DermondConstruction,"Standard Dermond construction Mechanic. It does a lot to the normal hull, the special feature of this type of construction is the integrated triple flux core, which evenly distributes and efficiently disappointing flux. ",Standart Dermond construction,graphics/hullmods/der_dermondian_construction.png
+Fertilla Flux Mechanic,DermondFertillaFlux,2,0.7,Ornium Engieneering,"defensive, offensive, special",Flux,30000,,,,5,12,19,29,data.hullmods.dermond.DermondFertillaFlux,Overrides Flux core safety protocols increasing it's flux dissipation and maximum flux barrier depending on the hull size.,Ornium Flux modifitation,graphics/hullmods/der_fertilla_flux.png
+Ornium Engine Modification,DermondEnginePower,2,0.7,Ornium Engieneering,"engines, req_spaceport,","Engines,  Requires Dock",20000,,,,3,9,15,20,data.hullmods.dermond.DermondEnginePower,,Ornium Engine Modification,graphics/hullmods/der_enginepower.png
+,,,,,,,,,,,,,,,,,,
+Torharta Hangar modification,DermondTorhartaHangarmodification,3,0.7,Dermondian Engieneering,"special, fighter, req_spaceport, non_phase","Special, Fighters,  Requires Dock",250000,,,,15,30,44,52,data.hullmods.dermond.TorhartaHangarmodification,"So normally you would need X amount to refit and rearm a fighter, well now you have more crew to do so!",Dermondian lazy Deck crew,graphics/hullmods/der_tortahta_hangar.png
+Reconstructed Ship,DermondReconstruction,,,Dermondian Engieneering,"offensive, defensive, no_drop, no_salvage, special",Special,200000,,TRUE,,0,0,0,0,data.hullmods.dermond.DermondReconstruction,"This ship was stripped and rebuild almost completely, everything what was left from the old ship is the hull. ",Dermondian Reconstruction,graphics/hullmods/der_dermondian_reconstruction.png
+Altorno Ships Modification,DermondAltornoModifcation,3,0.7,Dermondian Engieneering,"offensive, special, req_spaceport,","Flux,  Requires Dock",250000,,,,12,30,50,75,data.hullmods.dermond.DermondAltornoModifcation,"For some unknown reasons Dermond found a way to put their ships into permanent Damper Field emitting mode with HUGE modifications, this has caused the ship to take very little to no damage at all. This hullmod is the newest in Dermondian Federal Navy and was adopted in cycle 205.",Dermondian Damper Field at home,graphics/hullmods/der_damper_field.png
+Celtorian System,DermondCeltorianSystem,2,0.7,Dermondian Engieneering,"offensive, special, phase, req_spaceport,","Offensive, Phase,  Requires Dock",200000,,,,8,14,23,36,data.hullmods.dermond.CeltorianSystem,"Phase system developed by Dermond during cycle 204, after Commander Pralne took his first fly in Dermond constructed Excelsior Dermond Modification Superfrigate he suggested some modifications for the ship to become more effective, unluckily during the 5th test he went missing, nobody knows where he is currently...  ",Dermondoian Phase Technology,graphics/hullmods/der_celtorian_system.png
+Dermond Targeting Unit,DermondTargetingunit,3,0.7,Dermondian Engieneering,"defensive, special, req_spaceport,","Special,  Requires Dock",30000,,,,5,10,17,24,data.hullmods.dermond.DermondTargetingunit,"Dermondian Targeting Unit is based on 3 Gamma Cores fused together, nobody knows how they did it, but they did it. Due to some problems with Gamma Cores being fused into one, ships maintenance is increased. ",Dermond Targeting Core,graphics/hullmods/advanced_targeting_core.png
+#Dermond hullmods,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+#40k reference faction hullmods,,,,,,,,,,,,,,,,,,
+Küllastro,DermondKullastro,2,0.65,Ordo Aeterni Technologiae,"defensive, offensive, special, no_build_in",Special,65000,,,,5,10,20,28,data.hullmods.cultists.Kullastro,"#DATA DAMAGED
+#RELOADING...
+#RELOAD SUCCESFUL! LOADING AUDIO FILE..
+
+""-now exactly how they managed to do that... But it looks like one of these hullmods has a strange energy... Close to one we found Sector Bra-""
+
+#DATA CORRUPTED, FURTHER AUDIO FILE RECOVERY IS IMPOSSIBLE",Cultists Upgrades,graphics/hullmods/der_kullastro.png
+Hardella,DermondHerdella,3,0.7,Ordo Aeterni Technologiae,"defensive, offensive, special, no_build_in",Weapons,30000,,,,9,28,34,48,data.hullmods.cultists.Hardella,"#DATA DAMAGED
+#RELOADING...
+#RELOADING...
+#RELOAD FAILED",Cultists Targeting system,graphics/hullmods/der_hardella.png
+Chernalno,DermondChernalno,2,0.5,Ordo Aeterni Technologiae,"defensive, offensive, special, no_build_in","Special, Flux",75000,,,,4,12,27,36,data.hullmods.cultists.Chernalno,"#DATA DAMAGED
+#RELOADING...
+#RELOAD SUCCESFUL! LOADING AUDIO FILE..
+
+""-ave so many questions to why I should trust you, but if you believe in Our God we will gladly acc-""
+
+#DATA CORRUPTED, FURTHER AUDIO FILE RECOVERY IS IMPOSSIBLE",Cultists Hull modification,graphics/hullmods/der_chernalno.png
+Bontora,DermondBontora,3,0.7,Ordo Aeterni Technologiae,"defensive, offensive, special, no_build_in",Weapons,3000000,,,,15,30,40,60,data.hullmods.cultists.DermondBogorta,"#DATA DAMAGED
+#RELOADING...
+#RELOAD SUCCESFUL! LOADING AUDIO FILE..
+
+""-OU CAN'T JUST SHOVE OUR BODIES AND MAKE US INTO ONE PIECE OF TECHNOLOGY THAT'S NOT HOW WORLD WORKS THAT'S NOT AAAAAAAAA-""
+
+#DATA CORRUPTED, FURTHER AUDIO FILE RECOVERY IS IMPOSSIBLE",Cultists Imaginary Power,graphics/hullmods/der_bontora.png
+Altraha,DermondAltraha,2,0.65,Ordo Aeterni Technologiae,"defensive, offensive, special, no_build_in",Range,45000,,,,5,11,24,32,data.hullmods.cultists.Altraha,"#DATA DAMAGED
+#RELOADING...
+#RELOAD SUCCESFUL! LOADING AUDIO FILE..
+
+""-nk that you should be ready for any problems when trusting these freaks, because you know... We are a Domain Wide Corpo""
+
+#DATA CORRUPTED, FURTHER AUDIO FILE RECOVERY IS IMPOSSIBLE",Cultists Beams,graphics/hullmods/der_altrahta.png
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+FUN,dermondfuckyoupeople,50,0.99,Ordo Aeterni Technologiae,"defensive, offensive, special,",Weapons,25000000,,,,30,50,100,300,data.hullmods.special.dermondfuckyoupeople,"#DATA DAMAGED
+Oh wait wrong script
+So you are either lucky, or I coded it wrongly. This hullmod pretty much triples your damage. If you want S mod it, I don't care. If Mod Mafia deems this mod bad, FUCK YOU!",Cultists went on drugs,graphics/hullmods/FACK_YOU!.png
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+#DOMAIN,,,,,,,,,,,,,,,,,,
+5th Gen FTL combat modification,DermondfithGenerationFTLcombat,2,0.7,,"special, req_spaceport,","Engines, Offensive",240000,,,,3,10,15,25,data.hullmods.domain.FIVEthGenerationFTL,"This experimental hullmod was developed before The Collapse and not so many were smuggeled into the Persean Sector. Not a lot of Factions use it however and can not replicate, it looks like somebody is working to not let this hullmod be widely adopted. The reason is still unknown.",,graphics/hullmods/der_5th_gen_FTL_combat.png
+Persean HitnRun modification,DermondHitnRun,2,0.3,,"special, offensive, req_spaceport,","Offensive,  Requires Dock",35000,,,,4,10,17,25,data.hullmods.domain.HITnRUNmodification,"Was developed in Persean Sector after XIV's arrival to the sector, it is primarily used by Persean League and Tri Tachyon, however due to peace treaty after 2nd AI war the hullmod was banned from usage, however some factions and independent pilots do not care.",HitnRun modification,graphics/hullmods/der_HITnRUN.png
+TT Experimental Shields,DermondTTShields,2,0.4,,"special, offensive, req_spaceport,","Shields,  Requires Dock",350000,,,,5,14,25,35,data.hullmods.domain.TTshieldMOD,"Newest Tri Tachyon made Experimental Shields hullmod. This hullmod overrides default shield safety protocols, and enhances the default shield, however it was not widely used during the 2nd AI War due to an unknown reasons because Tri Tachyon had Logistical Capabilities to use this Hullmod.",,graphics/hullmods/der_TT_experimental_shields.png
+77th Battlegroup Maintenence hullmod,Dermond77thSafety,2,0.5,,"special, defensive",Offensive,425000,,,,3,9,15,25,data.hullmods.domain.SeventySeventhSafetyProtocols,"Experimental technologies were a widely tested subject in Domain. Thus the creation of 77th battlegroup was foreseen by many in the time. These brave man and woman of the domain tested the technologies that will ultimately either vanish after the collapse or get into twisted version of their former selves. 77th did not get the recognitions it deserved yet their existence is still important to several Battlegroups and their beloved generals who use the lost technologies for their lost fleets.
+Bkz. 36th, 95th, 573th and 26th",,graphics/hullmods/der_77th.png
+Traveler,DermondTraveler,3,0.9,,"special, exploration, req_spaceport,","Special,  Requires Dock",75000,,,,15,25,42,50,data.hullmods.domain.Traveler,"This hullmod was developed by an unknown explorer, after he figured out that he can make legally his own ships work diffirent he stripped them apart and rebuilt them. The result of his work was this hullmod, however the captain who made this hullmod doesn't exist?",,graphics/hullmods/der_traveler.png
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+#BALLIN!,,,,,,,,,,,,,,,,,,
+FUCK IT WE BALL,dermondballer5,,,Ballin Inc.,"no_drop, ballerinc","Weapons, Special, Baller",1,TRUE,,,-5,-10,-15,-30,data.hullmods.ballers.baller5,FUCK IT WE BALL FUCK IT WE BALL FUCK IT WE BALL FUCK IT WE BALL FUCK IT WE BALL FUCK IT WE BALL FUCK IT WE BALL FUCK IT WE BALL FUCK IT WE BALL FUCK IT WE BALL ,Ballin tier: FUCK IT WE BALL,graphics/hullmods/ball5.png
+Excelsior my beloved,dermondbigballs,,,Ballin Inc.,"no_drop, ballerinc","Weapons, Special, Baller",1,TRUE,,,-10,-20,-30,-50,data.hullmods.ballers.bigballs,"Captain your ship takes 200x times more damage, but we Ballin Inc. have you covered!","Ballin tier: My balls are very heavy, heavier that they are the black hole",graphics/hullmods/ball5.png
+Ballin,dermondballer4,,,Ballin Inc.,"no_drop, ballerinc","Weapons, Special, Baller",1,TRUE,,,-4,-8,-12,-24,data.hullmods.ballers.baller4,"Captain I think you don't need any explanations, here is the hullmod now go and kill those rebels!",Ballin tier: Baller,graphics/hullmods/ball4.png
+I have some bits of skill,dermondballer3,,,Ballin Inc.,"no_drop, ballerinc","Weapons, Special, Baller",1,TRUE,,,-2,-4,-8,-16,data.hullmods.ballers.baller3,Greetings captain! This hullmod was made for mid tier tr-. Sorry for mid tier captains just like you! We hope at Ballin Inc. you will solve your skill issue,Ballin tier: 50% of the people,graphics/hullmods/ball3.png
+I would like to get hit more?,dermondballer2,,,Ballin Inc.,"no_drop, ballerinc","Weapons, Special, Baller",1,TRUE,,,-1,-2,-3,-4,data.hullmods.ballers.baller2,"Greetings new customer! You are that type of person who we Ballin Inc. call ""new customers"" so I hope you will have fun!",Ballin tier: Starter,graphics/hullmods/ball2.png
+Hit me more dady :>,dermondballer1,,,Ballin Inc.,"no_drop, ballerinc","Weapons, Special, Baller",1,TRUE,,,0,0,0,0,data.hullmods.ballers.baller1,So you want to get some bonuses but you're a pussy? Well we have you covered at Ballin Inc. We have created specially for you this hullmod. Now go and cry!,Ballin tier: SUCK!,graphics/hullmods/ball1.png
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+#REDACTED,,,,,,,,,,,,,,,,,,
+Hunter AI Intergration,DermondHunterAI_Intergration,,,Unknown,"special, no_build_in, no_drop, no_drop_salvage, AIIntegration",Special,25000000,,,,0,0,0,0,data.hullmods.special.DermondHunterAI_Intergration,"This Hullmod allows the Intergration of Hunter AI core to your ship.
+But be aware, somebody might kill you if they will find out you were using Hunter AI...",,graphics/hullmods/der_HunterAI_intergration.png
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+HunterAI returner,DermondHunterAI_return,,,System,"no_drop, no_drop_salvage, no_build_in, restricted",DEVTOOL,,,TRUE,TRUE,0,0,0,0,data.hullmods.special.DermondHunterAI_return,DEBUG: You should never see this in game.,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
 Incompatible Hullmod Added,DermondBlockedBlankHullmod,,,System,"no_drop, no_salvage, special",Special,,,TRUE,,0,0,0,0,data.hullmods.DermondBlockedBlankHullmod,You have tried to add a hullmod which is incompatible with the ship's already installed/built-in hullmod,Warning,graphics/icons/tooltips/der_hullmod_incompatible.png
+,,,,,,,,,,,,,,,,,,

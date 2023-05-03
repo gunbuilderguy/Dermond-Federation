@@ -24,22 +24,12 @@ import java.util.Objects;
 
 public class dermond_ModPlugin extends BaseModPlugin {
 
-    public static boolean isExerlin = false;
-
-    private static void initDF() {
-        if (isExerlin && !SectorManager.getCorvusMode()) {
-            return;
-        }
-        new DERGen().generate(Global.getSector());
-    }
-
-    @Override
-    public void onApplicationLoad() {
-        isExerlin = Global.getSettings().getModManager().isModEnabled("nexerlin");
-    }
-
     @Override
     public void onNewGame() {
-        initDF();
+	boolean haveNexerelin = Global.getSettings().getModManager().isModEnabled("nexerelin");
+	if (!haveNexerelin || SectorManager.getManager().getCorvusMode()){
+            new DERGen().generate(Global.getSector());
+        }
     }
+
 }

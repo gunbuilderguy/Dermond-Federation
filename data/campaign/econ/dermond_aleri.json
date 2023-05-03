@@ -1,0 +1,86 @@
+{
+    "starSystem":"dermond_Aleri",
+    "markets":[
+
+      {
+        "entities":["der_outpost_Alpha_1"],
+        "faction":"dermond_federation",
+        "size":5,
+        "freePort":false,
+  
+        "startingConditions":[
+          "population_5",
+          "der_marinecorp",
+          "ore_rich",
+          "rare_ore_ultrarich"
+        ],
+  
+        "industries":[
+          ["population", "gamma_core"],
+          ["megaport","fullerene_spool","gamma_core"],
+          ["mining", "gamma_core"],
+          ["heavybatteries", "beta_core"],
+          ["highcommand", "alpha_core"],
+          ["starfortress_high", "alpha_core"],
+          ["refining", "gamma_core"]
+        ]
+      },
+  
+      {
+        "entities":["der_tine"],
+        "faction":"dermond_federation",
+        "size":4,
+        "freePort":false,
+  
+        "startingConditions":[
+          "population_4",
+          "der_marinecorp",
+          "thin_atmosphere",
+          "poor_light",
+          "cold",
+          "habitable",
+          "rare_ore_sparse",
+          "organics_trace",
+          "farmland_poor"
+        ],
+  
+        "industries":[
+          ["population"],
+          ["megaport", "beta_core"],
+          ["lightindustry", "beta_core"],
+          ["farming", "gamma_core"],
+          ["heavybatteries", "drone_replicator", "beta_core"],
+          ["starfortress_high", "beta_core"],
+          ["militarybase", "beta_core"]
+        ]
+      },
+
+  
+      {
+        "entities":["der_deni"],
+        "faction":"luddic_path",
+        "size":6,
+        "freePort":false,
+  
+        "startingConditions":[
+          "population_6",
+          "poor_light",
+          "cold",
+          "habitable",
+          "rare_ore_rich",
+          "organics_common"
+        ],
+  
+        "industries":[
+          "population",
+          "megaport",
+          "mining",
+          "refining",
+          "heavyindustry",
+          "heavybatteries",
+          "militarybase",
+          "starfortress"
+        ]
+      }
+    ]
+  }

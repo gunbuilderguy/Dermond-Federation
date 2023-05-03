@@ -7,7 +7,7 @@
   "height": 100,
   "width": 100,
   "center": [50, 42.5],
-  "collisionRadius": 59,
+  "collisionRadius": 88.5,
   "shieldCenter": [0, -0],
   "shieldRadius": 62,
   "viewOffset": 0,
@@ -16,7 +16,7 @@
       "id": "WS0001",
       "size": "SMALL",
       "type": "ENERGY",
-      "mount": "HIDDEN",
+      "mount": "HARDPOINT",
       "arc": 45,
       "angle": -90,
       "locations": [21, -12.5]
@@ -25,34 +25,16 @@
       "id": "WS0002",
       "size": "SMALL",
       "type": "ENERGY",
-      "mount": "HIDDEN",
+      "mount": "HARDPOINT",
       "arc": 45,
       "angle": 90,
       "locations": [21, 12.5]
     },
     {
-      "id": "WS0003",
-      "size": "SMALL",
-      "type": "ENERGY",
-      "mount": "HIDDEN",
-      "arc": 45,
-      "angle": 0,
-      "locations": [8, -22.5]
-    },
-    {
-      "id": "WS0004",
-      "size": "SMALL",
-      "type": "ENERGY",
-      "mount": "HIDDEN",
-      "arc": 45,
-      "angle": -0,
-      "locations": [8, 22.5]
-    },
-    {
       "id": "WS0005",
       "size": "SMALL",
       "type": "ENERGY",
-      "mount": "HIDDEN",
+      "mount": "HARDPOINT",
       "arc": 30,
       "angle": 0,
       "locations": [45.5, -0]
@@ -61,7 +43,7 @@
       "id": "WS0006",
       "size": "SMALL",
       "type": "ENERGY",
-      "mount": "HIDDEN",
+      "mount": "HARDPOINT",
       "arc": 270,
       "angle": 0,
       "locations": [11.5, -0]
@@ -69,8 +51,8 @@
     {
       "id": "WS0007",
       "size": "SMALL",
-      "type": "ENERGY",
-      "mount": "HIDDEN",
+      "type": "HYBRID",
+      "mount": "HARDPOINT",
       "arc": 242,
       "angle": 180,
       "locations": [-26.5, -0]

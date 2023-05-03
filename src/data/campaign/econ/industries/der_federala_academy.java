@@ -41,7 +41,7 @@ import com.fs.starfarer.api.util.Pair;
 import java.awt.Color;
 import java.util.Random;
 import org.lwjgl.util.vector.Vector2f;
-import data.library.ids.derIndustries;
+import data.boring.derIndustries;
 
 
 

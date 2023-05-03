@@ -1,0 +1,24 @@
+{
+  "baseHullId": "astral",
+  "baseValue": 400000,
+  "baseValueMult": 1.9,
+  "builtInMods": [
+    "DermondFertillaFlux",
+    "DermondReconstruction",
+    "operations_center"
+  ],
+  "descriptionId": "astral",
+  "descriptionPrefix": "As one smart man said: Dermondian engieneers will always find a way to butcher our old favorite ship, and upgrade them beyond belief",
+  "fighterBays": 0,
+  "fleetPoints": 27,
+  "fpMod": 0,
+  "hullDesignation": "Experimental Carrier",
+  "hullName": "Astral (Derond)",
+  "manufacturer": "",
+  "ordnancePoints": 325,
+  "restoreToBaseHull": false,
+  "skinHullId": "der_astral_dermond",
+  "spriteName": "graphics/ships/der_astral.png.png",
+  "systemId": "fortressshield",
+  "tech": ""
+}

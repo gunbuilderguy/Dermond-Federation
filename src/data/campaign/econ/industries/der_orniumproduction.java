@@ -23,12 +23,12 @@ public class der_orniumproduction extends BaseIndustry {
     
 	public static float DER_ORNIUMPRODUCTION_QUALITY = 0.50f;
 
-	public static float DEFENSE_BONUS_STATIONARY_ORNIUM = 0.25f;
-	public static float FLEET_BONUS_STATIONARY_ORNIUM = 0.50f;
-        public boolean hasHeavy = true;
-        public boolean hasPort = true;
+	public static float DEFENSE_BONUS_STATIONARY_ORNIUM = 0.4f;
+	public static float FLEET_BONUS_STATIONARY_ORNIUM = 0.75f;
+    public boolean hasHeavy = true;
+    public boolean hasPort = true;
         
-        @Override
+    @Override
 	public void apply() {
 		super.apply(true);
 		
@@ -37,10 +37,20 @@ public class der_orniumproduction extends BaseIndustry {
 		int shipBonus = 0;
 		float qualityBonus = DER_ORNIUMPRODUCTION_QUALITY;
 		
-		demand(Commodities.METALS, size);
-		demand(Commodities.RARE_METALS, size - 3);
-		
-		supply(Commodities.SUPPLIES, size - 2);
+		demand(Commodities.METALS, size + 2);
+		demand(Commodities.RARE_METALS, size);
+		demand(Commodities.ORE, size - 3);
+		demand(Commodities.RARE_ORE, size - 4);
+		demand(Commodities.HEAVY_MACHINERY, size - 1);
+		demand(Commodities.HAND_WEAPONS, size - 2);
+		demand(Commodities.CREW, size - 2);
+		demand(Commodities.MARINES, size - 3);
+
+		supply(Commodities.METALS, size - 3);
+		supply(Commodities.RARE_METALS, size - 5);
+		supply(Commodities.SUPPLIES, size - 1);
+		supply(Commodities.HAND_WEAPONS, size - 3);
+		supply(Commodities.HEAVY_MACHINERY, size - 4);
 		supply(Commodities.SHIPS, size + 4);
 		if (shipBonus > 0) {
 			supply(1, Commodities.SHIPS, shipBonus, "Ornium Shipyard");
@@ -52,7 +62,14 @@ public class der_orniumproduction extends BaseIndustry {
 		
 		applyDeficitToProduction(2, deficit,
 					Commodities.SUPPLIES,
-					Commodities.SHIPS);
+					Commodities.SHIPS,
+					Commodities.ORE,
+					Commodities.RARE_ORE,
+					Commodities.METALS,
+					Commodities.RARE_METALS,
+					Commodities.MARINES,
+					Commodities.CREW
+					);
 		
 		float mult = getDeficitMult(Commodities.SUPPLIES);
 		String extra = "";
@@ -65,7 +82,7 @@ public class der_orniumproduction extends BaseIndustry {
 		float bonus_fleet = FLEET_BONUS_STATIONARY_ORNIUM;
 		market.getStats().getDynamic().getMod(Stats.GROUND_DEFENSES_MOD).modifyMult(getModId(), 1f + defense_bonus * mult, getNameForModifier() + extra);
 		market.getStats().getDynamic().getMod(Stats.COMBAT_FLEET_SIZE_MULT).modifyMult(getModId(), 1f + bonus_fleet * mult, getNameForModifier() + extra);
-		market.getStats().getDynamic().getMod(Stats.PRODUCTION_QUALITY_MOD).modifyFlat(getModId(), qualityBonus, "Ornium style Production Shipyard");
+		market.getStats().getDynamic().getMod(Stats.PRODUCTION_QUALITY_MOD).modifyFlat(getModId(), qualityBonus, "Ornium Style Production Shipyard");
 		
 		float stability = market.getPrevStability();
 		if (stability < 5) {
@@ -169,7 +186,7 @@ public class der_orniumproduction extends BaseIndustry {
 	}
 
 	public float getPatherInterest() {
-		float base = -50f;
+		float base = -500f;
 		return base + super.getPatherInterest();
 	}
 	

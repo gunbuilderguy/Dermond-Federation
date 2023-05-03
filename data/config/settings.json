@@ -3,6 +3,22 @@
         "fx":{
             "der_incompatible": "graphics/icons/tooltips/der_hullmod_incompatible.png",
             "der_dermondcrest": "graphics/factions/crest_Dermond_Federation.png",
-        }
-    }
+            "der_dermondcrestfucked": "graphics/factions/crest_Dermond_Federation_messedup.png",
+            "der_cultists": "graphics/factions/crest_dermond_Cultists.png",
+            "der_ballerinc": "graphics/factions/crest_dermond_ballerinc.png",
+            "der_fack1": "graphics/icons/hullsys/interdictor_array.png",
+        },
+        "characters": {
+            "HunterAI": "graphics/portraits/characters/AI/der_HunterAI.png",
+        },
+    },
+
+    "designTypeColors":{
+        "Ballin Inc.": [45, 130, 38, 255],  
+		"Dermondian Engieneering":[0,0,180,255],
+		"Ordo Aeterni Technologiae":[255,86,70,255],
+		"Ornium Engieneering":[0,135,255,255],
+	},
+
+
 }
