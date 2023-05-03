@@ -40,11 +40,11 @@
   ],
   "modules": [],
   "wings": [
-    "DF_Fermond_wing",
-    "DF_Fermond_wing",
-    "DF_Dentor_wing",
-    "DF_Dentor_wing",
-    "DF_Dentor_wing",
-    "DF_Dentor_wing"
+    "DER_Fermond_wing",
+    "DER_Fermond_wing",
+    "DER_Dentor_wing",
+    "DER_Dentor_wing",
+    "DER_Dentor_wing",
+    "DER_Dentor_wing"
   ]
 }

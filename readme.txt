@@ -8,6 +8,8 @@ DME, ARC, Hullmods Expansion, Tahlan
 
 Special thanks to Banano, willthefunperson, jujutex and ruddy for helping with code, Jackundor with Banano for helping with icons.
 And overall Special Thanks to the Entire Corvus, the people there might be retarted but when it comes to modding people are ready to help.
+And also special thanks to Seven, and Danto for allowing to use their mod for AI intergration in the Hullmod test beta and in this version also.
+And finally Pogre. The base mod was based on bultach files and he knows it.
 
 
 Oh and also, why do you open sus txt files?

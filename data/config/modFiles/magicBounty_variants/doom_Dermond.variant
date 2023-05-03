@@ -17,18 +17,18 @@
       "autofire": false,
       "mode": "ALTERNATING",
       "weapons": {
-        "WS 001": "df_mentalor_launcher",
-        "WS 002": "df_mentalor_launcher"
+        "WS 001": "der_mentalor_launcher",
+        "WS 002": "der_mentalor_launcher"
       }
     },
     {
       "autofire": false,
       "mode": "ALTERNATING",
       "weapons": {
-        "WS 003": "df_mentalor_launcher",
-        "WS 004": "df_mentalor_launcher",
-        "WS 005": "df_mentalor_launcher",
-        "WS 006": "df_mentalor_launcher"
+        "WS 003": "der_mentalor_launcher",
+        "WS 004": "der_mentalor_launcher",
+        "WS 005": "der_mentalor_launcher",
+        "WS 006": "der_mentalor_launcher"
       }
     },
     {

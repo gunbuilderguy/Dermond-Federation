@@ -288,8 +288,10 @@
     #Can you please fuck off?
     
     "groundBattleSettings":{
-        "moraleDamageTakenMult":0.9,
-        "moraleDamageDealtMult":1.05,
+		"attackMult":1.2, 
+		"damageTakenMult":0.75,
+        "moraleDamageTakenMult":1.05, 
+        #Dermond Ground Forces WAS a Society of Warriors now it's just a collection of nationalistic militia
     },
     
     "specialForcesNamerClass":"exerelin.campaign.intel.specialforces.namer.FactionListNamer",

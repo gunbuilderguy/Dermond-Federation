@@ -12,9 +12,9 @@ public class der_willofthepeople extends BaseMarketConditionPlugin {
         "dermond_federation",
     };
 
-    public static float DEFENSE_BONUS_DF_WILLOFTHEPEOPLE = 2.0f;
+    public static float DEFENSE_BONUS_DER_WILLOFTHEPEOPLE = 2.0f;
     public static float STABILITY_BONUS = 4f;
-    public static float FLEET_SIZE_DF_WILLOFTHEPEOPLE = 1.2f;
+    public static float FLEET_SIZE_DER_WILLOFTHEPEOPLE = 1.2f;
 
     @Override
     public void apply(String id) {
@@ -26,9 +26,9 @@ public class der_willofthepeople extends BaseMarketConditionPlugin {
 
         float mult = market.getStats().getDynamic().getMod(Stats.GROUND_DEFENSES_MOD).getBonusMult();
             if (Arrays.asList(DER).contains(market.getFactionId())) {
-                market.getStats().getDynamic().getMod(Stats.COMBAT_FLEET_SIZE_MULT).modifyMult(getModId(), FLEET_SIZE_DF_WILLOFTHEPEOPLE, "Will of Dermond");
+                market.getStats().getDynamic().getMod(Stats.COMBAT_FLEET_SIZE_MULT).modifyMult(getModId(), FLEET_SIZE_DER_WILLOFTHEPEOPLE, "Will of Dermond");
                 market.getStability().modifyFlat(getModId(), STABILITY_BONUS, "Will of Dermond");
-                market.getStats().getDynamic().getMod(Stats.GROUND_DEFENSES_MOD).modifyMult(getModId(), DEFENSE_BONUS_DF_WILLOFTHEPEOPLE, "Will of Dermond");
+                market.getStats().getDynamic().getMod(Stats.GROUND_DEFENSES_MOD).modifyMult(getModId(), DEFENSE_BONUS_DER_WILLOFTHEPEOPLE, "Will of Dermond");
             }
     }
 
@@ -63,9 +63,9 @@ public class der_willofthepeople extends BaseMarketConditionPlugin {
                 "%s defense rating.",
                 20f,
                 Misc.getHighlightColor(),
-                "+" + (int) (DEFENSE_BONUS_DF_WILLOFTHEPEOPLE * 100f) + "%");
+                "+" + (int) (DEFENSE_BONUS_DER_WILLOFTHEPEOPLE * 100f) + "%");
         tooltip.addPara("%s fleet size",
                 20f, Misc.getHighlightColor(),
-                "+" + (int) ((FLEET_SIZE_DF_WILLOFTHEPEOPLE - 1f) * 100f) + "%");
+                "+" + (int) ((FLEET_SIZE_DER_WILLOFTHEPEOPLE - 1f) * 100f) + "%");
     }
 }

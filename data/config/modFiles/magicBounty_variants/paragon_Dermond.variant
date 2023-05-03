@@ -46,10 +46,10 @@
       "autofire": true,
       "mode": "ALTERNATING",
       "weapons": {
-        "WS 012": "df_mentalor_launcher",
-        "WS 014": "df_mentalor_launcher",
-        "WS 018": "df_mentalor_launcher",
-        "WS 020": "df_mentalor_launcher"
+        "WS 012": "der_mentalor_launcher",
+        "WS 014": "der_mentalor_launcher",
+        "WS 018": "der_mentalor_launcher",
+        "WS 020": "der_mentalor_launcher"
       }
     },
     {
