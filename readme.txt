@@ -3,7 +3,7 @@ This mod was released for the shits and giggles most of the content inside the m
 Portraits I either try do draw or make with AI.
 
 
-Most(around 74%) of the code is taken from other mods, if you find which mod takes what code good job! But in case some people wonder from where I took code then here:
+Most(around 74%) of the code is taken from other mods, if you find which code is taken from what mod then good job! But in case some people wonder from where I took code then here:
 DME, ARC, Hullmods Expansion, Tahlan
 
 Special thanks to Banano, willthefunperson, jujutex and ruddy for helping with code, Jackundor with Banano for helping with icons.
