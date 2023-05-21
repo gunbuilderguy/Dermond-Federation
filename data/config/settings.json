@@ -7,6 +7,7 @@
             "der_cultists": "graphics/factions/crest_dermond_Cultists.png",
             "der_ballerinc": "graphics/factions/crest_dermond_ballerinc.png",
             "der_fack1": "graphics/icons/hullsys/interdictor_array.png",
+            "Domain":"graphics/factions/crest_domain.png",
         },
         "characters": {
             "HunterAI": "graphics/portraits/characters/AI/der_HunterAI.png",

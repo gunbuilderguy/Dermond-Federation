@@ -54,7 +54,7 @@ public class dermondfuckyoupeople extends BaseHullMod {
         OrdoIcon.addPara(CSTitle, pad, YELLOW, CSTitle );
         //This one actually spawns the  BIGtext.
         final Color flavor = new Color(110,110,110,255);
-        OrdoIcon.addPara("%s", 6f, flavor, getString("damper_but_better")); //Main text
+        OrdoIcon.addPara("'Hey you! I know you have skill issue so here!'", 6f, flavor); //Main text
         OrdoIcon.addPara("%s", 1f, flavor, getString("manfred_buffett")); // Author
 
 
