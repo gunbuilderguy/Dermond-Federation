@@ -1,0 +1,239 @@
+{
+  "hullName": "Tertillonia",
+  "hullId": "DER_terillonia",
+  "hullSize": "CRUISER",
+  "spriteName": "graphics/ships/der_terillonia.png",
+  "style": "DERMOND_TECH",
+  "height": 350,
+  "width": 150,
+  "center": [75, 206],
+  "collisionRadius": 180,
+  "shieldCenter": [-4, -0],
+  "shieldRadius": 176.5,
+  "viewOffset": 0,
+  "builtInMods": [
+    "DermondConstruction",
+    "DermondfithGenerationFTLcombat"
+  ],
+  "weaponSlots": [
+    {
+      "id": "WS0001",
+      "size": "SMALL",
+      "type": "SYNERGY",
+      "mount": "TURRET",
+      "arc": 270,
+      "angle": 135,
+      "locations": [-97, 24]
+    },
+    {
+      "id": "WS0002",
+      "size": "SMALL",
+      "type": "SYNERGY",
+      "mount": "TURRET",
+      "arc": 270,
+      "angle": -135,
+      "locations": [-97, -24]
+    },
+    {
+      "id": "WS0003",
+      "size": "MEDIUM",
+      "type": "ENERGY",
+      "mount": "TURRET",
+      "arc": 142,
+      "angle": 45,
+      "locations": [35, 31]
+    },
+    {
+      "id": "WS0004",
+      "size": "MEDIUM",
+      "type": "ENERGY",
+      "mount": "TURRET",
+      "arc": 142,
+      "angle": -45,
+      "locations": [35, -31]
+    },
+    {
+      "id": "WS0005",
+      "size": "LARGE",
+      "type": "SYNERGY",
+      "mount": "HARDPOINT",
+      "arc": 0,
+      "angle": 0,
+      "locations": [117, -0]
+    },
+    {
+      "id": "LB 1",
+      "size": "LARGE",
+      "type": "LAUNCH_BAY",
+      "mount": "HIDDEN",
+      "arc": 360,
+      "angle": 0,
+      "locations": [
+        -42, 35,
+        -34, 36,
+        -19, 36
+      ]
+    },
+    {
+      "id": "LB 2",
+      "size": "LARGE",
+      "type": "LAUNCH_BAY",
+      "mount": "HIDDEN",
+      "arc": 360,
+      "angle": 0,
+      "locations": [
+        -19, -35,
+        -26, -35,
+        -37, -35
+      ]
+    }
+  ],
+  "engineSlots": [
+    {
+      "location": [-1, 56],
+      "length": 14,
+      "width": 7,
+      "angle": 171,
+      "contrailSize": 7,
+      "style": "HIGH_TECH"
+    },
+    {
+      "location": [-1, -56],
+      "length": 14,
+      "width": 7,
+      "angle": -171,
+      "contrailSize": 7,
+      "style": "HIGH_TECH"
+    },
+    {
+      "location": [-144, 36],
+      "length": 30,
+      "width": 21,
+      "angle": 171,
+      "contrailSize": 21,
+      "style": "HIGH_TECH"
+    },
+    {
+      "location": [-144, -36],
+      "length": 30,
+      "width": 21,
+      "angle": -171,
+      "contrailSize": 21,
+      "style": "HIGH_TECH"
+    },
+    {
+      "location": [-138, 40],
+      "length": 15,
+      "width": 4,
+      "angle": 169,
+      "contrailSize": 4,
+      "style": "HIGH_TECH"
+    },
+    {
+      "location": [-138, -40],
+      "length": 15,
+      "width": 4,
+      "angle": -169,
+      "contrailSize": 4,
+      "style": "HIGH_TECH"
+    },
+    {
+      "location": [-153, 29],
+      "length": 15,
+      "width": 4,
+      "angle": 169.5,
+      "contrailSize": 4,
+      "style": "HIGH_TECH"
+    },
+    {
+      "location": [-153, -29],
+      "length": 15,
+      "width": 4,
+      "angle": -169.5,
+      "contrailSize": 4,
+      "style": "HIGH_TECH"
+    },
+    {
+      "location": [-168, -0],
+      "length": 36,
+      "width": 10,
+      "angle": 180,
+      "contrailSize": 10,
+      "style": "HIGH_TECH"
+    },
+    {
+      "location": [-169, 8],
+      "length": 28,
+      "width": 15,
+      "angle": 180,
+      "contrailSize": 15,
+      "style": "HIGH_TECH"
+    },
+    {
+      "location": [-169, -8],
+      "length": 28,
+      "width": 15,
+      "angle": -180,
+      "contrailSize": 15,
+      "style": "HIGH_TECH"
+    },
+    {
+      "location": [-168, 15.5],
+      "length": 27,
+      "width": 11,
+      "angle": 180,
+      "contrailSize": 11,
+      "style": "HIGH_TECH"
+    },
+    {
+      "location": [-168, -15.5],
+      "length": 27,
+      "width": 11,
+      "angle": -180,
+      "contrailSize": 11,
+      "style": "HIGH_TECH"
+    }
+  ],
+  "bounds": [
+    134, -15,
+    130, -21,
+    109, -37,
+    73, -54,
+    30, -60,
+    18, -60,
+    0, -59,
+    -4, -52,
+    5, -50,
+    -5, -43,
+    -14, -45,
+    -39, -45,
+    -62, -38,
+    -96, -45,
+    -123, -45,
+    -137, -42,
+    -156, -27,
+    -148, -24,
+    -168, -22,
+    -168, -0,
+    -168, 22,
+    -148, 24,
+    -156, 27,
+    -137, 42,
+    -123, 45,
+    -96, 45,
+    -62, 38,
+    -39, 45,
+    -14, 45,
+    -5, 43,
+    5, 50,
+    -4, 52,
+    0, 59,
+    18, 60,
+    30, 60,
+    73, 54,
+    109, 37,
+    130, 21,
+    134, 15,
+    130, -0
+  ]
+}

@@ -42,19 +42,19 @@ public class DermondFertillaFlux extends BaseHullMod {
 
 	private static Map<HullSize, Float> flux_dis = new HashMap();
     static {
-        flux_dis.put(HullSize.FRIGATE, 50f);
-        flux_dis.put(HullSize.DESTROYER, 40f);
-        flux_dis.put(HullSize.CRUISER, 30f);
-        flux_dis.put(HullSize.CAPITAL_SHIP, 25f);
+        flux_dis.put(HullSize.FRIGATE, 40f);
+        flux_dis.put(HullSize.DESTROYER, 30f);
+        flux_dis.put(HullSize.CRUISER, 20f);
+        flux_dis.put(HullSize.CAPITAL_SHIP, 10f);
     }
 
     //Negative
     private static Map<HullSize, Float> SUPPLY_USE_MULT = new HashMap();
     static {
-        SUPPLY_USE_MULT.put(HullSize.FRIGATE, 30f);
+        SUPPLY_USE_MULT.put(HullSize.FRIGATE, 25f);
         SUPPLY_USE_MULT.put(HullSize.DESTROYER, 50f);
         SUPPLY_USE_MULT.put(HullSize.CRUISER, 75f);
-        SUPPLY_USE_MULT.put(HullSize.CAPITAL_SHIP, 150f);
+        SUPPLY_USE_MULT.put(HullSize.CAPITAL_SHIP, 100f);
     }
 
     public static final float CR_DEGRADATION = 1.6f;

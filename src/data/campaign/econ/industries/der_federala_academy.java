@@ -3,237 +3,180 @@ package data.campaign.econ.industries;
 import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.campaign.SpecialItemData;
 import com.fs.starfarer.api.campaign.econ.CommodityOnMarketAPI;
+import com.fs.starfarer.api.campaign.econ.Industry;
 import com.fs.starfarer.api.campaign.econ.InstallableIndustryItemPlugin;
 import com.fs.starfarer.api.impl.campaign.econ.impl.BaseIndustry;
 import com.fs.starfarer.api.impl.campaign.econ.impl.GenericInstallableItemPlugin;
-import com.fs.starfarer.api.impl.campaign.econ.impl.MilitaryBase;
-import com.fs.starfarer.api.campaign.BattleAPI;
-import com.fs.starfarer.api.campaign.CampaignEventListener.FleetDespawnReason;
-import com.fs.starfarer.api.campaign.CampaignFleetAPI;
-import com.fs.starfarer.api.campaign.PlanetAPI;
-import com.fs.starfarer.api.campaign.econ.CommoditySpecAPI;
-import com.fs.starfarer.api.campaign.econ.MarketAPI;
-import com.fs.starfarer.api.campaign.listeners.FleetEventListener;
-import com.fs.starfarer.api.campaign.rules.MemoryAPI;
-import com.fs.starfarer.api.impl.campaign.DebugFlags;
-import com.fs.starfarer.api.impl.campaign.fleets.FleetFactory.PatrolType;
-import com.fs.starfarer.api.impl.campaign.fleets.FleetFactoryV3;
-import com.fs.starfarer.api.impl.campaign.fleets.FleetParamsV3;
-import com.fs.starfarer.api.impl.campaign.fleets.PatrolAssignmentAIV4;
-import com.fs.starfarer.api.impl.campaign.fleets.RouteManager;
-import com.fs.starfarer.api.impl.campaign.fleets.RouteManager.OptionalFleetData;
-import com.fs.starfarer.api.impl.campaign.fleets.RouteManager.RouteData;
-import com.fs.starfarer.api.impl.campaign.fleets.RouteManager.RouteFleetSpawner;
-import com.fs.starfarer.api.impl.campaign.fleets.RouteManager.RouteSegment;
-import com.fs.starfarer.api.impl.campaign.ids.Factions;
-import com.fs.starfarer.api.impl.campaign.ids.MemFlags;
-import com.fs.starfarer.api.impl.campaign.ids.Ranks;
-import com.fs.starfarer.api.impl.campaign.ids.Strings;
-import com.fs.starfarer.api.impl.campaign.rulecmd.salvage.MarketCMD.RaidDangerLevel;
-import com.fs.starfarer.api.util.IntervalUtil;
-import com.fs.starfarer.api.util.WeightedRandomPicker;
 import com.fs.starfarer.api.impl.campaign.ids.Commodities;
+import com.fs.starfarer.api.impl.campaign.ids.Industries;
 import com.fs.starfarer.api.impl.campaign.ids.Items;
 import com.fs.starfarer.api.impl.campaign.ids.Stats;
 import com.fs.starfarer.api.ui.TooltipMakerAPI;
 import com.fs.starfarer.api.util.Misc;
 import com.fs.starfarer.api.util.Pair;
 import java.awt.Color;
-import java.util.Random;
-import org.lwjgl.util.vector.Vector2f;
-import data.boring.derIndustries;
+import java.util.ArrayList;
+import java.util.List;
 
 
+public class der_federala_academy extends BaseIndustry {
 
+	public static float DER_ORNIUMPRODUCTION_QUALITY = 0.50f;
 
+	public static float DEFENSE_BONUS_STATIONARY_ORNIUM = 0.4f;
+	public static float FLEET_BONUS_STATIONARY_ORNIUM = 0.75f;
+	public boolean hasHeavy = true;
+	public boolean hasPort = true;
 
-public class der_federala_academy extends BaseIndustry implements RouteFleetSpawner, FleetEventListener {
-
-	public static float OFFICER_PROB_MOD_DER_MILITARY_ACADEMY = 0.3f;
-	public static float DEFENSE_BONUS_DER_MILITARY_ACADEMY = 0.3f;
-
-	public static int IMPROVE_NUM_PATROLS_BONUS = 1;
-	
+	@Override
 	public void apply() {
-		
+		super.apply(true);
+
 		int size = market.getSize();
-		
 
-		boolean der_federala_academy = getSpec().hasTag(derIndustries.der_federala_academy);
+		int shipBonus = 0;
+		float qualityBonus = DER_ORNIUMPRODUCTION_QUALITY;
 
-		
-		super.apply(!der_federala_academy);
-		if (der_federala_academy) {
-			applyIncomeAndUpkeep(3);
-		}
-		
-		int extraDemand = 0;
-		
-		int light = 1;
-		int medium = 0;
-		int heavy = 0;
+		demand(Commodities.METALS, size + 2);
+		demand(Commodities.RARE_METALS, size);
+		demand(Commodities.ORE, size - 3);
+		demand(Commodities.RARE_ORE, size - 4);
+		demand(Commodities.HEAVY_MACHINERY, size - 1);
+		demand(Commodities.HAND_WEAPONS, size - 2);
+		demand(Commodities.CREW, size - 2);
+		demand(Commodities.MARINES, size - 3);
 
-		if (der_federala_academy) {
-			extraDemand = 2;
-
-		
-
-		if (size <= 3) {
-			light = 2;
-			medium = 0;
-			heavy = 0;
-		} else if (size == 4) {
-			light = 2;
-			medium = 0;
-			heavy = 0;
-		} else if (size == 5) {
-			light = 2;
-			medium = 1;
-			heavy = 0;
-		} else if (size == 6) {
-			light = 3;
-			medium = 1;
-			heavy = 0;
-		} else if (size == 7) {
-			light = 3;
-			medium = 2;
-			heavy = 1;
-		} else if (size == 8) {
-			light = 3;
-			medium = 3;
-			heavy = 1;
-		} else if (size >= 9) {
-			light = 4;
-			medium = 3;
-			heavy = 1;
-		}
-		}
-		
-		if (der_federala_academy) {
-			//light++;
-			medium = Math.max(medium + 1, size / 2 - 1);
-			heavy = Math.max(heavy, medium - 1);
+		supply(Commodities.METALS, size - 3);
+		supply(Commodities.RARE_METALS, size - 5);
+		supply(Commodities.SUPPLIES, size - 1);
+		supply(Commodities.HAND_WEAPONS, size - 3);
+		supply(Commodities.HEAVY_MACHINERY, size - 4);
+		supply(Commodities.SHIPS, size + 4);
+		if (shipBonus > 0) {
+			supply(1, Commodities.SHIPS, shipBonus, "Ornium Shipyard");
 		}
 
-		
-		
-		market.getStats().getDynamic().getMod(Stats.PATROL_NUM_LIGHT_MOD).modifyFlat(getModId(), light);
-		market.getStats().getDynamic().getMod(Stats.PATROL_NUM_MEDIUM_MOD).modifyFlat(getModId(), medium);
-		market.getStats().getDynamic().getMod(Stats.PATROL_NUM_HEAVY_MOD).modifyFlat(getModId(), heavy);
-		
-		
-		demand(Commodities.SUPPLIES, size - 1 + extraDemand);
-		demand(Commodities.FUEL, size - 1 + extraDemand);
-		demand(Commodities.SHIPS, size - 1 + extraDemand);
-		
-		supply(Commodities.CREW, size);
-		
-		if (!der_federala_academy) {
-			//demand(Commodities.HAND_WEAPONS, size);
-			supply(Commodities.MARINES, size);
-			
-//			Pair<String, Integer> deficit = getMaxDeficit(Commodities.HAND_WEAPONS);
-//			applyDeficitToProduction(1, deficit, Commodities.MARINES);
-		}
-		
-		
-		modifyStabilityWithBaseMod();
-		
+		Pair<String, Integer> deficit = getMaxDeficit(Commodities.METALS, Commodities.RARE_METALS);
+		int maxDeficit = size - 3; // to allow *some* production so economy doesn't get into an unrecoverable state
+		if (deficit.two > maxDeficit) deficit.two = maxDeficit;
+
+		applyDeficitToProduction(2, deficit,
+				Commodities.SUPPLIES,
+				Commodities.SHIPS,
+				Commodities.ORE,
+				Commodities.RARE_ORE,
+				Commodities.METALS,
+				Commodities.RARE_METALS,
+				Commodities.MARINES,
+				Commodities.CREW
+		);
+
 		float mult = getDeficitMult(Commodities.SUPPLIES);
 		String extra = "";
 		if (mult != 1) {
 			String com = getMaxDeficit(Commodities.SUPPLIES).one;
 			extra = " (" + getDeficitText(com).toLowerCase() + ")";
 		}
-		float bonus = DEFENSE_BONUS_DER_MILITARY_ACADEMY;
-		if (der_federala_academy) bonus = DEFENSE_BONUS_DER_MILITARY_ACADEMY;
-		market.getStats().getDynamic().getMod(Stats.GROUND_DEFENSES_MOD)
-						.modifyMult(getModId(), 1f + bonus * mult, getNameForModifier() + extra);
-		
-		MemoryAPI memory = market.getMemoryWithoutUpdate();
-		Misc.setFlagWithReason(memory, MemFlags.MARKET_PATROL, getModId(), true, -1);
-		
-		if (der_federala_academy) {
-			Misc.setFlagWithReason(memory, MemFlags.MARKET_MILITARY, getModId(), true, -1);
-		}
-		
 
-		float officerProb = OFFICER_PROB_MOD_DER_MILITARY_ACADEMY;
-		market.getStats().getDynamic().getMod(Stats.OFFICER_PROB_MOD).modifyFlat(getModId(0), officerProb);
-		
-		
+		float defense_bonus = DEFENSE_BONUS_STATIONARY_ORNIUM;
+		float bonus_fleet = FLEET_BONUS_STATIONARY_ORNIUM;
+		market.getStats().getDynamic().getMod(Stats.GROUND_DEFENSES_MOD).modifyMult(getModId(), 1f + defense_bonus * mult, getNameForModifier() + extra);
+		market.getStats().getDynamic().getMod(Stats.COMBAT_FLEET_SIZE_MULT).modifyMult(getModId(), 1f + bonus_fleet * mult, getNameForModifier() + extra);
+		market.getStats().getDynamic().getMod(Stats.PRODUCTION_QUALITY_MOD).modifyFlat(getModId(), qualityBonus, "Ornium Style Production Shipyard");
+
+		float stability = market.getPrevStability();
+		if (stability < 5) {
+			float stabilityMod = (stability - 5f) / 5f;
+			stabilityMod *= 0.5f;
+			market.getStats().getDynamic().getMod(Stats.PRODUCTION_QUALITY_MOD).modifyFlat(getModId(), stabilityMod, getNameForModifier() + " - low stability");
+		}
+
 		if (!isFunctional()) {
+			market.getStats().getDynamic().getMod(Stats.COMBAT_FLEET_SIZE_MULT).unmodifyFlat(getModId());
 			supply.clear();
 			unapply();
 		}
-
 	}
 
 	@Override
 	public void unapply() {
 		super.unapply();
-		
-		MemoryAPI memory = market.getMemoryWithoutUpdate();
-		Misc.setFlagWithReason(memory, MemFlags.MARKET_PATROL, getModId(), false, -1);
-		Misc.setFlagWithReason(memory, MemFlags.MARKET_MILITARY, getModId(), false, -1);
-		
-		unmodifyStabilityWithBaseMod();
-		
-		//market.getStats().getDynamic().getStat(Stats.COMBAT_FLEET_SPAWN_RATE_MULT).unmodifyMult(getModId());
-		//market.getStats().getDynamic().getMod(Stats.GROUND_DEFENSES_MULT).unmodifyFlat(getModId());
-		
-		market.getStats().getDynamic().getMod(Stats.PATROL_NUM_LIGHT_MOD).unmodifyFlat(getModId());
-		market.getStats().getDynamic().getMod(Stats.PATROL_NUM_MEDIUM_MOD).unmodifyFlat(getModId());
-		market.getStats().getDynamic().getMod(Stats.PATROL_NUM_HEAVY_MOD).unmodifyFlat(getModId());
-		
+
+		market.getStats().getDynamic().getMod(Stats.GROUND_DEFENSES_MOD).unmodifyFlat(getModId());
 		market.getStats().getDynamic().getMod(Stats.GROUND_DEFENSES_MOD).unmodifyMult(getModId());
-		
-		market.getStats().getDynamic().getMod(Stats.OFFICER_PROB_MOD).unmodifyFlat(getModId(0));
+		market.getStats().getDynamic().getMod(Stats.COMBAT_FLEET_SIZE_MULT).unmodifyFlat(getModId());
+		market.getStats().getDynamic().getMod(Stats.COMBAT_FLEET_SIZE_MULT).unmodifyMult(getModId());
+		market.getStats().getDynamic().getMod(Stats.COMBAT_FLEET_SIZE_MULT).unmodifyFlat(getModId(0));
+		market.getStats().getDynamic().getMod(Stats.COMBAT_FLEET_SIZE_MULT).unmodifyMult(getModId(1));
+		market.getStats().getDynamic().getMod(Stats.COMBAT_FLEET_SIZE_MULT).unmodifyMult(getModId(2));
+		market.getStats().getDynamic().getMod(Stats.COMBAT_FLEET_SIZE_MULT).unmodifyMult(getModId(3));
+		market.getStats().getDynamic().getMod(Stats.PRODUCTION_QUALITY_MOD).unmodifyFlat(getModId());
+		market.getStats().getDynamic().getMod(Stats.PRODUCTION_QUALITY_MOD).unmodifyMult(getModId());
+		market.getStats().getDynamic().getMod(Stats.PRODUCTION_QUALITY_MOD).unmodifyFlat(getModId(0));
+		market.getStats().getDynamic().getMod(Stats.PRODUCTION_QUALITY_MOD).unmodifyMult(getModId(1));
+		market.getStats().getDynamic().getMod(Stats.PRODUCTION_QUALITY_MOD).unmodifyMult(getModId(2));
+		market.getStats().getDynamic().getMod(Stats.PRODUCTION_QUALITY_MOD).unmodifyMult(getModId(3));
 	}
-	
-	protected boolean hasPostDemandSection(boolean hasDemand, IndustryTooltipMode mode) {
-		return mode != IndustryTooltipMode.NORMAL || isFunctional();
+
+	@Override
+	protected boolean canImproveToIncreaseProduction() {
+		return true;
 	}
-	
+
+	@Override
+	protected void addPostSupplySection(TooltipMakerAPI tooltip, boolean hasSupply, IndustryTooltipMode mode) {
+		super.addPostSupplySection(tooltip, hasSupply, mode);
+	}
+
 	@Override
 	protected void addPostDemandSection(TooltipMakerAPI tooltip, boolean hasDemand, IndustryTooltipMode mode) {
 		if (mode != IndustryTooltipMode.NORMAL || isFunctional()) {
-			addStabilityPostDemandSection(tooltip, hasDemand, mode);
-			
+			float total = DER_ORNIUMPRODUCTION_QUALITY;
+			float def_bonus = DEFENSE_BONUS_STATIONARY_ORNIUM;
+			float fleet_bonus = FLEET_BONUS_STATIONARY_ORNIUM;
 
-			float bonus = DEFENSE_BONUS_DER_MILITARY_ACADEMY;
-			addGroundDefensesImpactSection(tooltip, bonus, Commodities.SUPPLIES);
+			String totalDef = "+" + (int)Math.round(def_bonus * 100f) + "%";
+			String totalFleet = "+" + (int)Math.round(fleet_bonus * 100f) + "%";
+			String totalStr = "+" + (int)Math.round(total * 100f) + "%";
+			Color h = Misc.getHighlightColor();
+			Color h2 = Misc.getHighlightColor();
+			Color h3 = Misc.getHighlightColor();
+			float pad = 3f;
+			float opad = 10f;
+			if (def_bonus < 0) {
+				h = Misc.getNegativeHighlightColor();
+				totalDef = "" + (int)Math.round(def_bonus * 100f) + "%";
+			}
+			if (fleet_bonus < 0) {
+				h2 = Misc.getNegativeHighlightColor();
+				totalFleet = "" + (int)Math.round(fleet_bonus * 100f) + "%";
+			}
+			if (total < 0) {
+				h3 = Misc.getNegativeHighlightColor();
+				totalStr = "" + (int)Math.round(total * 100f) + "%";
+			}
+
+			if (def_bonus >= 0) tooltip.addPara("Ground Defenses: %s", opad, h, totalDef);
+			if (fleet_bonus >= 0) tooltip.addPara("Fleet Size: %s", pad, h2, totalFleet);
+			if (total >= 0) {
+				tooltip.addPara("Ship quality: %s", pad, h3, totalStr);
+				tooltip.addPara("*Quality bonus only applies for the largest ship producer in the faction.",
+						Misc.getGrayColor(), opad);
+			}
 		}
 	}
-	
-	@Override
-	protected int getBaseStabilityMod() {
-		boolean der_academy = getSpec().hasTag(derIndustries.der_federala_academy);
-		int stabilityMod = 1;
-		if (der_academy) {
-			stabilityMod = 2;
-		} 
-		return stabilityMod;
-	}
-	
 
-	
 
-//	protected float getStabilitySpawnRateMult() {
-//		return Math.max(0.2f, market.getStabilityValue() / 10f);
-//	}
-	
 	@Override
-	protected Pair<String, Integer> getStabilityAffectingDeficit() {
-		boolean patrol = getSpec().hasTag(derIndustries.der_federala_academy);
-		if (patrol) {
-			return getMaxDeficit(Commodities.SUPPLIES, Commodities.FUEL, Commodities.SHIPS);
-		}
-		//return getMaxDeficit(Commodities.SUPPLIES, Commodities.FUEL, Commodities.SHIPS, Commodities.HAND_WEAPONS);
-		return getMaxDeficit(Commodities.SUPPLIES, Commodities.FUEL, Commodities.SHIPS);
+	public boolean isAvailableToBuild() {
+		return false;
 	}
 
-	
+	@Override
+	public boolean showWhenUnavailable() {
+		return true;
+	}
+
 	public boolean isDemandLegal(CommodityOnMarketAPI com) {
 		return true;
 	}
@@ -242,410 +185,9 @@ public class der_federala_academy extends BaseIndustry implements RouteFleetSpaw
 		return true;
 	}
 
-	public boolean isAvailableToBuild() {
-		return false;
-	}
-	
-	
-	//protected IntervalUtil tracker = new IntervalUtil(5f, 9f);
-	protected IntervalUtil tracker = new IntervalUtil(Global.getSettings().getFloat("averagePatrolSpawnInterval") * 0.7f,
-													  Global.getSettings().getFloat("averagePatrolSpawnInterval") * 1.3f);
-	
-	protected float returningPatrolValue = 0f;
-	
-	@Override
-	protected void buildingFinished() {
-		super.buildingFinished();
-		
-		tracker.forceIntervalElapsed();
+	public float getPatherInterest() {
+		float base = -500f;
+		return base + super.getPatherInterest();
 	}
 
-	@Override
-	public void advance(float amount) {
-		super.advance(amount);
-		
-		if (Global.getSector().getEconomy().isSimMode()) return;
-
-		if (!isFunctional()) return;
-		
-		float days = Global.getSector().getClock().convertToDays(amount);
-		
-//		float stability = market.getPrevStability();
-//		float spawnRate = 1f + (stability - 5) * 0.2f;
-//		if (spawnRate < 0.5f) spawnRate = 0.5f;
-		
-		float spawnRate = 1f;
-		float rateMult = market.getStats().getDynamic().getStat(Stats.COMBAT_FLEET_SPAWN_RATE_MULT).getModifiedValue();
-		spawnRate *= rateMult;
-		
-		if (Global.getSector().isInNewGameAdvance()) {
-			spawnRate *= 3f;
-		}
-		
-		float extraTime = 0f;
-		if (returningPatrolValue > 0) {
-			// apply "returned patrols" to spawn rate, at a maximum rate of 1 interval per day
-			float interval = tracker.getIntervalDuration();
-			extraTime = interval * days;
-			returningPatrolValue -= days;
-			if (returningPatrolValue < 0) returningPatrolValue = 0;
-		}
-		tracker.advance(days * spawnRate + extraTime);
-		
-		//DebugFlags.FAST_PATROL_SPAWN = true;
-		if (DebugFlags.FAST_PATROL_SPAWN) {
-			tracker.advance(days * spawnRate * 100f);
-		}
-		
-		if (tracker.intervalElapsed()) {
-//			if (market.isPlayerOwned()) {
-//				System.out.println("ewfwefew");
-//			}
-//			if (market.getName().equals("Jangala")) {
-//				System.out.println("wefwefe");
-//			}
-			String sid = getRouteSourceId();
-			
-			int light = getCount(PatrolType.FAST);
-			int medium = getCount(PatrolType.COMBAT);
-			int heavy = getCount(PatrolType.HEAVY);
-
-			int maxLight = getMaxPatrols(PatrolType.FAST);
-			int maxMedium = getMaxPatrols(PatrolType.COMBAT);
-			int maxHeavy = getMaxPatrols(PatrolType.HEAVY);
-			
-			WeightedRandomPicker<PatrolType> picker = new WeightedRandomPicker<PatrolType>();
-			picker.add(PatrolType.HEAVY, maxHeavy - heavy); 
-			picker.add(PatrolType.COMBAT, maxMedium - medium); 
-			picker.add(PatrolType.FAST, maxLight - light); 
-			
-			if (picker.isEmpty()) return;
-			
-			PatrolType type = picker.pick();
-			PatrolFleetData custom = new PatrolFleetData(type);
-			
-			OptionalFleetData extra = new OptionalFleetData(market);
-			extra.fleetType = type.getFleetType();
-			
-			RouteData route = RouteManager.getInstance().addRoute(sid, market, Misc.genRandomSeed(), extra, this, custom);
-			extra.strength = (float) getPatrolCombatFP(type, route.getRandom());
-			extra.strength = Misc.getAdjustedStrength(extra.strength, market);
-			
-			
-			float patrolDays = 35f + (float) Math.random() * 10f;
-			route.addSegment(new RouteSegment(patrolDays, market.getPrimaryEntity()));
-		}
-	}
-	
-	public static class PatrolFleetData {
-		public PatrolType type;
-		public int spawnFP;
-		//public int despawnFP;
-		public PatrolFleetData(PatrolType type) {
-			this.type = type;
-		}
-	}
-	
-	public void reportAboutToBeDespawnedByRouteManager(RouteData route) {
-//		if (route.getActiveFleet() == null) return;
-//		PatrolFleetData custom = (PatrolFleetData) route.getCustom();
-//		custom.despawnFP = route.getActiveFleet().getFleetPoints();
-	}
-	
-	public boolean shouldRepeat(RouteData route) {
-//		PatrolFleetData custom = (PatrolFleetData) route.getCustom();
-////		return custom.spawnFP == custom.despawnFP || 
-////				(route.getActiveFleet() != null && route.getActiveFleet().getFleetPoints() >= custom.spawnFP * 0.6f);
-//		return route.getActiveFleet() != null && route.getActiveFleet().getFleetPoints() >= custom.spawnFP * 0.6f;
-		return false;
-	}
-	
-	public int getCount(PatrolType ... types) {
-		int count = 0;
-		for (RouteData data : RouteManager.getInstance().getRoutesForSource(getRouteSourceId())) {
-			if (data.getCustom() instanceof PatrolFleetData) {
-				PatrolFleetData custom = (PatrolFleetData) data.getCustom();
-				for (PatrolType type : types) {
-					if (type == custom.type) {
-						count++;
-						break;
-					}
-				}
-			}
-		}
-		return count;
-	}
-
-	public int getMaxPatrols(PatrolType type) {
-		if (type == PatrolType.FAST) {
-			return (int) market.getStats().getDynamic().getMod(Stats.PATROL_NUM_LIGHT_MOD).computeEffective(0);
-		}
-		if (type == PatrolType.COMBAT) {
-			return (int) market.getStats().getDynamic().getMod(Stats.PATROL_NUM_MEDIUM_MOD).computeEffective(0);
-		}
-		if (type == PatrolType.HEAVY) {
-			return (int) market.getStats().getDynamic().getMod(Stats.PATROL_NUM_HEAVY_MOD).computeEffective(0);
-		}
-		return 0;
-	}
-	
-	public String getRouteSourceId() {
-		return getMarket().getId() + "_" + "military";
-	}
-	
-	public boolean shouldCancelRouteAfterDelayCheck(RouteData route) {
-		return false;
-	}
-
-
-	public void reportBattleOccurred(CampaignFleetAPI fleet, CampaignFleetAPI primaryWinner, BattleAPI battle) {
-		
-	}
-
-	public void reportFleetDespawnedToListener(CampaignFleetAPI fleet, FleetDespawnReason reason, Object param) {
-		if (!isFunctional()) return;
-		
-		if (reason == FleetDespawnReason.REACHED_DESTINATION) {
-			RouteData route = RouteManager.getInstance().getRoute(getRouteSourceId(), fleet);
-			if (route.getCustom() instanceof PatrolFleetData) {
-				PatrolFleetData custom = (PatrolFleetData) route.getCustom();
-				if (custom.spawnFP > 0) {
-					float fraction  = fleet.getFleetPoints() / custom.spawnFP;
-					returningPatrolValue += fraction;
-				}
-			}
-		}
-	}
-	
-	public static int getPatrolCombatFP(PatrolType type, Random random) {
-		float combat = 0;
-		switch (type) {
-		case FAST:
-			combat = Math.round(3f + (float) random.nextFloat() * 2f) * 5f;
-			break;
-		case COMBAT:
-			combat = Math.round(6f + (float) random.nextFloat() * 3f) * 5f;
-			break;
-		case HEAVY:
-			combat = Math.round(10f + (float) random.nextFloat() * 5f) * 5f;
-			break;
-		}
-		return (int) Math.round(combat);
-	}
-	
-	public CampaignFleetAPI spawnFleet(RouteData route) {
-		
-		PatrolFleetData custom = (PatrolFleetData) route.getCustom();
-		PatrolType type = custom.type;
-		
-		Random random = route.getRandom();
-		
-		CampaignFleetAPI fleet = createPatrol(type, market.getFactionId(), route, market, null, random);
-		
-		if (fleet == null || fleet.isEmpty()) return null;
-		
-		fleet.addEventListener(this);
-		
-		market.getContainingLocation().addEntity(fleet);
-		fleet.setFacing((float) Math.random() * 360f);
-		// this will get overridden by the patrol assignment AI, depending on route-time elapsed etc
-		fleet.setLocation(market.getPrimaryEntity().getLocation().x, market.getPrimaryEntity().getLocation().y);
-		
-		fleet.addScript(new PatrolAssignmentAIV4(fleet, route));
-		
-		fleet.getMemoryWithoutUpdate().set(MemFlags.FLEET_IGNORES_OTHER_FLEETS, true, 0.3f);
-		
-		//market.getContainingLocation().addEntity(fleet);
-		//fleet.setLocation(market.getPrimaryEntity().getLocation().x, market.getPrimaryEntity().getLocation().y);
-		
-		if (custom.spawnFP <= 0) {
-			custom.spawnFP = fleet.getFleetPoints();
-		}
-		
-		return fleet;
-	}
-	
-	public static CampaignFleetAPI createPatrol(PatrolType type, String factionId, RouteData route, MarketAPI market, Vector2f locInHyper, Random random) {
-		if (random == null) random = new Random();
-		
-		
-		float combat = getPatrolCombatFP(type, random);
-		float tanker = 0f;
-		float freighter = 0f;
-		String fleetType = type.getFleetType();
-		switch (type) {
-		case FAST:
-			break;
-		case COMBAT:
-			tanker = Math.round((float) random.nextFloat() * 5f);
-			break;
-		case HEAVY:
-			tanker = Math.round((float) random.nextFloat() * 10f);
-			freighter = Math.round((float) random.nextFloat() * 10f);
-			break;
-		}
-		
-		FleetParamsV3 params = new FleetParamsV3(
-				market, 
-				locInHyper,
-				factionId,
-				route == null ? null : route.getQualityOverride(),
-				fleetType,
-				combat, // combatPts
-				freighter, // freighterPts 
-				tanker, // tankerPts
-				0f, // transportPts
-				0f, // linerPts
-				0f, // utilityPts
-				0f // qualityMod
-				);
-		if (route != null) {
-			params.timestamp = route.getTimestamp();
-		}
-		params.random = random;
-		CampaignFleetAPI fleet = FleetFactoryV3.createFleet(params);
-		
-		if (fleet == null || fleet.isEmpty()) return null;
-		
-		if (!fleet.getFaction().getCustomBoolean(Factions.CUSTOM_PATROLS_HAVE_NO_PATROL_MEMORY_KEY)) {
-			fleet.getMemoryWithoutUpdate().set(MemFlags.MEMORY_KEY_PATROL_FLEET, true);
-			if (type == PatrolType.FAST || type == PatrolType.COMBAT) {
-				fleet.getMemoryWithoutUpdate().set(MemFlags.MEMORY_KEY_CUSTOMS_INSPECTOR, true);
-			}
-		} else if (fleet.getFaction().getCustomBoolean(Factions.CUSTOM_PIRATE_BEHAVIOR)) {
-			fleet.getMemoryWithoutUpdate().set(MemFlags.MEMORY_KEY_PIRATE, true);
-			
-			// hidden pather and pirate bases
-			// make them raid so there's some consequence to just having a colony in a system with one of those
-			if (market != null && market.isHidden()) {
-				fleet.getMemoryWithoutUpdate().set(MemFlags.MEMORY_KEY_RAIDER, true);
-			}
-		}
-		
-		String postId = Ranks.POST_PATROL_COMMANDER;
-		String rankId = Ranks.SPACE_COMMANDER;
-		switch (type) {
-		case FAST:
-			rankId = Ranks.SPACE_LIEUTENANT;
-			break;
-		case COMBAT:
-			rankId = Ranks.SPACE_COMMANDER;
-			break;
-		case HEAVY:
-			rankId = Ranks.SPACE_CAPTAIN;
-			break;
-		}
-		
-		fleet.getCommander().setPostId(postId);
-		fleet.getCommander().setRankId(rankId);
-		
-		return fleet;
-	}
-	
-	
-	
-	public static float ALPHA_CORE_BONUS = 0.25f;
-	@Override
-	protected void applyAlphaCoreModifiers() {
-		market.getStats().getDynamic().getMod(Stats.COMBAT_FLEET_SIZE_MULT).modifyMult(
-				getModId(), 1f + ALPHA_CORE_BONUS, "Alpha core (" + getNameForModifier() + ")");
-	}
-	
-	@Override
-	protected void applyNoAICoreModifiers() {
-		market.getStats().getDynamic().getMod(Stats.COMBAT_FLEET_SIZE_MULT).unmodifyMult(getModId());
-	}
-	
-	@Override
-	protected void applyAlphaCoreSupplyAndDemandModifiers() {
-		demandReduction.modifyFlat(getModId(0), DEMAND_REDUCTION, "Alpha core");
-	}
-	
-	protected void addAlphaCoreDescription(TooltipMakerAPI tooltip, AICoreDescriptionMode mode) {
-		float opad = 10f;
-		Color highlight = Misc.getHighlightColor();
-		
-		String pre = "Alpha-level AI core currently assigned. ";
-		if (mode == AICoreDescriptionMode.MANAGE_CORE_DIALOG_LIST || mode == AICoreDescriptionMode.INDUSTRY_TOOLTIP) {
-			pre = "Alpha-level AI core. ";
-		}
-		float a = ALPHA_CORE_BONUS;
-		//String str = "" + (int)Math.round(a * 100f) + "%";
-		String str = Strings.X + (1f + a);
-		
-		if (mode == AICoreDescriptionMode.INDUSTRY_TOOLTIP) {
-			CommoditySpecAPI coreSpec = Global.getSettings().getCommoditySpec(aiCoreId);
-			TooltipMakerAPI text = tooltip.beginImageWithText(coreSpec.getIconName(), 48);
-			text.addPara(pre + "Reduces upkeep cost by %s. Reduces demand by %s unit. " +
-					"Increases fleet size by %s.", 0f, highlight,
-					"" + (int)((1f - UPKEEP_MULT) * 100f) + "%", "" + DEMAND_REDUCTION,
-					str);
-			tooltip.addImageWithText(opad);
-			return;
-		}
-		
-		tooltip.addPara(pre + "Reduces upkeep cost by %s. Reduces demand by %s unit. " +
-				"Increases fleet size by %s.", opad, highlight,
-				"" + (int)((1f - UPKEEP_MULT) * 100f) + "%", "" + DEMAND_REDUCTION,
-				str);
-		
-	}
-	
-	
-	@Override
-	public boolean canImprove() {
-		return true;
-	}
-	
-	protected void applyImproveModifiers() {
-		
-		String key = "der_mil_base_improve";
-		if (isImproved()) {
-			boolean patrol = getSpec().hasTag(derIndustries.der_federala_academy);
-//			boolean militaryBase = getSpec().hasTag(Industries.TAG_MILITARY);
-//			boolean command = getSpec().hasTag(Industries.TAG_COMMAND);
-			
-			if (patrol) {
-				market.getStats().getDynamic().getMod(Stats.PATROL_NUM_MEDIUM_MOD).modifyFlat(key, IMPROVE_NUM_PATROLS_BONUS);
-			} else {
-				market.getStats().getDynamic().getMod(Stats.PATROL_NUM_HEAVY_MOD).modifyFlat(key, IMPROVE_NUM_PATROLS_BONUS);
-			}
-		} else {
-			market.getStats().getDynamic().getMod(Stats.PATROL_NUM_MEDIUM_MOD).unmodifyFlat(key);
-			market.getStats().getDynamic().getMod(Stats.PATROL_NUM_HEAVY_MOD).unmodifyFlat(key);
-		}
-	}
-	
-	public void addImproveDesc(TooltipMakerAPI info, ImprovementDescriptionMode mode) {
-		float opad = 10f;
-		Color highlight = Misc.getHighlightColor();
-		
-		String str = "" + (int) IMPROVE_NUM_PATROLS_BONUS;
-		
-		boolean patrol = getSpec().hasTag(derIndustries.der_federala_academy);
-		String type = "medium patrols";
-		if (!patrol) type = "heavy patrols";
-		
-		if (mode == ImprovementDescriptionMode.INDUSTRY_TOOLTIP) {
-			info.addPara("Number of " + type + " launched increased by %s.", 0f, highlight, str);
-		} else {
-			info.addPara("Increases the number of " + type + " launched by %s.", 0f, highlight, str);
-		}
-
-		info.addSpacer(opad);
-		super.addImproveDesc(info, mode);
-	}
-
-	
-	@Override
-	public RaidDangerLevel adjustCommodityDangerLevel(String commodityId, RaidDangerLevel level) {
-		return level.next();
-	}
-
-	@Override
-	public RaidDangerLevel adjustItemDangerLevel(String itemId, String data, RaidDangerLevel level) {
-		return level.next();
-	}
-
-	
 }

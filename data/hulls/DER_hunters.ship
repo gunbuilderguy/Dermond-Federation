@@ -1,0 +1,187 @@
+{
+  "hullName": "Nerioln",
+  "hullId": "DER_hunters",
+  "hullSize": "CAPITAL_SHIP",
+  "spriteName": "graphics/ships/der_hunters.png",
+  "style": "SKY_OPS",
+  "height": 324,
+  "width": 370,
+  "center": [183, 168],
+  "collisionRadius": 196,
+  "shieldCenter": [0, -0],
+  "shieldRadius": 239,
+  "viewOffset": 0,
+  "weaponSlots": [
+    {
+      "id": "WS0001",
+      "size": "LARGE",
+      "type": "HYBRID",
+      "mount": "HARDPOINT",
+      "arc": 0,
+      "angle": 0,
+      "locations": [83, 22]
+    },
+    {
+      "id": "WS0002",
+      "size": "LARGE",
+      "type": "HYBRID",
+      "mount": "HARDPOINT",
+      "arc": 0,
+      "angle": -0,
+      "locations": [83, -22]
+    },
+    {
+      "id": "WS0003",
+      "size": "MEDIUM",
+      "type": "SYNERGY",
+      "mount": "TURRET",
+      "arc": 240,
+      "angle": 30,
+      "locations": [85, 67]
+    },
+    {
+      "id": "WS0004",
+      "size": "MEDIUM",
+      "type": "SYNERGY",
+      "mount": "TURRET",
+      "arc": 240,
+      "angle": -30,
+      "locations": [85, -67]
+    },
+    {
+      "id": "WS0005",
+      "size": "MEDIUM",
+      "type": "SYNERGY",
+      "mount": "TURRET",
+      "arc": 240,
+      "angle": 30,
+      "locations": [34, 58]
+    },
+    {
+      "id": "WS0006",
+      "size": "MEDIUM",
+      "type": "SYNERGY",
+      "mount": "TURRET",
+      "arc": 240,
+      "angle": -30,
+      "locations": [34, -58]
+    },
+    {
+      "id": "WS0007",
+      "size": "LARGE",
+      "type": "ENERGY",
+      "mount": "TURRET",
+      "arc": 180,
+      "angle": 45,
+      "locations": [43, 98]
+    },
+    {
+      "id": "WS0008",
+      "size": "LARGE",
+      "type": "ENERGY",
+      "mount": "TURRET",
+      "arc": 180,
+      "angle": -45,
+      "locations": [43, -98]
+    }
+  ],
+  "engineSlots": [
+    {
+      "location": [-161, 43.5],
+      "length": 26,
+      "width": 19,
+      "angle": 180,
+      "contrailSize": 19,
+      "style": "CUSTOM",
+      "styleId": "DERMOND_TECH"
+    },
+    {
+      "location": [-161, -43.5],
+      "length": 26,
+      "width": 19,
+      "angle": -180,
+      "contrailSize": 19,
+      "style": "CUSTOM",
+      "styleId": "DERMOND_TECH"
+    },
+    {
+      "location": [-157, 30],
+      "length": 20,
+      "width": 8,
+      "angle": 180,
+      "contrailSize": 8,
+      "style": "CUSTOM",
+      "styleId": "DERMOND_TECH"
+    },
+    {
+      "location": [-157, -30],
+      "length": 20,
+      "width": 8,
+      "angle": -180,
+      "contrailSize": 8,
+      "style": "CUSTOM",
+      "styleId": "DERMOND_TECH"
+    },
+    {
+      "location": [-160, 22],
+      "length": 20,
+      "width": 8,
+      "angle": 180,
+      "contrailSize": 8,
+      "style": "CUSTOM",
+      "styleId": "DERMOND_TECH"
+    },
+    {
+      "location": [-160, -22],
+      "length": 20,
+      "width": 8,
+      "angle": -180,
+      "contrailSize": 8,
+      "style": "CUSTOM",
+      "styleId": "DERMOND_TECH"
+    },
+    {
+      "location": [-162, 14],
+      "length": 20,
+      "width": 8,
+      "angle": -180,
+      "contrailSize": 8,
+      "style": "CUSTOM",
+      "styleId": "DERMOND_TECH"
+    },
+    {
+      "location": [-162, -14],
+      "length": 20,
+      "width": 8,
+      "angle": 180,
+      "contrailSize": 8,
+      "style": "CUSTOM",
+      "styleId": "DERMOND_TECH"
+    }
+  ],
+  "bounds": [
+    72, 0,
+    112, -8,
+    112, -36,
+    147, -39,
+    13, -177,
+    -15, -156,
+    -24, -132,
+    -39, -108,
+    -79, -80,
+    -117.5, -88,
+    -161, -54,
+    -157, -0,
+    -161, 54,
+    -117.5, 88,
+    -79, 80,
+    -39, 108,
+    -24, 132,
+    -15, 156,
+    13, 177,
+    147, 39,
+    112, 36,
+    112, 8,
+    72, -0
+  ]
+}

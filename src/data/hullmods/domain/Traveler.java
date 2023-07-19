@@ -54,13 +54,13 @@ shield efficiency and phase costs by 1000%
     //I don't know why would you want to make this hullmod even more OP, but here
     public static final float fuelly = -2f;
     public static final float cargo = 40f;
-    public static final float supply = 0.5f;
-    public static final float burn = 2f;
-    public static final float hull = 0.3f;
-    public static final float flox = 0.1f;
+    public static final float supply = 0.4f;
+    public static final float burn = 1f;
+    public static final float hull = 0.8f;
+    public static final float flox = 0.65f;
     public static final float cr = 2f;
     public static final float shield = 10f;
-    public static final float trolololo = 99999f;
+    public static final float trolololo = 50f;
 
     
 

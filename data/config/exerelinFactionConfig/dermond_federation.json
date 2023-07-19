@@ -35,20 +35,35 @@
     "marketSpawnWeight":0.75,
 
     "startRelationships":{ 
+        
+    
+    
+    
+    
         #vanilla factions
+        
+        
+        
+        
         "independent": 0.1,                 #Hi I would like to steal your people 
         "player": -0.2,                     #Fuck the player, me and my homies hate player.
         "pirates": -1,                      #God I hate Pirates, except for based from Arthur Pirates but Epicer!
         "hegemony":-0.8,                    #Fuck the XIV!
         "luddic_church":-0.3,               #Hey... We are technocratic, but we hate Tri tachyon more than you, oh and also we use AI cores
-        "luddic_path":0.25,                  #Due to some reasons we are friendly???? WTF????
+        "luddic_path":0.25,                 #Due to some reasons we are friendly???? WTF????
         "persean":-0.7,                     #Kazeron should be sent into the Gulag, and also I hope people still remember that Chimotoztech is not the only one with pritstine nanoforge.
         "tritachyon":-1.0,                  #Fuck the (bad)AI! Fuck the (bad)Megacorporations!
         "sindrian_diktat":-0.8,             #Fuck the Supereme Executer!
         "remnant": -1.0,                    #My remnant wife... I am sorry that I have to kill you...
         "lions_guard":-1.0,                 #serving a homeless guy smh
 
+        
+        
+        
         #modded factions
+
+
+
         "armaarmatura": 0.3,
         #They have fallen from their greatness. We MUST help them.
 
@@ -59,7 +74,7 @@
 
         "sevencorp": 0.1,
         #One of the first Allies of Dermond, however the relations have gone under the Bus after the Epta choosed to increase their relations with Tri Tachyon
-        #Currently the relations are still good, however the relations are still good, and both sides try to keep it that way.
+        #Currently the relations are still good, however the relations went under the buss harder after 2nd AI war, and both sides try to keep it that way.
 
 
         "orks": 0.8,
@@ -86,9 +101,9 @@
         #Dermond has a very long history with Diable Avionics. Let's start with the obvious,
         #yes all Dermond engines are produced by Diable. The point was that they couldn't create something as good as Diable engines
         #and in the end a deal was made that Diable Avionics will get a huge funding initiative around 25 billion credits,
-        #and the Dermond will receive the best Diable engines which they can produce. In the end the relations have begu to sorrow after the 2nd AI war
+        #and the Dermond will receive the best Diable engines which they can produce. In the end the relations have begun to sorrow after the 2nd AI war
         #when Diable engines were not as good as they were supposed to be and some even started to malfunction mid fight, currently
-        #the Federation is concerned with breaking toes with Diable Avionics after [INFORMATION REDACTED FURTHER DATA ACCES DENIED]
+        #the Federation is concerned with breaking toes with Diable Avionics after [INFORMATION REDACTED FURTHER DATA ACCES IS DENIED]
 
 
         "magellan_protectorate": -0.85,
@@ -144,7 +159,7 @@
 
 		"interstellarimperium":-1.0,
         #Interstellar Imperium is one of the main enemies of Dermond, as the humanity started with bloodshed
-        #the sae way have started relations between Imperium and Dermond.
+        #the same way have started relations between Imperium and Dermond.
 
 
 		"kadur_remnant":-0.2,
@@ -171,12 +186,14 @@
         #However Dermond still needs some sort of ally because of the 'Incoming Storm'
 
 
-        "apex_design":0.2,
-        #Apex Deign collective is supported by Dermond because of their connected history, and as such their relations are quite good.
+        "apex_design":-0.45,
+        #Dermond Federation does not like Apex Design Collective way of thinking, and has deliberetly raided their convoys so that they won't be able to leave their system
+        #Dermond due to their hatred of Apexes thinking has theteaned Collective with mass raiding and total disregard of their living ideas if they will try
+        #to spread their influence to Dermond.
 
 
-        "star_federation":0.05,
-        #Star Federation is a shady ally of Dermond, because of the fact that Dermond supported 'The Rebellion'
+        "star_federation":-0.35,
+        #Star Federation is a shady enemy of Dermond, because of the fact that Dermond supported 'The Rebellion'
 
 
         "uaf":-1.0,
@@ -192,7 +209,7 @@
 
         "tahlan_legioinfernalis":-1.0,
         #As crazy as they may sound, Dermond actually believes that Legio are here just to laugh at us all
-        #and that if they wanted they could just stop on everybody, because of alledged 'no counter balacen' and space and time anamoly usage
+        #and that if they wanted they could just stomp on everybody, because of alledged 'no counter balance' and space and time anamoly usage
         #which is by Domain law is illegal.
 
 
@@ -206,7 +223,7 @@
 
         "gmda": -0.6,
         "gmda_patrol":-0.6,
-        #These guys are either dumb or evil... We are too lazy to research them, but they are robin hoods? What.
+        #These guys are either dumb or evil... We are too lazy to file and investigation into them, but they are robin hoods? What.
 
 
         "draco":-0.6,
@@ -215,13 +232,14 @@
 
 
         "new_galactic_order":-1,
-        #I told you who not to bring? CORRECT! BLACK NAZIS!\
+        #I told you who not to bring? CORRECT! BLACK NAZIS!
         #In all seriousness Dermond sees NGO as a part of the crazy schizo organisation, in which dumb fucks took control and try to enforce their ideas.
-        #Of course it has failed, and Dermond is calling NGO a shittier version of FPE and Aria, althoguh Aria is a close ally of Dermond, they understand this connection.
+        #Of course it has failed, and Dermond is calling NGO a shittier version of FPE and Aria, althoguh Aria is a close ally of Dermond they have all right to oppose Dermond in this matter
 
 
         "xhanempire":-1,
-        #Xhan was for a long time an enemy of Dermond before The Collapse, because their structures were always resulting in Dermond 
+        #Xhan was for a long time an enemy of Dermond before The Collapse, because their structures were always resulting in Dermond entering to solve the issues behind their crimes
+        #To this day it is completly unknown why Xhan and Dermond are hostile towards eachother due to leaked private communictions
 
 
         "unitedpamed":0.3,
@@ -237,7 +255,7 @@
         #incident, these guys are our friends, thus try not to worsen our relations with them
 
 
-        "aria":0.1,
+        "aria":0.4,
         #The same with Yuri, but these guys are here for conquest however they somehow know what is with 'The Isane Gate' we have to keep good relations with them also.
         #They however want a lot from us... We can give them what they need, but they will have to help us... The issue with 'Isane Gate' can destroy us, that's why we need
         #their help. We have no clear idea about how they know abou it, but if they reveal the issue with 'Isane' we will have great consequences.

@@ -46,7 +46,7 @@ public class DermondEnginePower extends BaseHullMod {
 
 
     //Negative
-    public static final float SUPPLY_USE_MULT = 1.15f;
+    public static final float SUPPLY_USE_MULT = 1.3f;
 
 
     //Blocked

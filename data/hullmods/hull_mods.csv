@@ -1,7 +1,7 @@
 name,id,tier,rarity,tech/manufacturer,tags,uiTags,base value,unlocked,hidden,hiddenEverywhere,cost_frigate,cost_dest,cost_cruiser,cost_capital,script,desc,short,sprite
 Dermond Construction,DermondConstruction,,,Ornium Engieneering,"offensive, defensive, engines, no_drop, no_salvage, special",Special,200000,,TRUE,,0,0,0,0,data.hullmods.dermond.DermondConstruction,"Standard Dermond construction Mechanic. It does a lot to the normal hull, the special feature of this type of construction is the integrated triple flux core, which evenly distributes and efficiently disappointing flux. ",Standart Dermond construction,graphics/hullmods/der_dermondian_construction.png
 Fertilla Flux Mechanic,DermondFertillaFlux,2,0.7,Ornium Engieneering,"defensive, offensive, special",Flux,30000,,,,5,12,19,29,data.hullmods.dermond.DermondFertillaFlux,Overrides Flux core safety protocols increasing it's flux dissipation and maximum flux barrier depending on the hull size.,Ornium Flux modifitation,graphics/hullmods/der_fertilla_flux.png
-Ornium Engine Modification,DermondEnginePower,2,0.7,Ornium Engieneering,"engines, req_spaceport,","Engines,  Requires Dock",20000,,,,3,9,15,20,data.hullmods.dermond.DermondEnginePower,,Ornium Engine Modification,graphics/hullmods/der_enginepower.png
+Ornium Engine Modification,DermondEnginePower,2,0.7,Ornium Engieneering,"engines, req_spaceport,","Engines,  Requires Dock",20000,,,,3,9,15,20,data.hullmods.dermond.DermondEnginePower,text test,Ornium Engine Modification,graphics/hullmods/der_enginepower.png
 ,,,,,,,,,,,,,,,,,,
 Torharta Hangar modification,DermondTorhartaHangarmodification,3,0.7,Dermondian Engieneering,"special, fighter, req_spaceport, non_phase","Special, Fighters,  Requires Dock",250000,,,,15,30,44,52,data.hullmods.dermond.TorhartaHangarmodification,"So normally you would need X amount to refit and rearm a fighter, well now you have more crew to do so!",Dermondian lazy Deck crew,graphics/hullmods/der_tortahta_hangar.png
 Reconstructed Ship,DermondReconstruction,,,Dermondian Engieneering,"offensive, defensive, no_drop, no_salvage, special",Special,200000,,TRUE,,0,0,0,0,data.hullmods.dermond.DermondReconstruction,"This ship was stripped and rebuild almost completely, everything what was left from the old ship is the hull. ",Dermondian Reconstruction,graphics/hullmods/der_dermondian_reconstruction.png
@@ -75,11 +75,11 @@ Hit me more dady :>,dermondballer1,,,Ballin Inc.,"no_drop, ballerinc","Weapons, 
 ,,,,,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,
 #REDACTED,,,,,,,,,,,,,,,,,,
-Hunter AI Intergration,DermondHunterAI_Intergration,,,Unknown,"special, no_build_in, no_drop, no_drop_salvage, AIIntegration",Special,25000000,,,,0,0,0,0,data.hullmods.special.DermondHunterAI_Intergration,"This Hullmod allows the Intergration of Hunter AI core to your ship.
+#nope,,,,Unknown,"special, no_build_in, no_drop, no_drop_salvage, AIIntegration",Special,25000000,,,,0,0,0,0,data.hullmods.special.DermondHunterAI_Intergration,"This Hullmod allows the Intergration of Hunter AI core to your ship.
 But be aware, somebody might kill you if they will find out you were using Hunter AI...",,graphics/hullmods/der_HunterAI_intergration.png
 ,,,,,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,
-HunterAI returner,DermondHunterAI_return,,,System,"no_drop, no_drop_salvage, no_build_in, restricted",DEVTOOL,,,TRUE,TRUE,0,0,0,0,data.hullmods.special.DermondHunterAI_return,DEBUG: You should never see this in game.,,
+#nope,,,,System,"no_drop, no_drop_salvage, no_build_in, restricted",DEVTOOL,,,TRUE,TRUE,0,0,0,0,data.hullmods.special.DermondHunterAI_return,DEBUG: You should never see this in game.,,
 ,,,,,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,

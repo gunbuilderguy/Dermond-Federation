@@ -36,12 +36,12 @@ public class TorhartaHangarmodification extends BaseHullMod {
     }
 
     //Positive effects
-    public static final float replace_time_wing = 0.75f;
-    public static final float reduce_wing_casualties = 0.7f;
+    public static final float replace_time_wing = 0.85f;
+    public static final float reduce_wing_casualties = 0.8f;
 
 
     //Negative effects
-    public static final float more_crew_fighter = 30f;
+    public static final float more_crew_fighter = 35f;
 
 
     /*

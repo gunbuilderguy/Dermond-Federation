@@ -1,9 +1,9 @@
 {
     "id":"dermond_federation",
       "name":"Dermond Federation",
-      "author":"Glywnok",
-      "version":"0.1.1 Beta",
-      "description":"The terrorists from afar are back in the fold... \nAnd they want YOU DEAD.", #currently adds just that... But that's currently ;)
+      "author":"Glywnok & HuginBlar",
+      "version":"0.2",
+      "description":"Dermond is not a faction of Peace, it's a faction of Conquest and Destruction, or are they?\nCurrently does not feature 90% of the content", #The retards are back MOTHERFUCKERS!
       "gameVersion":"0.96",
       "jars":["jars/DERMOND.jar"],
       "modPlugin":"data.scripts.dermond_ModPlugin" 

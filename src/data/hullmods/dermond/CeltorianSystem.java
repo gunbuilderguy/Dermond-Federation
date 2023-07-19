@@ -21,14 +21,14 @@ public class CeltorianSystem extends BaseHullMod {
 
     
     //positive
-    public static final float phase_cooldown = 0.8f;
-    public static final float phase_cost_per_second = 0.9f;
+    public static final float phase_cooldown = 0.9f;
+    public static final float phase_cost_per_second = 0.95f;
     //Untill I find a way how to increase speed in phase I will just leave you here
     //public static final float phase_move = 1.2f;
 
 
     //negative
-    public static final float phase_cost_in = 2f;
+    public static final float phase_cost_in = 1.45f;
     private static Map<HullSize, Float> CRDEGRADATION = new HashMap();
     static {
         CRDEGRADATION.put(HullSize.FRIGATE, 20f);

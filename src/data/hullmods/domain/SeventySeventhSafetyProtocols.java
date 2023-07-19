@@ -37,8 +37,8 @@ public class SeventySeventhSafetyProtocols extends BaseHullMod {
 
     //I am in paaain :>
     public static final float speed = 1.1f; 
-    public static final float PPT = 1.4f;
-    public static final float CR = 0.8f;
+    public static final float PPT = 1.2f;
+    public static final float CR = 0.9f;
 
 
     

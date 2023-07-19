@@ -1,9 +1,26 @@
 name,id,designation,tech/manufacturer,system id,fleet pts,hitpoints,armor rating,max flux,8/6/5/4%,flux dissipation,ordnance points,fighter bays,max speed,acceleration,deceleration,max turn rate,turn acceleration,mass,shield type,defense id,shield arc,shield upkeep,shield efficiency,phase cost,phase upkeep,min crew,max crew,cargo,fuel,fuel/ly,range,max burn,base value,cr %/day,CR to deploy,peak CR sec,CR loss/sec,supplies/rec,supplies/mo,c/s,c/f,f/s,f/f,crew/s,crew/f,hints,tags,rarity,breakProb,minPieces,maxPieces,travel drive,number
-Fermond,DER_Fermond,,Dermond Federation,,6,1250,750,5000,,350,0,,150,100,100,75,75,250,FRONT,,270,0,1.5,,,10,10,,,,,,,,,,,,,,,,,,,,,,0,,,,600
-Dentor,DER_Dentor,,Dermond Federation,,6,200,50,1000,,100,0,,350,200,200,100,100,20,FRONT,,360,0.05,5,,,1,1,,,,,,,,,,,,,,,,,,,,,,0,,,,700
-Dolbre,DER_Dolbre,Light Cruiser,Dermond Federaion,plasmajets,33,7500,750,12500,,880,160,,130,75,70,50,45,725,FRONT,,270,0.2,0.7,,,150,250,150,100,7,,9,90000,4,25,600,4,33,19,,,,,,,,,,0.2,2,5,,800
-Protahta ,DER_Protahta,Experimental Cruiser,Dermond Federation,temporalshell,39,6750,450,9850,,650,190,,120,70,40,80,60,800,OMNI,,360,0.229,0.75,,,250,300,100,125,7,,9,150000,4,30,540,0.2,32,29,,,,,,,,,,0.2,2,6,,801
-Kontora,DER_kontora,Light Exploration Frigate,Domain,maneuveringjets,3,950,200,3000,,200,30,1,240,180,70,90,70,175,FRONT,,60,0.4,1.2,,,20,30,70,20,2,,12,4500,10,10,180,0.05,3,3,,,,,,,,,,0.1,2,3,,100
-ParaSlaught,DER_paraslaught,Abomination,Unknown,maneuveringjets,75,25750,2100,35000,,3250,460,4,20,10,5,15,5,9000,FRONT,,210,0.05,0.95,,,2500,3250,790,660,14,,7,2250000,2,20,960,0.05,150,120,,,,,,,,,,0.1,4,10,,900
+#DERMOND,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-Omegaraut,DER_omegaraut,Unknown Space Ship,unknown,temporalshell,50,25000,8500,120000,,2500,260,,120,200,200,200,200,12000,NONE,,,,,,,,,450,800,12,,10,999999999,0.1,40,,,60,250,,,,,,,,,,,,,,802
+#FIGHTERS,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Fermond,DER_Fermond,,Dermond Federation,,6,1250,750,5000,,350,0,,150,100,100,75,75,250,FRONT,,270,0,1.5,,,10,10,,,,,,,,,,,,,,,,,,,,,,0,,,,600
+Dentor,DER_Dentor,,Dermond Federation,,6,150,50,1000,,100,0,,350,200,200,100,100,20,FRONT,,360,0.05,1,,,1,1,,,,,,,,,,,,,,,,,,,,,,0,,,,700
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+#FRIGATES,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Kontora,DER_kontora,Light Exploration Frigate,Domain,plasmajets,3,950,200,3000,,200,30,1,240,180,70,90,70,175,FRONT,,60,0.4,1.2,,,20,30,70,20,2,,12,4500,10,10,180,0.05,3,3,,,,,,,,,,0.1,2,3,,100
+#Siltir,DER_siltir,Light Frigate,Dermond Federation,plasmajets,6,570,100,6500,,450,20,,190,275,45,120,20,225,FRONT,,90,0.7,0.2,,,40,70,30,5,4,,14,22500,15,10,480,0.5,7,7,,,,,,,,,,0,,,,9789
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+#DESTROYERS,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Dolbre,DER_Dolbre,Light Destroyer,Dermond Federaion,plasmajets,17,3750,750,12500,,880,50,,130,75,70,50,45,725,FRONT,,45,0.2,0.35,,,150,250,150,100,8,,9,90000,4,25,600,4,14,14,,,,,,,,,,0.2,2,5,,800
+Protahta ,DER_Protahta,Experimental Destroyer,Dermond Federation,temporalshell,22,3250,450,9850,,650,60,,120,70,40,80,60,800,FRONT,,60,0.229,0.4,,,250,300,100,125,8,,9,150000,4,30,540,0.2,19,19,,,,,,,,,,0.2,2,6,,801
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+#CRUISERS,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Terillonia,DER_terillonia,Assault Cruiser,Dermond Federation,plasmajets,27,4000,300,13500,,700,90,2,110,50,65,40,20,1750,FRONT,,45,0.3,0.3,,,350,500,250,125,9,,9,250000,5,20,480,0.4,24,24,,,,,,,,,,0.4,2,4,,802
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+#CAPITAL,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+ParaSlaught,DER_paraslaught,Abomination,Unknown,maneuveringjets,75,25750,2100,35000,,3250,460,4,20,10,5,15,5,9000,FRONT,,75,0.05,0.95,,,2500,3250,790,660,14,,7,2250000,2,20,960,0.05,120,120,,,,,,,,,,0.1,4,10,,900
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+#SPECIAL,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Nerioln,DER_hunters,,unknown,dermond_orlando,50,12500,3250,45000,,4500,190,,95,200,200,30,80,12000,FRONT,,210,0.6,0.9,,,890,1150,750,800,9,,10,999999999,0.1,40,,,140,140,,,,,,,,,,0.2,3,4,,1000

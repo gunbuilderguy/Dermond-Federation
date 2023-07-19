@@ -34,26 +34,26 @@ public class DermondBogorta extends BaseHullMod {
 
     public static Map<HullSize, Float> PPT_increase = new HashMap();
     static {
-        PPT_increase.put(HullSize.FRIGATE, 300f);
-        PPT_increase.put(HullSize.DESTROYER, 90f);
-        PPT_increase.put(HullSize.CRUISER, 50f);
-        PPT_increase.put(HullSize.CAPITAL_SHIP, 30f);
+        PPT_increase.put(HullSize.FRIGATE, 500f);
+        PPT_increase.put(HullSize.DESTROYER, 40f);
+        PPT_increase.put(HullSize.CRUISER, 20f);
+        PPT_increase.put(HullSize.CAPITAL_SHIP, 10f);
     }
 
     public static Map<HullSize, Float> ENERGY_DAMAGE = new HashMap();
     static {
-        ENERGY_DAMAGE.put(HullSize.FRIGATE, 100f);
-        ENERGY_DAMAGE.put(HullSize.DESTROYER, 75f);
-        ENERGY_DAMAGE.put(HullSize.CRUISER, 50f);
-        ENERGY_DAMAGE.put(HullSize.CAPITAL_SHIP, 25f);
+        ENERGY_DAMAGE.put(HullSize.FRIGATE, 60f);
+        ENERGY_DAMAGE.put(HullSize.DESTROYER, 40f);
+        ENERGY_DAMAGE.put(HullSize.CRUISER, 25f);
+        ENERGY_DAMAGE.put(HullSize.CAPITAL_SHIP, 15f);
     }
 
     //I am in paaain :>
-    public static final float Shpeed = 0.5f; //FUCK YOU!
-    public static final float turny_bitty_poopy = 0.5f; //Poo poo
+    public static final float Shpeed = 0.6f; //FUCK YOU!
+    public static final float turny_bitty_poopy = 0.6f; //Poo poo
     public static final float COWARD = 1.9f;
     public static final float hippy_hoppity_your_flux_is_now_my_property = 2f;
-    public static final float flox = 0.7f;
+    public static final float flox = 0.9f;
 
 
     

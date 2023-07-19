@@ -38,7 +38,7 @@ public class DermondAltornoModifcation extends BaseHullMod {
     }
 
     //Positive effects
-    public static final float fuckdamage = 0.45f;
+    public static final float fuckdamage = 0.4f;
 
     //Negative effects
     public static final float flux = 0.3f;

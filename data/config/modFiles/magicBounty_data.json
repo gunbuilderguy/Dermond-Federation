@@ -1,7 +1,7 @@
 {
     "Dermond_HunterAI_bounty":{
     
-        "required_mods_id": ["dermond_federation_hullmods"],
+        "required_mods_id": ["dermond_federation_hullmods"], #tehe, this thing is literally the only thing which does not allow it to spawn.... ye....
 
         #TRIGGERS (ALL OPTIONAL)
         

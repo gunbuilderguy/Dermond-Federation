@@ -1,4 +1,8 @@
 {
+	"plugins":{
+        "DermondBlockedHullmodDisplayScript":"data.hullmods.DermondBlockedHullmodDisplayScript",
+    },
+
     "graphics": {
         "fx":{
             "der_incompatible": "graphics/icons/tooltips/der_hullmod_incompatible.png",
@@ -13,6 +17,10 @@
             "HunterAI": "graphics/portraits/characters/AI/der_HunterAI.png",
         },
     },
+
+	"ruleCommandPackages":[
+		"data.campaign.rulescmd",
+	],	
 
     "designTypeColors":{
         "Ballin Inc.": [45, 130, 38, 255],  

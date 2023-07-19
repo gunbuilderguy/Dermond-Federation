@@ -36,9 +36,9 @@ public class Kullastro extends BaseHullMod {
     public static final float armour = 0.95f;
     public static final float ppt = 0.8f;
 
-    public static final float flox = 1.35f;
-    public static final float sped = 1.1f;
-    public static final float emp = 0.9f;
+    public static final float flox = 1.1f;
+    public static final float sped = 1.05f;
+    public static final float emp = 0.95f;
 
 
     
