@@ -7,9 +7,9 @@
   "height": 324,
   "width": 370,
   "center": [183, 168],
-  "collisionRadius": 196,
+  "collisionRadius": 271.5,
   "shieldCenter": [0, -0],
-  "shieldRadius": 239,
+  "shieldRadius": 217,
   "viewOffset": 0,
   "weaponSlots": [
     {

@@ -2,10 +2,7 @@ package data.scripts.shipsystems;
 
 
 import com.fs.starfarer.api.Global;
-import com.fs.starfarer.api.combat.CombatEngineAPI;
-import com.fs.starfarer.api.combat.CombatEngineLayers;
-import com.fs.starfarer.api.combat.MutableShipStatsAPI;
-import com.fs.starfarer.api.combat.ShipAPI;
+import com.fs.starfarer.api.combat.*;
 import com.fs.starfarer.api.graphics.SpriteAPI;
 import com.fs.starfarer.api.impl.combat.BaseShipSystemScript;
 import com.fs.starfarer.api.plugins.ShipSystemStatsScript;
@@ -15,12 +12,11 @@ import org.dark.graphics.util.AnamorphicFlare;
 import org.dark.shaders.distortion.DistortionShader;
 import org.dark.shaders.distortion.RippleDistortion;
 import org.lazywizard.lazylib.FastTrig;
+import org.lwjgl.opengl.GL11;
 import org.lwjgl.util.vector.Vector2f;
 import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
-import com.fs.starfarer.api.combat.CombatEntityAPI;
-import com.fs.starfarer.api.combat.DamageType;
 import java.awt.Color;
 import org.dark.shaders.distortion.WaveDistortion;
 import org.dark.shaders.light.LightShader;
@@ -88,6 +84,14 @@ public class dermond_orlando extends BaseShipSystemScript {
     private StandardLight light;
     private WaveDistortion wave;
 
+    private IntervalUtil interval_for_emp = new IntervalUtil(0, 0);
+
+    private List<EmpArcEntityAPI> Emp_arc_list = new ArrayList();
+
+    private Vector2f interval_size_emp = new Vector2f(0.1f,  0.5f);
+
+    private boolean spawnCircle = false;
+
     public void apply(MutableShipStatsAPI stats, String id, State state, float effectLevel) {
         CombatEngineAPI engine = Global.getCombatEngine();
         ShipAPI ship = null;
@@ -128,6 +132,29 @@ public class dermond_orlando extends BaseShipSystemScript {
             stats.getEmpDamageTakenMult().modifyMult(id, 0f);
             stats.getEngineDamageTakenMult().modifyMult(id, 0.2f);
 
+
+            //For EMP lightning Effect
+            float amount = Global.getCombatEngine().getElapsedInLastFrame();
+
+            interval_for_emp.advance(amount);
+
+            if (interval_for_emp.intervalElapsed() && !have_phased.contains(ship) && state == State.IN) {
+
+                interval_for_emp = new IntervalUtil(interval_size_emp.x, interval_size_emp.y);
+
+                Vector2f start = ship.getLocation();
+                float radius_of_ship = MathUtils.getRandomNumberInRange(180, ship.getShield().getRadius());
+                Vector2f end = MathUtils.getRandomPointOnCircumference(start, radius_of_ship);
+
+                EmpArcEntityAPI something = Global.getCombatEngine().spawnEmpArcVisual(start,ship,end,null,10f,FLARE_COLOR,JITTER_UNDER_COLOR);
+                Emp_arc_list.add(something);
+
+
+            }
+
+
+
+            //This runs only once
             if (!isActive) {
                 isActive = true;
                 //Global.getSoundPlayer().playSound(CHARGEUP_SOUND, 1f, 1f, ship.getLocation(), ship.getVelocity());
@@ -162,7 +189,122 @@ public class dermond_orlando extends BaseShipSystemScript {
         }
 
 
+        if(ship.getSystem().getState()!= ShipSystemAPI.SystemState.IN && !spawnCircle){
+            Vector2f loc = new Vector2f(ship.getLocation());
+            loc.x -= 70f * FastTrig.cos(ship.getFacing() * Math.PI / 180f);
+            loc.y -= 70f * FastTrig.sin(ship.getFacing() * Math.PI / 180f);
+            spawnCircle=true;
+            MagicRender.battlespace(
+                    Global.getSettings().getSprite("fx","circle"),
+                    ship.getLocation(),
+                    new Vector2f(0f,0f),
+                    new Vector2f(0f,0f),
+                    new Vector2f(500f, 500f),
+                    0f,
+                    3f,
+                    Color.WHITE,
+                    0f,
+                    0f,
+                    0f,
+                    0f,
+                    2f,
+                    0.5f,
+                    0.000001f,
+                    0.2f,
+                    CombatEngineLayers.JUST_BELOW_WIDGETS,
+                    GL11.GL_ONE_MINUS_DST_COLOR,
+                    GL11.GL_ONE_MINUS_SRC_ALPHA
+            );
+            //Creates Flares
+            Vector2f particlePos, particleVel;
+            int numParticlesThisFrame = Math.round(effectLevel * MAX_PARTICLES_PER_FRAME);
+            for (int x = 0; x < numParticlesThisFrame; x++) {
+                particlePos = MathUtils.getRandomPointOnCircumference(ship.getLocation(), PARTICLE_RADIUS);
+                particleVel = Vector2f.sub(ship.getLocation(), particlePos, null);
+                Global.getCombatEngine().addSmokeParticle(particlePos, particleVel, PARTICLE_SIZE, PARTICLE_OPACITY, 1f,
+                        PARTICLE_COLOR);
+            }
 
+
+            //The explosion itself
+            ShipAPI victim;
+            Vector2f dir;
+            float force, damage, emp, mod;
+            List<CombatEntityAPI> entities = CombatUtils.getEntitiesWithinRange(ship.getLocation(),
+                    EXPLOSION_PUSH_RADIUS);
+            int size = entities.size();
+            for (int i = 0; i < size; i++) {
+                CombatEntityAPI tmp = entities.get(i);
+                if (tmp == ship) {
+                    continue;
+                }
+
+                mod = 1f - (MathUtils.getDistance(ship, tmp) / EXPLOSION_PUSH_RADIUS);
+                force = FORCE_VS_ASTEROID * mod;
+                damage = EXPLOSION_DAMAGE_AMOUNT * mod;
+                emp = EXPLOSION_EMP_DAMAGE_AMOUNT * mod;
+
+                if (tmp instanceof ShipAPI) {
+                    victim = (ShipAPI) tmp;
+
+                    // Modify push strength based on ship class
+                    if (victim.getHullSize() == ShipAPI.HullSize.FIGHTER) {
+                        force = FORCE_VS_FIGHTER * mod;
+                        damage /= DAMAGE_MOD_VS_FIGHTER;
+                    } else if (victim.getHullSize() == ShipAPI.HullSize.FRIGATE) {
+                        force = FORCE_VS_FRIGATE * mod;
+                        damage /= DAMAGE_MOD_VS_FRIGATE;
+                    } else if (victim.getHullSize() == ShipAPI.HullSize.DESTROYER) {
+                        force = FORCE_VS_DESTROYER * mod;
+                        damage /= DAMAGE_MOD_VS_DESTROYER;
+                    } else if (victim.getHullSize() == ShipAPI.HullSize.CRUISER) {
+                        force = FORCE_VS_CRUISER * mod;
+                        damage /= DAMAGE_MOD_VS_CRUISER;
+                    } else if (victim.getHullSize() == ShipAPI.HullSize.CAPITAL_SHIP) {
+                        force = FORCE_VS_CAPITAL * mod;
+                        damage /= DAMAGE_MOD_VS_CAPITAL;
+                    }
+
+                    if (victim.getOwner() == ship.getOwner()) {
+                        damage *= EXPLOSION_DAMAGE_VS_ALLIES_MODIFIER;
+                        emp *= EXPLOSION_EMP_VS_ALLIES_MODIFIER;
+                        force *= EXPLOSION_FORCE_VS_ALLIES_MODIFIER;
+                    }
+
+
+
+                    if ((victim.getShield() != null && victim.getShield().isOn() && victim.getShield().isWithinArc(ship.getLocation()))) {
+                        victim.getFluxTracker().increaseFlux(damage * 2, true);
+                    } else {
+                        ShipAPI empTarget = victim;
+                        for (int x = 0; x < 5; x++) {
+                            engine.spawnEmpArc(ship, MathUtils.getRandomPointInCircle(victim.getLocation(),
+                                            victim.getCollisionRadius()),
+                                    empTarget,
+                                    empTarget, EXPLOSION_DAMAGE_TYPE, damage / 10, emp / 5,
+                                    EXPLOSION_PUSH_RADIUS, null, 2f, EXPLOSION_COLOR,
+                                    EXPLOSION_COLOR);
+                        }
+                    }
+                }
+
+                dir = VectorUtils.getDirectionalVector(ship.getLocation(), tmp.getLocation());
+                dir.scale(force);
+
+                Vector2f.add(tmp.getVelocity(), dir, tmp.getVelocity());
+            }
+
+
+
+        }
+
+
+        if(state != State.IN){
+            for(EmpArcEntityAPI E:new ArrayList<EmpArcEntityAPI>(Emp_arc_list)){
+                Global.getCombatEngine().removeEntity(E);
+                Emp_arc_list.remove(E);
+            }
+        }
 
 
         //After the system ends buildup and activates for real
@@ -217,7 +359,7 @@ public class dermond_orlando extends BaseShipSystemScript {
                 wave.setLocation(loc);
             }*/
 
-            // Exact amount per second doesn't matter since it's purely decorative
+            //Creates Flares
             Vector2f particlePos, particleVel;
             int numParticlesThisFrame = Math.round(effectLevel * MAX_PARTICLES_PER_FRAME);
             for (int x = 0; x < numParticlesThisFrame; x++) {
@@ -318,7 +460,7 @@ public class dermond_orlando extends BaseShipSystemScript {
                 //Global.getSoundPlayer().playSound(EXPLOSION_SOUND, 1f, 1f, ship.getLocation(), ship.getVelocity());
 
 
-                //Creates Flares after the explosion I guess?
+                //Creates  a small green explosion
                 AnamorphicFlare.createFlare(ship, new Vector2f(loc), engine, 0.50f, 0.05f, -15f + (float) Math.random() * 30f, 9.25f, 6f, FLARE_COLOR, PARTICLE_COLOR);
                 AnamorphicFlare.createFlare(ship, new Vector2f(loc), engine, 0.51f, 0.049f, -15f + (float) Math.random() * 60f, 8.95f, 6f, PARTICLE_COLOR, FLARE_COLOR);
                 AnamorphicFlare.createFlare(ship, new Vector2f(loc), engine, 0.52f, 0.048f, -15f + (float) Math.random() * 30f, 7.55f, 6f, FLARE_COLOR, PARTICLE_COLOR);
@@ -422,6 +564,11 @@ public class dermond_orlando extends BaseShipSystemScript {
         stats.getAcceleration().unmodify(id);
         stats.getDeceleration().unmodify(id);
 
+        isActive = false;
+
+        if(ship.getSystem().getState()== ShipSystemAPI.SystemState.COOLDOWN && spawnCircle){
+            spawnCircle=false;
+        }
 
         ship.setPhased(false);
         ship.setExtraAlphaMult(1f);
