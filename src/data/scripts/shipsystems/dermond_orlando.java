@@ -92,6 +92,8 @@ public class dermond_orlando extends BaseShipSystemScript {
 
     private boolean spawnCircle = false;
 
+    private boolean explosion_timeout_1 = false;
+
     public void apply(MutableShipStatsAPI stats, String id, State state, float effectLevel) {
         CombatEngineAPI engine = Global.getCombatEngine();
         ShipAPI ship = null;
@@ -199,8 +201,8 @@ public class dermond_orlando extends BaseShipSystemScript {
                     ship.getLocation(),
                     new Vector2f(0f,0f),
                     new Vector2f(0f,0f),
-                    new Vector2f(500f, 500f),
-                    0f,
+                    new Vector2f(400f, 400f),
+                    2f,
                     3f,
                     Color.WHITE,
                     0f,
@@ -215,6 +217,8 @@ public class dermond_orlando extends BaseShipSystemScript {
                     GL11.GL_ONE_MINUS_DST_COLOR,
                     GL11.GL_ONE_MINUS_SRC_ALPHA
             );
+
+
             //Creates Flares
             Vector2f particlePos, particleVel;
             int numParticlesThisFrame = Math.round(effectLevel * MAX_PARTICLES_PER_FRAME);
@@ -224,6 +228,14 @@ public class dermond_orlando extends BaseShipSystemScript {
                 Global.getCombatEngine().addSmokeParticle(particlePos, particleVel, PARTICLE_SIZE, PARTICLE_OPACITY, 1f,
                         PARTICLE_COLOR);
             }
+            /*
+            //Creates  a small green explosion
+            AnamorphicFlare.createFlare(ship, new Vector2f(loc), engine, 0.50f, 0.05f, -15f + (float) Math.random() * 30f, 9.25f, 6f, FLARE_COLOR, PARTICLE_COLOR);
+            AnamorphicFlare.createFlare(ship, new Vector2f(loc), engine, 0.51f, 0.049f, -15f + (float) Math.random() * 60f, 8.95f, 6f, PARTICLE_COLOR, FLARE_COLOR);
+            AnamorphicFlare.createFlare(ship, new Vector2f(loc), engine, 0.52f, 0.048f, -15f + (float) Math.random() * 30f, 7.55f, 6f, FLARE_COLOR, PARTICLE_COLOR);
+            AnamorphicFlare.createFlare(ship, new Vector2f(loc), engine, 0.51f, 0.047f, -15f + (float) Math.random() * 90f, 10.95f, 6f, PARTICLE_COLOR, FLARE_COLOR);
+            AnamorphicFlare.createFlare(ship, new Vector2f(loc), engine, 0.50f, 0.046f, -15f + (float) Math.random() * 120f, 8.55f, 6f, FLARE_COLOR, PARTICLE_COLOR);
+            */
 
 
             //The explosion itself
@@ -359,15 +371,7 @@ public class dermond_orlando extends BaseShipSystemScript {
                 wave.setLocation(loc);
             }*/
 
-            //Creates Flares
-            Vector2f particlePos, particleVel;
-            int numParticlesThisFrame = Math.round(effectLevel * MAX_PARTICLES_PER_FRAME);
-            for (int x = 0; x < numParticlesThisFrame; x++) {
-                particlePos = MathUtils.getRandomPointOnCircumference(ship.getLocation(), PARTICLE_RADIUS);
-                particleVel = Vector2f.sub(ship.getLocation(), particlePos, null);
-                Global.getCombatEngine().addSmokeParticle(particlePos, particleVel, PARTICLE_SIZE, PARTICLE_OPACITY, 1f,
-                        PARTICLE_COLOR);
-            }
+
 
 
             //Jitter effect
@@ -429,7 +433,8 @@ public class dermond_orlando extends BaseShipSystemScript {
             // After it has ended
 
             // Everything in this section is only done once per cooldown
-            if (isActive) {
+            if (!explosion_timeout_1) {
+                explosion_timeout_1 = true;
                 engine.spawnExplosion(ship.getLocation(), ship.getVelocity(), EXPLOSION_COLOR, EXPLOSION_VISUAL_RADIUS,
                         0.2f);
                 engine.spawnExplosion(ship.getLocation(), ship.getVelocity(), EXPLOSION_COLOR, EXPLOSION_VISUAL_RADIUS /
@@ -459,6 +464,15 @@ public class dermond_orlando extends BaseShipSystemScript {
 
                 //Global.getSoundPlayer().playSound(EXPLOSION_SOUND, 1f, 1f, ship.getLocation(), ship.getVelocity());
 
+                //Creates Flares
+                Vector2f particlePos, particleVel;
+                int numParticlesThisFrame = Math.round(effectLevel * MAX_PARTICLES_PER_FRAME);
+                for (int x = 0; x < numParticlesThisFrame; x++) {
+                    particlePos = MathUtils.getRandomPointOnCircumference(ship.getLocation(), PARTICLE_RADIUS);
+                    particleVel = Vector2f.sub(ship.getLocation(), particlePos, null);
+                    Global.getCombatEngine().addSmokeParticle(particlePos, particleVel, PARTICLE_SIZE, PARTICLE_OPACITY, 1f,
+                            PARTICLE_COLOR);
+                }
 
                 //Creates  a small green explosion
                 AnamorphicFlare.createFlare(ship, new Vector2f(loc), engine, 0.50f, 0.05f, -15f + (float) Math.random() * 30f, 9.25f, 6f, FLARE_COLOR, PARTICLE_COLOR);
@@ -563,7 +577,7 @@ public class dermond_orlando extends BaseShipSystemScript {
         stats.getTurnAcceleration().unmodify(id);
         stats.getAcceleration().unmodify(id);
         stats.getDeceleration().unmodify(id);
-
+        explosion_timeout_1 = false;
         isActive = false;
 
         if(ship.getSystem().getState()== ShipSystemAPI.SystemState.COOLDOWN && spawnCircle){

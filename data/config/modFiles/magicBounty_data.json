@@ -1,7 +1,7 @@
 {
     "Dermond_HunterAI_bounty":{
     
-        "required_mods_id": ["dermond_federation_hullmods"], #tehe, this thing is literally the only thing which does not allow it to spawn.... ye....
+        "required_mods_id": ["dermond_federation"], #tehe, this thing is literally the only thing which does not allow it to spawn.... ye....
 
         #TRIGGERS (ALL OPTIONAL)
         
@@ -57,7 +57,7 @@
         
         "fleet_name":"#UNKNOWN",
         "fleet_faction": "remnant",
-        "fleet_flagship_variant":"radiant_Dermond",
+        "fleet_flagship_variant":"der_hunters_main",
         "fleet_flagship_name":"DFN Eternal Fortune",
         "fleet_flagship_recoverable": false,
         "fleet_flagship_autofit": false,

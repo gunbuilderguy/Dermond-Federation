@@ -13,6 +13,9 @@
 
 	"flameoutOnImpactChance":0.5,
 
+	"clampTurnRateAfter":true,
+	"clampMaxSpeedAfter":false,
+
 	#"useSound":"system_burn_drive_activate",
 	#"loopSound":"system_burn_drive_loop",
 	#"deactivateSound":"system_burn_drive_deactivate",
@@ -20,7 +23,8 @@
 
 	"aiHints":{
 		"activeSpeedIncrease":100,
-		"burstMovementPotential":200,
+		"burstMovementPotential":1000,
 		"averageSpeedIncrease":100,
+		"averageSpeedMult":52,
 	}
 }
