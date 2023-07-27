@@ -1,8 +1,10 @@
 name,id,tier,rarity,tech/manufacturer,tags,uiTags,base value,unlocked,hidden,hiddenEverywhere,cost_frigate,cost_dest,cost_cruiser,cost_capital,script,desc,short,sprite
+#Pre Collapse Dermond shit,,,,,,,,,,,,,,,,,,
 Dermond Construction,DermondConstruction,,,Ornium Engieneering,"offensive, defensive, engines, no_drop, no_salvage, special",Special,200000,,TRUE,,0,0,0,0,data.hullmods.dermond.DermondConstruction,"Standard Dermond construction Mechanic. It does a lot to the normal hull, the special feature of this type of construction is the integrated triple flux core, which evenly distributes and efficiently disappointing flux. ",Standart Dermond construction,graphics/hullmods/der_dermondian_construction.png
 Fertilla Flux Mechanic,DermondFertillaFlux,2,0.7,Ornium Engieneering,"defensive, offensive, special",Flux,30000,,,,5,12,19,29,data.hullmods.dermond.DermondFertillaFlux,Overrides Flux core safety protocols increasing it's flux dissipation and maximum flux barrier depending on the hull size.,Ornium Flux modifitation,graphics/hullmods/der_fertilla_flux.png
 Ornium Engine Modification,DermondEnginePower,2,0.7,Ornium Engieneering,"engines, req_spaceport,","Engines,  Requires Dock",20000,,,,3,9,15,20,data.hullmods.dermond.DermondEnginePower,text test,Ornium Engine Modification,graphics/hullmods/der_enginepower.png
 ,,,,,,,,,,,,,,,,,,
+#Post Collapse Dermond shit,,,,,,,,,,,,,,,,,,
 Torharta Hangar modification,DermondTorhartaHangarmodification,3,0.7,Dermondian Engieneering,"special, fighter, req_spaceport, non_phase","Special, Fighters,  Requires Dock",250000,,,,15,30,44,52,data.hullmods.dermond.TorhartaHangarmodification,"So normally you would need X amount to refit and rearm a fighter, well now you have more crew to do so!",Dermondian lazy Deck crew,graphics/hullmods/der_tortahta_hangar.png
 Reconstructed Ship,DermondReconstruction,,,Dermondian Engieneering,"offensive, defensive, no_drop, no_salvage, special",Special,200000,,TRUE,,0,0,0,0,data.hullmods.dermond.DermondReconstruction,"This ship was stripped and rebuild almost completely, everything what was left from the old ship is the hull. ",Dermondian Reconstruction,graphics/hullmods/der_dermondian_reconstruction.png
 Altorno Ships Modification,DermondAltornoModifcation,3,0.7,Dermondian Engieneering,"offensive, special, req_spaceport,","Flux,  Requires Dock",250000,,,,12,30,50,75,data.hullmods.dermond.DermondAltornoModifcation,"For some unknown reasons Dermond found a way to put their ships into permanent Damper Field emitting mode with HUGE modifications, this has caused the ship to take very little to no damage at all. This hullmod is the newest in Dermondian Federal Navy and was adopted in cycle 205.",Dermondian Damper Field at home,graphics/hullmods/der_damper_field.png
@@ -22,8 +24,11 @@ Küllastro,DermondKullastro,2,0.65,Ordo Aeterni Technologiae,"defensive, offensi
 #DATA CORRUPTED, FURTHER AUDIO FILE RECOVERY IS IMPOSSIBLE",Cultists Upgrades,graphics/hullmods/der_kullastro.png
 Hardella,DermondHerdella,3,0.7,Ordo Aeterni Technologiae,"defensive, offensive, special, no_build_in",Weapons,30000,,,,9,28,34,48,data.hullmods.cultists.Hardella,"#DATA DAMAGED
 #RELOADING...
-#RELOADING...
-#RELOAD FAILED",Cultists Targeting system,graphics/hullmods/der_hardella.png
+#RELOADING..
+#RELOADING.
+#RELOADING
+...
+Why do you want to  know what we feel? Why do you keep coming back to this hell? Why don't you just let yourself be assimilated with us?",Cultists Targeting system,graphics/hullmods/der_hardella.png
 Chernalno,DermondChernalno,2,0.5,Ordo Aeterni Technologiae,"defensive, offensive, special, no_build_in","Special, Flux",75000,,,,4,12,27,36,data.hullmods.cultists.Chernalno,"#DATA DAMAGED
 #RELOADING...
 #RELOAD SUCCESFUL! LOADING AUDIO FILE..
@@ -42,12 +47,12 @@ Altraha,DermondAltraha,2,0.65,Ordo Aeterni Technologiae,"defensive, offensive, s
 #RELOADING...
 #RELOAD SUCCESFUL! LOADING AUDIO FILE..
 
-""-nk that you should be ready for any problems when trusting these freaks, because you know... We are a Domain Wide Corpo""
+""-nk that you should be ready for any problems when trusting these freaks, because you know... We are a Domain Wide Corpo-""
 
 #DATA CORRUPTED, FURTHER AUDIO FILE RECOVERY IS IMPOSSIBLE",Cultists Beams,graphics/hullmods/der_altrahta.png
 ,,,,,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,
-FUN,dermondfuckyoupeople,50,0.99,Ordo Aeterni Technologiae,"defensive, offensive, special,",Weapons,25000000,,,,30,50,100,300,data.hullmods.special.dermondfuckyoupeople,"#DATA DAMAGED
+haha fuck you,dermondfuckyoupeople,,,Ordo Aeterni Technologiae,"defensive, offensive, special,",Weapons,25000000,,,,30,50,100,300,data.hullmods.special.dermondfuckyoupeople,"#DATA DAMAGED
 Oh wait wrong script
 So you are either lucky, or I coded it wrongly. This hullmod pretty much triples your damage. If you want S mod it, I don't care. If Mod Mafia deems this mod bad, FUCK YOU!",Cultists went on drugs,graphics/hullmods/FACK_YOU!.png
 ,,,,,,,,,,,,,,,,,,

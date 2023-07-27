@@ -15,6 +15,29 @@ import com.fs.starfarer.api.impl.campaign.terrain.HyperspaceTerrainPlugin;
 import com.fs.starfarer.api.util.Misc;
 import static com.fs.starfarer.api.impl.campaign.procgen.StarSystemGenerator.addOrbitingEntities;
 
+/*
+
+All about planets is in data/campaign/econ not here, so
+
+⠄⣴⣶⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣤⣀
+⠄⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
+⠄⣾⣿⠿⠛⣉⣁⣤⣤⣤⣤⣬⣽⣿⣿⣿⣿⣿⣿⣿⣿⣿⡟⠛⠛⠛⠻⠿⠿⣿
+⣾⣿⣿⣶⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣶⣶⣶⣤⡈
+⣿⣿⣿⣿⠛⢋⠉⠩⠉⢩⣙⠛⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠿⠿⠿⠿⣿⣿⣿
+⣿⣿⣿⣿⣿⣿⠿⠶⢶⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣧⣶⣏⣁⡁⣐⣆⠈⢻
+⣿⣿⣿⣿⣿⣿⣿⣿⡿⢋⣥⣤⡌⢻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣭⣭⣭⣿⣾⣿
+⣿⣿⣿⣿⣿⣿⣿⠿⢀⣿⣿⡿⢁⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
+⢿⣿⣿⣿⣿⣿⢋⣴⣿⣿⠏⢡⣾⣿⣿⣿⣿⣿⣿⣿⡟⣿⣿⣿⣿⣿⣿⣿⣿⣿
+⡈⠙⠛⠛⠻⢃⣼⣿⣿⠏⣐⠻⠿⠿⠿⠿⣿⣿⣿⣿⣿⡜⢿⣿⣿⣿⣿⣿⣿⣿
+⣿⣿⣿⡿⢳⣾⣿⣿⠋⣼⣿⣷⣄⠄⠄⠄⠄⠈⠄⢀⣾⣿⣆⠹⣿⣿⡿⠛⠋⠁
+⣿⣿⡟⣀⣿⣿⣿⠛⣠⣄⢹⣿⣿⣧⣤⣄⣀⣤⣶⣾⣿⡿⣿⡆⢻⡟⠁⢀⡀⠄
+⣿⣿⣷⣿⣿⣿⢣⣾⣿⣿⠄⠉⠄⠄⠈⠉⠉⠃⠉⠉⠛⠃⠉⠈⣾⣷⠾⠟⠁⢠
+⠈⠛⠿⣿⣿⣿⣿⣿⣿⠃⣶⣆⢰⣶⣶⣶⣶⠶⠒⢀⣀⣄⣠⣴⡟⠁⠄⠄⣰⣿
+⠄⠄⠄⠄⠈⠻⠿⠿⠏⣾⡿⠃⠈⠉⠉⠛⠄⠘⠛⣻⣿⣿⣿⣿⣿⡇⣠⣾⣿⣿
+
+
+ */
+
 public class dermond_Bontora {
 
     public void generate(SectorAPI sector) {
