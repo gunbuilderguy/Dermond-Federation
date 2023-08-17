@@ -1,4 +1,5 @@
 id,trigger,conditions,script,text,options,notes
+"#RULESET_NAME dermond",,,,,,
 greetingDermondFriendly,OpenCommLink,"$faction.id == dermond_federation
 $faction.friendlyToPlayer","$menuState = fleetConvMain 0
 FireAll PopulateOptions","""Scanned and identified, good to see you $playerName.?""
@@ -13,16 +14,16 @@ OR
 greetingDermondHostileWeakerDefiant,OpenCommLink,"$faction.id == dermond_federation
 $entity.isHostile
 $entity.relativeStrength < 0
-$entity.weakerThanPlayerButHolding",$ignorePlayerCommRequests = true 1,"""We'll never surrender! And you better have some tea on your ship because we will need it after we wiill rebel against you!""
+$entity.weakerThanPlayerButHolding","$ignorePlayerCommRequests = true 1","""We'll never surrender! And you better have some tea on your ship because we will need it after we wiill rebel against you!""
 OR
-""We know how you dictator types treat prisoners, you won't be taking any.""",cutCommLink:Cut the comm link,
+""We know how you dictator types treat prisoners, you won't be taking any.""","cutCommLink:Cut the comm link",
 greetingDermondHostileStronger,OpenCommLink,"$faction.id == dermond_federation
 $entity.isHostile
-$entity.relativeStrength >= 0",$ignorePlayerCommRequests = true 1,"""Hostile fleet, we advise you power down weapons and cease transgressions against The Dermond Federation.""
+$entity.relativeStrength >= 0","$ignorePlayerCommRequests = true 1","""Hostile fleet, we advise you power down weapons and cease transgressions against The Dermond Federation.""
 OR
 ""You're outnumbered, surrender now and Dermond leadership promises fair treatment of any prisoners.""
 OR
-""AIS code acknowledged. It is unwise to show your face in Dermondian territory.""",cutCommLink:Cut the comm link,
+""AIS code acknowledged. It is unwise to show your face in Dermondian territory.""","cutCommLink:Cut the comm link",
 greetingDermondNeutral,OpenCommLink,"$faction.id == dermond_federation
 $faction.neutralToPlayer","$menuState = fleetConvMain 0
 FireAll PopulateOptions","""Scanned and identified. Safe travels.""
@@ -30,3 +31,4 @@ OR
 ""Acknowledging receipt of AIS code. We could use someone like you to stand against Tri-Tach, $playerName.""
 OR
 ""Good time of the day sire, I hope you will try bringing cookies or tea atleast next time because we like people who don't want to gun us down.""",,
+

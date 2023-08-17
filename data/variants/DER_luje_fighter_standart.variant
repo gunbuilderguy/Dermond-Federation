@@ -1,0 +1,36 @@
+{
+  "variantId": "DER_luje_fighter_standart",
+  "hullId": "DER_luje_fighter",
+  "displayName": "Standart",
+  "goalVariant": false,
+  "fluxCapacitors": 0,
+  "fluxVents": 0,
+  "quality": 1,
+  "permaMods": [],
+  "hullMods": [],
+  "weaponGroups": [
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0001": "der_tikele_spam",
+        "WS0002": "der_luje_right_arm",
+        "WS0004": "der_luje_left_arm"
+      }
+    },
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {}
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0003": "DER_luje_head"
+      }
+    }
+  ],
+  "modules": [],
+  "wings": []
+}

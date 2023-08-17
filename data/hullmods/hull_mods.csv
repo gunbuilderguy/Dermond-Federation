@@ -2,7 +2,7 @@ name,id,tier,rarity,tech/manufacturer,tags,uiTags,base value,unlocked,hidden,hid
 #Pre Collapse Dermond shit,,,,,,,,,,,,,,,,,,
 Dermond Construction,DermondConstruction,,,Ornium Engieneering,"offensive, defensive, engines, no_drop, no_salvage, special",Special,200000,,TRUE,,0,0,0,0,data.hullmods.dermond.DermondConstruction,"Standard Dermond construction Mechanic. It does a lot to the normal hull, the special feature of this type of construction is the integrated triple flux core, which evenly distributes and efficiently disappointing flux. ",Standart Dermond construction,graphics/hullmods/der_dermondian_construction.png
 Fertilla Flux Mechanic,DermondFertillaFlux,2,0.7,Ornium Engieneering,"defensive, offensive, special",Flux,30000,,,,5,12,19,29,data.hullmods.dermond.DermondFertillaFlux,Overrides Flux core safety protocols increasing it's flux dissipation and maximum flux barrier depending on the hull size.,Ornium Flux modifitation,graphics/hullmods/der_fertilla_flux.png
-Ornium Engine Modification,DermondEnginePower,2,0.7,Ornium Engieneering,"engines, req_spaceport,","Engines,  Requires Dock",20000,,,,3,9,15,20,data.hullmods.dermond.DermondEnginePower,text test,Ornium Engine Modification,graphics/hullmods/der_enginepower.png
+Ornium Engine Modification,DermondEnginePower,2,0.7,Ornium Engieneering,"engines, req_spaceport,","Engines,  Requires Dock",20000,,,,3,9,15,20,data.hullmods.dermond.DermondEnginePower,"While some engine modifications and safety protocls override make the ships better in some way or another, Ornium had another way of thinking and added some sort of malware to this Engine Modification... Nobody knows what he added but he certainly did.",Ornium Engine Modification,graphics/hullmods/der_enginepower.png
 ,,,,,,,,,,,,,,,,,,
 #Post Collapse Dermond shit,,,,,,,,,,,,,,,,,,
 Torharta Hangar modification,DermondTorhartaHangarmodification,3,0.7,Dermondian Engieneering,"special, fighter, req_spaceport, non_phase","Special, Fighters,  Requires Dock",250000,,,,15,30,44,52,data.hullmods.dermond.TorhartaHangarmodification,"So normally you would need X amount to refit and rearm a fighter, well now you have more crew to do so!",Dermondian lazy Deck crew,graphics/hullmods/der_tortahta_hangar.png
@@ -10,6 +10,7 @@ Reconstructed Ship,DermondReconstruction,,,Dermondian Engieneering,"offensive, d
 Altorno Ships Modification,DermondAltornoModifcation,3,0.7,Dermondian Engieneering,"offensive, special, req_spaceport,","Flux,  Requires Dock",250000,,,,12,30,50,75,data.hullmods.dermond.DermondAltornoModifcation,"For some unknown reasons Dermond found a way to put their ships into permanent Damper Field emitting mode with HUGE modifications, this has caused the ship to take very little to no damage at all. This hullmod is the newest in Dermondian Federal Navy and was adopted in cycle 205.",Dermondian Damper Field at home,graphics/hullmods/der_damper_field.png
 Celtorian System,DermondCeltorianSystem,2,0.7,Dermondian Engieneering,"offensive, special, phase, req_spaceport,","Offensive, Phase,  Requires Dock",200000,,,,8,14,23,36,data.hullmods.dermond.CeltorianSystem,"Phase system developed by Dermond during cycle 204, after Commander Pralne took his first fly in Dermond constructed Excelsior Dermond Modification Superfrigate he suggested some modifications for the ship to become more effective, unluckily during the 5th test he went missing, nobody knows where he is currently...  ",Dermondoian Phase Technology,graphics/hullmods/der_celtorian_system.png
 Dermond Targeting Unit,DermondTargetingunit,3,0.7,Dermondian Engieneering,"defensive, special, req_spaceport,","Special,  Requires Dock",30000,,,,5,10,17,24,data.hullmods.dermond.DermondTargetingunit,"Dermondian Targeting Unit is based on 3 Gamma Cores fused together, nobody knows how they did it, but they did it. Due to some problems with Gamma Cores being fused into one, ships maintenance is increased. ",Dermond Targeting Core,graphics/hullmods/advanced_targeting_core.png
+,,,,,,,,,,,,,,,,,,
 #Dermond hullmods,,,,,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,
@@ -43,7 +44,7 @@ Bontora,DermondBontora,3,0.7,Ordo Aeterni Technologiae,"defensive, offensive, sp
 ""-OU CAN'T JUST SHOVE OUR BODIES AND MAKE US INTO ONE PIECE OF TECHNOLOGY THAT'S NOT HOW WORLD WORKS THAT'S NOT AAAAAAAAA-""
 
 #DATA CORRUPTED, FURTHER AUDIO FILE RECOVERY IS IMPOSSIBLE",Cultists Imaginary Power,graphics/hullmods/der_bontora.png
-Altraha,DermondAltraha,2,0.65,Ordo Aeterni Technologiae,"defensive, offensive, special, no_build_in",Range,45000,,,,5,11,24,32,data.hullmods.cultists.Altraha,"#DATA DAMAGED
+Altraha,DermondAltraha,2,0.65,Ordo Aeterni Technologiae,"defensive, offensive, special, no_build_in",,45000,,,,5,11,24,32,data.hullmods.cultists.Altraha,"#DATA DAMAGED
 #RELOADING...
 #RELOAD SUCCESFUL! LOADING AUDIO FILE..
 
@@ -58,6 +59,10 @@ So you are either lucky, or I coded it wrongly. This hullmod pretty much triples
 ,,,,,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,
+#Fighters,,,,,,,,,,,,,,,,,,
+Test,dermondtesthangar,,,,,,50000,TRUE,,,9,18,27,36,data.hullmods.fighters.DermondFighterMain,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,
 #DOMAIN,,,,,,,,,,,,,,,,,,
 5th Gen FTL combat modification,DermondfithGenerationFTLcombat,2,0.7,,"special, req_spaceport,","Engines, Offensive",240000,,,,3,10,15,25,data.hullmods.domain.FIVEthGenerationFTL,"This experimental hullmod was developed before The Collapse and not so many were smuggeled into the Persean Sector. Not a lot of Factions use it however and can not replicate, it looks like somebody is working to not let this hullmod be widely adopted. The reason is still unknown.",,graphics/hullmods/der_5th_gen_FTL_combat.png
@@ -70,21 +75,21 @@ Traveler,DermondTraveler,3,0.9,,"special, exploration, req_spaceport,","Special,
 ,,,,,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,
 #BALLIN!,,,,,,,,,,,,,,,,,,
-FUCK IT WE BALL,dermondballer5,,,Ballin Inc.,"no_drop, ballerinc","Weapons, Special, Baller",1,TRUE,,,-5,-10,-15,-30,data.hullmods.ballers.baller5,FUCK IT WE BALL FUCK IT WE BALL FUCK IT WE BALL FUCK IT WE BALL FUCK IT WE BALL FUCK IT WE BALL FUCK IT WE BALL FUCK IT WE BALL FUCK IT WE BALL FUCK IT WE BALL ,Ballin tier: FUCK IT WE BALL,graphics/hullmods/ball5.png
-Excelsior my beloved,dermondbigballs,,,Ballin Inc.,"no_drop, ballerinc","Weapons, Special, Baller",1,TRUE,,,-10,-20,-30,-50,data.hullmods.ballers.bigballs,"Captain your ship takes 200x times more damage, but we Ballin Inc. have you covered!","Ballin tier: My balls are very heavy, heavier that they are the black hole",graphics/hullmods/ball5.png
-Ballin,dermondballer4,,,Ballin Inc.,"no_drop, ballerinc","Weapons, Special, Baller",1,TRUE,,,-4,-8,-12,-24,data.hullmods.ballers.baller4,"Captain I think you don't need any explanations, here is the hullmod now go and kill those rebels!",Ballin tier: Baller,graphics/hullmods/ball4.png
-I have some bits of skill,dermondballer3,,,Ballin Inc.,"no_drop, ballerinc","Weapons, Special, Baller",1,TRUE,,,-2,-4,-8,-16,data.hullmods.ballers.baller3,Greetings captain! This hullmod was made for mid tier tr-. Sorry for mid tier captains just like you! We hope at Ballin Inc. you will solve your skill issue,Ballin tier: 50% of the people,graphics/hullmods/ball3.png
-I would like to get hit more?,dermondballer2,,,Ballin Inc.,"no_drop, ballerinc","Weapons, Special, Baller",1,TRUE,,,-1,-2,-3,-4,data.hullmods.ballers.baller2,"Greetings new customer! You are that type of person who we Ballin Inc. call ""new customers"" so I hope you will have fun!",Ballin tier: Starter,graphics/hullmods/ball2.png
-Hit me more dady :>,dermondballer1,,,Ballin Inc.,"no_drop, ballerinc","Weapons, Special, Baller",1,TRUE,,,0,0,0,0,data.hullmods.ballers.baller1,So you want to get some bonuses but you're a pussy? Well we have you covered at Ballin Inc. We have created specially for you this hullmod. Now go and cry!,Ballin tier: SUCK!,graphics/hullmods/ball1.png
+FUCK IT WE BALL,dermondballer5,,,Ballin Inc.,"no_drop, ballerinc",Baller,1,TRUE,,,-5,-10,-15,-30,data.hullmods.ballers.baller5,FUCK IT WE BALL FUCK IT WE BALL FUCK IT WE BALL FUCK IT WE BALL FUCK IT WE BALL FUCK IT WE BALL FUCK IT WE BALL FUCK IT WE BALL FUCK IT WE BALL FUCK IT WE BALL ,Ballin tier: FUCK IT WE BALL,graphics/hullmods/ball5.png
+Excelsior my beloved,dermondbigballs,,,Ballin Inc.,"no_drop, ballerinc",Baller,1,TRUE,,,-10,-20,-30,-50,data.hullmods.ballers.bigballs,"Captain your ship takes 200x times more damage, but we Ballin Inc. have you covered!","Ballin tier: My balls are very heavy, heavier that they are the black hole",graphics/hullmods/ball5.png
+Ballin,dermondballer4,,,Ballin Inc.,"no_drop, ballerinc",Baller,1,TRUE,,,-4,-8,-12,-24,data.hullmods.ballers.baller4,"Captain I think you don't need any explanations, here is the hullmod now go and kill those rebels!",Ballin tier: Baller,graphics/hullmods/ball4.png
+I have some bits of skill,dermondballer3,,,Ballin Inc.,"no_drop, ballerinc",Baller,1,TRUE,,,-2,-4,-8,-16,data.hullmods.ballers.baller3,Greetings captain! This hullmod was made for mid tier tr-. Sorry for mid tier captains just like you! We hope at Ballin Inc. you will solve your skill issue,Ballin tier: 50% of the people,graphics/hullmods/ball3.png
+I would like to get hit more?,dermondballer2,,,Ballin Inc.,"no_drop, ballerinc",Baller,1,TRUE,,,-1,-2,-3,-4,data.hullmods.ballers.baller2,"Greetings new customer! You are that type of person who we Ballin Inc. call ""new customers"" so I hope you will have fun!",Ballin tier: Starter,graphics/hullmods/ball2.png
+Hit me more dady :>,dermondballer1,,,Ballin Inc.,"no_drop, ballerinc",Baller,1,TRUE,,,0,0,0,0,data.hullmods.ballers.baller1,So you want to get some bonuses but you're a pussy? Well we have you covered at Ballin Inc. We have created specially for you this hullmod. Now go and cry!,Ballin tier: SUCK!,graphics/hullmods/ball1.png
 ,,,,,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,
 #REDACTED,,,,,,,,,,,,,,,,,,
-#nope,,,,Unknown,"special, no_build_in, no_drop, no_drop_salvage, AIIntegration",Special,25000000,,,,0,0,0,0,data.hullmods.special.DermondHunterAI_Intergration,"This Hullmod allows the Intergration of Hunter AI core to your ship.
+hunter ai intergration,DermondHunterAI_Intergration,,,Unknown,"special, no_build_in, no_drop, no_drop_salvage, AIIntegration",Special,25000000,,,,0,0,0,0,data.hullmods.special.DermondHunterAI_Intergration,"This Hullmod allows the Intergration of Hunter AI core to your ship.
 But be aware, somebody might kill you if they will find out you were using Hunter AI...",,graphics/hullmods/der_HunterAI_intergration.png
 ,,,,,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,
-#nope,,,,System,"no_drop, no_drop_salvage, no_build_in, restricted",DEVTOOL,,,TRUE,TRUE,0,0,0,0,data.hullmods.special.DermondHunterAI_return,DEBUG: You should never see this in game.,,
+hunter ai core return,DermondHunterAI_return,,,System,"no_drop, no_drop_salvage, no_build_in, restricted",DEVTOOL,,,TRUE,TRUE,0,0,0,0,data.hullmods.special.DermondHunterAI_return,DEBUG: You should never see this in game.,,
 ,,,,,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,

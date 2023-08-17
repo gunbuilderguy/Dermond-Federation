@@ -1,0 +1,110 @@
+{
+  "hullName": "Luje",
+  "hullId": "DER_luje_fighter",
+  "hullSize": "FIGHTER",
+  "spriteName": "graphics/ships/mechs/DER_luje.png",
+  "style": "DERMOND_TECH",
+  "height": 70,
+  "width": 62,
+  "center": [31, 44.5],
+  "collisionRadius": 77.5,
+  "shieldCenter": [-3.5, -0],
+  "shieldRadius": 90,
+  "viewOffset": 0,
+  "builtInMods": [
+    "eccm",
+    "DermondConstruction",
+    "autorepair",
+    "ground_support"
+  ],
+  "builtInWeapons": {
+    "WS0001": "der_tikele_spam",
+    "WS0002": "der_luje_right_arm",
+    "WS0003": "DER_luje_head",
+    "WS0004": "der_luje_left_arm"
+  },
+  "weaponSlots": [
+    {
+      "id": "WS0003",
+      "size": "SMALL",
+      "type": "BUILT_IN",
+      "mount": "TURRET",
+      "arc": 270,
+      "angle": 0,
+      "locations": [-8.5, -0]
+    },
+    {
+      "id": "WS0002",
+      "size": "SMALL",
+      "type": "BUILT_IN",
+      "mount": "TURRET",
+      "arc": 90,
+      "angle": -40,
+      "locations": [-10, -27]
+    },
+    {
+      "id": "WS0004",
+      "size": "SMALL",
+      "type": "BUILT_IN",
+      "mount": "TURRET",
+      "arc": 90,
+      "angle": 40,
+      "locations": [-10, 26]
+    },
+    {
+      "id": "WS0001",
+      "size": "SMALL",
+      "type": "BUILT_IN",
+      "mount": "TURRET",
+      "arc": 0,
+      "angle": 0,
+      "locations": [-14, -0]
+    }
+  ],
+  "engineSlots": [
+    {
+      "location": [-31.5, 18],
+      "length": 18,
+      "width": 7,
+      "angle": 180,
+      "contrailSize": 7,
+      "style": "CUSTOM",
+      "styleId": "DERMOND_TECH"
+    },
+    {
+      "location": [-31.5, -18],
+      "length": 18,
+      "width": 7,
+      "angle": -180,
+      "contrailSize": 7,
+      "style": "CUSTOM",
+      "styleId": "DERMOND_TECH"
+    },
+    {
+      "location": [-28.5, 11.5],
+      "length": 18,
+      "width": 5,
+      "angle": 180,
+      "contrailSize": 5,
+      "style": "CUSTOM",
+      "styleId": "DERMOND_TECH"
+    },
+    {
+      "location": [-28.5, -11.5],
+      "length": 18,
+      "width": 5,
+      "angle": -180,
+      "contrailSize": 5,
+      "style": "CUSTOM",
+      "styleId": "DERMOND_TECH"
+    }
+  ],
+  "bounds": [
+    17.5, -13,
+    -43, -29,
+    -18, -0,
+    -43, 29,
+    17.5, 13,
+    24.5, -0
+  ]
+}

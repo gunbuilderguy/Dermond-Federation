@@ -1,0 +1,59 @@
+{
+  "id": "der_tikele_spam",
+  "specClass": "projectile",
+  "projectileSpecId": "der_tikele_spam_missile",
+  "type": "MISSILE",
+  "size": "SMALL",
+  "turretSprite": "graphics/weapons/der_tikele_spam.png",
+  "hardpointSprite": "",
+  "turretOffsets": [
+    4,
+    15,
+    4,
+    -15,
+    2,
+    15,
+    2,
+    -15,
+    0,
+    15,
+    0,
+    -15
+  ],
+  "turretAngleOffsets": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "hardpointOffsets": [
+    0,
+    0
+  ],
+  "hardpointAngleOffsets": [
+    0
+  ],
+  "barrelMode": "ALTERNATING_BURST",
+  "animationType": "SMOKE",
+  "requiresFullCharge": false,
+  "smokeSpec": {
+    "particleSizeMin": 2,
+    "particleSizeRange": 2,
+    "cloudParticleCount": 3,
+    "cloudDuration": 1,
+    "cloudRadius": 1,
+    "blowbackParticleCount": 3,
+    "blowbackDuration": 2,
+    "blowbackLength": 3,
+    "blowbackSpread": 1,
+    "particleColor": [
+      255,
+      255,
+      255,
+      255
+    ]
+  },
+  "fireSoundTwo": "der_tikele_shot"
+}

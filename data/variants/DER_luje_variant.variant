@@ -1,0 +1,25 @@
+{
+  "variantId": "DER_luje_variant",
+  "hullId": "DER_luje",
+  "displayName": "New Variant",
+  "goalVariant": false,
+  "fluxCapacitors": 0,
+  "fluxVents": 0,
+  "quality": 1,
+  "permaMods": [],
+  "hullMods": [],
+  "weaponGroups": [
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0001": "der_tikele_spam",
+        "WS0002": "der_luje_right_arm",
+        "WS0003": "DER_luje_head",
+        "WS0004": "der_luje_left_arm"
+      }
+    }
+  ],
+  "modules": [],
+  "wings": []
+}

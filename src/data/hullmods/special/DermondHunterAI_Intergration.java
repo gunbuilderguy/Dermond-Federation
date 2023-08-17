@@ -15,7 +15,7 @@ import com.fs.starfarer.api.loading.HullModSpecAPI;
 import com.fs.starfarer.api.ui.Alignment;
 import com.fs.starfarer.api.ui.TooltipMakerAPI;
 import com.fs.starfarer.api.util.Misc;
-import data.scripts.utils.seven_util_misc;
+import data.scripts.utils.dalton_utils;
 import java.awt.*;
 import java.awt.Color;
 import com.jcraft.jorbis.Block;
@@ -102,7 +102,7 @@ public class DermondHunterAI_Intergration extends BaseHullMod {
         if (!data.containsKey("aiinthunter_check_" + member.getId())) {
             data.put("aiinthunter_check_" + member.getId(), "_");
             if(member.getFleetData() != null && member.getFleetData().getFleet() != null && member.getFleetData().getFleet().equals(Global.getSector().getPlayerFleet())) {
-                seven_util_misc.removePlayerCommodity("dermond_hunter_AI");
+                dalton_utils.removePlayerCommodity("dermond_hunter_AI");
             }
         }
 
@@ -130,12 +130,12 @@ public class DermondHunterAI_Intergration extends BaseHullMod {
         if(ship.getVariant().hasHullMod("DermondHunterAI_Intergration")){
             return true;
         }else{
-            return seven_util_misc.playerHasCommodity("dermond_hunter_AI") && super.canBeAddedOrRemovedNow(ship, marketOrNull, mode);
+            return dalton_utils.playerHasCommodity("dermond_hunter_AI") && super.canBeAddedOrRemovedNow(ship, marketOrNull, mode);
         }
     }
 
     public String getCanNotBeInstalledNowReason(ShipAPI ship, MarketAPI marketOrNull, CampaignUIAPI.CoreUITradeMode mode) {
-        return !seven_util_misc.playerHasCommodity("dermond_hunter_AI") ? "You do not have the required AI core" : super.getCanNotBeInstalledNowReason(ship, marketOrNull, mode);
+        return !dalton_utils.playerHasCommodity("dermond_hunter_AI") ? "You do not have the required AI core" : super.getCanNotBeInstalledNowReason(ship, marketOrNull, mode);
     }
     
 
@@ -147,7 +147,7 @@ public class DermondHunterAI_Intergration extends BaseHullMod {
         float PAD = 5f;
         Color YELLOW = new Color(241, 199, 0);			
         String CSTitle = "'Tri Tachyon Corporation Experimental Engieneering'";
-        String OrdoCrest ="graphics/factions/crest_ai_remnant.png" ;
+        String OrdoCrest ="graphics/factions/crest_hunter.png" ;
 		float pad = 2f;
 		Color[] arr ={Misc.getPositiveHighlightColor(),Misc.getHighlightColor()};		
         TooltipMakerAPI OrdoIcon = tooltip.beginImageWithText(OrdoCrest, HEIGHT);

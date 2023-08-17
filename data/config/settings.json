@@ -13,6 +13,7 @@
             "der_cultists": "graphics/factions/crest_dermond_Cultists.png",
             "der_ballerinc": "graphics/factions/crest_dermond_ballerinc.png",
             "der_fack1": "graphics/icons/hullsys/interdictor_array.png",
+            "der_hunter_fac": "graphics/factions/crest_hunter.png",
             "Domain":"graphics/factions/crest_domain.png",
         },
         "characters": {
@@ -25,6 +26,7 @@
 	],	
 
     "designTypeColors":{
+        "Dermond Federation" : [0, 153, 255, 255],
         "Ballin Inc.": [45, 130, 38, 255],  
 		"Dermondian Engieneering":[0,0,180,255],
 		"Ordo Aeterni Technologiae":[255,86,70,255],

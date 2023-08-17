@@ -1,0 +1,93 @@
+{
+  "hullName": "Sturys",
+  "hullId": "DER_sturys",
+  "hullSize": "FRIGATE",
+  "spriteName": "graphics/ships/der_sturys.png",
+  "style": "DERMOND_TECH",
+  "height": 110,
+  "width": 50,
+  "center": [25, 55],
+  "collisionRadius": 80.5,
+  "shieldCenter": [0, 0],
+  "shieldRadius": 70.5,
+  "viewOffset": 0,
+  "builtInMods": [
+    "DermondConstruction"
+  ],
+  "builtInWings": [
+    "DER_Dentor_wing"
+  ],
+  "weaponSlots": [
+    {
+      "id": "WS0001",
+      "size": "SMALL",
+      "type": "HYBRID",
+      "mount": "HARDPOINT",
+      "arc": 0,
+      "angle": 0,
+      "locations": [43, -10]
+    },
+    {
+      "id": "WS0002",
+      "size": "SMALL",
+      "type": "HYBRID",
+      "mount": "HARDPOINT",
+      "arc": 0,
+      "angle": 0,
+      "locations": [43, 10]
+    },
+    {
+      "id": "WS0003",
+      "size": "SMALL",
+      "type": "HYBRID",
+      "mount": "TURRET",
+      "arc": 360,
+      "angle": 0,
+      "locations": [9, -0]
+    },
+    {
+      "id": "LB 1",
+      "size": "LARGE",
+      "type": "LAUNCH_BAY",
+      "mount": "HIDDEN",
+      "arc": 360,
+      "angle": 0,
+      "locations": [
+        3.5, -0,
+        1, -0
+      ]
+    },
+    {
+      "id": "LB 2",
+      "size": "LARGE",
+      "type": "LAUNCH_BAY",
+      "mount": "HIDDEN",
+      "arc": 360,
+      "angle": 0,
+      "locations": [
+        -0.5, -0,
+        -4, -0
+      ]
+    }
+  ],
+  "engineSlots": [
+    {
+      "location": [-48, -0],
+      "length": 40,
+      "width": 20,
+      "angle": 180,
+      "contrailSize": 20,
+      "style": "CUSTOM",
+      "styleId": "DERMOND_TECH"
+    }
+  ],
+  "bounds": [
+    52, -14,
+    -22, -25,
+    -54, -12,
+    -48, -0,
+    -54, 12,
+    -22, 25,
+    52, 14
+  ]
+}

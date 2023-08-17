@@ -1,3 +1,6 @@
 id,variant,tags,tier,rarity,fleet pts,op cost,formation,range,attackRunRange,attackPositionOffset,num,role,role desc,refit,base value,,,,,,,,,,,,,number
+#DERMOND,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+DER_luje_wing,DER_luje_fighter_standart,,4,,7,15,V,0,0,,2,FIGHTER,Ground Support Mech,180,50000,,,,,,,,,,,,,699
 DER_Fermond_wing,DER_Fermond_variant,,3,,12,30,V,5000,1000,,1,FIGHTER,Heavy Fighter,60,25000,,,,,,,,,,,,,700
 DER_Dentor_wing,DER_Dentor_variant,,3,,10,20,V,1000,0,0,3,INTERCEPTOR,Light Interceptor,30,10000,,,,,,,,,,,,,701
