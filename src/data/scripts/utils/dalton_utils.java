@@ -11,6 +11,41 @@ import java.util.List;
 public class dalton_utils extends BaseModPlugin {
 
 
+    public static boolean playerHasCommodity(String item, int amount) {
+        CampaignFleetAPI playerFleet = Global.getSector().getPlayerFleet();
+        if (playerFleet == null)
+            return false;
+
+        List<CargoStackAPI> playerCargoStacks = playerFleet.getCargo().getStacksCopy();
+
+        CargoAPI playerFleetCargo = playerFleet.getCargo();
+
+        switch (item) {
+            case "creds":
+                return playerFleetCargo.getCredits().get() >= amount;
+            case "supplies":
+                return playerFleetCargo.getSupplies() >= amount;
+            case "fuel":
+                return playerFleetCargo.getFuel() >= amount;
+            case "crew":
+                return playerFleetCargo.getCrew() >= amount;
+            case "marines":
+                return playerFleetCargo.getMarines() >= amount;
+            case "shipCount":
+                return playerFleet.getNumShips() >= amount;
+            default:
+                for (CargoStackAPI cargoStack : playerCargoStacks) {
+                    if (cargoStack.isCommodityStack() && cargoStack.getCommodityId().equals(item) && cargoStack.getSize() >= amount) {
+                        return true;
+                    }
+                }
+        }
+        return false;
+    }
+
+
+    /*
+
     public static boolean playerHasCommodity(String item, int amount)
     {
         CampaignFleetAPI playerFleet = Global.getSector().getPlayerFleet();
@@ -26,6 +61,8 @@ public class dalton_utils extends BaseModPlugin {
 
         return false;
     }
+
+     */
 
     public static void removePlayerCommodity(String item, int amount)
     {

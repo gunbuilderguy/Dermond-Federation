@@ -177,6 +177,9 @@ No I wont chane the damage takenmult way, it will decrease damage of all
                     dalton_utils.removePlayerCommodity("supplies", 500);
                 }
             }
+            if (!member.getVariant().hasHullMod("der_holder")) {
+                member.getVariant().getHullMods().add("der_holder");
+            }
         }
     }
 

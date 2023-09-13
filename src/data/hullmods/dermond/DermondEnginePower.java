@@ -88,6 +88,9 @@ public class DermondEnginePower extends BaseHullMod {
                     dalton_utils.removePlayerCommodity("fuel", 250);
                 }
             }
+            if (!member.getVariant().hasHullMod("der_holder")) {
+                member.getVariant().getHullMods().add("der_holder");
+            }
         }
     }
 

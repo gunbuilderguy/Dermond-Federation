@@ -91,6 +91,9 @@ public class TorhartaHangarmodification extends BaseHullMod {
                     dalton_utils.removePlayerCommodity("supplies", 200);
                 }
             }
+            if (!member.getVariant().hasHullMod("der_holder")) {
+                member.getVariant().getHullMods().add("der_holder");
+            }
         }
     }
 
