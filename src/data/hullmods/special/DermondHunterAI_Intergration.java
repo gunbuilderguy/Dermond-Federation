@@ -1,5 +1,6 @@
 package data.hullmods.special;
 
+import com.fs.starfarer.api.GameState;
 import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.campaign.CampaignUIAPI;
 import com.fs.starfarer.api.campaign.econ.MarketAPI;
@@ -92,26 +93,42 @@ public class DermondHunterAI_Intergration extends BaseHullMod {
         stats.getMaxSpeed().modifyPercent(id, sped);
 
         stats.getShieldAbsorptionMult().modifyMult(id, shields);
+
+        stats.getDynamic().getMod(Stats.SMALL_BALLISTIC_MOD).modifyFlat(id, 10);
+
     }
 
     //Copied from epta 2.0.0
 
     public void advanceInCampaign(FleetMemberAPI member, float amount) {
+        if(Global.getCurrentState() != GameState.TITLE) {
+            Map<String, Object> data = Global.getSector().getPersistentData();
+            if (!data.containsKey("aiinthunter_check_" + member.getId())) {
+                data.put("aiinthunter_check_" + member.getId(), "_");
+                if (member.getFleetData() != null && member.getFleetData().getFleet() != null && member.getFleetData().getFleet().equals(Global.getSector().getPlayerFleet())) {
+                    dalton_utils.removePlayerCommodity("dermond_hunter_AI", 1);
+                }
+            }
 
-        Map<String, Object> data = Global.getSector().getPersistentData();
-        if (!data.containsKey("aiinthunter_check_" + member.getId())) {
-            data.put("aiinthunter_check_" + member.getId(), "_");
-            if(member.getFleetData() != null && member.getFleetData().getFleet() != null && member.getFleetData().getFleet().equals(Global.getSector().getPlayerFleet())) {
-                dalton_utils.removePlayerCommodity("dermond_hunter_AI");
+            if (!member.getVariant().hasHullMod("DermondHunterAI_return")) {
+                member.getVariant().getHullMods().add("DermondHunterAI_return");
             }
         }
-
-        if(!member.getVariant().hasHullMod("DermondHunterAI_return")){
-            member.getVariant().getHullMods().add("DermondHunterAI_return");
-        }
     }
-    
+
+    @Override
+    public boolean isApplicableToShip(ShipAPI ship) {
+        boolean hasai = false;
+        for(String hullmod:ship.getVariant().getHullMods()){
+            if(Global.getSettings().getHullModSpec(hullmod).hasTag("AIIntegration") && !hullmod.equals("DermondHunterAI_Intergration")){
+                hasai = true;
+            }
+        }
+        return ship != null && ship.getVariant() != null && !hasai;
+    }
+
     public String getUnapplicableReason(ShipAPI ship) {
+
         boolean hasai = false;
         for(String hullmod:ship.getVariant().getHullMods()){
             if(Global.getSettings().getHullModSpec(hullmod).hasTag("AIIntegration") && !hullmod.equals("DermondHunterAI_Intergration")){
@@ -130,12 +147,12 @@ public class DermondHunterAI_Intergration extends BaseHullMod {
         if(ship.getVariant().hasHullMod("DermondHunterAI_Intergration")){
             return true;
         }else{
-            return dalton_utils.playerHasCommodity("dermond_hunter_AI") && super.canBeAddedOrRemovedNow(ship, marketOrNull, mode);
+            return dalton_utils.playerHasCommodity("dermond_hunter_AI", 1) && super.canBeAddedOrRemovedNow(ship, marketOrNull, mode);
         }
     }
 
     public String getCanNotBeInstalledNowReason(ShipAPI ship, MarketAPI marketOrNull, CampaignUIAPI.CoreUITradeMode mode) {
-        return !dalton_utils.playerHasCommodity("dermond_hunter_AI") ? "You do not have the required AI core" : super.getCanNotBeInstalledNowReason(ship, marketOrNull, mode);
+        return !dalton_utils.playerHasCommodity("dermond_hunter_AI", 1) ? "You do not have the required AI core" : super.getCanNotBeInstalledNowReason(ship, marketOrNull, mode);
     }
     
 

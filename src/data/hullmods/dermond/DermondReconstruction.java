@@ -64,6 +64,24 @@ public class DermondReconstruction extends BaseHullMod {
         stats.getHullBonus().modifyMult(id, HULL_BONUS);
         stats.getEnergyDamageTakenMult().modifyMult(id, ENERGY_DAMAGE_INCREASE);
         stats.getSuppliesPerMonth().modifyMult(id, SUPPLY_USE_MULT);
+
+        /*
+        if(Global.getSettings().getWeaponSpec(weapon).hasTag("Dermond")) {
+
+            stats.getDynamic().getMod(Stats.LARGE_BALLISTIC_MOD).modifyFlat(id, 5);
+            stats.getDynamic().getMod(Stats.LARGE_ENERGY_MOD).modifyFlat(id, 5);
+            stats.getDynamic().getMod(Stats.LARGE_MISSILE_MOD).modifyFlat(id, 5);
+
+            stats.getDynamic().getMod(Stats.MEDIUM_BALLISTIC_MOD).modifyFlat(id, 5);
+            stats.getDynamic().getMod(Stats.MEDIUM_ENERGY_MOD).modifyFlat(id, 5);
+            stats.getDynamic().getMod(Stats.MEDIUM_MISSILE_MOD).modifyFlat(id, 5);
+
+            stats.getDynamic().getMod(Stats.SMALL_BALLISTIC_MOD).modifyFlat(id, 5);
+            stats.getDynamic().getMod(Stats.SMALL_ENERGY_MOD).modifyFlat(id, 5);
+            stats.getDynamic().getMod(Stats.SMALL_MISSILE_MOD).modifyFlat(id, 5);
+
+        }*/
+
     }
 
 

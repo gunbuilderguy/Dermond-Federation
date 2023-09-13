@@ -27,7 +27,10 @@
         ["heavybatteries", "drone_replicator", "beta_core"],
         ["highcommand", "cryoarithmetic_engine","alpha_core"],
         ["starfortress_high", "beta_core"],
-        ["refining", "catalytic_core", "alpha_core"]
+        ["refining", "catalytic_core", "alpha_core"],
+        ["der_meat_grinder"],
+        ["der_meat_raiders"],
+        ["der_hives"]
       ]
     },
 

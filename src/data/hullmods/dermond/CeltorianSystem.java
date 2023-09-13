@@ -1,10 +1,14 @@
 package data.hullmods.dermond;
 
+import com.fs.starfarer.api.GameState;
+import com.fs.starfarer.api.campaign.CampaignUIAPI;
+import com.fs.starfarer.api.campaign.econ.MarketAPI;
 import com.fs.starfarer.api.combat.BaseHullMod;
 import com.fs.starfarer.api.combat.MutableShipStatsAPI;
 import com.fs.starfarer.api.combat.ShipAPI;
 import com.fs.starfarer.api.combat.ShipAPI.HullSize;
 import com.fs.starfarer.api.Global;
+import com.fs.starfarer.api.fleet.FleetMemberAPI;
 import com.fs.starfarer.api.util.Misc;
 import java.util.HashMap;
 import java.util.Map;
@@ -12,6 +16,7 @@ import com.fs.starfarer.api.ui.TooltipMakerAPI;
 import com.fs.starfarer.api.ui.Alignment;
 import java.awt.Color;
 import com.fs.starfarer.api.combat.ShieldAPI;
+import data.scripts.utils.dalton_utils;
 
 
 public class CeltorianSystem extends BaseHullMod {
@@ -54,6 +59,31 @@ public class CeltorianSystem extends BaseHullMod {
     //nuke: test if this is properly incompatible with reactive fields
         
     //another note: Vanguards are annoying even out of the game
+
+    public void advanceInCampaign(FleetMemberAPI member, float amount) {
+        if(Global.getCurrentState() != GameState.TITLE) {
+            Map<String, Object> data = Global.getSector().getPersistentData();
+            if (!data.containsKey("aiceltorian_check_" + member.getId())) {
+                data.put("aiceltorian_check_" + member.getId(), "_");
+                if (member.getFleetData() != null && member.getFleetData().getFleet() != null && member.getFleetData().getFleet().equals(Global.getSector().getPlayerFleet())) {
+                    dalton_utils.removePlayerCommodity("supplies", 200);
+                }
+            }
+        }
+    }
+
+
+    public boolean canBeAddedOrRemovedNow(ShipAPI ship, MarketAPI marketOrNull, CampaignUIAPI.CoreUITradeMode mode) {
+        if(ship.getVariant().hasHullMod("DermondCeltorianSystem")){
+            return true;
+        }else{
+            return dalton_utils.playerHasCommodity("supplies", 200) && super.canBeAddedOrRemovedNow(ship, marketOrNull, mode);
+        }
+    }
+
+    public String getCanNotBeInstalledNowReason(ShipAPI ship, MarketAPI marketOrNull, CampaignUIAPI.CoreUITradeMode mode) {
+        return !dalton_utils.playerHasCommodity("supplies", 200) ? "You do not have the required ammount of supplies" : super.getCanNotBeInstalledNowReason(ship, marketOrNull, mode);
+    }
                 
     public String getUnapplicableReason(ShipAPI ship) {
 		

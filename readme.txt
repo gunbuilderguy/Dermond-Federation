@@ -36,7 +36,7 @@ Credits:
 
 Special thanks to Banano, willthefunperson, jujutex and ruddy for helping with code, Jackundor with Banano for helping with icons.
 And overall Special Thanks to the Entire Corvus, the people there might be retarded but when it comes to modding people are ready to help.
-And also special thanks to Seven, and Danto for allowing to use their mod for AI integration in the Hullmod test beta and in this version also.
+And also special thanks to Seven, and Dalton for allowing to use their mod for AI integration in the Hullmod test beta and in this version also. And Dalton for helping with some bits of code, hangar stuff is purely made by him.
 And finally Pogre. The base mod was based on bultach files and he knows it.
 
 The biggest Thank you goes to Hugin because without him the base mod would look like shit, and he is the guy who helped me make as it looks right now.

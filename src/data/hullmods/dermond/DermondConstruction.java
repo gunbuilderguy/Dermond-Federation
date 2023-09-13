@@ -5,6 +5,7 @@ package data.hullmods.dermond;
 import java.util.*;
 import java.awt.Color;
 import com.fs.starfarer.api.Global;
+import com.fs.starfarer.api.fleet.FleetMemberAPI;
 import com.fs.starfarer.api.ui.Alignment;
 import com.fs.starfarer.api.ui.TooltipMakerAPI;
 import com.fs.starfarer.api.util.Misc;
@@ -26,19 +27,21 @@ public class DermondConstruction extends BaseHullMod {
 
 
     //Positive Bonuses
-    public static final float HULL_BONUS = 5f;
-    public static final float HEALTH_BONUS = 20f;
-    public static final float CORONA_EFFECT_REDUCTION = 0.9f;
-    public static final float ENERGY_DAMAGE_REDUCTION = 0.9f;
-    public static final float HE_REDUCTION = 0.95f;
-    public static final float ARMOR_DAMAGE_REDUCTION = 0.95f;
-    public static final float PPT_MULT = 0.8f;
+    public static final float HULL_BONUS = 5f; //% bonus
+    public static final float HEALTH_BONUS = 20f; //engine bonus %
+    public static final float CORONA_EFFECT_REDUCTION = 0.9f; //mult bonus
+    public static final float ENERGY_DAMAGE_REDUCTION = 0.9f; //mult bonus
+    public static final float HE_REDUCTION = 0.95f; // mult bonus
+    public static final float ARMOR_DAMAGE_REDUCTION = 0.95f; // mult bonus
+
 
 
     //Negative Bonuses
-    public static final float SUPPLY_USE_MULT = 2.25f;
-    public static final float DEGRADE_INCREASE_PERCENT = 60f;
-    public static final float PROFILE_MULT = 1.4f;
+
+    public static final float PPT_MULT = 0.8f; // mult decrease
+    public static final float SUPPLY_USE_MULT = 2.25f; // mult increase
+    public static final float DEGRADE_INCREASE_PERCENT = 60f; // % buff
+    public static final float PROFILE_MULT = 1.4f; // mult debuff
 
 
     //Blocked
@@ -70,12 +73,28 @@ public class DermondConstruction extends BaseHullMod {
         //stats.getBeamDamageTakenMult().modifyMult(id, BEAM_DAMAGE_REDUCTION);
         stats.getDynamic().getStat(Stats.CORONA_EFFECT_MULT).modifyMult(id, CORONA_EFFECT_REDUCTION);
 
+        //stats.getShieldArcBonus().
 
         //Negative Bonuses
         stats.getSensorProfile().modifyMult(id, PROFILE_MULT);
         stats.getSuppliesPerMonth().modifyMult(id, SUPPLY_USE_MULT);
         stats.getCRLossPerSecondPercent().modifyPercent(id, DEGRADE_INCREASE_PERCENT);
+        /*
+        if(Global.getSettings().getWeaponSpec(weapon).hasTag("Dermond")) {
 
+            stats.getDynamic().getMod(Stats.LARGE_BALLISTIC_MOD).modifyFlat(id, 10);
+            stats.getDynamic().getMod(Stats.LARGE_ENERGY_MOD).modifyFlat(id, 10);
+            stats.getDynamic().getMod(Stats.LARGE_MISSILE_MOD).modifyFlat(id, 10);
+
+            stats.getDynamic().getMod(Stats.MEDIUM_BALLISTIC_MOD).modifyFlat(id, 10);
+            stats.getDynamic().getMod(Stats.MEDIUM_ENERGY_MOD).modifyFlat(id, 10);
+            stats.getDynamic().getMod(Stats.MEDIUM_MISSILE_MOD).modifyFlat(id, 10);
+
+            stats.getDynamic().getMod(Stats.SMALL_BALLISTIC_MOD).modifyFlat(id, 10);
+            stats.getDynamic().getMod(Stats.SMALL_ENERGY_MOD).modifyFlat(id, 10);
+            stats.getDynamic().getMod(Stats.SMALL_MISSILE_MOD).modifyFlat(id, 10);
+
+        }*/
 
     }
 

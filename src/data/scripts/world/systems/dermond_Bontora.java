@@ -75,6 +75,8 @@ public class dermond_Bontora {
         PlanetAPI belnarha2 = system.addPlanet("der_bandore", belnarha_star, "Bandore", "terran", 355, 170, 6000, 280);
         belnarha2.setCustomDescriptionId("der_bandore");
 
+        belnarha2.setInteractionImage("illustrations", "bandore_planet_greet");
+
         PlanetAPI belnarha3 = system.addPlanet("der_blockno", belnarha2, "Blockno", "tundra", 75, 50, 600, 29);
         belnarha3.setCustomDescriptionId("der_blockno");
 

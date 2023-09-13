@@ -1,0 +1,10 @@
+{
+	"id":"der_oie",  # this id must match what's in the spreadsheet
+	"specClass":"projectile",
+	"type":"BALLISTIC",
+	"size":"MEDIUM",
+	"turretSprite":"graphics/weapons/drones/oie/der_oie_main_00.png",
+	"numFrames":11,	
+	"frameRate":10,	
+	"barrelMode":"ALTERNATING", # or LINKED.  whether barrels fire at the same time or 
+}

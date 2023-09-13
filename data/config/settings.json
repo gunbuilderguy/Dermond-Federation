@@ -19,11 +19,14 @@
         "characters": {
             "HunterAI": "graphics/portraits/characters/AI/der_HunterAI.png",
         },
+      "illustrations": {
+        "bandore_planet_greet": "graphics/planets/interractions/der_bandore_main.png",
+      }
     },
 
 	"ruleCommandPackages":[
 		"data.campaign.rulescmd",
-	],	
+	],
 
     "designTypeColors":{
         "Dermond Federation" : [0, 153, 255, 255],

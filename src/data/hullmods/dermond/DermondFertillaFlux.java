@@ -6,7 +6,12 @@ package data.hullmods.dermond;
 import java.util.HashMap;
 import java.util.Map;
 import java.awt.Color;
+
+import com.fs.starfarer.api.GameState;
 import com.fs.starfarer.api.Global;
+import com.fs.starfarer.api.campaign.CampaignUIAPI;
+import com.fs.starfarer.api.campaign.econ.MarketAPI;
+import com.fs.starfarer.api.fleet.FleetMemberAPI;
 import com.fs.starfarer.api.ui.Alignment;
 import com.fs.starfarer.api.ui.TooltipMakerAPI;
 import com.fs.starfarer.api.util.Misc;
@@ -22,6 +27,7 @@ import com.fs.starfarer.api.combat.MutableShipStatsAPI;
 import com.fs.starfarer.api.combat.ShipAPI;
 import com.fs.starfarer.api.combat.ShipAPI.HullSize;
 import com.fs.starfarer.api.combat.listeners.HullDamageAboutToBeTakenListener;
+import data.scripts.utils.dalton_utils;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -83,6 +89,35 @@ public class DermondFertillaFlux extends BaseHullMod {
         stats.getFluxDissipation().modifyPercent(id, (float) flux_dis.get(hullSize));
         stats.getSuppliesPerMonth().modifyPercent(id, (float) SUPPLY_USE_MULT.get(hullSize));
         stats.getCRLossPerSecondPercent().modifyMult(id, CR_DEGRADATION);
+    }
+
+
+    public void advanceInCampaign(FleetMemberAPI member, float amount) {
+        if(Global.getCurrentState() != GameState.TITLE) {
+            Map<String, Object> data = Global.getSector().getPersistentData();
+            if (!data.containsKey("aifertilla_check_" + member.getId())) {
+                data.put("aifertilla_check_" + member.getId(), "_");
+                if (member.getFleetData() != null && member.getFleetData().getFleet() != null && member.getFleetData().getFleet().equals(Global.getSector().getPlayerFleet())) {
+                    dalton_utils.removePlayerCommodity("supplies", 200);
+                }
+            }
+            if (!member.getVariant().hasHullMod("der_holder")) {
+                member.getVariant().getHullMods().add("der_holder");
+            }
+        }
+    }
+
+
+    public boolean canBeAddedOrRemovedNow(ShipAPI ship, MarketAPI marketOrNull, CampaignUIAPI.CoreUITradeMode mode) {
+        if(ship.getVariant().hasHullMod("DermondFertillaFlux")){
+            return true;
+        }else{
+            return dalton_utils.playerHasCommodity("supplies", 200) && super.canBeAddedOrRemovedNow(ship, marketOrNull, mode);
+        }
+    }
+
+    public String getCanNotBeInstalledNowReason(ShipAPI ship, MarketAPI marketOrNull, CampaignUIAPI.CoreUITradeMode mode) {
+        return !dalton_utils.playerHasCommodity("supplies", 200) ? "You do not have the required ammount of supplies" : super.getCanNotBeInstalledNowReason(ship, marketOrNull, mode);
     }
 
     

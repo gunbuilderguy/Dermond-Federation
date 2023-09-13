@@ -20,8 +20,8 @@ public class DermondHunterAI_return extends BaseHullMod {
 
         if (!hasAICoreHullmod) {
             Map<String, Object> data = Global.getSector().getPersistentData();
-            if (data.containsKey("aiintHunter_check_" + member.getId())) {
-                data.remove("aiintHunter_check_" + member.getId());
+            if (data.containsKey("aiinthunter_check_" + member.getId())) {
+                data.remove("aiinthunter_check_" + member.getId());
             }
             if(member.getFleetData().getFleet().equals(Global.getSector().getPlayerFleet())) {
                 dalton_utils.addPlayerCommodity("dermond_hunter_AI", 1);

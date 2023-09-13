@@ -5,7 +5,12 @@ package data.hullmods.dermond;
 import java.util.HashMap;
 import java.util.Map;
 import java.awt.Color;
+
+import com.fs.starfarer.api.GameState;
 import com.fs.starfarer.api.Global;
+import com.fs.starfarer.api.campaign.CampaignUIAPI;
+import com.fs.starfarer.api.campaign.econ.MarketAPI;
+import com.fs.starfarer.api.fleet.FleetMemberAPI;
 import com.fs.starfarer.api.ui.Alignment;
 import com.fs.starfarer.api.ui.TooltipMakerAPI;
 import com.fs.starfarer.api.util.Misc;
@@ -17,6 +22,8 @@ import com.fs.starfarer.api.combat.BaseHullMod;
 import com.fs.starfarer.api.combat.MutableShipStatsAPI;
 import com.fs.starfarer.api.combat.ShipAPI;
 import com.fs.starfarer.api.combat.ShipAPI.HullSize;
+import data.scripts.utils.dalton_utils;
+
 import java.util.HashSet;
 import java.util.Set;
 import java.util.Iterator;
@@ -26,27 +33,27 @@ public class DermondTargetingunit extends BaseHullMod {
         return Global.getSettings().getString("der", key);
     }
 
-    private static final Set<String> BLOCKED_HULLMODS = new HashSet(8);
+    static final Set<String> BLOCKED_HULLMODS = new HashSet(8);
 
     // Positive effects
-    private static Map<HullSize, Float> RANGE = new HashMap();
+    static Map<HullSize, Float> RANGE = new HashMap();
     static {
-        RANGE.put(HullSize.FRIGATE, 30f);
-        RANGE.put(HullSize.DESTROYER, 40f);
-        RANGE.put(HullSize.CRUISER, 60f);
-        RANGE.put(HullSize.CAPITAL_SHIP, 80f);
+        RANGE.put(HullSize.FRIGATE, 10f);
+        RANGE.put(HullSize.DESTROYER, 20f);
+        RANGE.put(HullSize.CRUISER, 30f);
+        RANGE.put(HullSize.CAPITAL_SHIP, 40f);
     }
-    public static final float PD_DMG = 50f;
+    final float PD_DMG = 50f;
 
     // Negative effects
-    private static Map<HullSize, Float> SUPPLY_USE_MULT = new HashMap();
-    static {
+    final Map<HullSize, Float> SUPPLY_USE_MULT = new HashMap();
+     {
         SUPPLY_USE_MULT.put(HullSize.FRIGATE, 25f);
         SUPPLY_USE_MULT.put(HullSize.DESTROYER, 50f);
         SUPPLY_USE_MULT.put(HullSize.CRUISER, 75f);
         SUPPLY_USE_MULT.put(HullSize.CAPITAL_SHIP, 100f);
     }
-    public static final float CR_DEGRADATION = 500f;
+    final float CR_DEGRADATION = 50f;
 
     public void applyEffectsBeforeShipCreation(HullSize hullSize, MutableShipStatsAPI stats, String id) {
         // Positive
@@ -64,6 +71,7 @@ public class DermondTargetingunit extends BaseHullMod {
         // Negative
         stats.getSuppliesPerMonth().modifyPercent(id, (float) SUPPLY_USE_MULT.get(hullSize));
         stats.getCRLossPerSecondPercent().modifyPercent(id, CR_DEGRADATION);
+        stats.getWeaponMalfunctionChance().modifyPercent(id, 2f);
     }
 
     public void applyEffectsAfterShipCreation(ShipAPI ship, String id) {
@@ -79,9 +87,36 @@ public class DermondTargetingunit extends BaseHullMod {
 
     }
 
-    // Here had to be the dmg modifier but idk how to do it, so basically I can't
-    // increase PD dmg :C If somebody finds this line, and knows how to do it tell
-    // me.
+    public void advanceInCampaign(FleetMemberAPI member, float amount) {
+        if(Global.getCurrentState() != GameState.TITLE) {
+            Map<String, Object> data = Global.getSector().getPersistentData();
+            if (!data.containsKey("aitergeting_dermond_check_" + member.getId())) {
+                data.put("aitergeting_dermond_check_" + member.getId(), "_");
+                if (member.getFleetData() != null && member.getFleetData().getFleet() != null && member.getFleetData().getFleet().equals(Global.getSector().getPlayerFleet())) {
+                    dalton_utils.removePlayerCommodity("gamma_core", 3);
+                }
+            }
+            if (!member.getVariant().hasHullMod("der_holder")) {
+                member.getVariant().getHullMods().add("der_holder");
+            }
+        }
+    }
+
+
+    public boolean canBeAddedOrRemovedNow(ShipAPI ship, MarketAPI marketOrNull, CampaignUIAPI.CoreUITradeMode mode) {
+        if(ship.getVariant().hasHullMod("DermondTargetingunit")){
+            return true;
+        }else{
+            return dalton_utils.playerHasCommodity("gamma_core", 3) && super.canBeAddedOrRemovedNow(ship, marketOrNull, mode);
+        }
+    }
+
+    public String getCanNotBeInstalledNowReason(ShipAPI ship, MarketAPI marketOrNull, CampaignUIAPI.CoreUITradeMode mode) {
+        return !dalton_utils.playerHasCommodity("gamma_core", 3) ? "You do not have the required ammount of AI cores" : super.getCanNotBeInstalledNowReason(ship, marketOrNull, mode);
+    }
+
+
+    // 
 
     @Override
     public void addPostDescriptionSection(TooltipMakerAPI tooltip, ShipAPI.HullSize hullSize, ShipAPI ship, float width,

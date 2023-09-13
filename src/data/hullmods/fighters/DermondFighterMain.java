@@ -10,6 +10,10 @@ import com.fs.starfarer.api.impl.hullmods.DefectiveManufactory;
 import java.util.HashMap;
 import java.util.Map;
 
+/*
+Retardation is prime, we go monkey
+
+ */
 public class DermondFighterMain extends BaseHullMod {
 
 
