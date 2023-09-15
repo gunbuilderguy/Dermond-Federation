@@ -36,13 +36,7 @@ public class DermondTargetingunit extends BaseHullMod {
     static final Set<String> BLOCKED_HULLMODS = new HashSet(8);
 
     // Positive effects
-    static Map<HullSize, Float> RANGE = new HashMap();
-    static {
-        RANGE.put(HullSize.FRIGATE, 10f);
-        RANGE.put(HullSize.DESTROYER, 20f);
-        RANGE.put(HullSize.CRUISER, 30f);
-        RANGE.put(HullSize.CAPITAL_SHIP, 40f);
-    }
+    final float RANGE = 75f;
     final float PD_DMG = 50f;
 
     // Negative effects
@@ -58,10 +52,10 @@ public class DermondTargetingunit extends BaseHullMod {
     public void applyEffectsBeforeShipCreation(HullSize hullSize, MutableShipStatsAPI stats, String id) {
         // Positive
 
-        stats.getBallisticWeaponRangeBonus().modifyPercent(id, (Float) RANGE.get(hullSize));
-        stats.getEnergyWeaponRangeBonus().modifyPercent(id, (Float) RANGE.get(hullSize));
-        stats.getNonBeamPDWeaponRangeBonus().modifyPercent(id, (Float) RANGE.get(hullSize));
-        stats.getBeamPDWeaponRangeBonus().modifyPercent(id, (Float) RANGE.get(hullSize));
+        stats.getBallisticWeaponRangeBonus().modifyPercent(id, (Float) RANGE);
+        stats.getEnergyWeaponRangeBonus().modifyPercent(id, (Float) RANGE);
+        stats.getNonBeamPDWeaponRangeBonus().modifyPercent(id, (Float) RANGE);
+        stats.getBeamPDWeaponRangeBonus().modifyPercent(id, (Float) RANGE);
 
         stats.getDynamic().getMod(Stats.PD_IGNORES_FLARES).modifyFlat(id, 1f);
         stats.getDynamic().getMod(Stats.PD_BEST_TARGET_LEADING).modifyFlat(id, 1f);
@@ -72,6 +66,16 @@ public class DermondTargetingunit extends BaseHullMod {
         stats.getSuppliesPerMonth().modifyPercent(id, (float) SUPPLY_USE_MULT.get(hullSize));
         stats.getCRLossPerSecondPercent().modifyPercent(id, CR_DEGRADATION);
         stats.getWeaponMalfunctionChance().modifyPercent(id, 2f);
+    }
+
+    @Override
+    public Color getNameColor() {
+        return Color.green;
+    }
+
+    @Override
+    public Color getBorderColor() {
+        return Color.red;
     }
 
     public void applyEffectsAfterShipCreation(ShipAPI ship, String id) {
@@ -124,11 +128,12 @@ public class DermondTargetingunit extends BaseHullMod {
         if (isForModSpec || ship == null)
             return;
         float HEIGHT = 64f;
-        float PAD = 5f;
+;        float PAD = 5f;
         Color YELLOW = new Color(241, 199, 0);
         String HullmodIncompatible = "graphics/icons/tooltips/der_hullmod_incompatible.png";
         String CSTitle = "'Post-Collapse Dermondian Engieneering'";
         String DermondCrest = "graphics/factions/crest_Dermond_Federation_messedup.png";
+        String gamma_core = "graphics/icons/cargo/ai_core_gamma.png";
         float pad = 2f;
         Color[] arr = { Misc.getPositiveHighlightColor(), Misc.getHighlightColor() };
         Color[] add = { Misc.getNegativeHighlightColor(), Misc.getHighlightColor() };
@@ -146,7 +151,7 @@ public class DermondTargetingunit extends BaseHullMod {
         // Boobies at nheantai.net :)
 
         // Positive bonuses
-        tooltip.addPara("%s " + getString("range_increase"), pad, arr, Math.round(RANGE.get(hullSize)) + "%");
+        tooltip.addPara("%s " + getString("range_increase"), pad, arr, Math.round(RANGE) + "%");
         tooltip.addPara("%s " + getString("increase_pddmg"), pad, arr, Math.round(PD_DMG) + "%");
 
         // Negative ones
@@ -182,6 +187,13 @@ public class DermondTargetingunit extends BaseHullMod {
 
         if (isForModSpec || ship == null)
             return;
+
+        tooltip.addSectionHeading("Hullmod Cost", Alignment.MID, pad);
+        TooltipMakerAPI cost = tooltip.beginImageWithText(gamma_core, 25);
+        cost.addPara("- 3 Gamma Level AI Cores is needed to install this hullmod", Misc.getHighlightColor(), pad);
+        tooltip.addImageWithText(pad);
+        tooltip.addPara("Attention, after installing said hullmod, all commodities needed to install will disapear. " +
+                "This does not count Crew and Marines, as they run under different equation", Misc.getNegativeHighlightColor(), pad);
     }
 
     // Bork

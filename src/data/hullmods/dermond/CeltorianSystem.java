@@ -26,8 +26,8 @@ public class CeltorianSystem extends BaseHullMod {
 
     
     //positive
-    public static final float phase_cooldown = 0.9f;
-    public static final float phase_cost_per_second = 0.95f;
+    public static final float phase_cooldown = 0.85f;
+    public static final float phase_cost_per_second = 0.75f;
     //Untill I find a way how to increase speed in phase I will just leave you here
     //public static final float phase_move = 1.2f;
 
@@ -112,6 +112,7 @@ public class CeltorianSystem extends BaseHullMod {
         Color YELLOW = new Color(241, 199, 0);			
         String CSTitle = "'Post-Collapse Dermondian Engieneering'";
         String DermondCrest = "graphics/factions/crest_Dermond_Federation_messedup.png";
+        String supplies = "graphics/icons/cargo/supplies.png";
 		float pad = 2f;
 		Color[] arr ={Misc.getPositiveHighlightColor(),Misc.getHighlightColor()};
         Color[] add ={Misc.getNegativeHighlightColor(),Misc.getHighlightColor()};		
@@ -135,6 +136,13 @@ public class CeltorianSystem extends BaseHullMod {
         //Negative ones
         tooltip.addPara("%s " + getString("degradecr_fast"), pad, add, Math.round(CRDEGRADATION.get(hullSize)) + "%");
         tooltip.addPara("%s " + getString("phase_cost_in"), pad, add, Math.round((phase_cost_in - 1f) * 100) + "%");
+
+        tooltip.addSectionHeading("Hullmod Cost", Alignment.MID, pad);
+        TooltipMakerAPI cost = tooltip.beginImageWithText(supplies, 25);
+        cost.addPara("- 200 supplies is needed to install this hullmod", Misc.getHighlightColor(), pad);
+        tooltip.addImageWithText(pad);
+        tooltip.addPara("Attention, after installing said hullmod, all commodities needed to install will disapear. " +
+                "This does not count Crew and Marines, as they run under different equation", Misc.getNegativeHighlightColor(), pad);
     }
 
 }

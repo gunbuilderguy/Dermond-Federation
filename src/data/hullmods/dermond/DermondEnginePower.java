@@ -77,6 +77,7 @@ public class DermondEnginePower extends BaseHullMod {
         stats.getMaxSpeed().modifyPercent(id, (float) SPEED.get(hullSize));
         stats.getTurnAcceleration().modifyPercent(id, (float) MANEUVARABILITY.get(hullSize));
         stats.getSuppliesPerMonth().modifyMult(id, SUPPLY_USE_MULT);
+        stats.getTimeMult().modifyMult(id, 1.15f);
     }
 
     public void advanceInCampaign(FleetMemberAPI member, float amount) {
@@ -93,6 +94,8 @@ public class DermondEnginePower extends BaseHullMod {
             }
         }
     }
+
+
 
 
     public boolean canBeAddedOrRemovedNow(ShipAPI ship, MarketAPI marketOrNull, CampaignUIAPI.CoreUITradeMode mode) {
@@ -118,6 +121,7 @@ public class DermondEnginePower extends BaseHullMod {
 		String HullmodIncompatible = "graphics/icons/tooltips/der_hullmod_incompatible.png";				
         String CSTitle = "'Post-Collapse Dermondian Engieneering'";
         String DermondCrest = "graphics/factions/crest_Dermond_Federation_messedup.png";
+        String fuel = "graphics/icons/cargo/fuel.png";
 		float pad = 2f;
 		Color[] arr ={Misc.getPositiveHighlightColor(),Misc.getHighlightColor()};
         Color[] add ={Misc.getNegativeHighlightColor(),Misc.getHighlightColor()};		
@@ -147,8 +151,8 @@ public class DermondEnginePower extends BaseHullMod {
 
 
         
-    tooltip.addSectionHeading("Incompatibilities", Alignment.MID, pad);
-    TooltipMakerAPI blocked = tooltip.beginImageWithText(HullmodIncompatible, 40);
+        tooltip.addSectionHeading("Incompatibilities", Alignment.MID, pad);
+        TooltipMakerAPI blocked = tooltip.beginImageWithText(HullmodIncompatible, 40);
         blocked.addPara(getString("fuckyou"), pad);
             
         blocked.addPara("- Insulated Engine Assembly", Misc.getNegativeHighlightColor(), pad);
@@ -162,6 +166,13 @@ public class DermondEnginePower extends BaseHullMod {
             blocked.addPara(" - Inertia Redirection Systems", Misc.getNegativeHighlightColor(), pad);
         }
         tooltip.addImageWithText(pad);
+
+        tooltip.addSectionHeading("Hullmod Cost", Alignment.MID, pad);
+        TooltipMakerAPI cost = tooltip.beginImageWithText(fuel, 25);
+        cost.addPara("- 250 fuel is needed to install this hullmod", Misc.getHighlightColor(), pad);
+        tooltip.addImageWithText(pad);
+        tooltip.addPara("Attention, after installing said hullmod, all commodities needed to install will disapear. " +
+                "This does not count Crew and Marines, as they run under different equation", Misc.getNegativeHighlightColor(), pad);
     }
 
     @Override

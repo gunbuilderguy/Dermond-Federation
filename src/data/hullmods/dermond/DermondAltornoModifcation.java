@@ -244,6 +244,7 @@ No I wont chane the damage takenmult way, it will decrease damage of all
         String HullmodIncompatible = "graphics/icons/tooltips/der_hullmod_incompatible.png";		
         String CSTitle = "'Post-Collapse Dermondian Engieneering'";
         String OrdoCrest = "graphics/factions/crest_Dermond_Federation_messedup.png";
+        String supplies = "graphics/icons/cargo/supplies.png";
 		float pad = 2f;
 		Color[] arr ={Misc.getPositiveHighlightColor(),Misc.getHighlightColor()};
         Color[] add ={Misc.getNegativeHighlightColor(),Misc.getHighlightColor()};
@@ -283,6 +284,13 @@ No I wont chane the damage takenmult way, it will decrease damage of all
             blocked.addPara("- This hullmod blocks too much hullmods so I am lazy to write them all down.", Misc.getNegativeHighlightColor(), pad);
             
         tooltip.addImageWithText(pad);
+
+        tooltip.addSectionHeading("Hullmod Cost", Alignment.MID, pad);
+        TooltipMakerAPI cost = tooltip.beginImageWithText(supplies, 25);
+        cost.addPara("- 500 supplies is needed to install this hullmod", Misc.getHighlightColor(), pad);
+        tooltip.addImageWithText(pad);
+        tooltip.addPara("Attention, after installing said hullmod, all commodities needed to install will disapear. " +
+                "This does not count Crew and Marines, as they run under different equation", Misc.getNegativeHighlightColor(), pad);
     }
 
     //Bork

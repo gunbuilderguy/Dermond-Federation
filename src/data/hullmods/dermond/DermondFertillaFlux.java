@@ -131,6 +131,7 @@ public class DermondFertillaFlux extends BaseHullMod {
 		String HullmodIncompatible = "graphics/icons/tooltips/der_hullmod_incompatible.png"; //what hullmod to show				
         String CSTitle = "'Dermondian Engieneering'"; //Title
         String DermondCrest = "graphics/factions/crest_Dermond_Federation.png"; //What thing to display near the qoute
+        String supplies = "graphics/icons/cargo/supplies.png";
 		float pad = 2f;
 		Color[] arr ={Misc.getPositiveHighlightColor(),Misc.getHighlightColor()}; //Green color
         Color[] add ={Misc.getNegativeHighlightColor(),Misc.getHighlightColor()}; //Red color
@@ -173,6 +174,14 @@ public class DermondFertillaFlux extends BaseHullMod {
             blocked.addPara(" - High capacity flux", Misc.getNegativeHighlightColor(), pad);
         }
         tooltip.addImageWithText(pad);
+
+        tooltip.addSectionHeading("Hullmod Cost", Alignment.MID, pad);
+        TooltipMakerAPI cost = tooltip.beginImageWithText(supplies, 25);
+        cost.addPara("- 200 supplies is needed to install this hullmod", Misc.getHighlightColor(), pad);
+        tooltip.addImageWithText(pad);
+        tooltip.addPara("Attention, after installing said hullmod, all commodities needed to install will disapear. " +
+                "This does not count Crew and Marines, as they run under different equation", Misc.getNegativeHighlightColor(), pad);
+
     }
 
     @Override
