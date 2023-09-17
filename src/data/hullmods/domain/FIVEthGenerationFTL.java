@@ -63,7 +63,7 @@ public class FIVEthGenerationFTL extends BaseHullMod {
 
 
 
-
+/*
     @Override
     public void advanceInCombat(ShipAPI ship, float amount) {
 		if (Global.getCombatEngine().isPaused()) {
@@ -89,7 +89,7 @@ public class FIVEthGenerationFTL extends BaseHullMod {
             ship.getMutableStats().getTimeMult().modifyPercent("FIVEthGenerationFTL", timeMult);
             Global.getCombatEngine().getTimeMult().unmodify("FIVEthGenerationFTL");
         }
-        /*
+
 
     Look guys look useless code
 
@@ -124,9 +124,9 @@ public class FIVEthGenerationFTL extends BaseHullMod {
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
 
-     */
 
-    }
+
+    }    */
 
 
     @Override

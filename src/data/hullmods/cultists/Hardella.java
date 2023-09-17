@@ -34,7 +34,7 @@ public class Hardella extends BaseHullMod {
         PPT_increase.put(HullSize.FRIGATE, 30f);
         PPT_increase.put(HullSize.DESTROYER, 60f);
         PPT_increase.put(HullSize.CRUISER, 150f);
-        PPT_increase.put(HullSize.CAPITAL_SHIP, 2400f);
+        PPT_increase.put(HullSize.CAPITAL_SHIP, 240f);
     }
     public static final float SUPPLY_USE_MULT = 0.8f;
 

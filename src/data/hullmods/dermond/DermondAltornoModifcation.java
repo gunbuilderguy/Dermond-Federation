@@ -141,7 +141,8 @@ No I wont chane the damage takenmult way, it will decrease damage of all
         stats.getArmorDamageTakenMult().modifyMult(id, fuckdamage);
         stats.getEnergyDamageTakenMult().modifyMult(id, fuckdamage);
         stats.getHighExplosiveDamageTakenMult().modifyMult(id, fuckdamage);
-        stats.getEnergyDamageTakenMult().modifyMult(id, fuckdamage);
+        stats.getKineticDamageTakenMult().modifyMult(id, fuckdamage);
+        stats.getFragmentationDamageTakenMult().modifyMult(id, fuckdamage);
 
 
         //Negative

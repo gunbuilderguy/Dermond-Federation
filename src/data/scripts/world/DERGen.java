@@ -113,6 +113,8 @@ public class DERGen implements SectorGeneratorPlugin{
 
         new dermond_Bontora().generate(sector);
         new dermond_Aleri().generate(sector);
+
+        
     }
 }
 
