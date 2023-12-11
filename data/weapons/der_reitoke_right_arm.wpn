@@ -1,0 +1,43 @@
+{
+  "id": "der_reitoke_right_arm",
+  "specClass": "projectile",
+  "projectileSpecId": "der_luje_shot",
+  "type": "BALLISTIC",
+  "size": "SMALL",
+  "turretSprite": "graphics/weapons/mechs/Reitoke/DER_reitoke_right_arm.png",
+  "hardpointSprite": "",
+  "turretOffsets": [
+    81,
+    -4
+  ],
+  "turretAngleOffsets": [
+    0
+  ],
+  "hardpointOffsets": [
+    0,
+    0
+  ],
+  "hardpointAngleOffsets": [
+    0
+  ],
+  "barrelMode": "ALTERNATING",
+  "animationType": "MUZZLE_FLASH",
+  "interruptibleBurst": true,
+  "autocharge": true,
+  "requiresFullCharge": false,
+  "muzzleFlashSpec": {
+    "length": 10,
+    "spread": 5,
+    "particleSizeMin": 2,
+    "particleSizeRange": 5,
+    "particleDuration": 0.5,
+    "particleCount": 3,
+    "particleColor": [
+      255,
+      255,
+      255,
+      255
+    ]
+  },
+  "fireSoundTwo": "der_MACHINE_GUN_LIGHT"
+}
