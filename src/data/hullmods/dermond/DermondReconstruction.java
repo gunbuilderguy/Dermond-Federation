@@ -29,13 +29,13 @@ public class DermondReconstruction extends BaseHullMod {
 
 
     //Positive bonuses
-    public static final float ARMOR_BONUS = 1.25f; //Armor 25% bonus
+    public static final float ARMOR_BONUS = 1.20f; //Armor 20% bonus
     public static final float HIGHEXPLOSIVERE_DAMAGE_REDUCTION = 0.9f; //HE reduction by 10%
     public static final float SHIELD_EFFICENCY = 0.85f; // Shield effcency increased by15%
 
     //Negative bonuses
-    public static final float HULL_BONUS = 0.95f; //Hull decreased by 5%
-    public static final float ENERGY_DAMAGE_INCREASE = 1.05f; // Energy damage taken increased by 5%
+    public static final float HULL_BONUS = 0.75f; //Hull decreased by 25%
+    public static final float ENERGY_DAMAGE_INCREASE = 1.25f; // Energy damage taken increased by 5%
     public static final float SUPPLY_USE_MULT = 1.5f; //Maintanance increased by 50%
 
     //Blocked hullmods, thx s0ren for figuring out how to do it
@@ -64,6 +64,24 @@ public class DermondReconstruction extends BaseHullMod {
         stats.getHullBonus().modifyMult(id, HULL_BONUS);
         stats.getEnergyDamageTakenMult().modifyMult(id, ENERGY_DAMAGE_INCREASE);
         stats.getSuppliesPerMonth().modifyMult(id, SUPPLY_USE_MULT);
+
+        /*
+        if(Global.getSettings().getWeaponSpec(weapon).hasTag("Dermond")) {
+
+            stats.getDynamic().getMod(Stats.LARGE_BALLISTIC_MOD).modifyFlat(id, 5);
+            stats.getDynamic().getMod(Stats.LARGE_ENERGY_MOD).modifyFlat(id, 5);
+            stats.getDynamic().getMod(Stats.LARGE_MISSILE_MOD).modifyFlat(id, 5);
+
+            stats.getDynamic().getMod(Stats.MEDIUM_BALLISTIC_MOD).modifyFlat(id, 5);
+            stats.getDynamic().getMod(Stats.MEDIUM_ENERGY_MOD).modifyFlat(id, 5);
+            stats.getDynamic().getMod(Stats.MEDIUM_MISSILE_MOD).modifyFlat(id, 5);
+
+            stats.getDynamic().getMod(Stats.SMALL_BALLISTIC_MOD).modifyFlat(id, 5);
+            stats.getDynamic().getMod(Stats.SMALL_ENERGY_MOD).modifyFlat(id, 5);
+            stats.getDynamic().getMod(Stats.SMALL_MISSILE_MOD).modifyFlat(id, 5);
+
+        }*/
+
     }
 
 

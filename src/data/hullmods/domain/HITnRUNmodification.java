@@ -7,6 +7,7 @@ import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.ui.Alignment;
 import com.fs.starfarer.api.ui.TooltipMakerAPI;
 import com.fs.starfarer.api.util.Misc;
+import com.fs.starfarer.combat.entities.Ship;
 import com.jcraft.jorbis.Block;
 import com.fs.starfarer.api.impl.campaign.ids.Stats;
 import com.fs.starfarer.api.impl.campaign.skills.EnergyWeaponMastery;
@@ -27,9 +28,9 @@ public class HITnRUNmodification extends BaseHullMod {
 
 
     //I am in paaain :>
-    public static final float speed = 1.2f;
-    public static final float flox = 1.35f;
-    public static final float shieldeff = 0.6f;
+    public static final float speed = 1.15f;
+    public static final float flox = 1.2f;
+    public static final float shieldeff = 0.75f;
 
     public static final float shieldarc = 0.25f;
     public static final float hp = 0.75f;
@@ -45,17 +46,45 @@ public class HITnRUNmodification extends BaseHullMod {
 */
 
     //Actual stats
-    public void applyEffectsBeforeShipCreation(HullSize hullSize, MutableShipStatsAPI stats, String id) {
-        stats.getFluxCapacity().modifyMult(id, flox);
-        stats.getFluxDissipation().modifyMult(id, flox);
-        stats.getMaxSpeed().modifyMult(id, speed);
-        stats.getTurnAcceleration().modifyMult(id, speed);
-        stats.getShieldDamageTakenMult().modifyMult(id, shieldeff);
+    public void applyEffectsBeforeShipCreation(HullSize hullSize, MutableShipStatsAPI stats, String id, ShipAPI ship) {
+        Global.getLogger(this.getClass()).info("EFFECT RUNS");
+        if (stats.getVariant().hasHullMod("DermondConstruction")) {
+            stats.getFluxCapacity().modifyMult(id, flox - 0.1f);
+            stats.getFluxDissipation().modifyMult(id, flox - 0.1f);
+            stats.getMaxSpeed().modifyMult(id, speed- 0.05f);
+            stats.getTurnAcceleration().modifyMult(id, speed - 0.05f);
+            stats.getShieldDamageTakenMult().modifyMult(id, shieldeff+ 0.1f);
 
-        stats.getShieldArcBonus().modifyMult(id, shieldarc);
-        stats.getHullBonus().modifyMult(id, hp);
-        stats.getArmorBonus().modifyMult(id, hp);
-        stats.getPeakCRDuration().modifyMult(id, ppt);
+            stats.getHullBonus().modifyMult(id, hp + 0.1f);
+            stats.getArmorBonus().modifyMult(id, hp + 0.1f);
+            Global.getLogger(this.getClass()).info("CONSTRUCTION");
+
+        } if (stats.getVariant().hasHullMod("DermondReconstruction")) {
+            stats.getFluxCapacity().modifyMult(id, flox - 0.15f);
+            stats.getFluxDissipation().modifyMult(id, flox - 0.15f);
+            stats.getMaxSpeed().modifyMult(id, speed- 0.1f);
+            stats.getTurnAcceleration().modifyMult(id, speed - 0.1f);
+            stats.getShieldDamageTakenMult().modifyMult(id, shieldeff+ 0.15f);
+
+            stats.getHullBonus().modifyMult(id, hp + 0.05f);
+            stats.getArmorBonus().modifyMult(id, hp + 0.05f);
+            stats.getPeakCRDuration().modifyMult(id, ppt + 0.65f);
+            Global.getLogger(this.getClass()).info("RECONSTRUCTION RUNS");
+
+        } else {
+            stats.getFluxCapacity().modifyMult(id, flox);
+            stats.getFluxDissipation().modifyMult(id, flox);
+            stats.getMaxSpeed().modifyMult(id, speed);
+            stats.getTurnAcceleration().modifyMult(id, speed);
+            stats.getShieldDamageTakenMult().modifyMult(id, shieldeff);
+
+            stats.getShieldArcBonus().modifyMult(id, shieldarc);
+            stats.getHullBonus().modifyMult(id, hp);
+            stats.getArmorBonus().modifyMult(id, hp);
+            stats.getPeakCRDuration().modifyMult(id, ppt);
+            Global.getLogger(this.getClass()).info("ELSE RUNS");
+        }
+
     }
 
     
@@ -100,7 +129,12 @@ public class HITnRUNmodification extends BaseHullMod {
         tooltip.addPara("%s " + getString("shieldarc_less"), pad, add, Math.round((shieldarc - 1f) * -100f) + "%");   
         tooltip.addPara("%s " + getString("hull_decrease"), pad, add, Math.round((hp - 1f) * -100f) + "%");   
         tooltip.addPara("%s " + getString("armour_decrease"), pad, add, Math.round((hp - 1f) * -100f) + "%");   
-        tooltip.addPara("%s " + getString("ppt_less"), pad, add, Math.round((ppt - 1f) * -100f) + "%");  
+        tooltip.addPara("%s " + getString("ppt_less"), pad, add, Math.round((ppt - 1f) * -100f) + "%");
+
+        tooltip.addSectionHeading("Special", Alignment.MID, pad);
+            tooltip.addPara(getString("exceptions"), pad);
+            tooltip.addPara(" - Dermond Constuction", pad);
+            tooltip.addPara("- Dermond Reconstruction", pad);
     }
 
     //Bork

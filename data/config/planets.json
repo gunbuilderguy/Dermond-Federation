@@ -1,0 +1,20 @@
+{
+    "der_desert_tundra":{
+        "name":"Desert Tundra",	
+        "tilt":-27, # left-right (>0 tilts to the left)
+        "pitch":2, # towards-away from the viewer (>0 pitches towards)
+        "rotation":-1, # degrees/second
+        "planetColor":[255,255,255,255],
+        "atmosphereThickness":0, # as fraction of radius.  Set to 0 for no atmosphere
+        "atmosphereThicknessMin":12, #  minimum thickness in pixels
+        "atmosphereColor":[142, 210, 234, 255],
+        "texture":"graphics/planets/desert_tundra.png",
+        "icon":"graphics/warroom/icon_planet.png",
+        "iconColor":[90, 183, 220, 255],
+        "isStar":false,
+        "lightPosition":[-2,-8,10], # in planet radii.  Not used for stars.  z > 0 is above the playing field.
+        #"glowTexture":"graphics/planets/barren_bombarded_lights.png", # omit for no glow layer
+        #"glowColor":[255,255,255,255],
+        #"useReverseLightForGlow":true,
+    },
+}

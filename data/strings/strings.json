@@ -12,6 +12,8 @@
 
 		"fuckyou":"This ship cannot install the following hullmods:",
 
+		"exceptions": "This hullmod has some exceptions for the next hullmods, he effects may varry:",
+
 
 		#These are negative buffs
 		"maintanence_increase":"increase in ships maintanence.",
@@ -130,4 +132,6 @@
 		"construction_desc": "'You know what they gave me when I sent them the first blueprint? Crack. I love our Leader.'\n",
 		"Ornium": " - Arthur Ornium, the creater of Ornium Shipyards Style Construction\n",
     },
+
+	
 }

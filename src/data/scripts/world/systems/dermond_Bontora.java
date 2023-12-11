@@ -15,6 +15,29 @@ import com.fs.starfarer.api.impl.campaign.terrain.HyperspaceTerrainPlugin;
 import com.fs.starfarer.api.util.Misc;
 import static com.fs.starfarer.api.impl.campaign.procgen.StarSystemGenerator.addOrbitingEntities;
 
+/*
+
+All about planets is in data/campaign/econ not here, so
+
+⠄⣴⣶⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣤⣀
+⠄⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
+⠄⣾⣿⠿⠛⣉⣁⣤⣤⣤⣤⣬⣽⣿⣿⣿⣿⣿⣿⣿⣿⣿⡟⠛⠛⠛⠻⠿⠿⣿
+⣾⣿⣿⣶⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣶⣶⣶⣤⡈
+⣿⣿⣿⣿⠛⢋⠉⠩⠉⢩⣙⠛⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠿⠿⠿⠿⣿⣿⣿
+⣿⣿⣿⣿⣿⣿⠿⠶⢶⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣧⣶⣏⣁⡁⣐⣆⠈⢻
+⣿⣿⣿⣿⣿⣿⣿⣿⡿⢋⣥⣤⡌⢻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣭⣭⣭⣿⣾⣿
+⣿⣿⣿⣿⣿⣿⣿⠿⢀⣿⣿⡿⢁⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
+⢿⣿⣿⣿⣿⣿⢋⣴⣿⣿⠏⢡⣾⣿⣿⣿⣿⣿⣿⣿⡟⣿⣿⣿⣿⣿⣿⣿⣿⣿
+⡈⠙⠛⠛⠻⢃⣼⣿⣿⠏⣐⠻⠿⠿⠿⠿⣿⣿⣿⣿⣿⡜⢿⣿⣿⣿⣿⣿⣿⣿
+⣿⣿⣿⡿⢳⣾⣿⣿⠋⣼⣿⣷⣄⠄⠄⠄⠄⠈⠄⢀⣾⣿⣆⠹⣿⣿⡿⠛⠋⠁
+⣿⣿⡟⣀⣿⣿⣿⠛⣠⣄⢹⣿⣿⣧⣤⣄⣀⣤⣶⣾⣿⡿⣿⡆⢻⡟⠁⢀⡀⠄
+⣿⣿⣷⣿⣿⣿⢣⣾⣿⣿⠄⠉⠄⠄⠈⠉⠉⠃⠉⠉⠛⠃⠉⠈⣾⣷⠾⠟⠁⢠
+⠈⠛⠿⣿⣿⣿⣿⣿⣿⠃⣶⣆⢰⣶⣶⣶⣶⠶⠒⢀⣀⣄⣠⣴⡟⠁⠄⠄⣰⣿
+⠄⠄⠄⠄⠈⠻⠿⠿⠏⣾⡿⠃⠈⠉⠉⠛⠄⠘⠛⣻⣿⣿⣿⣿⣿⡇⣠⣾⣿⣿
+
+
+ */
+
 public class dermond_Bontora {
 
     public void generate(SectorAPI sector) {
@@ -51,6 +74,8 @@ public class dermond_Bontora {
 
         PlanetAPI belnarha2 = system.addPlanet("der_bandore", belnarha_star, "Bandore", "terran", 355, 170, 6000, 280);
         belnarha2.setCustomDescriptionId("der_bandore");
+
+        belnarha2.setInteractionImage("illustrations", "bandore_planet_greet");
 
         PlanetAPI belnarha3 = system.addPlanet("der_blockno", belnarha2, "Blockno", "tundra", 75, 50, 600, 29);
         belnarha3.setCustomDescriptionId("der_blockno");

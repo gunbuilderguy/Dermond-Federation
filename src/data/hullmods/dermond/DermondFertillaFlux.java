@@ -6,7 +6,12 @@ package data.hullmods.dermond;
 import java.util.HashMap;
 import java.util.Map;
 import java.awt.Color;
+
+import com.fs.starfarer.api.GameState;
 import com.fs.starfarer.api.Global;
+import com.fs.starfarer.api.campaign.CampaignUIAPI;
+import com.fs.starfarer.api.campaign.econ.MarketAPI;
+import com.fs.starfarer.api.fleet.FleetMemberAPI;
 import com.fs.starfarer.api.ui.Alignment;
 import com.fs.starfarer.api.ui.TooltipMakerAPI;
 import com.fs.starfarer.api.util.Misc;
@@ -22,6 +27,7 @@ import com.fs.starfarer.api.combat.MutableShipStatsAPI;
 import com.fs.starfarer.api.combat.ShipAPI;
 import com.fs.starfarer.api.combat.ShipAPI.HullSize;
 import com.fs.starfarer.api.combat.listeners.HullDamageAboutToBeTakenListener;
+import data.scripts.utils.dalton_utils;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -42,20 +48,14 @@ public class DermondFertillaFlux extends BaseHullMod {
 
 	private static Map<HullSize, Float> flux_dis = new HashMap();
     static {
-        flux_dis.put(HullSize.FRIGATE, 50f);
-        flux_dis.put(HullSize.DESTROYER, 40f);
-        flux_dis.put(HullSize.CRUISER, 30f);
-        flux_dis.put(HullSize.CAPITAL_SHIP, 25f);
+        flux_dis.put(HullSize.FRIGATE, 40f);
+        flux_dis.put(HullSize.DESTROYER, 30f);
+        flux_dis.put(HullSize.CRUISER, 20f);
+        flux_dis.put(HullSize.CAPITAL_SHIP, 10f);
     }
 
     //Negative
-    private static Map<HullSize, Float> SUPPLY_USE_MULT = new HashMap();
-    static {
-        SUPPLY_USE_MULT.put(HullSize.FRIGATE, 30f);
-        SUPPLY_USE_MULT.put(HullSize.DESTROYER, 50f);
-        SUPPLY_USE_MULT.put(HullSize.CRUISER, 75f);
-        SUPPLY_USE_MULT.put(HullSize.CAPITAL_SHIP, 150f);
-    }
+    public static int SUPPLY_USE_MULT = 50;
 
     public static final float CR_DEGRADATION = 1.6f;
 
@@ -81,8 +81,37 @@ public class DermondFertillaFlux extends BaseHullMod {
         stats.getTimeMult().modifyPercent(id, 20f); //Yes this effect will not be written in the description. And I don't care!
         stats.getFluxCapacity().modifyPercent(id, (float) max_flux.get(hullSize));
         stats.getFluxDissipation().modifyPercent(id, (float) flux_dis.get(hullSize));
-        stats.getSuppliesPerMonth().modifyPercent(id, (float) SUPPLY_USE_MULT.get(hullSize));
+        stats.getSuppliesPerMonth().modifyPercent(id, SUPPLY_USE_MULT);
         stats.getCRLossPerSecondPercent().modifyMult(id, CR_DEGRADATION);
+    }
+
+
+    public void advanceInCampaign(FleetMemberAPI member, float amount) {
+        if(Global.getCurrentState() != GameState.TITLE) {
+            Map<String, Object> data = Global.getSector().getPersistentData();
+            if (!data.containsKey("aifertilla_check_" + member.getId())) {
+                data.put("aifertilla_check_" + member.getId(), "_");
+                if (member.getFleetData() != null && member.getFleetData().getFleet() != null && member.getFleetData().getFleet().equals(Global.getSector().getPlayerFleet())) {
+                    dalton_utils.removePlayerCommodity("supplies", 200);
+                }
+            }
+            if (!member.getVariant().hasHullMod("der_holder")) {
+                member.getVariant().getHullMods().add("der_holder");
+            }
+        }
+    }
+
+
+    public boolean canBeAddedOrRemovedNow(ShipAPI ship, MarketAPI marketOrNull, CampaignUIAPI.CoreUITradeMode mode) {
+        if(ship.getVariant().hasHullMod("DermondFertillaFlux")){
+            return true;
+        }else{
+            return dalton_utils.playerHasCommodity("supplies", 200) && super.canBeAddedOrRemovedNow(ship, marketOrNull, mode);
+        }
+    }
+
+    public String getCanNotBeInstalledNowReason(ShipAPI ship, MarketAPI marketOrNull, CampaignUIAPI.CoreUITradeMode mode) {
+        return !dalton_utils.playerHasCommodity("supplies", 200) ? "You do not have the required amount of supplies" : super.getCanNotBeInstalledNowReason(ship, marketOrNull, mode);
     }
 
     
@@ -96,6 +125,7 @@ public class DermondFertillaFlux extends BaseHullMod {
 		String HullmodIncompatible = "graphics/icons/tooltips/der_hullmod_incompatible.png"; //what hullmod to show				
         String CSTitle = "'Dermondian Engieneering'"; //Title
         String DermondCrest = "graphics/factions/crest_Dermond_Federation.png"; //What thing to display near the qoute
+        String supplies = "graphics/icons/cargo/supplies.png";
 		float pad = 2f;
 		Color[] arr ={Misc.getPositiveHighlightColor(),Misc.getHighlightColor()}; //Green color
         Color[] add ={Misc.getNegativeHighlightColor(),Misc.getHighlightColor()}; //Red color
@@ -120,7 +150,7 @@ public class DermondFertillaFlux extends BaseHullMod {
 
 
         //Negative ones
-        tooltip.addPara("%s " + getString("maintanence_increase"), pad, add, Math.round(SUPPLY_USE_MULT.get(hullSize)) + "%");
+        tooltip.addPara("%s " + getString("maintanence_increase"), pad, add, SUPPLY_USE_MULT + "%");
         tooltip.addPara("%s " + getString("degradecr_fast"), pad, add, Math.round((CR_DEGRADATION - 1f) * 100f) + "%");
         
 
@@ -138,6 +168,14 @@ public class DermondFertillaFlux extends BaseHullMod {
             blocked.addPara(" - High capacity flux", Misc.getNegativeHighlightColor(), pad);
         }
         tooltip.addImageWithText(pad);
+
+        tooltip.addSectionHeading("Hullmod Cost", Alignment.MID, pad);
+        TooltipMakerAPI cost = tooltip.beginImageWithText(supplies, 25);
+        cost.addPara("- 200 supplies is needed to install this hullmod", Misc.getHighlightColor(), pad);
+        tooltip.addImageWithText(pad);
+        tooltip.addPara("Attention, after installing said hullmod, all commodities needed to install will disapear. " +
+                "This does not count Crew and Marines, as they run under different equation", Misc.getNegativeHighlightColor(), pad);
+
     }
 
     @Override

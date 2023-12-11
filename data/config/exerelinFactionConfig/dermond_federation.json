@@ -27,7 +27,7 @@
 	"freeMarket":false,
 	"specialForcesMaxFleets":5,
 	"specialForcesPointMult":3,
-	"specialForcesSizeMult":2.25,
+	"specialForcesSizeMult":4,
     "tariffMult":0.1,
     "useConfigRelationshipsInNonRandomSector": true, #i am lazy to go and do this in the gen file so woe
 
@@ -35,20 +35,35 @@
     "marketSpawnWeight":0.75,
 
     "startRelationships":{ 
+        
+    
+    
+    
+    
         #vanilla factions
+        
+        
+        
+        
         "independent": 0.1,                 #Hi I would like to steal your people 
         "player": -0.2,                     #Fuck the player, me and my homies hate player.
         "pirates": -1,                      #God I hate Pirates, except for based from Arthur Pirates but Epicer!
         "hegemony":-0.8,                    #Fuck the XIV!
         "luddic_church":-0.3,               #Hey... We are technocratic, but we hate Tri tachyon more than you, oh and also we use AI cores
-        "luddic_path":0.25,                  #Due to some reasons we are friendly???? WTF????
+        "luddic_path":0.25,                 #Due to some reasons we are friendly???? WTF????
         "persean":-0.7,                     #Kazeron should be sent into the Gulag, and also I hope people still remember that Chimotoztech is not the only one with pritstine nanoforge.
         "tritachyon":-1.0,                  #Fuck the (bad)AI! Fuck the (bad)Megacorporations!
         "sindrian_diktat":-0.8,             #Fuck the Supereme Executer!
         "remnant": -1.0,                    #My remnant wife... I am sorry that I have to kill you...
         "lions_guard":-1.0,                 #serving a homeless guy smh
 
+        
+        
+        
         #modded factions
+
+
+
         "armaarmatura": 0.3,
         #They have fallen from their greatness. We MUST help them.
 
@@ -59,10 +74,10 @@
 
         "sevencorp": 0.1,
         #One of the first Allies of Dermond, however the relations have gone under the Bus after the Epta choosed to increase their relations with Tri Tachyon
-        #Currently the relations are still good, however the relations are still good, and both sides try to keep it that way.
+        #Currently the relations are still good, however the relations went under the buss harder after 2nd AI war, and both sides try to keep the relations aas they are now
 
 
-        "orks": 0.8,
+        "orks": 0.4,
         #Bulltach Coalition is one of the most closest allies of Dermond,
         #being before 1st AI war a Tri Tachyon 'Lab Rat' Dermond has only given support to any, or all
         #operation preformed by Bultach. Currently releations have began to sorrow after the
@@ -73,7 +88,7 @@
         #SaclarTech were in isolation for a very long time, and since then were only recently opened to The Sector
         #they were trying to build up diplomatic relations with Dermond, although not with a huge success.
         #The biggest problem was the infamous 'Gate Experiment' and many speculate that Dermond secretly
-        #supported the fact that the experiment failed, and even rewarded the the incident creator.
+        #supported the fact that the experiment failed, and even rewarded the people behind incident creator.
 
 
         "sindrian_fuel": -0.3,
@@ -86,9 +101,9 @@
         #Dermond has a very long history with Diable Avionics. Let's start with the obvious,
         #yes all Dermond engines are produced by Diable. The point was that they couldn't create something as good as Diable engines
         #and in the end a deal was made that Diable Avionics will get a huge funding initiative around 25 billion credits,
-        #and the Dermond will receive the best Diable engines which they can produce. In the end the relations have begu to sorrow after the 2nd AI war
+        #and the Dermond will receive the best Diable engines which they can produce. In the end the relations have begun to sorrow after the 2nd AI war
         #when Diable engines were not as good as they were supposed to be and some even started to malfunction mid fight, currently
-        #the Federation is concerned with breaking toes with Diable Avionics after [INFORMATION REDACTED FURTHER DATA ACCES DENIED]
+        #the Federation is concerned with breaking toes with Diable Avionics after [INFORMATION REDACTED FURTHER DATA ACCESS IS DENIED]
 
 
         "magellan_protectorate": -0.85,
@@ -97,20 +112,20 @@
 
 
 		"sylphon":0,
-        #Sylphon RnD is not quite well known in Dermond because of that their citizens have
-        #full protection from the state, when normal AI cores have to go after a 'special testing' not a lot of people know what it is,
-        #but there are reports that many AI cores were found on the Black Market.
+        #Sylphin RND, is now widely known in Dermond, but their citizens have State Protection,
+        #Not too many know why they are under State Protection, but everything the historians were able to find was leading to before collapse time
 
 
         "blackrock_driveyards":-0.45,
         #Blackrock Driveyards is one of the most biggest enemy of the current Dermond goverment, because of the 2 planets Blackrock has in their systems
-        #Dermond multiple times suggested Blackrock Administration to allow them to destroy these planets with 'Planet Eridicator',
-        #but blackrock has refused multiiple times that offer.
+        #Dermond multiple times suggested Blackrock Administration to allow them to destroy these planets with 'Planet Eradicators',
+        #but Blackrock has refused multiiple times that offer.
 
 
         "dassault_mikoyan": 0.15,
         #Dassault-Mikoyan Engineering is a good old friend of Dermond having most of their fighters being based of their designs,
-        #but lately most of them were scrapped and Dermond started to produce fighetrs with incredible cost but very good firepower as their main trick.
+        #but lately most of them were scrapped and Dermond started to produce fighetrs with incredible cost but very good firepower as their main trick,
+        #which has begun to sorrow relations between the two.
 
 
         "6eme_bureau": 0.35,
@@ -123,19 +138,27 @@
 
 
         "the_deserter": 0.1,
-        #The deserters however are connected to Dermond very well, because there were multiple reports by 6eme that Demond has been sending relief convoys to them,
-        #and supporting all their acts against 'The Enemy', who that enemy is still unknown.
+        #The Deserters however don't have a very big connection to Dermond, but what is known is that they were supported multiple times by Dermond
+
+
+        "sephira_conclave":-0.3,
+        #While the relations between Dermond and Blade Breaker Deserters is somewhat normal, the relations between Dermond and Sephiria is close to hostile.
+
+
+        "sephira_nightravens":-1,
+        #REDACTED
 
 
         "brighton": 0.2,
-        #Brighton were under Federations eye long before they became a big, and when Brighton appeared with Remnant ships in usage,
-        #Dermond sent multiple relief fleets to support them in any way they were able to. Not a lot of people still know between an underground connection between these 2...
+        #Brighton were under Federations eye long before they became big, and when Brighton appeared with Remnant ships in usage,
+        #Dermond sent multiple relief fleets to support them in any way they were able to. 
+        #Not a lot of people still know about an underground connection between these 2...
 
 
 		"HMI": -0.3,
         #HMI was multiple times decalred by Dermond as inefficent in destroying and/or conatining The Mess,
-        #Dermond was offering them multiple times an offer in which they(The Dermond) would destroy The Mess.
-        #HMI has refused all of them. This has made relations between the 2 very hostile lately.
+        #Dermond has offered them multiple times an offer in which they(The Dermond) would destroy The Mess.
+        #HMI has refused it all of them. This has made relations between the 2 very hostile lately.
 
 
         "mess": -0.8,
@@ -144,7 +167,7 @@
 
 		"interstellarimperium":-1.0,
         #Interstellar Imperium is one of the main enemies of Dermond, as the humanity started with bloodshed
-        #the sae way have started relations between Imperium and Dermond.
+        #the same way have started relations between Imperium and Dermond.
 
 
 		"kadur_remnant":-0.2,
@@ -157,13 +180,13 @@
 
 
         "ORA":-0.25,
-        #ORA was for a long time under watch by Dermond, and Dermond have spotted a lot of lies with them...
-        #However Dermond still keeps themself quite friendly with them.
+        #While the relations between the 2 have gone downhill, the relations are still not too far from friendly.
+        #As one Persean politic said 'When in need, Dermond and ORA will cooperate, and that is a nightmare.'
 
 
 		"shadow_industry":-1,
-        #Shadowyards Reconstruction Authority is a long time enemy of Dermond, and Dermond was trying for a long time trying to destroy their homeworld
-        #This hostility was caused because of alledged Planet Killer Device deployment above Bontore.
+        #Shadowyards Reconstruction Authority is a long time enemy of Dermond, and Dermond was trying for a very long time trying to destroy their homeworld
+        #This hostility was caused because of alledged Planet Killer Device deployment above Bontore, but not a lot of people believe this
 
 
         "ironshell":-1,
@@ -171,42 +194,57 @@
         #However Dermond still needs some sort of ally because of the 'Incoming Storm'
 
 
-        "apex_design":0.2,
-        #Apex Deign collective is supported by Dermond because of their connected history, and as such their relations are quite good.
+        "apex_design":-0.45,
+        #Dermond Federation does not like Apex Design Collective way of thinking, and has deliberetly raided their convoys so that they won't be able to leave their system
+        #This has caused Dermond and Apex citizens engage in racism towards eachother, and Dermond claiming that Apex is preparing to attack everybody one day.
 
 
-        "star_federation":0.05,
-        #Star Federation is a shady ally of Dermond, because of the fact that Dermond supported 'The Rebellion'
+        "star_federation":-0.35,
+        #Star Federation is a shady enemy of Dermond, because of the fact that Dermond supported 'The Rebellion'
 
 
         "uaf":-1.0,
         #United Aurora Federation is a big enemy of Dermond due to multiple reasons which are -
         #1. UAF war crimes commited to trading fleets coming out of Bontora system
         #2. UAF alledged stealing of multiple Planet Killer devices
-        #3. UAF declared war on false claims of slaves being based in Bontora
+        #3. UAF declaration of war on false claims of slaves being based in Bontora
         #4. UAF claims that Dermond has stolen choco lava cakes? -Who the fuck decalres war because of that?
         #5. UAF alledged War Crimes by deploying Nuclear Devices in space. -Response was deployment of Kartellia Nuclear Human Launhcer
         #And 6. UAF claims that Dermond is here to kill everybody. -Hey... this is actually t-
         #[DATA EXPUNGED]
 
+        #Now let's end with jokes... Dermond hates United Aurora Federation for 3 main reasons
+        #First, general disregard for 17th Geneva Convention, in which were outlawed Nuclear Weapons with power over 1 Megaton
+        #Second, general disregard for people of Persia. Thought Dermond hates Perseans due to them being hostile to Dermondians,
+        #Dermond hates U.A.F. more than Perseans in a way.
+        #Third, claiming to be here for a reason that they are not here for. Multiple raids of U.A.F. databases have found out, how they were living
+        #in their own world. A Feminist revolution happend in which almost all men were removed for high posts, and woman became leeches of society
+        #after some time discoveries were made that U.A.F. woman can't live without energy consumption of male energy.
+        #U.A.F. are here not only to destroy something, they are also here to steal people, and kill off those who don't want to serve them.
+        #If their technology was on par with the rest of The Sector, U.A.F. would've already conquered most of The Sector,
+        #and destroyed The Persean Identity.
+
+
+
+
 
         "tahlan_legioinfernalis":-1.0,
-        #As crazy as they may sound, Dermond actually believes that Legio are here just to laugh at us all
-        #and that if they wanted they could just stop on everybody, because of alledged 'no counter balacen' and space and time anamoly usage
-        #which is by Domain law is illegal.
+        #As crazy as it may sound, Dermod believes that Legio is here just to laugh at the entire sector, and conquer it in the name of Domain
+        #Many people claim this to be stupid and unrealistic, but countless raids commenced by Dermond against Legio has proven Dermond being effective against them
 
 
         "SCY":0.1,
-        #The Scy nation is one who Dermond supported as they have arrived into the sector, and even sometime asking for research permission in their system.
+        #Scy Nation is one of the few Science allies of Dermond, by the first glance they are allies, but when you dvelve further... 
+        #Their relations aren't as friendly as they look
 
 
-        "MVS": 0.4,
+        "MVS": 0.7,
         #Machina Void Shipyard is the 2nd Biggest Ally in The Sector for Dermond, and some even call them being their number 1 ally.
 
 
         "gmda": -0.6,
         "gmda_patrol":-0.6,
-        #These guys are either dumb or evil... We are too lazy to research them, but they are robin hoods? What.
+        #These guys are either dumb or evil... We are too lazy to file and investigation into them, but they are robin hoods..? What.
 
 
         "draco":-0.6,
@@ -215,13 +253,15 @@
 
 
         "new_galactic_order":-1,
-        #I told you who not to bring? CORRECT! BLACK NAZIS!\
+        #I told you who not to bring? CORRECT! BLACK NAZIS!
         #In all seriousness Dermond sees NGO as a part of the crazy schizo organisation, in which dumb fucks took control and try to enforce their ideas.
-        #Of course it has failed, and Dermond is calling NGO a shittier version of FPE and Aria, althoguh Aria is a close ally of Dermond, they understand this connection.
+        #Of course it has failed, and Dermond is calling NGO a shittier version of FPE and Aria, 
+        #althoguh Aria is a close ally of Dermond Aria refused to comment on the the Dermond NGO-relations
 
 
-        "xhanempire":-1,
-        #Xhan was for a long time an enemy of Dermond before The Collapse, because their structures were always resulting in Dermond 
+        "xhanempire":-0.7,
+        #Xhan was for a long time an enemy of Dermond before The Collapse, 
+        #Nobody knows why, but the relations between the 2 have started to normalise is the recent cycles.
 
 
         "unitedpamed":0.3,
@@ -229,23 +269,26 @@
 
 
         "vic":-0.2,
-        #Keep and eye on them... We don't know what they can bring to us... Also can you... ask to import some of their genetechs? For reserch of course and in no way to create a catgirl harem for our president. Definetly not for that!
+        #Keep and eye on them... We don't know what they can bring to us... 
+        #Also can you... ask to import some of their genetechs? For reserch of course and in no way to create a catgirl harem for our president. 
+        #Definetly not for that!
 
 
         "yrxp": 0.35,
-        #Recently arrived faction to The Sector which was highly cooperative to Dermond, we collaborate with them on almost all issue resolving 'The Isane Gate'
+        #Recently arrived faction to The Sector Yuri were highly cooperative to Dermond, Dermond has collaborated with them on almost all issue resolving 'The Isane Gate'
         #incident, these guys are our friends, thus try not to worsen our relations with them
 
 
-        "aria":0.1,
+        "aria":0.4,
         #The same with Yuri, but these guys are here for conquest however they somehow know what is with 'The Isane Gate' we have to keep good relations with them also.
         #They however want a lot from us... We can give them what they need, but they will have to help us... The issue with 'Isane Gate' can destroy us, that's why we need
-        #their help. We have no clear idea about how they know abou it, but if they reveal the issue with 'Isane' we will have great consequences.
+        #their help. We have no clear idea about how they know abou it, but if they reveal the issue with 'Isane' we will have great consequences with the rest of the sector.
+
 
         "ryaz":0.65,
-        #Our second closest ally nowadays. Kindgom of Royal Azalea has become our biggest ally since June cycle 205, since then Dermond was building with RYAZ
-        #well maintained relations, in which The President visited multiple time The Queen. As of now the relaitionships are stable, however are still well maintained
-        #any political change will most likely change relations with RYAZ, and this Dermond has to avoid, since they don't have that much Allies in The Sector
+        #Our most closest ally nowadays. Kindgom of Royal Azalea has become our biggest ally since June cycle 205, since then Dermond was building with RYAZ
+        #well maintained relations, in which The President visited multiple time The Queen. As of now the relaitionships are stable, however are still well maintained.
+        #Any political change will most likely change relations with RYAZ, and this is what Dermond has to avoid, since they don't have that much Allies in The Sector
 
 
         "default": -0.4,
@@ -261,7 +304,7 @@
         "tritachyon":-0.4,                  #So you are telling me they want to make peace with us, after we found out about their secert laboratory on Bronde? Fuck them.
         "hegemony":0.1,                     #FUCK YOU! I TOLD YOU NOT FUCKING ENGAGE ME AT MAGEC! AND YOU DID WHAT? CORRECT! YOU FOUGHT US, WE WANTED TO HELP YOU!
         "ironshell":0.2,                    #I am not going to kill you at least if you won't ask me to pay taxes
-        "diableavionics":0.5,               #Megacorp, but they have slaves... BUT SO WE DO!
+        "diableavionics":0.5,               #Megacorp, but they have slaves... BUT SO DO WE!
         "shadow_industry":-0.4,             #After we found out they wanted to explode planet killer device on our planet we are never going to make long term peace with them
         "uaf": -0.1,                        #Spy on them for now, we need to find that 'Interdimensional Gate', it might open to us some answers.
     },

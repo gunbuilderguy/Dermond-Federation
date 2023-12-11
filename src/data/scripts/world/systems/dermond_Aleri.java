@@ -15,6 +15,29 @@ import com.fs.starfarer.api.impl.campaign.terrain.HyperspaceTerrainPlugin;
 import com.fs.starfarer.api.util.Misc;
 import static com.fs.starfarer.api.impl.campaign.procgen.StarSystemGenerator.addOrbitingEntities;
 
+/*
+
+All about planets is in data/campaign/econ not here, so
+
+⠄⣴⣶⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣤⣀
+⠄⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
+⠄⣾⣿⠿⠛⣉⣁⣤⣤⣤⣤⣬⣽⣿⣿⣿⣿⣿⣿⣿⣿⣿⡟⠛⠛⠛⠻⠿⠿⣿
+⣾⣿⣿⣶⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣶⣶⣶⣤⡈
+⣿⣿⣿⣿⠛⢋⠉⠩⠉⢩⣙⠛⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠿⠿⠿⠿⣿⣿⣿
+⣿⣿⣿⣿⣿⣿⠿⠶⢶⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣧⣶⣏⣁⡁⣐⣆⠈⢻
+⣿⣿⣿⣿⣿⣿⣿⣿⡿⢋⣥⣤⡌⢻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣭⣭⣭⣿⣾⣿
+⣿⣿⣿⣿⣿⣿⣿⠿⢀⣿⣿⡿⢁⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
+⢿⣿⣿⣿⣿⣿⢋⣴⣿⣿⠏⢡⣾⣿⣿⣿⣿⣿⣿⣿⡟⣿⣿⣿⣿⣿⣿⣿⣿⣿
+⡈⠙⠛⠛⠻⢃⣼⣿⣿⠏⣐⠻⠿⠿⠿⠿⣿⣿⣿⣿⣿⡜⢿⣿⣿⣿⣿⣿⣿⣿
+⣿⣿⣿⡿⢳⣾⣿⣿⠋⣼⣿⣷⣄⠄⠄⠄⠄⠈⠄⢀⣾⣿⣆⠹⣿⣿⡿⠛⠋⠁
+⣿⣿⡟⣀⣿⣿⣿⠛⣠⣄⢹⣿⣿⣧⣤⣄⣀⣤⣶⣾⣿⡿⣿⡆⢻⡟⠁⢀⡀⠄
+⣿⣿⣷⣿⣿⣿⢣⣾⣿⣿⠄⠉⠄⠄⠈⠉⠉⠃⠉⠉⠛⠃⠉⠈⣾⣷⠾⠟⠁⢠
+⠈⠛⠿⣿⣿⣿⣿⣿⣿⠃⣶⣆⢰⣶⣶⣶⣶⠶⠒⢀⣀⣄⣠⣴⡟⠁⠄⠄⣰⣿
+⠄⠄⠄⠄⠈⠻⠿⠿⠏⣾⡿⠃⠈⠉⠉⠛⠄⠘⠛⣻⣿⣿⣿⣿⣿⡇⣠⣾⣿⣿
+
+
+ */
+
 public class dermond_Aleri {
     
 
@@ -69,7 +92,7 @@ public class dermond_Aleri {
         null); // faction
         gatea.setCircularOrbit(Aleri_star, 108, 6980, 365);
 
-        PlanetAPI Aleri2 = system.addPlanet("der_tine", Aleri_star, "Tine", "barren-desert", 80, 66, 7345, 470);
+        PlanetAPI Aleri2 = system.addPlanet("der_tine", Aleri_star, "Tine", "der_desert_tundra", 80, 66, 7345, 470);
         Aleri2.setCustomDescriptionId("der_tine");
 
         PlanetAPI Aleri3 = system.addPlanet("der_deni", Aleri_star, "Tine", "terran", 120, 96, 8357, 760);

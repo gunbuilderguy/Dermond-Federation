@@ -1,0 +1,101 @@
+{
+  "hullName": "Sulfurat",
+  "hullId": "der_sulfurat",
+  "hullSize": "FRIGATE",
+  "spriteName": "graphics/ships/der_sulfurat.png",
+  "style": "DERMOND_TECH",
+  "coversColor": "97,195,226,255",
+  "height": 127,
+  "width": 76,
+  "center": [38, 63.5],
+  "collisionRadius": 69.5,
+  "shieldCenter": [0, -0],
+  "shieldRadius": 65,
+  "viewOffset": 0,
+  "builtInMods": [
+    "DermondConstruction"
+  ],
+  "weaponSlots": [
+    {
+      "id": "WS 000",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 210,
+      "angle": 315,
+      "locations": [8.5, -19]
+    },
+    {
+      "id": "WS 001",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 210,
+      "angle": 45,
+      "locations": [8.5, 19]
+    },
+    {
+      "id": "WS 002",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 180,
+      "angle": 315,
+      "locations": [29.5, -17]
+    },
+    {
+      "id": "WS 003",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 180,
+      "angle": 45,
+      "locations": [29.5, 17]
+    },
+    {
+      "id": "WS 004",
+      "size": "MEDIUM",
+      "type": "HYBRID",
+      "mount": "HARDPOINT",
+      "arc": 10,
+      "angle": 0,
+      "locations": [39.5, 0]
+    }
+  ],
+  "engineSlots": [
+    {
+      "location": [-58, 14.5],
+      "length": 13,
+      "width": 4,
+      "angle": 180,
+      "contrailSize": 18,
+      "style": "DERMOND_TECH"
+    },
+    {
+      "location": [-58, -14.5],
+      "length": 13,
+      "width": 4,
+      "angle": 180,
+      "contrailSize": 18,
+      "style": "DERMOND_TECH"
+    }
+  ],
+  "bounds": [
+    59.5, 8,
+    55.5, 0,
+    59.5, -8,
+    56.5, -22,
+    5, -34.5,
+    -13, -27.5,
+    -36, -27.5,
+    -51.5, -24,
+    -57.5, -14.5,
+    -39.5, 0,
+    -57.5, 14.5,
+    -51.5, 24,
+    -36, 27.5,
+    -13, 27.5,
+    5, 34.5,
+    56.5, 22
+  ]
+}

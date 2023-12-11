@@ -32,8 +32,8 @@ public class Chernalno extends BaseHullMod {
     }
  
     //negative
-    public static final float sped = 0.7f;
-    public static final float flox = 0.85f;
+    public static final float sped = 0.2f;
+    public static final float flox = 0.65f;
  
     //postive
     public static final float range = 1.1f;

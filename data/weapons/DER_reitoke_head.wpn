@@ -1,0 +1,52 @@
+{
+  "id": "DER_reitoke_head",
+  "specClass": "beam",
+  "type": "ENERGY",
+  "mountTypeOverride": "ENERGY",
+  "size": "SMALL",
+  "collisionClass": "RAY",
+  "collisionClassByFighter": "RAY_FIGHTER",
+  "turretSprite": "graphics/weapons/mechs/Reitoke/DER_reitoke_head.png",
+  "hardpointSprite": "",
+  "glowColor": [
+    140,
+    227,
+    253,
+    100
+  ],
+  "hitGlowRadius": 0,
+  "turretOffsets": [
+    6,
+    -3.5,
+    6,
+    2.5
+  ],
+  "turretAngleOffsets": [
+    0,
+    0
+  ],
+  "hardpointOffsets": [
+    0,
+    0
+  ],
+  "hardpointAngleOffsets": [
+    0
+  ],
+  "fringeColor": [
+    39,
+    196,
+    245,
+    100
+  ],
+  "coreColor": [
+    39,
+    196,
+    245,
+    255
+  ],
+  "darkCore": true,
+  "width": 1,
+  "textureType": LASER,
+  "textureScrollSpeed": 20,
+  "pixelsPerTexel": 1
+}

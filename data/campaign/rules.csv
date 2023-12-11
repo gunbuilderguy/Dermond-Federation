@@ -1,4 +1,32 @@
 id,trigger,conditions,script,text,options,notes
+"#RULESET_NAME dermond",,,,,,
+,,,,,,
+# DERMOND STUFF,,,,,,
+,,,,,,
+# Description relations,,,,,,
+relLevelCooperativeDermond,RelationshipLevelDesc,"$faction.rel == COOPERATIVE
+$faction.id == dermond_federation","FireAll RelLevelMoreDescription","You are hailed as a national hero of Dermond, many see you as an enemy but there is almost nobody that will try to challenge your Authority, except for The Goverment, and The Military Council.",,
+relLevelFriendlyDermond,RelationshipLevelDesc,"$faction.rel == FRIENDLY
+$faction.id == dermond_federation","FireAll RelLevelMoreDescription","Many see you as just a normal soldier, but there is good speak of you in the mids of most Dermondians. You mostly know a lot about the military traditions, and many high ranking officers would surely want to employ not only because of your skill but also because of your political weight.",,
+relLevelWelcomingDermond,RelationshipLevelDesc,"$faction.rel == WELCOMING
+$faction.id == dermond_federation","FireAll RelLevelMoreDescription","Most people don't know how, or when Dermond became happy to see you in their space. You surely have either paid them a lot, or you just don't act like an asshole. That is mostly what Dermond wants, to not be treated like shit.",,
+relLevelFavorableDermond,RelationshipLevelDesc,"$faction.rel == FAVORABLE
+$faction.id == dermond_federation","FireAll RelLevelMoreDescription","Many question how you got so good with Dermond, and many will try to execute you, but who will try to kill you, is not for you or me to decide. Dermond will surely be happy to be allies with you, as they do need your help...",,
+relLevelNeutralDermond,RelationshipLevelDesc,"$faction.rel == NEUTRAL
+$faction.id == dermond_federation","FireAll RelLevelMoreDescription","Dermond does not see you anymore as a hostile entity. Most Dermond patrools will still stop you, but they won't try to be as harsh with you as before.",,
+relLevelSuspiciousDermond,RelationshipLevelDesc,"$faction.rel == SUSPICIOUS
+$faction.id == dermond_federation","FireAll RelLevelMoreDescription","Dermond does not hate everybody, but they do see a lot of faction as hostiles. It's for you to decide do you want them to be dissapointed in you, or you use your brain and not be an asshole.",,
+relLevelInhospitableDermond,RelationshipLevelDesc,"$faction.rel == INHOSPITABLE
+$faction.id == dermond_federation","FireAll RelLevelMoreDescription","You are being monitered, and some agent is being tasked with tracking you. If you try to be much hostile with them you can either save your skin or become an asshole.",,
+relLevelHostileDermond,RelationshipLevelDesc,"$faction.rel == HOSTILE
+$faction.id == dermond_federation","FireAll RelLevelMoreDescription","Dermond fleets are allowed to engage you at any moment, most people would still rather not deal with you. But they can attack you if they want to.",,
+relLevelVengefulDermond,RelationshipLevelDesc,"$faction.rel == VENGEFUL
+$faction.id == dermond_federation","FireAll RelLevelMoreDescription","[REDACTED DUE TO EXCESSIVE amount OF HATRED]",,
+relLevelDermondCores,RelLevelMoreDescription,"$faction.id == dermond_federation
+$faction.turnedIn_allCores > 3",,"Dermond officials and Dermond Central Intelligence Agency are tasked with looking into your fleets activity, to spot from where did you get so many AI cores.",,
+"#END Description relations",,,,,,
+,,,,,,
+# Meeting stuff,,,,,,
 greetingDermondFriendly,OpenCommLink,"$faction.id == dermond_federation
 $faction.friendlyToPlayer","$menuState = fleetConvMain 0
 FireAll PopulateOptions","""Scanned and identified, good to see you $playerName.?""
@@ -9,24 +37,27 @@ $entity.isHostile
 $entity.relativeStrength < 0","$menuState = fleetConvMain 0
 FireAll PopulateOptions","""Local patrols have already been dispatched to this signal, you'd best disengage, scum.""
 OR
-""Huh so it looks liek this fucker wants to talk, so listen closly you dipshit. We don't want you or anybody else in that manner here, so I suggest you FUCK OFF before we kill you, your crew and DESTROY your home planet!""",,
+""Huh so it looks like this fucker wants to talk, so listen closely you dipshit. We don't want you or anybody else in that manner here, so I suggest you FUCK OFF before we kill you, your crew and DESTROY your home planet!""",,
 greetingDermondHostileWeakerDefiant,OpenCommLink,"$faction.id == dermond_federation
 $entity.isHostile
 $entity.relativeStrength < 0
-$entity.weakerThanPlayerButHolding",$ignorePlayerCommRequests = true 1,"""We'll never surrender! And you better have some tea on your ship because we will need it after we wiill rebel against you!""
+$entity.weakerThanPlayerButHolding","$ignorePlayerCommRequests = true 1","""We'll never surrender! And you better have some tea on your ship because we will need it after we wiill rebel against you!""
 OR
-""We know how you dictator types treat prisoners, you won't be taking any.""",cutCommLink:Cut the comm link,
+""We know how you dictator types treat prisoners, you won't be taking any.""","cutCommLink:Cut the comm link",
 greetingDermondHostileStronger,OpenCommLink,"$faction.id == dermond_federation
 $entity.isHostile
-$entity.relativeStrength >= 0",$ignorePlayerCommRequests = true 1,"""Hostile fleet, we advise you power down weapons and cease transgressions against The Dermond Federation.""
+$entity.relativeStrength >= 0","$ignorePlayerCommRequests = true 1","""Friend, I advise you to put down your guns and surrender, or try fighting against us.""
 OR
-""You're outnumbered, surrender now and Dermond leadership promises fair treatment of any prisoners.""
+""You're outnumbered, surrender now and Dermond leadership promises fair treatment of any prisoners. Probably...""
 OR
-""AIS code acknowledged. It is unwise to show your face in Dermondian territory.""",cutCommLink:Cut the comm link,
+""AIS code acknowledged. It is unwise to show your face in Dermondian territory.""","cutCommLink:Cut the comm link",
 greetingDermondNeutral,OpenCommLink,"$faction.id == dermond_federation
 $faction.neutralToPlayer","$menuState = fleetConvMain 0
 FireAll PopulateOptions","""Scanned and identified. Safe travels.""
 OR
-""Acknowledging receipt of AIS code. We could use someone like you to stand against Tri-Tach, $playerName.""
+""Acknowledging receipt of AIS code. We could use someone like you to stand against retards of The Sector, $playerName.""
 OR
 ""Good time of the day sire, I hope you will try bringing cookies or tea atleast next time because we like people who don't want to gun us down.""",,
+"#END Meeting stuff",,,,,,
+"#END DERMOND STUFF",,,,,,
+

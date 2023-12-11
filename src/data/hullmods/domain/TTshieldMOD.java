@@ -32,7 +32,7 @@ public class TTshieldMOD extends BaseHullMod {
     public static final float arc = 1.15f;
     public static final float shield_flox = 0.8f;
     public static final float CR_degrade = 250f;
-    public static final float supplies = 1.75f;
+    public static final float supplies = 1.5f;
 
 
     //Stolen code >:)    

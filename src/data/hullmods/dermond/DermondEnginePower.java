@@ -6,7 +6,12 @@ package data.hullmods.dermond;
 import java.util.HashMap;
 import java.util.Map;
 import java.awt.Color;
+
+import com.fs.starfarer.api.GameState;
 import com.fs.starfarer.api.Global;
+import com.fs.starfarer.api.campaign.CampaignUIAPI;
+import com.fs.starfarer.api.campaign.econ.MarketAPI;
+import com.fs.starfarer.api.fleet.FleetMemberAPI;
 import com.fs.starfarer.api.ui.Alignment;
 import com.fs.starfarer.api.ui.TooltipMakerAPI;
 import com.fs.starfarer.api.util.Misc;
@@ -20,6 +25,8 @@ import com.fs.starfarer.api.combat.BaseHullMod;
 import com.fs.starfarer.api.combat.MutableShipStatsAPI;
 import com.fs.starfarer.api.combat.ShipAPI;
 import com.fs.starfarer.api.combat.ShipAPI.HullSize;
+import data.scripts.utils.dalton_utils;
+
 import java.util.HashSet;
 import java.util.Set;
 
@@ -29,24 +36,14 @@ public class DermondEnginePower extends BaseHullMod {
         return Global.getSettings().getString("der",  key);}
 
     //Positive
-	private static Map<HullSize, Float> SPEED = new HashMap();
-	static {
-	    SPEED.put(HullSize.FRIGATE, 10f);
-		SPEED.put(HullSize.DESTROYER, 20f);
-		SPEED.put(HullSize.CRUISER, 30f);
-		SPEED.put(HullSize.CAPITAL_SHIP, 20f);
-	}
-	private static Map<HullSize, Float> MANEUVARABILITY = new HashMap();
-	static {
-	    MANEUVARABILITY.put(HullSize.FRIGATE, 50f);
-		MANEUVARABILITY.put(HullSize.DESTROYER, 40f);
-		MANEUVARABILITY.put(HullSize.CRUISER, 35f);
-		MANEUVARABILITY.put(HullSize.CAPITAL_SHIP, 25f);
-	}
+    public static float SPEED = 30f;
+
+    public static float MANEUVARABILITY = 15f;
+
 
 
     //Negative
-    public static final float SUPPLY_USE_MULT = 1.15f;
+    public static float nerf = 15f;
 
 
     //Blocked
@@ -67,9 +64,40 @@ public class DermondEnginePower extends BaseHullMod {
     }
 
     public void applyEffectsBeforeShipCreation(HullSize hullSize, MutableShipStatsAPI stats, String id) {
-        stats.getMaxSpeed().modifyPercent(id, (float) SPEED.get(hullSize));
-        stats.getTurnAcceleration().modifyPercent(id, (float) MANEUVARABILITY.get(hullSize));
-        stats.getSuppliesPerMonth().modifyMult(id, SUPPLY_USE_MULT);
+        stats.getMaxSpeed().modifyPercent(id, SPEED);
+        stats.getTurnAcceleration().modifyPercent(id, MANEUVARABILITY);
+        stats.getShieldArcBonus().modifyFlat(id, -nerf);
+        stats.getTimeMult().modifyMult(id, 1.15f);
+    }
+
+    public void advanceInCampaign(FleetMemberAPI member, float amount) {
+        if(Global.getCurrentState() != GameState.TITLE) {
+            Map<String, Object> data = Global.getSector().getPersistentData();
+            if (!data.containsKey("aiengine_check_" + member.getId())) {
+                data.put("aiengine_check_" + member.getId(), "_");
+                if (member.getFleetData() != null && member.getFleetData().getFleet() != null && member.getFleetData().getFleet().equals(Global.getSector().getPlayerFleet())) {
+                    dalton_utils.removePlayerCommodity("fuel", 250);
+                }
+            }
+            if (!member.getVariant().hasHullMod("der_holder")) {
+                member.getVariant().getHullMods().add("der_holder");
+            }
+        }
+    }
+
+
+
+
+    public boolean canBeAddedOrRemovedNow(ShipAPI ship, MarketAPI marketOrNull, CampaignUIAPI.CoreUITradeMode mode) {
+        if(ship.getVariant().hasHullMod("DermondEnginePower")){
+            return true;
+        }else{
+            return dalton_utils.playerHasCommodity("fuel", 250) && super.canBeAddedOrRemovedNow(ship, marketOrNull, mode);
+        }
+    }
+
+    public String getCanNotBeInstalledNowReason(ShipAPI ship, MarketAPI marketOrNull, CampaignUIAPI.CoreUITradeMode mode) {
+        return !dalton_utils.playerHasCommodity("fuel", 250) ? "You do not have the required amount of fuel." : super.getCanNotBeInstalledNowReason(ship, marketOrNull, mode);
     }
 
     
@@ -83,6 +111,7 @@ public class DermondEnginePower extends BaseHullMod {
 		String HullmodIncompatible = "graphics/icons/tooltips/der_hullmod_incompatible.png";				
         String CSTitle = "'Post-Collapse Dermondian Engieneering'";
         String DermondCrest = "graphics/factions/crest_Dermond_Federation_messedup.png";
+        String fuel = "graphics/icons/cargo/fuel.png";
 		float pad = 2f;
 		Color[] arr ={Misc.getPositiveHighlightColor(),Misc.getHighlightColor()};
         Color[] add ={Misc.getNegativeHighlightColor(),Misc.getHighlightColor()};		
@@ -103,17 +132,17 @@ public class DermondEnginePower extends BaseHullMod {
 
 
         //Positive bonuses
-        tooltip.addPara("%s " + getString("speed_increase"), pad, arr, Math.round(SPEED.get(hullSize)) + "%"  );
-        tooltip.addPara("%s " + getString("maneuv_increase"), pad, arr, Math.round(MANEUVARABILITY.get(hullSize)) + "%"  );
+        tooltip.addPara("%s " + getString("speed_increase"), pad, arr, Math.round(SPEED) + "%"  );
+        tooltip.addPara("%s " + getString("maneuv_increase"), pad, arr, Math.round(MANEUVARABILITY) + "%"  );
 
 
         //Negative ones
-        tooltip.addPara("%s " + getString("maintanence_increase"), pad, add, Math.round((SUPPLY_USE_MULT - 1f) * 100f) + "%");
+        tooltip.addPara("%s " + getString("shieldarc_less"), pad, add, Math.round(nerf) + " degree");
 
 
         
-    tooltip.addSectionHeading("Incompatibilities", Alignment.MID, pad);
-    TooltipMakerAPI blocked = tooltip.beginImageWithText(HullmodIncompatible, 40);
+        tooltip.addSectionHeading("Incompatibilities", Alignment.MID, pad);
+        TooltipMakerAPI blocked = tooltip.beginImageWithText(HullmodIncompatible, 40);
         blocked.addPara(getString("fuckyou"), pad);
             
         blocked.addPara("- Insulated Engine Assembly", Misc.getNegativeHighlightColor(), pad);
@@ -127,6 +156,13 @@ public class DermondEnginePower extends BaseHullMod {
             blocked.addPara(" - Inertia Redirection Systems", Misc.getNegativeHighlightColor(), pad);
         }
         tooltip.addImageWithText(pad);
+
+        tooltip.addSectionHeading("Hullmod Cost", Alignment.MID, pad);
+        TooltipMakerAPI cost = tooltip.beginImageWithText(fuel, 25);
+        cost.addPara("- 250 fuel is needed to install this hullmod", Misc.getHighlightColor(), pad);
+        tooltip.addImageWithText(pad);
+        tooltip.addPara("Attention, after installing said hullmod, all commodities needed to install will disapear. " +
+                "This does not count Crew and Marines, as they run under different equation", Misc.getNegativeHighlightColor(), pad);
     }
 
     @Override

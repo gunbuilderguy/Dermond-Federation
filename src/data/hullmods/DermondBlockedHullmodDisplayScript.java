@@ -1,6 +1,5 @@
 package data.hullmods;
 
-import java.util.List;
 import com.fs.starfarer.api.EveryFrameScript;
 import com.fs.starfarer.api.GameState;
 import com.fs.starfarer.api.Global;
@@ -8,65 +7,52 @@ import com.fs.starfarer.api.combat.BaseEveryFrameCombatPlugin;
 import com.fs.starfarer.api.combat.CombatEngineAPI;
 import com.fs.starfarer.api.combat.ShipAPI;
 import com.fs.starfarer.api.input.InputEventAPI;
+import java.util.List;
 import org.apache.log4j.Logger;
 
-public class DermondBlockedHullmodDisplayScript extends BaseEveryFrameCombatPlugin implements EveryFrameScript
-{
-    private static final Logger Log = Logger.getLogger(DermondBlockedHullmodDisplayScript.class);
+public class DermondBlockedHullmodDisplayScript extends BaseEveryFrameCombatPlugin implements EveryFrameScript {
+    private static final Logger Log = Logger.getLogger(data.hullmods.DermondBlockedHullmodDisplayScript.class);
     private static final String NOTIFICATION_HULLMOD = "DermondBlockedBlankHullmod";
     private static final String NOTIFICATION_SOUND = "cr_allied_critical";
     private static ShipAPI ship;
 
-    public static void showBlocked(ShipAPI blocked)
-    {
+    public static void showBlocked(ShipAPI blocked) {
         stopDisplaying();
-
         ship = blocked;
-        ship.getVariant().addMod(NOTIFICATION_HULLMOD);
-        Global.getSoundPlayer().playUISound(NOTIFICATION_SOUND, 1f, 1f);
+        ship.getVariant().addMod("DermondBlockedBlankHullmod");
+        Global.getSoundPlayer().playUISound("cr_allied_critical", 1.0F, 1.0F);
     }
 
-    @Override
-    public boolean isDone()
-    {
+    public boolean isDone() {
         return false;
     }
 
-    @Override
-    public boolean runWhilePaused()
-    {
+    public boolean runWhilePaused() {
         return true;
     }
 
-    public static void stopDisplaying()
-    {
-        if (ship != null)
-        {
+    public static void stopDisplaying() {
+        if (ship != null) {
             Log.debug("Removed from existing ship.");
-            ship.getVariant().removeMod(NOTIFICATION_HULLMOD);
+            ship.getVariant().removeMod("DermondBlockedBlankHullmod");
             ship = null;
         }
+
     }
 
-    @Override
-    public void advance(float amount)
-    {
+    public void advance(float amount) {
         stopDisplaying();
     }
 
-    @Override
-    public void advance(float amount, List<InputEventAPI> events)
-    {
+    public void advance(float amount, List<InputEventAPI> events) {
         stopDisplaying();
     }
 
-    @Override
-    public void init(CombatEngineAPI engine)
-    {
-        if (Global.getSettings().getCurrentState() != GameState.TITLE)
-        {
+    public void init(CombatEngineAPI engine) {
+        if (Global.getSettings().getCurrentState() != GameState.TITLE) {
             stopDisplaying();
             Global.getCombatEngine().removePlugin(this);
         }
+
     }
 }

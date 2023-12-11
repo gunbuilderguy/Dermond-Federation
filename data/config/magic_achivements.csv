@@ -1,0 +1,8 @@
+id,name,description,tooltip,script,image,hasProgressBar,spoilerLevel,rarity,
+#QUEST LINE 1,,,,,,,,,
+der_hunter_meet,Interesting Friend,Meet an interesting character,,data.scripts.quests.der_hunter_find,,false,SPOILER,,
+der_pirate_dream,The Great Consipracy,"Give your Greed, a chance...",,data.scripts.quests.der_pirate_dream,,false,SPOILER,,
+der_upgrader_unlock,The Forgotten Machine,Some things are best forgotten... but when they are not... They bring chaos,,data.scripts.quests.der_upgrader,,false,SPOILER,,
+,,,,,,,,,
+#3rd tier hullmods,,,,,,,,,
+der_3rd_ITU,The forgotten Targtes,Unlock the 3rd tier of Targetting Unit,,,,,HIDDEN,,

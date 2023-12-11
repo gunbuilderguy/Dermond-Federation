@@ -2,9 +2,9 @@
 	id:"dermond_federation",
 	"color":[0,51,102,255],
 	"displayName":"Dermond",
-	"displayNameWithArticle":"Federation of Dermond",
+	"displayNameWithArticle":"Dermond",
 	"displayNameLong":"Federation of Dermond",
-	"displayNameLongWithArticle":"The Federation of Dermond",
+	"displayNameLongWithArticle":"The 5th Federation of Dermond",
 	"logo":"graphics/factions/Dermond_Federation.png",
 	"crest":"graphics/factions/crest_Dermond_Federation.png",
 	"shipNamePrefix":"DFN",
@@ -193,8 +193,8 @@
 		"phaseShips":1,
 		
 		"officerQuality":5,
-		"shipQuality":4,
-		"numShips":1,
+		"shipQuality":1,
+		"numShips":2,
 		
 		"shipSize":4,
 		

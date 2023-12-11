@@ -5,7 +5,12 @@ package data.hullmods.dermond;
 import java.util.HashMap;
 import java.util.Map;
 import java.awt.Color;
+
+import com.fs.starfarer.api.GameState;
 import com.fs.starfarer.api.Global;
+import com.fs.starfarer.api.campaign.CampaignUIAPI;
+import com.fs.starfarer.api.campaign.econ.MarketAPI;
+import com.fs.starfarer.api.fleet.FleetMemberAPI;
 import com.fs.starfarer.api.ui.Alignment;
 import com.fs.starfarer.api.ui.TooltipMakerAPI;
 import com.fs.starfarer.api.util.Misc;
@@ -23,6 +28,7 @@ import java.util.HashSet;
 import java.util.Set;
 import com.fs.starfarer.api.combat.ShieldAPI.ShieldType;
 import com.fs.starfarer.api.combat.ArmorGridAPI;
+import data.scripts.utils.dalton_utils;
 import org.lazywizard.lazylib.MathUtils;
 import org.lwjgl.util.vector.Vector2f;
 import com.fs.starfarer.api.impl.campaign.ids.HullMods;
@@ -36,12 +42,12 @@ public class TorhartaHangarmodification extends BaseHullMod {
     }
 
     //Positive effects
-    public static final float replace_time_wing = 0.75f;
-    public static final float reduce_wing_casualties = 0.7f;
+    public static final float replace_time_wing = 0.85f;
+    public static final float reduce_wing_casualties = 0.8f;
 
 
     //Negative effects
-    public static final float more_crew_fighter = 30f;
+    public static final float more_crew_fighter = 35f;
 
 
     /*
@@ -76,6 +82,33 @@ public class TorhartaHangarmodification extends BaseHullMod {
         }
 	}
 */
+    public void advanceInCampaign(FleetMemberAPI member, float amount) {
+        if(Global.getCurrentState() != GameState.TITLE) {
+            Map<String, Object> data = Global.getSector().getPersistentData();
+            if (!data.containsKey("aitorthata_check_" + member.getId())) {
+                data.put("aitortahta_check_" + member.getId(), "_");
+                if (member.getFleetData() != null && member.getFleetData().getFleet() != null && member.getFleetData().getFleet().equals(Global.getSector().getPlayerFleet())) {
+                    dalton_utils.removePlayerCommodity("supplies", 200);
+                }
+            }
+            if (!member.getVariant().hasHullMod("der_holder")) {
+                member.getVariant().getHullMods().add("der_holder");
+            }
+        }
+    }
+
+
+    public boolean canBeAddedOrRemovedNow(ShipAPI ship, MarketAPI marketOrNull, CampaignUIAPI.CoreUITradeMode mode) {
+        if(ship.getVariant().hasHullMod("DermondTorhartaHangarmodification")){
+            return true;
+        }else{
+            return dalton_utils.playerHasCommodity("supplies", 200) && super.canBeAddedOrRemovedNow(ship, marketOrNull, mode);
+        }
+    }
+
+    public String getCanNotBeInstalledNowReason(ShipAPI ship, MarketAPI marketOrNull, CampaignUIAPI.CoreUITradeMode mode) {
+        return !dalton_utils.playerHasCommodity("supplies", 200) ? "You do not have the required amount of supplies" : super.getCanNotBeInstalledNowReason(ship, marketOrNull, mode);
+    }
 
     @Override
 	public void addPostDescriptionSection(TooltipMakerAPI tooltip, ShipAPI.HullSize hullSize, ShipAPI ship, float width, boolean isForModSpec) 
@@ -87,6 +120,7 @@ public class TorhartaHangarmodification extends BaseHullMod {
         String HullmodIncompatible = "graphics/icons/tooltips/der_hullmod_incompatible.png";		
         String CSTitle = "'Post-Collapse Dermondian Engieneering'";
         String OrdoCrest = "graphics/factions/crest_Dermond_Federation_messedup.png";
+        String supplies = "graphics/icons/cargo/supplies.png";
 		float pad = 2f;
 		Color[] arr ={Misc.getPositiveHighlightColor(),Misc.getHighlightColor()};
         Color[] add ={Misc.getNegativeHighlightColor(),Misc.getHighlightColor()};
@@ -121,6 +155,13 @@ public class TorhartaHangarmodification extends BaseHullMod {
                 
             blocked.addPara("- ", Misc.getNegativeHighlightColor(), pad);
         */
+
+        tooltip.addSectionHeading("Hullmod Cost", Alignment.MID, pad);
+        TooltipMakerAPI cost = tooltip.beginImageWithText(supplies, 25);
+        cost.addPara("- 200 supplies is needed to install this hullmod", Misc.getHighlightColor(), pad);
+        tooltip.addImageWithText(pad);
+        tooltip.addPara("Attention, after installing said hullmod, all commodities needed to install will disapear. " +
+                "This does not count Crew and Marines, as they run under different equation", Misc.getNegativeHighlightColor(), pad);
     }
 
     //DOOD!

@@ -1,11 +1,12 @@
 {
-    "id":"dermond_federation",
+    "id":"dermond_federation_main", #Main Dermond Federation mod, is required to be on for everything else to work.
       "name":"Dermond Federation",
-      "author":"Glywnok",
-      "version":"0.1.1 Beta",
-      "description":"The terrorists from afar are back in the fold... \nAnd they want YOU DEAD.", #currently adds just that... But that's currently ;)
-      "gameVersion":"0.95.1a-RC6",
+      "author":"Glywnok, HuginBlar, Flans Nundernail :skull_emoji: ",
+      "version":"0.2",
+      "description":"\"Dermond is not a faction of Peace, it's a faction of Conquest and Destruction\"\n Or are they?\n\nCurrently does not feature 90% of the content", #The retards are back MOTHERFUCKERS!
+      "gameVersion":"0.96",
       "jars":["jars/DERMOND.jar"],
-      "modPlugin":"data.scripts.dermond_ModPlugin" 
+      "modPlugin":"data.scripts.dermond_ModPlugin",
+      "tags": ["main", "dermond", "faction", "campaign"]
   }
   

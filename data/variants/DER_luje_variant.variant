@@ -1,0 +1,46 @@
+{
+  "variantId": "DER_luje_variant",
+  "hullId": "DER_luje",
+  "displayName": "Standart",
+  "goalVariant": true,
+  "fluxCapacitors": 4,
+  "fluxVents": 0,
+  "quality": 1,
+  "permaMods": [],
+  "hullMods": [
+    "DermondEnginePower",
+    "DermondfithGenerationFTLcombat"
+  ],
+  "weaponGroups": [
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0001": "der_tikele_spam"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0002": "der_luje_right_arm"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0004": "der_luje_left_arm"
+      }
+    },
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0003": "DER_luje_head"
+      }
+    }
+  ],
+  "modules": [],
+  "wings": []
+}

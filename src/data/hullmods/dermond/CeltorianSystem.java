@@ -1,10 +1,15 @@
 package data.hullmods.dermond;
 
+import com.fs.starfarer.api.GameState;
+import com.fs.starfarer.api.campaign.CampaignUIAPI;
+import com.fs.starfarer.api.campaign.econ.MarketAPI;
 import com.fs.starfarer.api.combat.BaseHullMod;
 import com.fs.starfarer.api.combat.MutableShipStatsAPI;
 import com.fs.starfarer.api.combat.ShipAPI;
 import com.fs.starfarer.api.combat.ShipAPI.HullSize;
 import com.fs.starfarer.api.Global;
+import com.fs.starfarer.api.fleet.FleetMemberAPI;
+import com.fs.starfarer.api.impl.campaign.ids.HullMods;
 import com.fs.starfarer.api.util.Misc;
 import java.util.HashMap;
 import java.util.Map;
@@ -12,6 +17,7 @@ import com.fs.starfarer.api.ui.TooltipMakerAPI;
 import com.fs.starfarer.api.ui.Alignment;
 import java.awt.Color;
 import com.fs.starfarer.api.combat.ShieldAPI;
+import data.scripts.utils.dalton_utils;
 
 
 public class CeltorianSystem extends BaseHullMod {
@@ -21,14 +27,14 @@ public class CeltorianSystem extends BaseHullMod {
 
     
     //positive
-    public static final float phase_cooldown = 0.8f;
-    public static final float phase_cost_per_second = 0.9f;
+    public static final float phase_cooldown = 0.85f;
+    public static final float phase_cost_per_second = 0.75f;
     //Untill I find a way how to increase speed in phase I will just leave you here
     //public static final float phase_move = 1.2f;
 
 
     //negative
-    public static final float phase_cost_in = 2f;
+    public static final float phase_cost_in = 1.45f;
     private static Map<HullSize, Float> CRDEGRADATION = new HashMap();
     static {
         CRDEGRADATION.put(HullSize.FRIGATE, 20f);
@@ -46,14 +52,42 @@ public class CeltorianSystem extends BaseHullMod {
     }
 
     @Override
-	public boolean isApplicableToShip(ShipAPI ship) {
-		//return ship != null && ship.getShield() == null && ship.getPhaseCloak() == null;
-		return ship.getHullSpec().isPhase();
+    public boolean isApplicableToShip(ShipAPI ship) {
+        if (ship.getVariant().hasHullMod(HullMods.ADAPTIVE_COILS)) return false;
+        return ship.getHullSpec().isPhase();
     }
 
     //nuke: test if this is properly incompatible with reactive fields
         
     //another note: Vanguards are annoying even out of the game
+
+    public void advanceInCampaign(FleetMemberAPI member, float amount) {
+        if(Global.getCurrentState() != GameState.TITLE) {
+            Map<String, Object> data = Global.getSector().getPersistentData();
+            if (!data.containsKey("aiceltorian_check_" + member.getId())) {
+                data.put("aiceltorian_check_" + member.getId(), "_");
+                if (member.getFleetData() != null && member.getFleetData().getFleet() != null && member.getFleetData().getFleet().equals(Global.getSector().getPlayerFleet())) {
+                    dalton_utils.removePlayerCommodity("supplies", 200);
+                }
+            }
+            if (!member.getVariant().hasHullMod("der_holder")) {
+                member.getVariant().getHullMods().add("der_holder");
+            }
+        }
+    }
+
+
+    public boolean canBeAddedOrRemovedNow(ShipAPI ship, MarketAPI marketOrNull, CampaignUIAPI.CoreUITradeMode mode) {
+        if(ship.getVariant().hasHullMod("DermondCeltorianSystem")){
+            return true;
+        }else{
+            return dalton_utils.playerHasCommodity("supplies", 200) && super.canBeAddedOrRemovedNow(ship, marketOrNull, mode);
+        }
+    }
+
+    public String getCanNotBeInstalledNowReason(ShipAPI ship, MarketAPI marketOrNull, CampaignUIAPI.CoreUITradeMode mode) {
+        return !dalton_utils.playerHasCommodity("supplies", 200) ? "You do not have the required amount of supplies" : super.getCanNotBeInstalledNowReason(ship, marketOrNull, mode);
+    }
                 
     public String getUnapplicableReason(ShipAPI ship) {
 		
@@ -79,6 +113,7 @@ public class CeltorianSystem extends BaseHullMod {
         Color YELLOW = new Color(241, 199, 0);			
         String CSTitle = "'Post-Collapse Dermondian Engieneering'";
         String DermondCrest = "graphics/factions/crest_Dermond_Federation_messedup.png";
+        String supplies = "graphics/icons/cargo/supplies.png";
 		float pad = 2f;
 		Color[] arr ={Misc.getPositiveHighlightColor(),Misc.getHighlightColor()};
         Color[] add ={Misc.getNegativeHighlightColor(),Misc.getHighlightColor()};		
@@ -102,6 +137,13 @@ public class CeltorianSystem extends BaseHullMod {
         //Negative ones
         tooltip.addPara("%s " + getString("degradecr_fast"), pad, add, Math.round(CRDEGRADATION.get(hullSize)) + "%");
         tooltip.addPara("%s " + getString("phase_cost_in"), pad, add, Math.round((phase_cost_in - 1f) * 100) + "%");
+
+        tooltip.addSectionHeading("Hullmod Cost", Alignment.MID, pad);
+        TooltipMakerAPI cost = tooltip.beginImageWithText(supplies, 25);
+        cost.addPara("- 200 supplies is needed to install this hullmod", Misc.getHighlightColor(), pad);
+        tooltip.addImageWithText(pad);
+        tooltip.addPara("Attention, after installing said hullmod, all commodities needed to install will disapear. " +
+                "This does not count Crew and Marines, as they run under different equation", Misc.getNegativeHighlightColor(), pad);
     }
 
 }

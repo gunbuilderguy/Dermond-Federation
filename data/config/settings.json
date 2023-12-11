@@ -1,19 +1,35 @@
 {
+	"plugins":{
+        "DermondBlockedHullmodDisplayScript":"data.hullmods.DermondBlockedHullmodDisplayScript",
+    },
+
     "graphics": {
         "fx":{
+            "circle": "graphics/circle.png",
+
             "der_incompatible": "graphics/icons/tooltips/der_hullmod_incompatible.png",
             "der_dermondcrest": "graphics/factions/crest_Dermond_Federation.png",
             "der_dermondcrestfucked": "graphics/factions/crest_Dermond_Federation_messedup.png",
             "der_cultists": "graphics/factions/crest_dermond_Cultists.png",
             "der_ballerinc": "graphics/factions/crest_dermond_ballerinc.png",
             "der_fack1": "graphics/icons/hullsys/interdictor_array.png",
+            "der_hunter_fac": "graphics/factions/crest_hunter.png",
+            "Domain":"graphics/factions/crest_domain.png",
         },
         "characters": {
             "HunterAI": "graphics/portraits/characters/AI/der_HunterAI.png",
         },
+      "illustrations": {
+        "bandore_planet_greet": "graphics/planets/interractions/der_bandore_main.png",
+      }
     },
 
+	"ruleCommandPackages":[
+		"data.campaign.rulescmd",
+	],
+
     "designTypeColors":{
+        "Dermond Federation" : [0, 153, 255, 255],
         "Ballin Inc.": [45, 130, 38, 255],  
 		"Dermondian Engieneering":[0,0,180,255],
 		"Ordo Aeterni Technologiae":[255,86,70,255],

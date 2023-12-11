@@ -1,2 +1,22 @@
 name,id,tier,rarity,base value,range,damage/second,damage/shot,emp,impact,turn rate,OPs,ammo,ammo/sec,reload size,type,energy/shot,energy/second,chargeup,chargedown,burst size,burst delay,min spread,max spread,spread/shot,spread decay/sec,beam speed,proj speed,launch speed,flight time,proj hitpoints,autofireAccBonus,extraArcForAI,hints,tags,groupTag,tech/manufacturer,for weapon tooltip>>,primaryRoleStr,speedStr,trackingStr,turnRateStr,accuracyStr,customPrimary,customPrimaryHL,customAncillary,customAncillaryHL,noDPSInTooltip,number
-Mentalor LRM Laucnher,der_mentalor_launcher,4,,7500,4000,,750,2000,,40,12,5,0.1,1,ENERGY,400,,0.5,5,1,5,0,0,0,,,450,40,30,325,,,"DO_NOT_AIM, HEATSEEKER, DO_NOT_CONSERVE",,,Dermond Federation,,Strike EMP Missile,Fast,Excelent,,,,,,,True,600
+#DERMOND,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+#SMALL,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+#DECO,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Luje Head,DER_luje_head,,,3000,0,1,,,,100,,,,,ENERGY,,5,,,,,,,,,,,,,,,,"SYSTEM, DIRECT_AIM,",,,Dermond Federation,,Pilot Head,,,,,,,,,True,305
+Seitike Device,DER_reitoke_head,,,5000,700,50,,5,,100,,,,,ENERGY,,50,,,,,,,,,5000,5000,,,,,,DIRECT_AIM,,,Dermond Federation,,Pilot Head,,,,,,,,,True,306
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+#BALLISTIC,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Luje Heavy Mahchine Gun,der_luje_right_arm,,,4000,1000,,90,,,25,0,25,2,10,HIGH_EXPLOSIVE,50,,,0.25,,1,2,20,0.5,20,,1000,,,200,,,,,,Dermond Federation,,Heavy Machine Gun,,,,,,,,,,309
+Luje Heavy Mahchine Gun,der_luje_left_arm,,,4000,1000,,90,,,25,0,25,2,10,HIGH_EXPLOSIVE,50,,,0.25,,1,2,20,0.5,20,,1000,,,200,,,,,,Dermond Federation,,Heavy Machine Gun,,,,,,,,,,400
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Reitoke Hand Built-in Light Machine Gun,der_reitoke_left_arm,,,2500,700,,40,,,30,0,200,1,200,KINETIC,10,,,0.05,,4,1,30,4,2,,1250,,,50,,,,,,Dermond Federation,,Light Machine Gun,,,,,,,,,,401
+Reitoke Hand Built-in Light Machine Gun,der_reitoke_right_arm,,,2500,700,,40,,,30,0,200,1,200,KINETIC,10,,,0.05,,4,1,30,4,2,,1250,,,50,,,,,,Dermond Federation,,Light Machine Gun,,,,,,,,,,402
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+#MISSILE,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Mentalor LRM Laucnher,der_mentalor_launcher,4,,7500,4000,,50,2000,,40,12,5,0.05,1,ENERGY,100,,0.5,5,1,5,0,0,0,,,450,40,30,325,,,"DO_NOT_AIM, HEATSEEKER, DO_NOT_CONSERVE",,,Dermond Federation,,Strike EMP Missile,Fast,Excelent,,,,,,,True,600
+Tikele Missile Launcher,der_tikele_spam,,,4000,1200,,300,,,10,0,10,0.20,10,FRAGMENTATION,50,,,0.4,1,0.4,2,0.1,0.2,20,,300,20,20,100,,,"DO_NOT_AIM, ANTI_FTR",,,Dermond Federation,,Anti Fighetr Missiles,Fast,Good,,,,,,,True,601
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,

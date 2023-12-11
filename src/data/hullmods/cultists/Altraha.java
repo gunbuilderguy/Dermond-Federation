@@ -30,8 +30,8 @@ public class Altraha extends BaseHullMod {
     }
 
 
-    public static final float ammocap = 0.75f;
-    public static final float ballisticspeed = 0.7f;
+    public static final float ammocap = 0.4f;
+    public static final float ballisticspeed = 0.3f;
 
     public static final float beamdmg = 1.2f;
     public static final float beamrange = 1.3f;
