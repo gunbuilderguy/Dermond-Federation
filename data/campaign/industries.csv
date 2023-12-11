@@ -1,11 +1,16 @@
 id,name,cost mult,build time,income,upkeep,downgrade,upgrade,tags,data,image,plugin,desc,order,disruptDanger
+#DERMOND FEDERATION,,,,,,,,,,,,,,
 der_orniumproduction,Ornium Production Shipyards,250,720,,55,,,"heavyindustry, industry, industrial",,graphics/icons/industry/der_ornium_production.png,data.campaign.econ.industries.der_orniumproduction,"Ornium Production style is the only production style in which Dermondian engieneers are able to build so complex systems. Time needed to build even a single ship is very high on soely Orbital Works, but if for example you build the base engine parts via Ornium Production style Shipyards, it will cut time almost 7 times. This allows Dermond ships to be built extremly fast and at the same time not caring that much about quality.",3665,HIGH
 der_federala_academy,Federal Officer Training Academy,1.2,365,,40,,,"der_federala_academy, tactical_bombardment, structure",,graphics/icons/industry/der_federal_academy.png,data.campaign.econ.industries.der_federala_academy,"Dermond is very famous for their officers, and the Federal Academy is the place from where all these captains come from. There aren't that a lot of them, but those which there are, are very famous and very prestigious.",3666,HIGH
 der_researchcomplex,Research Complex,1,90,,10,,,structure,,graphics/icons/industry/der_research_laboratory.png,data.campaign.econ.industries.der_researchcomplex,"Dermond is famous for their science breakthroughs and their generous research grants, starting from 1 million credits ending in entire planets diverted to support research. The reason why their academies are placed on planets may differ and may actually just be that orbital stations are too small for their equipment.
 
 The research station on $market is due to AI or ship research reasons. This academy for example focuses more on AI research and creating more advanced level AI cores. Hegemony keeps an eye on this research complex due to it being the last official AI Core creating facility.",3667,HIGH
 ,,,,,,,,,,,,,,
+#DERMOND KM PMC,,,,,,,,,,,,,,
+der_pmc_level1,Külai Merai PMC Outpost,2,45,,40,,,"patrol, unraidable, tactical_bombardment, structure",,,data.campaign.econ.industries.kmPMC.der_PMC_level1,,3999,HIGH
 ,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+#ORDO,,,,,,,,,,,,,,
 der_meat_grinder,In Cibum Factorem,1.5,720,,40,,,industry,,,data.campaign.econ.industries.der_ordo_meat_grinder,"Whilist Ordo Aeterni are few in numbers, prisoners which they capture are many, and those who are not worthy to go threw The Ascession, are sent here. No matter who you are you will be transformed with The Power of God into something more useful. How is it done, is unknown",3668,HIGH
 der_meat_raiders,Cibum Inquisitores,1.2,365,,25,,,industry,,,data.campaign.econ.industries.der_ordo_raiders,"Ordo Aeterni is few in numbers, that is why they need more people in order to sustain their population. Most people are gained threw Ascension who were normal people before comming here... What they have seen or what have happened to them is unknown.",3669,HIGH
 der_hives,Hive Breeding Anthills,1.9,2350,,750,,,industry,,,data.campaign.econ.industries.der_ordo_breeder,"Whilist to become one of the citizens of Ordo Aeterni you have to go threw Ascension... But what if you are not worthy? Well for that Ordo have made a new way, completly remaking people.

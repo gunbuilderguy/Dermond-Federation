@@ -9,6 +9,7 @@ import com.fs.starfarer.api.combat.ShipAPI;
 import com.fs.starfarer.api.combat.ShipAPI.HullSize;
 import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.fleet.FleetMemberAPI;
+import com.fs.starfarer.api.impl.campaign.ids.HullMods;
 import com.fs.starfarer.api.util.Misc;
 import java.util.HashMap;
 import java.util.Map;
@@ -51,9 +52,9 @@ public class CeltorianSystem extends BaseHullMod {
     }
 
     @Override
-	public boolean isApplicableToShip(ShipAPI ship) {
-		//return ship != null && ship.getShield() == null && ship.getPhaseCloak() == null;
-		return ship.getHullSpec().isPhase();
+    public boolean isApplicableToShip(ShipAPI ship) {
+        if (ship.getVariant().hasHullMod(HullMods.ADAPTIVE_COILS)) return false;
+        return ship.getHullSpec().isPhase();
     }
 
     //nuke: test if this is properly incompatible with reactive fields
@@ -85,7 +86,7 @@ public class CeltorianSystem extends BaseHullMod {
     }
 
     public String getCanNotBeInstalledNowReason(ShipAPI ship, MarketAPI marketOrNull, CampaignUIAPI.CoreUITradeMode mode) {
-        return !dalton_utils.playerHasCommodity("supplies", 200) ? "You do not have the required ammount of supplies" : super.getCanNotBeInstalledNowReason(ship, marketOrNull, mode);
+        return !dalton_utils.playerHasCommodity("supplies", 200) ? "You do not have the required amount of supplies" : super.getCanNotBeInstalledNowReason(ship, marketOrNull, mode);
     }
                 
     public String getUnapplicableReason(ShipAPI ship) {

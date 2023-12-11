@@ -5,7 +5,7 @@
 	"sprite":"graphics/missiles/der_tikele_spam_missile.png",
 	"size":[8,20],	
 	"center":[4,10],
-	"collisionRadius":20,
+	"collisionRadius":10,
 	"collisionClass":"MISSILE_NO_FF",
 	"explosionColor":[0,102,204,255],  # purely visual, will get a white additively blended core on top of this color
 	"explosionRadius":150, # purely visual
@@ -14,7 +14,7 @@
 				  "acc":6250,
 				  "dec":4000},
 	"engineSlots":[{"id":"ES1",
-					"loc":[-3.5, 0],
+					"loc":[-8, 0],
 				    "style":"CUSTOM",
 					"styleSpec":{
 						"mode":"QUAD_STRIP", # PARTICLES or QUAD_STRIP, determines which params are used

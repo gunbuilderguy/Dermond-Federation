@@ -116,7 +116,7 @@ public class DermondTargetingunit extends BaseHullMod {
     }
 
     public String getCanNotBeInstalledNowReason(ShipAPI ship, MarketAPI marketOrNull, CampaignUIAPI.CoreUITradeMode mode) {
-        return !dalton_utils.playerHasCommodity("gamma_core", 3) ? "You do not have the required ammount of AI cores" : super.getCanNotBeInstalledNowReason(ship, marketOrNull, mode);
+        return !dalton_utils.playerHasCommodity("gamma_core", 3) ? "You do not have the required amount of AI cores" : super.getCanNotBeInstalledNowReason(ship, marketOrNull, mode);
     }
 
 

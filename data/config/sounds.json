@@ -54,5 +54,20 @@
         "file":"sounds/weapons/missiles/der_tikele_shot_3.ogg",
         "volume": 0.1
     }
+],
+
+"der_MACHINE_GUN_LIGHT": [
+    {
+        "file": "sounds/weapons/missiles/mg15_1.ogg",
+        "volume": 0.15
+    },
+    {
+        "file": "sounds/weapons/missiles/mg15_2.ogg",
+        "volume": 0.15
+    },
+    {
+        "file": "sounds/weapons/missiles/mg15_2.ogg",
+        "volume": 0.15
+    }
 ]
 }

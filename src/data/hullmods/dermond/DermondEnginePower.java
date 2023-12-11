@@ -36,24 +36,14 @@ public class DermondEnginePower extends BaseHullMod {
         return Global.getSettings().getString("der",  key);}
 
     //Positive
-	private static Map<HullSize, Float> SPEED = new HashMap();
-	static {
-	    SPEED.put(HullSize.FRIGATE, 10f);
-		SPEED.put(HullSize.DESTROYER, 20f);
-		SPEED.put(HullSize.CRUISER, 30f);
-		SPEED.put(HullSize.CAPITAL_SHIP, 20f);
-	}
-	private static Map<HullSize, Float> MANEUVARABILITY = new HashMap();
-	static {
-	    MANEUVARABILITY.put(HullSize.FRIGATE, 50f);
-		MANEUVARABILITY.put(HullSize.DESTROYER, 40f);
-		MANEUVARABILITY.put(HullSize.CRUISER, 35f);
-		MANEUVARABILITY.put(HullSize.CAPITAL_SHIP, 25f);
-	}
+    public static float SPEED = 30f;
+
+    public static float MANEUVARABILITY = 15f;
+
 
 
     //Negative
-    public static final float SUPPLY_USE_MULT = 1.3f;
+    public static float nerf = 15f;
 
 
     //Blocked
@@ -74,9 +64,9 @@ public class DermondEnginePower extends BaseHullMod {
     }
 
     public void applyEffectsBeforeShipCreation(HullSize hullSize, MutableShipStatsAPI stats, String id) {
-        stats.getMaxSpeed().modifyPercent(id, (float) SPEED.get(hullSize));
-        stats.getTurnAcceleration().modifyPercent(id, (float) MANEUVARABILITY.get(hullSize));
-        stats.getSuppliesPerMonth().modifyMult(id, SUPPLY_USE_MULT);
+        stats.getMaxSpeed().modifyPercent(id, SPEED);
+        stats.getTurnAcceleration().modifyPercent(id, MANEUVARABILITY);
+        stats.getShieldArcBonus().modifyFlat(id, -nerf);
         stats.getTimeMult().modifyMult(id, 1.15f);
     }
 
@@ -107,7 +97,7 @@ public class DermondEnginePower extends BaseHullMod {
     }
 
     public String getCanNotBeInstalledNowReason(ShipAPI ship, MarketAPI marketOrNull, CampaignUIAPI.CoreUITradeMode mode) {
-        return !dalton_utils.playerHasCommodity("fuel", 250) ? "You do not have the required ammount of fuel." : super.getCanNotBeInstalledNowReason(ship, marketOrNull, mode);
+        return !dalton_utils.playerHasCommodity("fuel", 250) ? "You do not have the required amount of fuel." : super.getCanNotBeInstalledNowReason(ship, marketOrNull, mode);
     }
 
     
@@ -142,12 +132,12 @@ public class DermondEnginePower extends BaseHullMod {
 
 
         //Positive bonuses
-        tooltip.addPara("%s " + getString("speed_increase"), pad, arr, Math.round(SPEED.get(hullSize)) + "%"  );
-        tooltip.addPara("%s " + getString("maneuv_increase"), pad, arr, Math.round(MANEUVARABILITY.get(hullSize)) + "%"  );
+        tooltip.addPara("%s " + getString("speed_increase"), pad, arr, Math.round(SPEED) + "%"  );
+        tooltip.addPara("%s " + getString("maneuv_increase"), pad, arr, Math.round(MANEUVARABILITY) + "%"  );
 
 
         //Negative ones
-        tooltip.addPara("%s " + getString("maintanence_increase"), pad, add, Math.round((SUPPLY_USE_MULT - 1f) * 100f) + "%");
+        tooltip.addPara("%s " + getString("shieldarc_less"), pad, add, Math.round(nerf) + " degree");
 
 
         

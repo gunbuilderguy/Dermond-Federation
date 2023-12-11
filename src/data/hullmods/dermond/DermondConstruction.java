@@ -79,8 +79,14 @@ public class DermondConstruction extends BaseHullMod {
         stats.getSensorProfile().modifyMult(id, PROFILE_MULT);
         stats.getSuppliesPerMonth().modifyMult(id, SUPPLY_USE_MULT);
         stats.getCRLossPerSecondPercent().modifyPercent(id, DEGRADE_INCREASE_PERCENT);
-        /*
-        if(Global.getSettings().getWeaponSpec(weapon).hasTag("Dermond")) {
+
+
+
+    }
+
+
+    /*
+            if(weapon.getTags.().contains("Ornium")) {
 
             stats.getDynamic().getMod(Stats.LARGE_BALLISTIC_MOD).modifyFlat(id, 10);
             stats.getDynamic().getMod(Stats.LARGE_ENERGY_MOD).modifyFlat(id, 10);
@@ -94,9 +100,8 @@ public class DermondConstruction extends BaseHullMod {
             stats.getDynamic().getMod(Stats.SMALL_ENERGY_MOD).modifyFlat(id, 10);
             stats.getDynamic().getMod(Stats.SMALL_MISSILE_MOD).modifyFlat(id, 10);
 
-        }*/
-
-    }
+        }
+     */
 
     public boolean isApplicableToShip(ShipAPI ship) {
         return ship != null && (ship.getHullSpec().getNoCRLossTime() < 10000 || ship.getHullSpec().getCRLossPerSecond() > 0); //this was in Hardened subsystems or effcency hullmod? I don't remember.

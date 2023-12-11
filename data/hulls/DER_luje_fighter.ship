@@ -29,7 +29,7 @@
       "size": "SMALL",
       "type": "BUILT_IN",
       "mount": "TURRET",
-      "arc": 270,
+      "arc": 110,
       "angle": 0,
       "locations": [-8.5, -0]
     },
@@ -38,18 +38,18 @@
       "size": "SMALL",
       "type": "BUILT_IN",
       "mount": "TURRET",
-      "arc": 110,
-      "angle": -40,
-      "locations": [-10, -27]
+      "arc": 70,
+      "angle": -20,
+      "locations": [-10, -26.5]
     },
     {
       "id": "WS0004",
       "size": "SMALL",
       "type": "BUILT_IN",
       "mount": "TURRET",
-      "arc": 110,
-      "angle": 40,
-      "locations": [-10, 26]
+      "arc": 70,
+      "angle": 20,
+      "locations": [-10, 26.5]
     },
     {
       "id": "WS0001",

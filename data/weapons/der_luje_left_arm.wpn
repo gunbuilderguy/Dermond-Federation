@@ -14,8 +14,8 @@
     "RENDER_BARREL_BELOW"
   ],
   "turretOffsets": [
-    39,
-    4
+    66,
+    10.5
   ],
   "turretAngleOffsets": [
     0
@@ -45,5 +45,5 @@
       255
     ]
   },
-  "fireSoundTwo":"hephaestus_fire",
+  "fireSoundTwo": "hephaestus_fire"
 }

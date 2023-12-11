@@ -13,6 +13,7 @@ import java.util.Objects;
 import com.fs.starfarer.api.Global;
 import data.scripts.world.systems.dermond_Bontora;
 import data.scripts.world.systems.dermond_Aleri;
+import data.scripts.world.systems.dermond_quasi;
 
 //I kinda hate coding, but if I need I will code...
 
@@ -113,6 +114,7 @@ public class DERGen implements SectorGeneratorPlugin{
 
         new dermond_Bontora().generate(sector);
         new dermond_Aleri().generate(sector);
+        new dermond_quasi().generate(sector);
 
         
     }

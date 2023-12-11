@@ -146,6 +146,9 @@ public class dermond_orlando extends BaseShipSystemScript {
 
     private boolean explosion_timeout_1 = false;
 
+
+
+
     public void apply(MutableShipStatsAPI stats, String id, State state, float effectLevel) {
         CombatEngineAPI engine = Global.getCombatEngine();
         ShipAPI ship = null;
@@ -429,7 +432,7 @@ public class dermond_orlando extends BaseShipSystemScript {
             //Jitter effect
             float jitterLevel = effectLevel;
             float jitterRangeBonus = 0;
-            float maxRangeBonus = 10f;
+            float maxRangeBonus = 20f;
             if (state == State.IN) {
                 jitterLevel = effectLevel / (1f / ship.getSystem().getChargeUpDur());
                 if (jitterLevel > 1) {
@@ -455,9 +458,16 @@ public class dermond_orlando extends BaseShipSystemScript {
             float offsetY = sprite.getHeight() / 2.0F - sprite.getCenterY();
             this.interval.advance(engine.getElapsedInLastFrame());
             if (this.interval.intervalElapsed()) {
-                offsetX = (float) FastTrig.cos(Math.toRadians((double)(ship.getFacing() - 90.0F))) * offsetX - (float)FastTrig.sin(Math.toRadians((double)(ship.getFacing() - 90.0F))) * offsetY;
-                offsetY = (float)FastTrig.sin(Math.toRadians((double)(ship.getFacing() - 90.0F))) * offsetX + (float)FastTrig.cos(Math.toRadians((double)(ship.getFacing() - 90.0F))) * offsetY;
-                MagicRender.battlespace(Global.getSettings().getSprite(ship.getHullSpec().getSpriteName()), new Vector2f(ship.getLocation().getX() + offsetX, ship.getLocation().getY() + offsetY), new Vector2f(0.0F, 0.0F), new Vector2f(ship.getSpriteAPI().getWidth(), ship.getSpriteAPI().getHeight()), new Vector2f(0.0F, 0.0F), ship.getFacing() - 90.0F, 0.0F, this.AFTER_IMAGE_COLOR, true, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.1F, 0.1F, 1.0F, CombatEngineLayers.BELOW_SHIPS_LAYER);
+                offsetX = (float) FastTrig.cos(Math.toRadians((double)(ship.getFacing() - 90.0F))) * offsetX -
+                        (float)FastTrig.sin(Math.toRadians((double)(ship.getFacing() - 90.0F))) * offsetY;
+                offsetY = (float)FastTrig.sin(Math.toRadians((double)(ship.getFacing() - 90.0F))) * offsetX +
+                        (float)FastTrig.cos(Math.toRadians((double)(ship.getFacing() - 90.0F))) * offsetY;
+                MagicRender.battlespace(Global.getSettings().getSprite(ship.getHullSpec().getSpriteName()),
+                        new Vector2f(ship.getLocation().getX() + offsetX, ship.getLocation().getY() + offsetY),
+                        new Vector2f(0.0F, 0.0F), new Vector2f(ship.getSpriteAPI().getWidth(), ship.getSpriteAPI().getHeight()),
+                        new Vector2f(0.0F, 0.0F), ship.getFacing() - 90.0F, 0.0F,
+                        this.AFTER_IMAGE_COLOR, true, 0.0F, 0.0F, 0.0F, 0.0F,
+                        0.0F, 0.1F, 0.1F, 1.0F, CombatEngineLayers.BELOW_SHIPS_LAYER);
             }
 
 

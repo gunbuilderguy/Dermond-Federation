@@ -101,7 +101,7 @@ public class dalton_utils extends BaseModPlugin {
         if(Global.getCurrentState() != GameState.TITLE) {
             Map<String, Object> data = Global.getSector().getPersistentData();
             if (member.getFleetData() != null && member.getFleetData().getFleet() != null && member.getFleetData().getFleet().equals(Global.getSector().getPlayerFleet())) {
-                dalton_utils.removePlayerCommodity("COMMODITY", AMMOUNT);
+                dalton_utils.removePlayerCommodity("COMMODITY", amount);
             }
         }
     }
@@ -111,11 +111,11 @@ public class dalton_utils extends BaseModPlugin {
         if(ship.getVariant().hasHullMod("HULLMOD")){
             return true;
         }else{
-            return dalton_utils.playerHasCommodity("COMMODITY", AMMOUNT) && super.canBeAddedOrRemovedNow(ship, marketOrNull, mode);
+            return dalton_utils.playerHasCommodity("COMMODITY", amount) && super.canBeAddedOrRemovedNow(ship, marketOrNull, mode);
         }
     }
 
     public String getCanNotBeInstalledNowReason(ShipAPI ship, MarketAPI marketOrNull, CampaignUIAPI.CoreUITradeMode mode) {
-        return !dalton_utils.playerHasCommodity("COMMODITY", AMMOUNT) ? "You do not have the required ammount of ITEM" : super.getCanNotBeInstalledNowReason(ship, marketOrNull, mode);
+        return !dalton_utils.playerHasCommodity("COMMODITY", amount) ? "You do not have the required amount of ITEM" : super.getCanNotBeInstalledNowReason(ship, marketOrNull, mode);
     }
  */

@@ -194,7 +194,7 @@ No I wont chane the damage takenmult way, it will decrease damage of all
     }
 
     public String getCanNotBeInstalledNowReason(ShipAPI ship, MarketAPI marketOrNull, CampaignUIAPI.CoreUITradeMode mode) {
-        return !dalton_utils.playerHasCommodity("supplies", 500) ? "You do not have the required ammount of supplies" : super.getCanNotBeInstalledNowReason(ship, marketOrNull, mode);
+        return !dalton_utils.playerHasCommodity("supplies", 500) ? "You do not have the required amount of supplies" : super.getCanNotBeInstalledNowReason(ship, marketOrNull, mode);
     }
 
     @Override

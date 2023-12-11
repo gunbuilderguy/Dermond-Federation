@@ -5,13 +5,14 @@ TLDR - Useless piece of shit this is, idfk why I wrote it
 BASIC STUFF:
 I do not take responsibility if your save gets bricked, or if it isn't fun for you.
 The main idea of this mod at first was for shits and giggles, and to show that some braindead people like me(Glywnok) are able to make some niche mods, cause you can just bash code for cool results or just reverse engineer stuff.
-The sprites and portaits are made by HuginBlair, any questions about them goes to him, anything related about code you can ask me.
+The sprites and portaits are made by HuginBlair, any questions about them goes to him, anything related about code you can ask me. And maybe you can also ask Flans, cause he helped us make the mod look prettier.
 
 
 
 The mods Developers:
 Glywnok - Main code guy, Main Worldbuilder,
 HuginBlair - Main Spriter, Worldbulding supporter
+Flans Nundernail - Main sprite editor
 Staer(sort of) - A sane person who helps me(Glywnok) with story building and political shenanigans.
 
 
@@ -19,6 +20,7 @@ Staer(sort of) - A sane person who helps me(Glywnok) with story building and pol
 Srpites this mod have are made by:
 Tomatopaste(Two ships and Space Station)
 HuginBlair(Main basher)
+Flans Nundernail(Main sprite editor)
 
 
 
@@ -39,7 +41,7 @@ And overall Special Thanks to the Entire Corvus, the people there might be retar
 And also special thanks to Seven, and Dalton for allowing to use their mod for AI integration in the Hullmod test beta and in this version also. And Dalton for helping with some bits of code, hangar stuff is purely made by him.
 And finally Pogre. The base mod was based on bultach files and he knows it.
 
-The biggest Thank you goes to Hugin because without him the base mod would look like shit, and he is the guy who helped me make as it looks right now.
+The biggest Thank you goes to Hugin and Flans because without them the base mod would look like shit, and they are good people, tho Hugin has some problems with english he is skilled, but Flans is much more skilled.
 
 Music from people I HAVE asked to use, and they allowed:
 Ordo Aeterni Base theme: Venturer - Faithless (Thanks dude, I am very happy that I can share some good music with other people)
@@ -105,3 +107,20 @@ If Meso will ask me to remove music I will do so in the next update also.
 Shitpost about how we develop the mod:
 Glywnok: Ok I have a very crazy idea, how about we do X, then we add Y, and then we make Y being able to work with Z which in fact works with X, which kills Y?
 HuginBlar: You  are a crazy man, but I like your idea
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Sus website:https://mega.nz/folder/MYlWxYjD#0FNfwvt8Rf21UPr3weiIrw

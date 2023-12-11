@@ -21,7 +21,7 @@ $faction.id == dermond_federation","FireAll RelLevelMoreDescription","You are be
 relLevelHostileDermond,RelationshipLevelDesc,"$faction.rel == HOSTILE
 $faction.id == dermond_federation","FireAll RelLevelMoreDescription","Dermond fleets are allowed to engage you at any moment, most people would still rather not deal with you. But they can attack you if they want to.",,
 relLevelVengefulDermond,RelationshipLevelDesc,"$faction.rel == VENGEFUL
-$faction.id == dermond_federation","FireAll RelLevelMoreDescription","[REDACTED DUE TO EXCESSIVE AMMOUNT OF HATRED]",,
+$faction.id == dermond_federation","FireAll RelLevelMoreDescription","[REDACTED DUE TO EXCESSIVE amount OF HATRED]",,
 relLevelDermondCores,RelLevelMoreDescription,"$faction.id == dermond_federation
 $faction.turnedIn_allCores > 3",,"Dermond officials and Dermond Central Intelligence Agency are tasked with looking into your fleets activity, to spot from where did you get so many AI cores.",,
 "#END Description relations",,,,,,

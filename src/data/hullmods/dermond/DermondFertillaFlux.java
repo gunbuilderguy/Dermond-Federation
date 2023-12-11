@@ -55,13 +55,7 @@ public class DermondFertillaFlux extends BaseHullMod {
     }
 
     //Negative
-    private static Map<HullSize, Float> SUPPLY_USE_MULT = new HashMap();
-    static {
-        SUPPLY_USE_MULT.put(HullSize.FRIGATE, 25f);
-        SUPPLY_USE_MULT.put(HullSize.DESTROYER, 50f);
-        SUPPLY_USE_MULT.put(HullSize.CRUISER, 75f);
-        SUPPLY_USE_MULT.put(HullSize.CAPITAL_SHIP, 100f);
-    }
+    public static int SUPPLY_USE_MULT = 50;
 
     public static final float CR_DEGRADATION = 1.6f;
 
@@ -87,7 +81,7 @@ public class DermondFertillaFlux extends BaseHullMod {
         stats.getTimeMult().modifyPercent(id, 20f); //Yes this effect will not be written in the description. And I don't care!
         stats.getFluxCapacity().modifyPercent(id, (float) max_flux.get(hullSize));
         stats.getFluxDissipation().modifyPercent(id, (float) flux_dis.get(hullSize));
-        stats.getSuppliesPerMonth().modifyPercent(id, (float) SUPPLY_USE_MULT.get(hullSize));
+        stats.getSuppliesPerMonth().modifyPercent(id, SUPPLY_USE_MULT);
         stats.getCRLossPerSecondPercent().modifyMult(id, CR_DEGRADATION);
     }
 
@@ -117,7 +111,7 @@ public class DermondFertillaFlux extends BaseHullMod {
     }
 
     public String getCanNotBeInstalledNowReason(ShipAPI ship, MarketAPI marketOrNull, CampaignUIAPI.CoreUITradeMode mode) {
-        return !dalton_utils.playerHasCommodity("supplies", 200) ? "You do not have the required ammount of supplies" : super.getCanNotBeInstalledNowReason(ship, marketOrNull, mode);
+        return !dalton_utils.playerHasCommodity("supplies", 200) ? "You do not have the required amount of supplies" : super.getCanNotBeInstalledNowReason(ship, marketOrNull, mode);
     }
 
     
@@ -156,7 +150,7 @@ public class DermondFertillaFlux extends BaseHullMod {
 
 
         //Negative ones
-        tooltip.addPara("%s " + getString("maintanence_increase"), pad, add, Math.round(SUPPLY_USE_MULT.get(hullSize)) + "%");
+        tooltip.addPara("%s " + getString("maintanence_increase"), pad, add, SUPPLY_USE_MULT + "%");
         tooltip.addPara("%s " + getString("degradecr_fast"), pad, add, Math.round((CR_DEGRADATION - 1f) * 100f) + "%");
         
 
